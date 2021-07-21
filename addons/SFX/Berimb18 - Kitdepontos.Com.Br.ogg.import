@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Berimb18 - Kitdepontos.Com.Br.ogg-a718c08aaba46f725c3cf1310e610043.oggstr"
+
+[deps]
+
+source_file="res://addons/SFX/Berimb18 - Kitdepontos.Com.Br.ogg"
+dest_files=[ "res://.import/Berimb18 - Kitdepontos.Com.Br.ogg-a718c08aaba46f725c3cf1310e610043.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

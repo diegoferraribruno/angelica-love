@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Happy-Walk-9s.ogg-2fe08ce195894ff5f14074745b0a1c73.oggstr"
+
+[deps]
+
+source_file="res://addons/SFX/Happy-Walk-9s.ogg"
+dest_files=[ "res://.import/Happy-Walk-9s.ogg-2fe08ce195894ff5f14074745b0a1c73.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

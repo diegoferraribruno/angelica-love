@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tabla-lick-voiceanddrums.wav-42016c2cf5e93f1ece6d38851e36450f.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/tabla-lick-voiceanddrums.wav"
+dest_files=[ "res://.import/tabla-lick-voiceanddrums.wav-42016c2cf5e93f1ece6d38851e36450f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

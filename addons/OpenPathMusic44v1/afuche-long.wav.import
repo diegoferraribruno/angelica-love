@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/afuche-long.wav-51897b57c8bf88684b7e540356f612f5.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/afuche-long.wav"
+dest_files=[ "res://.import/afuche-long.wav-51897b57c8bf88684b7e540356f612f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

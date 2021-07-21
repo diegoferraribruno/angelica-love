@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/beat olodum djluisinho.com.mp3-da62f7ec8b01bb218161ddfa7f020d13.mp3str"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/beat olodum djluisinho.com.mp3"
+dest_files=[ "res://.import/beat olodum djluisinho.com.mp3-da62f7ec8b01bb218161ddfa7f020d13.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

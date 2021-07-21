@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Batida #8 - 130 BPM (Panela).wav-9ab8ff1c2057e5d807e311ec8e32f9ed.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Batida #8 - 130 BPM (Panela).wav"
+dest_files=[ "res://.import/Batida #8 - 130 BPM (Panela).wav-9ab8ff1c2057e5d807e311ec8e32f9ed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

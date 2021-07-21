@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/timbale-hi-rim-2.wav-c8cd7e6c5e825c4f80b0a2aff79c6f0f.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/timbale-hi-rim-2.wav"
+dest_files=[ "res://.import/timbale-hi-rim-2.wav-c8cd7e6c5e825c4f80b0a2aff79c6f0f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

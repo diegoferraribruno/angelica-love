@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Synth #8 - Namorado Otário (D).wav-b333d7c17bb8b62e415968c74c4a1717.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Synth #8 - Namorado Otário (D).wav"
+dest_files=[ "res://.import/Synth #8 - Namorado Otário (D).wav-b333d7c17bb8b62e415968c74c4a1717.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

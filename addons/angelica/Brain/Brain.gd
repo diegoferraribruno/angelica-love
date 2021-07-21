@@ -14,7 +14,7 @@ onready var Cbar = get_node("../../CommandBar")
 onready var game = get_node("../../Game")
 onready var load_save = $"LoadSave"
 var dock = preload("res://addons/angelica/Dock/Dock.tscn")
-onready var title = get_node("../../Paint/FloatingTitle/Title")
+onready var title = get_node("../../Paint/Title/Title")
 #var state = "show"
 #var state_old = "show"
 const FILE_NAME = "user://angelica-data.json"
@@ -181,24 +181,24 @@ func synapse(new_text)-> void :
 			screen_shot(true)
 			yield(get_tree().create_timer(0.2), "timeout")
 		"pong":
-			var instance = pong.instance()
 			if game.has_node("Pong") == false:
-				$"../".visible = false
+				var instance = pong.instance()
+#				$"../".visible = false
 				game.add_child(instance)
 			elif game.has_node("Pong"):
 				get_node("../../Game/Pong").queue_free()
-				$"../".visible = true
+#				$"../".visible = true
 				ai_say("Good game!")
 		"truck":
 			var instance = truck.instance()
 			if game.has_node("CarSelect") == false:
-				$"../".visible = false
+#				$"../".visible = false
 				game.add_child(instance)
 			elif game.has_node("CarSelect"):
 				if game.has_node("TownScene"):
 					get_node("../../Game/TownScene").queue_free()
 				get_node("../../Game/CarSelect").queue_free()
-				$"../".visible = true
+#				$"../".visible = true
 				ai_say("Good game!")
 		"love":
 			var instance = love.instance()
@@ -210,16 +210,13 @@ func synapse(new_text)-> void :
 #				$"../".visible = true
 				ai_say("Good game!")
 		"xperma":
-			var instance = xperma.instance()
 			if game.has_node("XpermaWorld") == false:
-#				$"../".visible = false
+				var instance = xperma.instance()
 				game.add_child(instance)
 			elif game.has_node("XpermaWorld"):
 				get_node("../../Game/XpermaWorld").queue_free()
-#				$"../".visible = true
 				ai_say("Good game!")
 		"glow":
-			get_node("../../").get_tree().get_root().set_transparent_background(false)
 			if get_node("../../Paint").has_node("Glow") == false:
 				var instance = glow.instance()
 				get_node("../../Paint").add_child(instance)
@@ -227,14 +224,14 @@ func synapse(new_text)-> void :
 			else:
 				get_node("../../Paint/Glow").queue_free()
 				ai_say("Glow removed!")
-				get_node("../../").get_tree().get_root().set_transparent_background(true)
+#				get_node("../../").get_tree().get_root().set_transparent_background(true)
 		"title":
-			if command.size() == 1:
+			if command.size() == 1 :
 				title.get_parent().visible = !title.get_parent().visible
 			else:
 				new_text = new_text.replace("title ","")
-				title.get_parent().visible = true
 				title.bbcode_text = new_text
+				title.get_parent().visible = true
 		"paint":
 			var instance = paint.instance()
 			if get_parent().has_node("PaintTools") == false:

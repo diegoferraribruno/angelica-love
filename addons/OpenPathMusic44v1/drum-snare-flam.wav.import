@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drum-snare-flam.wav-ef28cd50dcfe13674f2a70102c63e511.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/drum-snare-flam.wav"
+dest_files=[ "res://.import/drum-snare-flam.wav-ef28cd50dcfe13674f2a70102c63e511.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

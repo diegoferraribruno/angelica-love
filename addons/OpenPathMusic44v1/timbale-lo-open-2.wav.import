@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/timbale-lo-open-2.wav-0d1d3b4066752e1712ebea3612667c84.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/timbale-lo-open-2.wav"
+dest_files=[ "res://.import/timbale-lo-open-2.wav-0d1d3b4066752e1712ebea3612667c84.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

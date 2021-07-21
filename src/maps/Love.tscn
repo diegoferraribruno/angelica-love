@@ -153,15 +153,15 @@ custom_fonts/bold_font = SubResource( 4 )
 custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "
-[center][wave][rainbow] This is the end. 
+[center][wave][rainbow] This is the end for now..
  [/rainbow][/wave]
 Have a lovely life!
-By Diego, Markusmmm and Rick Reeves"
+By Diego Ferrari Bruno, Marcusmmm and Rick Reeves[/center]"
 text = "
- This is the end. 
+ This is the end for now..
  
 Have a lovely life!
-By Diego, Markusmmm and Rick Reeves"
+By Diego Ferrari Bruno, Marcusmmm and Rick Reeves"
 __meta__ = {
 "_edit_use_anchors_": false
 }

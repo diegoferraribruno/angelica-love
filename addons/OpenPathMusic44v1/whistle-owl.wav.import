@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/whistle-owl.wav-e1b458ecbc49c3a3c5a2ae991df61c97.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/whistle-owl.wav"
+dest_files=[ "res://.import/whistle-owl.wav-e1b458ecbc49c3a3c5a2ae991df61c97.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

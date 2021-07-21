@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cowbell-small-open.wav-0e456de8f0c27fbae7a99648d524d582.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/cowbell-small-open.wav"
+dest_files=[ "res://.import/cowbell-small-open.wav-0e456de8f0c27fbae7a99648d524d582.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

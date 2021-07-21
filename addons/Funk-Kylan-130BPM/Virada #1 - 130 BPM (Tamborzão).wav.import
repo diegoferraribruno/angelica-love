@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Virada #1 - 130 BPM (Tamborzão).wav-ba1f7582b2078378787ebe8998b63603.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Virada #1 - 130 BPM (Tamborzão).wav"
+dest_files=[ "res://.import/Virada #1 - 130 BPM (Tamborzão).wav-ba1f7582b2078378787ebe8998b63603.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

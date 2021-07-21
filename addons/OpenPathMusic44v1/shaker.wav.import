@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shaker.wav-f57d569f2d86fd52ff330d0dc0ac1956.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/shaker.wav"
+dest_files=[ "res://.import/shaker.wav-f57d569f2d86fd52ff330d0dc0ac1956.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fingercymbals-large.wav-b9dcaa327c030ad03c12042f7dc901ac.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/fingercymbals-large.wav"
+dest_files=[ "res://.import/fingercymbals-large.wav-b9dcaa327c030ad03c12042f7dc901ac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

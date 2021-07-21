@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drum-snare-drag.wav-4e933487d8f99c1384c9c3501b70dcf1.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/drum-snare-drag.wav"
+dest_files=[ "res://.import/drum-snare-drag.wav-4e933487d8f99c1384c9c3501b70dcf1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

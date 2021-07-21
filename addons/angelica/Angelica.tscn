@@ -20,7 +20,7 @@ margin_top = 1.0
 margin_right = 3.0
 margin_bottom = 5.0
 
-[node name="FloatingTitle" parent="Paint" instance=ExtResource( 2 )]
+[node name="Title" parent="Paint" instance=ExtResource( 2 )]
 position = Vector2( 44.8071, 28.3992 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
@@ -28,5 +28,4 @@ position = Vector2( 2.5199, 10.0793 )
 
 [node name="CommandBar" parent="." instance=ExtResource( 5 )]
 pause_mode = 2
-visible = false
-position = Vector2( 534.624, 679.481 )
+position = Vector2( 527.95, 603.395 )

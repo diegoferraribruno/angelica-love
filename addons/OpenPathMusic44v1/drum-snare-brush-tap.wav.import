@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drum-snare-brush-tap.wav-ada1e74e11f0ee8dc4ac814dc023a514.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/drum-snare-brush-tap.wav"
+dest_files=[ "res://.import/drum-snare-brush-tap.wav-ada1e74e11f0ee8dc4ac814dc023a514.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

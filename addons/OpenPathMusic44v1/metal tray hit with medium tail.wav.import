@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/metal tray hit with medium tail.wav-b721273352e95c2b3df6594d3a41f68b.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/metal tray hit with medium tail.wav"
+dest_files=[ "res://.import/metal tray hit with medium tail.wav-b721273352e95c2b3df6594d3a41f68b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -225,7 +225,8 @@ func _on_Notes_meta_clicked(meta):
 
 
 func _on_Notes_meta_hover_started(meta):
-	var stream = load(notes[meta])
-	$"Notes/AudioStreamPlayer".set_stream(stream)
-	$"Notes/AudioStreamPlayer".volume_db = volume
-	$"Notes/AudioStreamPlayer".play()
+	if meta in notes:
+		var stream = load(notes[meta])
+		$"Notes/AudioStreamPlayer".set_stream(stream)
+		$"Notes/AudioStreamPlayer".volume_db = volume
+		$"Notes/AudioStreamPlayer".play()

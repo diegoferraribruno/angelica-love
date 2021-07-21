@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drum-tom-hi-brush.wav-464fa87d1a55a35ff3af6bca9bbe23f6.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/drum-tom-hi-brush.wav"
+dest_files=[ "res://.import/drum-tom-hi-brush.wav-464fa87d1a55a35ff3af6bca9bbe23f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

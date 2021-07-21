@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tumba-slap-1.wav-89174b5a398ee9895b9431d4200d31a7.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/tumba-slap-1.wav"
+dest_files=[ "res://.import/tumba-slap-1.wav-89174b5a398ee9895b9431d4200d31a7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

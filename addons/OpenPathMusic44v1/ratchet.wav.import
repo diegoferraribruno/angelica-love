@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ratchet.wav-f29bb2138c13ffbafb5533ba72a6d64d.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/ratchet.wav"
+dest_files=[ "res://.import/ratchet.wav-f29bb2138c13ffbafb5533ba72a6d64d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

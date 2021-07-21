@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Saxofone #2 - 130 BPM.wav-ac72e523cf0ab4ae393f3da88f217dcd.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Saxofone #2 - 130 BPM.wav"
+dest_files=[ "res://.import/Saxofone #2 - 130 BPM.wav-ac72e523cf0ab4ae393f3da88f217dcd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

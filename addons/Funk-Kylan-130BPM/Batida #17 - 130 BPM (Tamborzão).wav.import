@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Batida #17 - 130 BPM (Tamborzão).wav-b395224c22eed725710b1c4a5b3ae9f2.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Batida #17 - 130 BPM (Tamborzão).wav"
+dest_files=[ "res://.import/Batida #17 - 130 BPM (Tamborzão).wav-b395224c22eed725710b1c4a5b3ae9f2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

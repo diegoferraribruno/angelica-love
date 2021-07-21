@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tumba-muffled-2.wav-f23fadc5bbb2c74297a3198d942f095f.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/tumba-muffled-2.wav"
+dest_files=[ "res://.import/tumba-muffled-2.wav-f23fadc5bbb2c74297a3198d942f095f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bell-octave0.wav-7a998e1330b5b07e8f3715ec15d98080.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/bell-octave0.wav"
+dest_files=[ "res://.import/bell-octave0.wav-7a998e1330b5b07e8f3715ec15d98080.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

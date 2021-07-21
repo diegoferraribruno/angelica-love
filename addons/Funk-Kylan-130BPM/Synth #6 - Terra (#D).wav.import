@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Synth #6 - Terra (#D).wav-b8f30ca7f6493b95301fbb0f8d305d52.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Synth #6 - Terra (#D).wav"
+dest_files=[ "res://.import/Synth #6 - Terra (#D).wav-b8f30ca7f6493b95301fbb0f8d305d52.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

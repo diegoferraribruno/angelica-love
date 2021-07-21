@@ -31,7 +31,7 @@ sort_enabled = false
 script = ExtResource( 35 )
 
 [node name="nextfeatures" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1063.18, 503.844 )
+position = Vector2( 1049.73, 505.526 )
 
 [node name="Brain" type="Node" parent="."]
 script = ExtResource( 23 )
@@ -107,8 +107,7 @@ script = ExtResource( 7 )
 script = ExtResource( 8 )
 
 [node name="Mini" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 25.0557, 625.351 )
+position = Vector2( 28.4193, 568.17 )
 
 [node name="Hint" parent="." instance=ExtResource( 21 )]
 visible = false

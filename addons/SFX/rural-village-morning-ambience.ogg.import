@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rural-village-morning-ambience.ogg-21c61f710f87443aa19afee30d0c3400.oggstr"
+
+[deps]
+
+source_file="res://addons/SFX/rural-village-morning-ambience.ogg"
+dest_files=[ "res://.import/rural-village-morning-ambience.ogg-21c61f710f87443aa19afee30d0c3400.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

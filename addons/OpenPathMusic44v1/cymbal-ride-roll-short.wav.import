@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cymbal-ride-roll-short.wav-df55ada00afbf8bef56468463276bb8d.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/cymbal-ride-roll-short.wav"
+dest_files=[ "res://.import/cymbal-ride-roll-short.wav-df55ada00afbf8bef56468463276bb8d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

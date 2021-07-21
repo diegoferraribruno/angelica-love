@@ -1,2 +1,2 @@
 extends Node2D
-var close = true
+var mini = true

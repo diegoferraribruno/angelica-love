@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shaker-lo-down.wav-15b767ff067ec612eeb63ac0bbe3d87b.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/shaker-lo-down.wav"
+dest_files=[ "res://.import/shaker-lo-down.wav-15b767ff067ec612eeb63ac0bbe3d87b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

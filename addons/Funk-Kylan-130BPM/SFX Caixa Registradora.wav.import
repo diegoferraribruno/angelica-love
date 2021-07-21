@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX Caixa Registradora.wav-ec7d0e0d8ac43c5e081b8ab5759cfd87.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/SFX Caixa Registradora.wav"
+dest_files=[ "res://.import/SFX Caixa Registradora.wav-ec7d0e0d8ac43c5e081b8ab5759cfd87.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

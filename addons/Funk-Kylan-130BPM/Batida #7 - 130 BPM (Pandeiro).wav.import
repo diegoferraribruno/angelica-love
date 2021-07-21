@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Batida #7 - 130 BPM (Pandeiro).wav-79a91c87a44e849bc947b5b8597128d6.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Batida #7 - 130 BPM (Pandeiro).wav"
+dest_files=[ "res://.import/Batida #7 - 130 BPM (Pandeiro).wav-79a91c87a44e849bc947b5b8597128d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

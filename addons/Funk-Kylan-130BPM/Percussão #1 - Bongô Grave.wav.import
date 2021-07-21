@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Percussão #1 - Bongô Grave.wav-1ceb5c2a59d35b5ab8c200864f9fa067.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Percussão #1 - Bongô Grave.wav"
+dest_files=[ "res://.import/Percussão #1 - Bongô Grave.wav-1ceb5c2a59d35b5ab8c200864f9fa067.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

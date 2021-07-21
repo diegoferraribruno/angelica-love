@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shaker child voice.wav-c939763e057897871be105708b6e7619.sample"
+
+[deps]
+
+source_file="res://addons/OpenPathMusic44v1/shaker child voice.wav"
+dest_files=[ "res://.import/shaker child voice.wav-c939763e057897871be105708b6e7619.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

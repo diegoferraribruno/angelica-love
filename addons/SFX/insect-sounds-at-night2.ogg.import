@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/insect-sounds-at-night2.ogg-19bbdeb408e36e0254ce17c99f2c4d0a.oggstr"
+
+[deps]
+
+source_file="res://addons/SFX/insect-sounds-at-night2.ogg"
+dest_files=[ "res://.import/insect-sounds-at-night2.ogg-19bbdeb408e36e0254ce17c99f2c4d0a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

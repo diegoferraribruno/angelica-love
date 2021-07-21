@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Batida #6 - 130 BPM (Beatbox).wav-6bd64b9f5b6b23e265565d420a4319f5.sample"
+
+[deps]
+
+source_file="res://addons/Funk-Kylan-130BPM/Batida #6 - 130 BPM (Beatbox).wav"
+dest_files=[ "res://.import/Batida #6 - 130 BPM (Beatbox).wav-6bd64b9f5b6b23e265565d420a4319f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
