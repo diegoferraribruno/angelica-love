@@ -1,0 +1,126 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://addons/angelica/Body/Commands.gd" type="Script" id=1]
+[ext_resource path="res://addons/kenney_interface_sounds/drop_001.wav" type="AudioStream" id=2]
+[ext_resource path="res://addons/angelica/Chat/ChatMini.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/angelica/Trackers/Trackers.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/angelica/DJ/DJ.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/angelica/Brain/Memory.gd" type="Script" id=6]
+[ext_resource path="res://addons/angelica/Body/Load.gd" type="Script" id=7]
+[ext_resource path="res://addons/angelica/Brain/Audio.gd" type="Script" id=8]
+[ext_resource path="res://addons/angelica/Body/NextFeatures.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/angelica/Brain/ShortTermMemory.gd" type="Script" id=14]
+[ext_resource path="res://addons/angelica/Body/AssetSwitcher.gd" type="Script" id=16]
+[ext_resource path="res://addons/angelica/Brain/Emoji.gd" type="Script" id=19]
+[ext_resource path="res://addons/angelica/Themes/Hint.tscn" type="PackedScene" id=21]
+[ext_resource path="res://addons/angelica/Brain/Brain.gd" type="Script" id=23]
+[ext_resource path="res://addons/angelica/Brain/nvc/feelings.gd" type="Script" id=24]
+[ext_resource path="res://addons/angelica/Brain/nvc/NotFeelings.gd" type="Script" id=25]
+[ext_resource path="res://addons/angelica/Brain/nvc/Necessities.gd" type="Script" id=26]
+[ext_resource path="res://addons/angelica/Brain/VisualMemory.gd" type="Script" id=29]
+[ext_resource path="res://addons/angelica/Brain/Help.gd" type="Script" id=30]
+[ext_resource path="res://addons/angelica/Brain/Greetings.gd" type="Script" id=31]
+[ext_resource path="res://addons/angelica/Brain/Sentences.gd" type="Script" id=32]
+[ext_resource path="res://addons/angelica/Brain/Privacy.gd" type="Script" id=33]
+[ext_resource path="res://addons/angelica/Brain/UserDefault.gd" type="Script" id=34]
+[ext_resource path="res://addons/angelica/Body/Spine.gd" type="Script" id=35]
+
+[node name="Body" type="YSort"]
+pause_mode = 2
+sort_enabled = false
+script = ExtResource( 35 )
+
+[node name="nextfeatures" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1063.18, 503.844 )
+
+[node name="Brain" type="Node" parent="."]
+script = ExtResource( 23 )
+
+[node name="Memory" type="Node" parent="Brain"]
+script = ExtResource( 6 )
+
+[node name="Emotional" type="Node" parent="Brain/Memory"]
+script = ExtResource( 24 )
+
+[node name="NotFeelings" type="Node" parent="Brain/Memory"]
+script = ExtResource( 25 )
+
+[node name="Necessities" type="Node" parent="Brain/Memory"]
+script = ExtResource( 26 )
+
+[node name="Help" type="Node" parent="Brain/Memory"]
+script = ExtResource( 30 )
+
+[node name="Sentences" type="Node" parent="Brain/Memory"]
+script = ExtResource( 32 )
+
+[node name="Greetings" type="Node" parent="Brain/Memory"]
+script = ExtResource( 31 )
+
+[node name="Privacy" type="Node" parent="Brain/Memory"]
+script = ExtResource( 33 )
+
+[node name="VisualMemory" type="Node" parent="Brain/Memory"]
+script = ExtResource( 29 )
+
+[node name="UserDefault" type="Node" parent="Brain/Memory"]
+script = ExtResource( 34 )
+
+[node name="Session" type="Node" parent="Brain/Memory"]
+script = ExtResource( 14 )
+
+[node name="Emoji" type="Node" parent="Brain/Memory"]
+script = ExtResource( 19 )
+
+[node name="History" type="Node" parent="Brain/Memory"]
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Brain/Memory"]
+stream = ExtResource( 2 )
+volume_db = 5.266
+
+[node name="AssetSwitcher" type="Node" parent="Brain/Memory"]
+script = ExtResource( 16 )
+
+[node name="Timer" type="Timer" parent="Brain"]
+wait_time = 1.5
+one_shot = true
+
+[node name="TimeOut" type="Timer" parent="Brain"]
+wait_time = 20.0
+one_shot = true
+
+[node name="Blink" type="Timer" parent="Brain"]
+wait_time = 600.0
+autostart = true
+
+[node name="Rest" type="Timer" parent="Brain"]
+wait_time = 3000.0
+autostart = true
+
+[node name="Preload" type="Node" parent="Brain"]
+
+[node name="LoadSave" type="Node" parent="Brain"]
+script = ExtResource( 7 )
+
+[node name="Audio" type="Node" parent="Brain"]
+script = ExtResource( 8 )
+
+[node name="Mini" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 25.0557, 625.351 )
+
+[node name="Hint" parent="." instance=ExtResource( 21 )]
+visible = false
+position = Vector2( 8.39134, 44.6763 )
+
+[node name="Trackers" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 552.604, 243.955 )
+
+[node name="DJ" parent="." instance=ExtResource( 5 )]
+pause_mode = 1
+visible = false
+position = Vector2( 637.347, 17.4019 )
+
+[connection signal="timeout" from="Brain/Timer" to="Brain" method="_on_Timer_timeout"]

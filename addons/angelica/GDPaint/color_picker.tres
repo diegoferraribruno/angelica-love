@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=2]
+
+[resource]
+ColorPicker/constants/h_width = 26
+ColorPicker/constants/label_width = 10
+ColorPicker/constants/margin = 4
+ColorPicker/constants/sv_height = 95
+ColorPicker/constants/sv_width = 194
+ColorPicker/icons/add_preset = null
+ColorPicker/icons/color_hue = null
+ColorPicker/icons/color_sample = null
+ColorPicker/icons/overbright_indicator = null
+ColorPicker/icons/preset_bg = null
+ColorPicker/icons/screen_picker = null

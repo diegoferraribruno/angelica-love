@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/angelica/GDPaint/paint_control.gd" type="Script" id=4]
+
+[node name="PaintControl" type="Control"]
+margin_right = 2.0
+margin_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TLPos" type="Position2D" parent="."]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/angelica/DJ/SuperAudioStream.gd" type="Script" id=1]
+
+[node name="SuperAudioStream" type="AudioStreamPlayer2D"]
+position = Vector2( 4, -2 )
+script = ExtResource( 1 )

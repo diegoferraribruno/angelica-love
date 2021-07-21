@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 4
+background_sky = SubResource( 1 )
+background_energy = 2.54
+background_canvas_max_layer = 2
+ambient_light_color = Color( 0.176471, 0.290196, 0.529412, 1 )
+glow_enabled = true
+glow_bloom = 0.15
+glow_blend_mode = 1
+adjustment_brightness = 1.5
+adjustment_contrast = 1.2
+adjustment_saturation = 1.42
+
+[node name="Glow" type="WorldEnvironment"]
+environment = SubResource( 2 )

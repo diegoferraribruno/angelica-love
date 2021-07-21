@@ -1,0 +1,135 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://sprites/spiralbg.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/KillBullet/KillBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/Tree/Tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/maps/Xperma.gd" type="Script" id=4]
+[ext_resource path="res://src/scenes/Goodies/Goodies.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/Player/XPlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/sprites720p.png" type="Texture" id=7]
+[ext_resource path="res://src/maps/XAudioStreamPlayer.gd" type="Script" id=8]
+[ext_resource path="res://src/maps/Cursor.gd" type="Script" id=9]
+[ext_resource path="res://addons/Funk-Kylan-130BPM/Trompete #1 - 130 BPM.wav" type="AudioStream" id=10]
+[ext_resource path="res://src/maps/Love.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fase1"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("spiralbg:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -10.5, 119.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 3600.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 36.2, 62, 108.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.572549, 0, 0.552941, 1 ), Color( 2, 2, 2, 1 ), Color( 2, 2, 2, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spiralbg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 25.6, 62.2, 108.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.556863, 0.0980392, 0.541176, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 3, 3, 3, 1 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 992, 544, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="XpermaWorld" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1472.0
+margin_bottom = 868.0
+color = Color( 2, 2, 2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Fase1"
+anims/Fase1 = SubResource( 1 )
+
+[node name="spiralbg" type="Sprite" parent="."]
+modulate = Color( 2.24804, 2.24804, 2.24804, 1 )
+position = Vector2( 708.338, 421.916 )
+rotation = 50.6615
+scale = Vector2( 1.82165, 1.82165 )
+texture = ExtResource( 1 )
+offset = Vector2( -18, 10 )
+
+[node name="Xperma" type="YSort" parent="."]
+script = ExtResource( 4 )
+TreeScene = ExtResource( 3 )
+XPlayer = ExtResource( 6 )
+Kill = ExtResource( 2 )
+Goodie = ExtResource( 5 )
+Love = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="Xperma"]
+one_shot = true
+autostart = true
+
+[node name="BadTimer" type="Timer" parent="Xperma"]
+wait_time = 3.327
+autostart = true
+
+[node name="GoodiesTimer" type="Timer" parent="Xperma"]
+wait_time = 6.068
+autostart = true
+
+[node name="Player1Timer" type="Timer" parent="Xperma"]
+wait_time = 6.109
+one_shot = true
+autostart = true
+
+[node name="PlayersTimer" type="Timer" parent="Xperma"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="XPlayer" parent="Xperma" instance=ExtResource( 6 )]
+
+[node name="Cursor" type="AnimatedSprite" parent="Xperma"]
+modulate = Color( 3, 3, 3, 0.75 )
+frames = SubResource( 3 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Xperma"]
+stream = ExtResource( 10 )
+volume_db = -7.345
+autoplay = true
+script = ExtResource( 8 )
+
+[connection signal="timeout" from="Xperma/Timer" to="Xperma" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Xperma/Player1Timer" to="Xperma" method="_on_Player1Timer_timeout"]
+[connection signal="finished" from="Xperma/AudioStreamPlayer" to="Xperma/AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]

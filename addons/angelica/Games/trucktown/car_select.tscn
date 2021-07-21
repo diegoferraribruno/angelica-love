@@ -1,0 +1,111 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://addons/angelica/Games/trucktown/car_select.gd" type="Script" id=1]
+[ext_resource path="res://addons/angelica/images/32/1f69a.png" type="Texture" id=2]
+[ext_resource path="res://addons/angelica/images/32/1f69c.png" type="Texture" id=3]
+[ext_resource path="res://addons/angelica/images/32/1f697.png" type="Texture" id=4]
+[ext_resource path="res://addons/angelica/images/32/1f3c6.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[node name="CarSelect" type="Control"]
+margin_left = 149.132
+margin_top = 143.469
+margin_right = 476.132
+margin_bottom = 217.469
+size_flags_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D",
+"_edit_use_anchors_": false
+}
+
+[node name="MiniVan" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 2.0
+margin_right = 68.0
+margin_bottom = 40.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/normal = SubResource( 1 )
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monstertruck" type="Button" parent="."]
+margin_left = 180.478
+margin_top = 3.0294
+margin_right = 224.478
+margin_bottom = 41.0294
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/normal = SubResource( 1 )
+icon = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrailerTruck" type="Button" parent="."]
+margin_left = 61.5
+margin_top = 3.0
+margin_right = 105.5
+margin_bottom = 41.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TowTruck" type="Button" parent="."]
+margin_left = 105.001
+margin_top = 0.823792
+margin_right = 183.001
+margin_bottom = 42.8238
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f697" type="Sprite" parent="TowTruck"]
+position = Vector2( 50, 20 )
+texture = ExtResource( 4 )
+
+[connection signal="pressed" from="MiniVan" to="." method="_on_MiniVan_pressed"]
+[connection signal="pressed" from="Monstertruck" to="." method="_on_Monstertruck_pressed"]
+[connection signal="pressed" from="TrailerTruck" to="." method="_on_TrailerTruck_pressed"]
+[connection signal="pressed" from="TowTruck" to="." method="_on_TowTruck_pressed"]

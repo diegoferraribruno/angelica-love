@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/winning-bells.ogg-5addc76b4668ecde28cfb6aaa06dd5e1.oggstr"
+
+[deps]
+
+source_file="res://addons/angelica/sounds/winning-bells.ogg"
+dest_files=[ "res://.import/winning-bells.ogg-5addc76b4668ecde28cfb6aaa06dd5e1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

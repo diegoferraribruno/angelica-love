@@ -1,0 +1,246 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://addons/angelica/Studio/Studio.tres" type="StyleBox" id=1]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/angelica/GDPaint/HScrollBarBrushSize.gd" type="Script" id=4]
+[ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/angelica/GDPaint/PaintMenu.gd" type="Script" id=7]
+[ext_resource path="res://addons/angelica/GDPaint/color_picker.tres" type="Theme" id=8]
+[ext_resource path="res://addons/angelica/GDPaint/paint_tools.png" type="Texture" id=9]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="PaintTools" type="Node2D"]
+position = Vector2( 512.404, 9.04231 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Background" type="Panel" parent="."]
+pause_mode = 2
+margin_left = -2.0
+margin_right = 104.0
+margin_bottom = 221.0
+mouse_filter = 1
+theme = SubResource( 1 )
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTools" type="Label" parent="."]
+margin_left = 31.5297
+margin_top = 6.52973
+margin_right = 139.53
+margin_bottom = 20.5297
+text = "Tool: Off"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelStats" type="Label" parent="."]
+modulate = Color( 0.414062, 0.414062, 0.414062, 1 )
+margin_left = 32.5279
+margin_top = 133.225
+margin_right = 91.5279
+margin_bottom = 147.225
+text = "00000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaintMenu" type="RichTextLabel" parent="."]
+margin_left = 9.0
+margin_top = 54.0
+margin_right = 35.0
+margin_bottom = 216.0
+bbcode_enabled = true
+bbcode_text = "[url=mode_pencil][img]res://addons/angelica/images/16/1f58c.png[/img][/url][url=mode_rectangle][img]res://addons/angelica/images/16/25fb.png[/img][/url][url=mode_circle][img]res://addons/angelica/images/16/2690.png[/img][/url]
+[img]res://addons/angelica/images/16/21aa.png[/img][url=mode_none][img]res://addons/angelica/images/16/1f6c7.png[/img][/url][url=clear_picture][img]res://addons/angelica/images/16/1f5d1.png[/img][/url][url=glow][img]res://addons/angelica/images/16/1f4a1.png[/img][/url][url=rewind][img]res://addons/angelica/images/16/1f501.png[/img][/url]"
+meta_underlined = false
+text = "
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBackgroundColor" type="Label" parent="."]
+visible = false
+margin_left = 33.0
+margin_top = 216.0
+margin_right = 129.0
+margin_bottom = 247.0
+text = "Background
+color"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSave" type="Button" parent="."]
+visible = false
+margin_left = 17.0
+margin_top = 280.0
+margin_right = 107.0
+margin_bottom = 320.0
+text = "Save picture"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BrushSettings" type="Control" parent="."]
+margin_left = 35.0
+margin_top = 37.0
+margin_right = 103.0
+margin_bottom = 89.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBrushSize" type="Label" parent="BrushSettings"]
+margin_left = -1.0
+margin_top = 27.4703
+margin_right = 56.0
+margin_bottom = 43.4703
+text = "4px"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HScrollBarBrushSize3" type="HScrollBar" parent="BrushSettings"]
+visible = false
+margin_left = 8.0
+margin_top = 34.0
+margin_right = 119.0
+margin_bottom = 46.0
+min_value = 2.0
+max_value = 120.0
+step = 4.0
+value = 12.0
+exp_edit = true
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HScrollBarBrushSize" type="HSlider" parent="BrushSettings"]
+margin_left = -1.0
+margin_top = 13.0
+margin_right = 58.0
+margin_bottom = 29.0
+min_value = 2.0
+max_value = 120.0
+step = 2.0
+value = 4.0
+exp_edit = true
+rounded = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBrushShape" type="Label" parent="BrushSettings"]
+visible = false
+margin_left = 1.0
+margin_top = 41.6632
+margin_right = 124.0
+margin_bottom = 55.6632
+text = "Brush shape: Circle"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonShapeBox" type="Button" parent="BrushSettings"]
+visible = false
+margin_left = 94.0
+margin_top = 9.0
+margin_right = 116.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="BrushSettings/ButtonShapeBox"]
+position = Vector2( 11.2311, 10.5846 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="ButtonShapeCircle" type="Button" parent="BrushSettings"]
+visible = false
+margin_left = 69.0
+margin_top = 9.0
+margin_right = 90.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="BrushSettings/ButtonShapeCircle"]
+position = Vector2( 10.3163, 10.0357 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 16, 16, 16, 16 )
+
+[node name="ColorPickerBackground" type="ColorPickerButton" parent="."]
+visible = false
+margin_left = 54.8782
+margin_top = 43.1408
+margin_right = 82.8782
+margin_bottom = 63.1408
+color = Color( 1, 1, 1, 1 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPickerBrush" type="ColorPickerButton" parent="."]
+margin_left = 10.0
+margin_top = 31.0
+margin_right = 93.0
+margin_bottom = 47.0
+theme = ExtResource( 8 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+color = Color( 0.945098, 0.678431, 0.937255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPicker" type="ColorPicker" parent="ColorPickerBrush"]
+visible = false
+margin_left = 305.853
+margin_top = 146.828
+margin_right = 627.853
+margin_bottom = 608.828
+theme = ExtResource( 8 )
+custom_constants/h_width = -10
+custom_constants/sv_width = -14
+alignment = 1
+
+[node name="EmojiPanel" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 177, 8 )
+
+[node name="SuperButton" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.25, 0.125001 )
+
+[connection signal="focus_exited" from="BrushSettings/HScrollBarBrushSize" to="BrushSettings/HScrollBarBrushSize" method="_on_HScrollBarBrushSize_focus_exited"]

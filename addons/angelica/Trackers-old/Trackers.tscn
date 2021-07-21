@@ -1,0 +1,187 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/angelica/Trackers/Timer.gd" type="Script" id=1]
+[ext_resource path="res://addons/angelica/Trackers/Tracker.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/Trackers/Trackers.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.109804 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+outline_size = 2
+outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
+font_data = SubResource( 2 )
+
+[node name="Trackers" type="Node2D"]
+position = Vector2( 513.923, 48.868 )
+script = ExtResource( 3 )
+
+[node name="Timer" type="Node2D" parent="."]
+position = Vector2( -6.10352e-05, 1 )
+script = ExtResource( 1 )
+
+[node name="Clock" type="Label" parent="Timer"]
+margin_left = 46.2505
+margin_right = 117.25
+margin_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "00:00:00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="RichTextLabel" parent="Timer"]
+margin_left = -3.0
+margin_top = -3.02293
+margin_right = 135.0
+margin_bottom = 41.9771
+grow_horizontal = 0
+grow_vertical = 0
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Timer"]
+one_shot = true
+
+[node name="TimerB" type="Timer" parent="Timer"]
+
+[node name="Tracker" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( -6.10352e-05, 23.868 )
+script = ExtResource( 2 )
+
+[node name="Object" type="Label" parent="Tracker"]
+margin_left = 46.1265
+margin_right = 117.126
+margin_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "00:00:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon2" type="RichTextLabel" parent="Tracker"]
+margin_top = 1.66803
+margin_right = 54.0
+margin_bottom = 22.668
+grow_horizontal = 0
+grow_vertical = 0
+bbcode_enabled = true
+bbcode_text = "[img]res://addons/angelica/images/16/23f1.png[img]  [img]res://addons/angelica/images/16/274e.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tracker2" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( -6.10352e-05, 46.536 )
+script = ExtResource( 2 )
+
+[node name="Object" type="Label" parent="Tracker2"]
+margin_left = 46.1265
+margin_right = 117.126
+margin_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "00:00:00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon2" type="RichTextLabel" parent="Tracker2"]
+margin_top = 1.66803
+margin_right = 54.0
+margin_bottom = 22.668
+grow_horizontal = 0
+grow_vertical = 0
+bbcode_enabled = true
+bbcode_text = "[img]res://addons/angelica/images/16/23f1.png[img]  [img]res://addons/angelica/images/16/274e.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tracker3" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( -6.10352e-05, 69.204 )
+script = ExtResource( 2 )
+
+[node name="Object" type="Label" parent="Tracker3"]
+margin_left = 46.1265
+margin_right = 117.126
+margin_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "00:00:00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon2" type="RichTextLabel" parent="Tracker3"]
+margin_top = 1.66803
+margin_right = 54.0
+margin_bottom = 22.668
+grow_horizontal = 0
+grow_vertical = 0
+bbcode_enabled = true
+bbcode_text = "[img]res://addons/angelica/images/16/23f1.png[img]  [img]res://addons/angelica/images/16/274e.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tracker4" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( -6.10352e-05, 91.872 )
+script = ExtResource( 2 )
+
+[node name="Object" type="Label" parent="Tracker4"]
+margin_left = 46.1265
+margin_right = 117.126
+margin_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "00:00:00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon2" type="RichTextLabel" parent="Tracker4"]
+margin_top = 1.66803
+margin_right = 54.0
+margin_bottom = 22.668
+grow_horizontal = 0
+grow_vertical = 0
+bbcode_enabled = true
+bbcode_text = "[img]res://addons/angelica/images/16/23f1.png[img]  [img]res://addons/angelica/images/16/274e.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer/TimerB" to="Timer" method="_on_TimerB_timeout"]

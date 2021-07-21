@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/angelica/Trackers/Fps.gd" type="Script" id=1]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.439216 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.231373, 0.231373, 0.231373, 0.352941 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 30.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+outline_size = 2
+outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
+font_data = SubResource( 2 )
+
+[node name="Fps" type="Node2D"]
+modulate = Color( 1, 1, 1, 0.647059 )
+script = ExtResource( 1 )
+
+[node name="Object" type="Label" parent="."]
+margin_left = 27.1265
+margin_right = 98.126
+margin_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "00:00:00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuperButton" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4, -4 )

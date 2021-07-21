@@ -1,0 +1,260 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://addons/angelica/Editor/Editor.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/fonts/style/grabber.tres" type="StyleBox" id=4]
+[ext_resource path="res://addons/angelica/fonts/open_sans_yellow.tres" type="DynamicFont" id=5]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.45098, 0.45098, 0.45098, 0.513726 )
+draw_center = false
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 36
+border_color = Color( 0.00784314, 0.00784314, 0.00784314, 0.839216 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.00784314, 0.905882, 0, 1 )
+
+[sub_resource type="Theme" id=4]
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = ExtResource( 4 )
+VScrollBar/styles/grabber_highlight = ExtResource( 4 )
+VScrollBar/styles/grabber_pressed = SubResource( 3 )
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 15.0
+content_margin_right = 4.0
+content_margin_top = 17.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.054902, 0.054902, 0.054902, 0.968627 )
+border_width_left = 2
+border_width_top = 7
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0.710938, 0, 1, 0.32 )
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 3.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://addons/angelica/fonts/OpenSans-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 17
+extra_spacing_top = -4
+extra_spacing_bottom = -1
+extra_spacing_space = 1
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 9 )
+
+[node name="Editor" type="Node2D"]
+position = Vector2( -7.62939e-06, 0.35127 )
+script = ExtResource( 2 )
+
+[node name="Skin2" type="Panel" parent="."]
+pause_mode = 2
+margin_right = 590.0
+margin_bottom = 331.0
+mouse_filter = 1
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skin3" type="Panel" parent="."]
+pause_mode = 2
+visible = false
+margin_left = -22.0
+margin_top = -2.0
+margin_right = 618.0
+margin_bottom = 319.0
+mouse_filter = 1
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 34.6123
+margin_top = 29.3674
+margin_right = 559.612
+margin_bottom = 300.367
+theme = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/code_folding_color = Color( 0.611765, 0.282353, 0.635294, 1 )
+custom_colors/symbol_color = Color( 0.27451, 0.858824, 0.105882, 1 )
+custom_colors/selection_color = Color( 0.564706, 0.505882, 0.866667, 1 )
+custom_colors/caret_color = Color( 0.470588, 0.0901961, 1, 1 )
+custom_colors/breakpoint_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+custom_colors/font_color = Color( 0.360784, 0.737255, 0.666667, 1 )
+custom_colors/number_color = Color( 0.666667, 0.811765, 0.768627, 1 )
+custom_colors/mark_color = Color( 0.329412, 0.156863, 0.156863, 1 )
+custom_constants/line_spacing = 0
+text = "This is the note editor: Here are some useful commands:
+	notes
+	list notes 
+		add note 
+			Ex: add note1 Testing : (will add a note named 1 with the text \"Testing\")
+edit note 1 (wil open the note \"1\" here) than you can edit and save it.
+del note 1 (will delete your note named 1)
+HAVE FUN!!!"
+syntax_highlighting = true
+draw_tabs = true
+draw_spaces = true
+fold_gutter = true
+highlight_all_occurrences = true
+override_selected_font_color = true
+smooth_scrolling = true
+hiding_enabled = true
+wrap_enabled = true
+minimap_width = 50
+caret_blink = true
+caret_blink_speed = 1.35
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+visible = false
+margin_left = -7.62939e-06
+margin_top = 38.0
+margin_right = 551.0
+margin_bottom = 260.0
+theme = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.0196078, 0.682353, 0.101961, 1 )
+text = "This is the note editor: Here are some useful commands:
+notes
+list notes
+add note 1 Testing : (will add a note named 1 with the text \"Testing\")
+edit note 1 (wil open the note \"1\" here) than you can edit and save it.
+del note 1 (will delete your note named 1)
+HAVE FUN!!!"
+fold_gutter = true
+override_selected_font_color = true
+smooth_scrolling = true
+caret_blink = true
+caret_blink_speed = 1.18
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="RichTextLabel" parent="."]
+margin_left = 8.84612
+margin_top = 33.6312
+margin_right = 33.846
+margin_bottom = 291.631
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/normal_font = SubResource( 10 )
+custom_colors/default_color = Color( 0.215686, 0.576471, 0.517647, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 0
+bbcode_enabled = true
+bbcode_text = "[img]res://addons/angelica/images/16/1f4df.png[/img] [img]res://addons/angelica/images/16/1f4e8.png[/img] [img]res://addons/angelica/images/16/1f4dd.png[/img]"
+text = "  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu2" type="Control" parent="."]
+margin_left = -2.3811
+margin_right = 37.6189
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="LinkButton" parent="Menu2"]
+margin_left = -3.82239
+margin_top = 130.128
+margin_right = 49.1776
+margin_bottom = 156.128
+grow_horizontal = 2
+grow_vertical = 2
+focus_next = NodePath("../../Print")
+focus_previous = NodePath("..")
+focus_mode = 2
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0.815686, 0.145098, 1 )
+text = "[save]"
+underline = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="copy" type="LinkButton" parent="Menu2"]
+margin_left = -3.82239
+margin_top = 107.26
+margin_right = 50.1776
+margin_bottom = 133.26
+grow_horizontal = 2
+grow_vertical = 2
+focus_next = NodePath("../../Print")
+focus_previous = NodePath("..")
+focus_mode = 2
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0.815686, 0.145098, 1 )
+text = "[copy]"
+underline = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="."]
+margin_left = 32.1681
+margin_top = 1.74285
+margin_right = 309.168
+margin_bottom = 27.7428
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/normal_font = SubResource( 10 )
+custom_colors/default_color = Color( 0.215686, 0.576471, 0.517647, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 0
+bbcode_enabled = true
+bbcode_text = " Angelica Editor ver. 125"
+text = " Angelica Editor ver. 125"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuperButton" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1, 1 )
+
+[connection signal="button_up" from="Menu2/save" to="." method="_on_save_button_up"]
+[connection signal="button_up" from="Menu2/copy" to="." method="_on_copy_button_up"]

@@ -1,0 +1,184 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/scenes/Tree/Tree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/maps/AudioStreamPlayer.gd" type="Script" id=3]
+[ext_resource path="res://src/maps/Cursor.gd" type="Script" id=4]
+[ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/maps/World.gd" type="Script" id=6]
+[ext_resource path="res://sprites/sprites720p.png" type="Texture" id=7]
+[ext_resource path="res://src/scenes/KillBullet/KillBullet.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/SFX/Happy-Walk-9s.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/scenes/Goodies/Goodies.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/cutscenes/abertura/abertura.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "tempo"
+length = 300.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( -7.2, 0.7, 5.1, 20.6, 32.7, 58, 77.6, 111.1, 246.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0.356863, 0.356863, 0.356863, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1.28627, 1.28627, 1.28627, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10.3, 27.4, 43.3, 59.4, 77.2, 92, 111.8, 135.8, 158.6, 185.7, 247.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 2, 2, 2, 1 ), Color( 0, 0, 0, 1 ), Color( 0.788235, 0.941176, 0.407843, 0.698039 ), Color( 0.556863, 0.745098, 0.117647, 1 ), Color( 1, 0.937255, 0.662745, 1 ), Color( 0.972549, 0.988235, 0.984314, 1 ), Color( 0.968627, 0.984314, 0.984314, 1 ), Color( 0.980392, 0.980392, 0.980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.788235, 0.941176, 0.407843, 0.698039 ), Color( 0.788235, 0.941176, 0.407843, 0.698039 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 992, 544, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+outline_size = 4
+outline_color = Color( 0.137255, 0.137255, 0.137255, 1 )
+extra_spacing_top = 20
+font_data = ExtResource( 2 )
+
+[node name="Love" type="YSort"]
+modulate = Color( 1.0377, 1.0377, 1.0377, 1 )
+script = ExtResource( 6 )
+TreeScene = ExtResource( 1 )
+Player = ExtResource( 5 )
+Kill = ExtResource( 8 )
+Goodie = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.888272, 0.843285, 0.564928, 1 )
+margin_right = 1028.0
+margin_bottom = 606.0
+color = Color( 2, 2, 2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="abertura" parent="." instance=ExtResource( 11 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.2
+
+[node name="BadTimer" type="Timer" parent="."]
+wait_time = 3.327
+autostart = true
+
+[node name="GoodiesTimer" type="Timer" parent="."]
+wait_time = 6.068
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "tempo"
+anims/tempo = SubResource( 1 )
+
+[node name="Cursor" type="AnimatedSprite" parent="."]
+modulate = Color( 3, 3, 3, 0.75 )
+frames = SubResource( 3 )
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -16.945
+autoplay = true
+script = ExtResource( 3 )
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+margin_left = 244.224
+margin_top = 173.804
+margin_right = 284.224
+margin_bottom = 213.804
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portughues" type="RichTextLabel" parent="Credits"]
+visible = false
+margin_left = -221.0
+margin_top = -174.0
+margin_right = 776.0
+margin_bottom = 429.0
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "
+[center][wave][rainbow]  O amor é atemporal [/rainbow][/wave]
+mas 
+[wave][color=red]The End [/color][/wave]
+of the game. 
+Have a nice life!"
+text = "
+  O amor é atemporal 
+mas 
+The End 
+of the game. 
+Have a nice life!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Credits"]
+margin_left = 8.83111
+margin_top = -52.6314
+margin_right = 793.831
+margin_bottom = 465.369
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "
+[center][wave][rainbow] This is the end. 
+ [/rainbow][/wave]
+Have a lovely life!
+By Diego, Markusmmm and Rick Reeves"
+text = "
+ This is the end. 
+ 
+Have a lovely life!
+By Diego, Markusmmm and Rick Reeves"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1Timer" type="Timer" parent="."]
+wait_time = 6.109
+one_shot = true
+autostart = true
+
+[node name="PlayersTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="BadTimer" to="." method="_on_BadTimer_timeout"]
+[connection signal="timeout" from="GoodiesTimer" to="." method="_on_GoodiesTimer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
+[connection signal="timeout" from="Player1Timer" to="." method="_on_Player1Timer_timeout"]
+[connection signal="timeout" from="PlayersTimer" to="." method="_on_PlayersTimer_timeout"]

@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 241.356
+margin_top = 59.0013
+margin_right = 785.356
+margin_bottom = 550.001
+bbcode_text = "Você é tempo e intemporalidade ao mesmo tempo, do contrário, não poderia alcançar o equilíbrio. Mas só conheceu parte do seu ser, somente a parte do tempo. Se conhecer todo seu ser, conhecerá também sua parte atemporal. Para o todo não existe tempo. É um conceito relativo, só existe para aqueles que não estão completos, inteiros. Isso é importante que se entenda, é um ponto delicado e muito complicado. O tempo é um dos problemas mais difíceis.- Osho - "
+text = "Você é tempo e intemporalidade ao mesmo tempo, do contrário, não poderia alcançar o equilíbrio. Mas só conheceu parte do seu ser, somente a parte do tempo. Se conhecer todo seu ser, conhecerá também sua parte atemporal. Para o todo não existe tempo. É um conceito relativo, só existe para aqueles que não estão completos, inteiros. Isso é importante que se entenda, é um ponto delicado e muito complicado. O tempo é um dos problemas mais difíceis.- Osho - "
+__meta__ = {
+"_edit_use_anchors_": false
+}

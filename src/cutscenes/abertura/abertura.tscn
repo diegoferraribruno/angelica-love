@@ -1,0 +1,218 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/spiralbg.png" type="Texture" id=3]
+[ext_resource path="res://sprites/favicon.png" type="Texture" id=4]
+[ext_resource path="res://src/cutscenes/abertura/abertura.gd" type="Script" id=5]
+[ext_resource path="res://addons/fonts/ComicNeue-Regular.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://addons/fonts/ComicNeue_Bold.otf" type="DynamicFontData" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Espiral"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("spiralbg:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 8.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.00179e-05, 180.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spiralbg:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 2.5, 3.5, 5.7, 8.6 ),
+"transitions": PoolRealArray( 0.406126, 0.406126, 0.406126, 1, 1 ),
+"update": 0,
+"values": [ Color( 2, 2, 2, 1 ), Color( 0.556863, 0.0980392, 0.541176, 1 ), Color( 0.282353, 0, 0.443137, 1 ), Color( 0.0588235, 0.054902, 0.0588235, 0 ), Color( 0.0588235, 0.054902, 0.0588235, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spiralbg:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.3, 2.5, 2.9, 3.5, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 655.581, 389.253 ), Vector2( 523.439, 294.866 ), Vector2( 700.887, 334.291 ), Vector2( 523.439, 278.992 ), Vector2( 699.423, 399.359 ), Vector2( 520.265, 310.74 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("P1:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( -0.1, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 720.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("P1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( -0.2, 3.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 522.056, 368.084 ), Vector2( 499.833, 302.866 ), Vector2( 525.231, 306.041 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("P1:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( -1, -0.2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.005, 1 ), Vector2( 2, 2 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("P1:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( -0.2, 5.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.00784314, 0.00784314, 0.00784314, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("title:visible_characters")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 1.2, 2, 2.7, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 21, 30, 60, 60, 60, 0, 0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("credito:visible_characters")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 2.9, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -1, -1 ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 4
+outline_color = Color( 0.137255, 0.137255, 0.137255, 1 )
+extra_spacing_top = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 51
+outline_size = 4
+outline_color = Color( 0.137255, 0.137255, 0.137255, 1 )
+extra_spacing_top = 20
+font_data = ExtResource( 7 )
+
+[node name="abertura" type="Node"]
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Espiral = SubResource( 1 )
+
+[node name="spiralbg" type="Sprite" parent="."]
+modulate = Color( 0.875781, 0.518352, 0.863561, 1 )
+position = Vector2( 655.581, 389.253 )
+rotation = 0.332639
+scale = Vector2( 1.57454, 1.57454 )
+texture = ExtResource( 3 )
+offset = Vector2( -18, 10 )
+
+[node name="P1" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.963922, 0.963922, 0.963922, 0.963636 )
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 520.709, 364.131 )
+rotation = 0.246399
+scale = Vector2( 1.93462, 1.93462 )
+script = null
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="favicon" type="Sprite" parent="."]
+position = Vector2( 774.129, 161.64 )
+scale = Vector2( 2.92926, 2.92926 )
+texture = ExtResource( 4 )
+
+[node name="credito" type="RichTextLabel" parent="."]
+anchor_top = -0.00419973
+anchor_bottom = -0.00419963
+margin_left = 326.734
+margin_top = 419.061
+margin_right = 989.734
+margin_bottom = 746.061
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]Made with: Godot Engine, Emojitwo,
+ Kenney audio pack, FreeSound Library, Linux, inkscape, Gimp 
+and Audacity"
+text = "Made with: Godot Engine, Emojitwo,
+ Kenney audio pack, FreeSound Library, Linux, inkscape, Gimp 
+and Audacity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="RichTextLabel" parent="."]
+anchor_top = -0.00419973
+anchor_bottom = -0.00419963
+margin_left = 324.929
+margin_top = 59.3391
+margin_right = 964.929
+margin_bottom = 487.339
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "
+[center][wave][rainbow]  Compartilhe  Amor, 
+Não Covid
+Share Love, not Covid! [/rainbow][/wave]
+"
+visible_characters = 0
+percent_visible = 0.0
+text = "
+  Compartilhe  Amor, 
+Não Covid
+Share Love, not Covid! 
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
