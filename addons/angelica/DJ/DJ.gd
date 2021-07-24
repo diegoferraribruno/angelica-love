@@ -1,38 +1,55 @@
 extends Node2D
-#var audacitypath = ["flatpak run org.audacityteam.Audacity","flatpak list"]
-var user = {"name":"default"}
+
+var title = "DJ"
+var icon = "1f3a7"
 var close = true
 var mini = true
-var icon = "[img]res://addons/angelica/images/16/1f3a7.png[/img]"
+
+#var audacitypath = ["flatpak run org.audacityteam.Audacity","flatpak list"]
+var user = {
+	"name":"default"
+	}
 var loop = ""
 var count = 0
 var trackerposition = Vector2(0,28)
 var playing = false
 var m_name = "New track"
 var allmusic
-#onready var notes = $Sounds.kenney
-#onready var beats = $Sounds.kylan
-#onready var playsound = notes["a"]
+
 onready var track = load("res://addons/angelica/DJ/Track.tscn")
 onready var musiclist = load("res://addons/angelica/DJ/MusicPop.tscn")
 onready var tracks = []
 onready var bpm = 130
 onready var speed_a = 130
 
+const menu = "[url=add music][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear][img]res://img/16/1f5d9.png[/img][/url] [url=rewind][img]res://img/32/23ee.png[/img][/url] [url=loop all][img]res://img/32/1f504.png[/img][/url] [url=play][img]res://img/32/25b6.png[/img][/url]"
+
 func _on_SpeedTune2_value_changed(value):
 	speed_a = value
 
 func _ready():
-#	var stream = load(playsound)
 	speed_a = 130
 	bpm = 130
 	loadmusic("New track")
+	$Menu.bbcode_text = menu
 
 func play_dj(bpm):
 	for i in $Loop.text:
 		var x = int(i)
 		if x < tracks.size():
 			tracks[x]._on_Playing_pressed()
+
+func add_and_play(music):
+	if typeof(music) == TYPE_DICTIONARY:
+		allmusic[music["name"]] = music
+	elif music in allmusic:
+		loadmusic(music)
+	else:
+		allmusic["playing"] = get_parent().music
+		print(allmusic)
+		loadmusic("playing")
+	playing = !playing
+	play_dj(bpm)
 
 func loop_all():
 	for i in $Loop.text:
@@ -49,20 +66,20 @@ func rewind():
 
 func _on_RichTextLabel_meta_clicked(meta):
 	match meta:
-		"dj play":
+		"play":
 			playing = !playing
 			play_dj(bpm)
 		"loop all":
 			loop_all()
-		"dj clear":
-			$TextEdit.text = ""
+#		"clear":
+#			$TextEdit.text = ""
 		"paste":
 			$LineEdit.text += OS.clipboard
 		"add music":
 			var m_name = $"MusicName".text
 			if m_name in allmusic:
 				loadmusic(m_name)
-		"clear all":
+		"clear":
 			for i in tracks:
 				i.queue_free()
 		"rewind":
@@ -72,8 +89,9 @@ func _on_RichTextLabel_meta_clicked(meta):
 		"save music":
 			save_music()
 		"list music":
-			var event = BUTTON_LEFT
-			_on_MusicName_gui_input(event)
+			if has_node("MusicPop") == false:
+				var instance = musiclist.instance()
+				get_node(".").add_child(instance)
 		"cancel":
 			$"SavePopUp".visible = false
 func save_music():
@@ -116,10 +134,10 @@ func loadmusic(m_name):
 		"tracks":{
 			0:{"BPM":130,"volume":0,"fx":0,"beat":"","loop":true,"audiopack":"kenney"}
 		}}
+	allmusic["playing"] = get_parent().music
 	count = tracks.size()
 	for i in allmusic[m_name]["tracks"]:
 		var audiopack = allmusic[m_name]["tracks"][i]["audiopack"]
-		print (audiopack)
 		var instance = track.instance()
 		instance.position = trackerposition*count+Vector2(0,40)
 		get_node(".").add_child(instance)
@@ -165,7 +183,6 @@ func _on_RichTextLabel_meta_hover_ended(meta):
 	$"Hint".visible = false
 func _on_RichTextLabel4_meta_hover_started(meta):
 	$"Hint".visible = false
-
 
 func _on_MusicName_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:

@@ -4,7 +4,7 @@ func _ready():
 	var bbcode = ""
 	
 	for i in allmusic:
-		bbcode += "[url="+i+"][img]res://addons/angelica/images/16/1f3b5.png[/img]"+i+"[/url]\n" 
+		bbcode += "[url="+i+"][img]res://img/16/1f3b5.png[/img]"+i+"[/url]\n" 
 	bbcode_text = bbcode
 	pass # Replace with function body.
 

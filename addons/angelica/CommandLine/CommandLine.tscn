@@ -85,7 +85,7 @@ margin_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-bbcode_text = "[img]res://addons/angelica/images/16/1f4ad.png[/img]"
+bbcode_text = "[img]res://img/16/1f4ad.png[/img]"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "[/img]res://addons/angelica/images/16/1f4ad.png[/img]"
@@ -102,7 +102,7 @@ focus_next = NodePath("../../Print")
 focus_previous = NodePath("..")
 theme = SubResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[img]res://addons/angelica/images/16/1f4ac.png[/img]"
+bbcode_text = "[img]res://img/16/1f4ac.png[/img]"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -117,7 +117,6 @@ input_pass_on_modal_close_click = false
 custom_styles/normal = SubResource( 7 )
 custom_fonts/normal_font = SubResource( 9 )
 bbcode_enabled = true
-text = "afsafsddssdvvdsvdv"
 __meta__ = {
 "_edit_use_anchors_": false
 }

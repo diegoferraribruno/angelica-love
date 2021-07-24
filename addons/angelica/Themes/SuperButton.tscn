@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://addons/angelica/Themes/closebutton.gd" type="Script" id=1]
+[ext_resource path="res://addons/angelica/Themes/SupperButton.gd" type="Script" id=1]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
@@ -13,14 +13,15 @@ font_data = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="bbcode" type="RichTextLabel" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 71.0
-margin_bottom = 28.0
+modulate = Color( 1.4, 1.30196, 1.30196, 1 )
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 90.0
+margin_bottom = 38.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[url=superbutton][img]res://addons/angelica/images/16/1f5e8.png[/img][/url]"
+bbcode_text = "[url=superbutton][img]res://img/32/1f49f.png[/img][/url]"
 meta_underlined = false
 scroll_active = false
 __meta__ = {

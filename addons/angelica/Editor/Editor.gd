@@ -1,7 +1,7 @@
 extends Node2D
 var supermenu
 var close = true
-var icon = "[img]res://addons/angelica/images/16/1f4df.png[/img]"
+var icon = "1f4df"
 var mini = true
 var user = {"name":"default"}
 onready var heart = $"TextEdit"

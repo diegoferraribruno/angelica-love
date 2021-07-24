@@ -227,10 +227,10 @@ __meta__ = {
 
 [node name="ColorPicker" type="ColorPicker" parent="ColorPickerBrush"]
 visible = false
-margin_left = 305.853
-margin_top = 146.828
-margin_right = 627.853
-margin_bottom = 608.828
+margin_left = 313.853
+margin_top = 154.828
+margin_right = 635.853
+margin_bottom = 616.828
 theme = ExtResource( 8 )
 custom_constants/h_width = -10
 custom_constants/sv_width = -14

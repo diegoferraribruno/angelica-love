@@ -38,7 +38,7 @@ var text = ""
 var have_feelings = []
 var have_need = []
 var inputs = 0
-var new_face = "res://addons/angelica/images/avatar/1f646.png"
+var new_face = "res://img/avatar/1f646.png"
 var sleep = true
 var history =["enter text here"]
 var autohide = true
@@ -194,13 +194,13 @@ func change_state(state_new):
 		state_old = state
 #	match state_new:
 #		"mini":
-#			face_change("res://addons/angelica/images/32/1f646.png")
+#			face_change("res://img/32/1f646.png")
 #			$Body.visible = false
 #			state = "mini"
 #			if $Control.addonmode == false:
 #				OS.set_window_mouse_passthrough($Mini/AuraMini.polygon)
 #		"hide":
-#			face_change("res://addons/angelica/images/32/0000.png")
+#			face_change("res://img/32/0000.png")
 #			$Body.visible = true
 #			if $Control.addonmode == false:
 #				if heart.visible == true:
@@ -216,7 +216,7 @@ func change_state(state_new):
 #				Cbar.grab_focus()
 #		"show":
 #			$Body.visible = true
-#			face_change("res://addons/angelica/images/avatar/1f646.png")
+#			face_change("res://img/avatar/1f646.png")
 #			if $Control.addonmode == false:
 #				OS.set_window_mouse_passthrough($AuraFull.polygon)
 #			head.visible = true
@@ -550,7 +550,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 #						ai_say("here is a list of your notes:\n"+str(user[7][0]))
 						var x = 0
 						for i in notes[0]:
-							text += "[url=edit note "+notes[0][x]+"][img]res://addons/angelica/images/16/1f4d4.png[/img]"+notes[0][x]+"[/url] "
+							text += "[url=edit note "+notes[0][x]+"][img]res://img/16/1f4d4.png[/img]"+notes[0][x]+"[/url] "
 							x += 1
 						text = "here are your notes: "+text
 						ai_say(text)
@@ -558,24 +558,24 @@ func _on_LineEdit_text_entered(new_text)-> void :
 					"links":
 						var x = 0
 						for i in links[0]:
-							text += "[url="+links[1][x]+"][img]res://addons/angelica/images/16/1f30e.png[/img]"+links[0][x]+"[/url] "
+							text += "[url="+links[1][x]+"][img]res://img/16/1f30e.png[/img]"+links[0][x]+"[/url] "
 							x += 1
 						ai_say(text)
 						text =""
 					"good": 
 						list(good)
 						append_text(str("\n"))
-						new_face ="res://addons/angelica/images/avatar/1f481.png"
+						new_face ="res://img/avatar/1f481.png"
 						face_change(new_face)
 						sleep = false
 					"bad":
-						new_face ="res://addons/angelica/images/avatar/1f64d.png"
+						new_face ="res://img/avatar/1f64d.png"
 						face_change(new_face) 
 						list(bad)
 						append_text(str("\n"))
 						sleep = false
 					"feelings":
-						new_face = "res://addons/angelica/images/avatar/1f481.png"
+						new_face = "res://img/avatar/1f481.png"
 						face_change(new_face) 
 						list(good)
 						append_text(str("\n"))
@@ -586,7 +586,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 						for i in hashtags:
 							append_text(str(i+" "))
 					"needs":
-						new_face ="res://addons/angelica/images/avatar/1f481.png"
+						new_face ="res://img/avatar/1f481.png"
 						face_change(new_face) 
 						ai_say(str("This is a list of NEEDS that might be useful to you:"))
 						list(needs)
@@ -736,7 +736,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 #						print (help[command[1]].size())
 #							ai_say(str(help[command[2]]))
 				else:
-					new_face ="res://addons/angelica/images/avatar/1f937.png"
+					new_face ="res://img/avatar/1f937.png"
 					face_change(new_face)
 					for i in help:
 						append_text(str("[url="+i+"][b]"+i+"[/b][/url]: "+help[i][0]+" \n"))
@@ -802,7 +802,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 	if new_text == " editor ":
 		editor._on_EditorButton_button_up()
 	if new_text == " bye ":
-		new_face = "res://addons/angelica/images/avatar/1f64b.png"
+		new_face = "res://img/avatar/1f64b.png"
 		face_change(new_face)
 		auto_save()
 		ai_say(str("Bye! If you need me, reload the page or open the app again."))
@@ -831,10 +831,10 @@ func _on_LineEdit_text_entered(new_text)-> void :
 		_on_LineEdit_text_entered("list bad")
 	if new_text == " sleep ":
 		sleep = true
-		new_face = "res://addons/angelica/images/avatar/1f486.png"
+		new_face = "res://img/avatar/1f486.png"
 		face_change(new_face)
 	if new_text in greetings:
-		new_face = "res://addons/angelica/images/avatar/1f64b.png"
+		new_face = "res://img/avatar/1f64b.png"
 		face_change(new_face)
 		ai_say(str(greetings[new_text]))
 		sleep = false
@@ -842,7 +842,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 		sleep = false
 		interface.set_bbcode("")
 		ai_say(str(sentences["welcome"]))
-		new_face = "res://addons/angelica/images/avatar/1f64e.png"
+		new_face = "res://img/avatar/1f64e.png"
 		face_change(new_face)
 		ai_say(str(greetings[" hello "]))
 		have_need = []
@@ -850,7 +850,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 		inputs = 0
 		satisfied = 0
 	if new_text == " needs ":
-			new_face = "res://addons/angelica/images/avatar/1f481.png"
+			new_face = "res://img/avatar/1f481.png"
 			face_change(new_face) 
 			ai_say(str("This is a list of NEEDS that might be useful to you:"))
 			list(needs)
@@ -860,7 +860,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 				x = " "+ x + " "
 				if new_text.find(x) != -1:
 					have_feelings.append(x)
-					new_face = "res://addons/angelica/images/avatar/1f646.png"
+					new_face = "res://img/avatar/1f646.png"
 					face_change(new_face)
 					satisfied += 1
 					ai_say(str("Uhu! You really look "+ i.to_lower()+ "!"))
@@ -871,7 +871,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 			for f in notfeeling[i]:
 				f =  " " + f + " "
 				if new_text.find(f) != -1:
-					new_face = "res://addons/angelica/images/avatar/1f937.png"
+					new_face = "res://img/avatar/1f937.png"
 					face_change(new_face)
 					ai_say(str("Did you said: ", f.to_lower(), "? this is not a feeling.\n", sentences["notfeeling"]))
 					break
@@ -880,7 +880,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 				y = " " + y + " "
 				if new_text.find(y) != -1:
 					have_feelings.append(y)
-					new_face ="res://addons/angelica/images/avatar/1f645.png"
+					new_face ="res://img/avatar/1f645.png"
 					face_change(new_face)
 					satisfied -= 1
 					ai_say(str("Oh! You are ", i.to_lower(), " aren't you?!"))
@@ -893,13 +893,13 @@ func _on_LineEdit_text_entered(new_text)-> void :
 					if new_text.find(y) != -1:
 						if satisfied <= 0:
 							have_need.append(y)
-							new_face ="res://addons/angelica/images/avatar/1f646.png"
+							new_face ="res://img/avatar/1f646.png"
 							face_change(new_face)
 							ai_say(str(i.to_lower(), ", hum?! I miss it too."))
 							break
 						if satisfied > 0:
 							have_need.append(y)
-							new_face ="res://addons/angelica/images/avatar/1f646.png"
+							new_face ="res://img/avatar/1f646.png"
 							face_change(new_face)
 							ai_say(str(i.to_lower(), ", hum?! That is awesome!."))
 							break
@@ -912,7 +912,7 @@ func _on_LineEdit_text_entered(new_text)-> void :
 			sleep == true
 		if sleep == false:
 			if inputs == 4 and have_need and have_feelings:
-				new_face ="res://addons/angelica/images/avatar/1f937.png"
+				new_face ="res://img/avatar/1f937.png"
 				face_change(new_face)
 				face_change(new_face)
 				ai_say(str("If you want to talk to someone, maybe you could tell them that you feel, ", str(have_feelings), "\n because of your need for ", str(have_need), " and than ask them to do (or stop doing) something concrete that would make your life more joyful!"))
@@ -1052,7 +1052,7 @@ func _on_Blink_timeout():
 		if autopause == true:
 			get_tree().paused = true
 	#	ai_say("Time to rest your eyes")
-		new_face = "res://addons/angelica/images/avatar/1f64b.png"
+		new_face = "res://img/avatar/1f64b.png"
 		face_change(new_face)
 		$Pinky.visible = !$Pinky/Warning.visible
 		$Pinky/Label.text = "Take 20 seconds to rest your eyes."
@@ -1067,7 +1067,7 @@ func _on_RSI_timeout():
 	if autopause == true:
 		get_tree().paused = true
 #	ai_say("Time to take a break")
-	new_face = "res://addons/angelica/images/avatar/1f64b.png"
+	new_face = "res://img/avatar/1f64b.png"
 	face_change(new_face)
 	$Pinky/Warning.visible = !$Pinky/Warning.visible
 	$Pinky/Label.text = "Time for 1 min rest \n to deactivate this type [b]rsi[/b]"

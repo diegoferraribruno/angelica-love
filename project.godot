@@ -54,7 +54,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/calendar_button/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [input]
 

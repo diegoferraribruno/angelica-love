@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://addons/angelica/Games/Pong/logic/ceiling_floor.gd" type="Script" id=1]
 [ext_resource path="res://addons/angelica/Games/Pong/logic/wall_left.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://addons/kenney_interface_sounds/confirmation_002.wav" type="AudioStream" id=12]
 [ext_resource path="res://addons/angelica/Games/Pong/Player1.gd" type="Script" id=13]
 [ext_resource path="res://addons/angelica/Games/Pong/pong.gd" type="Script" id=14]
+[ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -45,7 +46,7 @@ font_path = "res://addons/angelica/fonts/OpenSans-ExtraBold.ttf"
 [sub_resource type="DynamicFont" id=5]
 size = 160
 outline_size = 2
-outline_color = Color( 8.21, 0.05, 13.83, 0.7 )
+outline_color = Color( 0.745098, 0.0235294, 1.20784, 1 )
 font_data = SubResource( 4 )
 
 [sub_resource type="CapsuleShape2D" id=6]
@@ -128,7 +129,7 @@ modulate = Color( 1.01569, 1.01961, 3.01569, 1 )
 margin_right = 40.0
 margin_bottom = 40.0
 bbcode_enabled = true
-bbcode_text = "[img]res://addons/angelica/images/16/268a.png[/img]"
+bbcode_text = "[img]res://img/16/268a.png[/img]"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -156,7 +157,7 @@ margin_top = -7.71689
 margin_right = 31.8621
 margin_bottom = 32.2831
 bbcode_enabled = true
-bbcode_text = "[img]res://addons/angelica/images/16/268a.png[/img]"
+bbcode_text = "[img]res://img/16/268a.png[/img]"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -175,7 +176,7 @@ modulate = Color( 0.75, 1.75, 1.16, 1 )
 margin_right = 17.0
 margin_bottom = 17.0
 bbcode_enabled = true
-bbcode_text = "[img]res://addons/angelica/images/16/26aa.png[/img]"
+bbcode_text = "[img]res://img/16/26aa.png[/img]"
 scroll_active = false
 script = ExtResource( 3 )
 __meta__ = {
@@ -227,6 +228,7 @@ position = Vector2( -0.0523376, -81.8441 )
 shape = SubResource( 10 )
 
 [node name="closebutton2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -2.66968, -22.6923 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
@@ -252,12 +254,12 @@ shape = SubResource( 11 )
 
 [node name="left_control" type="RichTextLabel" parent="."]
 modulate = Color( 2.3098, 1, 17.9216, 0.0980392 )
-margin_left = 2.0
+margin_left = -12.6832
 margin_top = 20.0
-margin_right = 71.0
-margin_bottom = 319.0
+margin_right = 72.3168
+margin_bottom = 336.0
 bbcode_enabled = true
-bbcode_text = "[url=up][img]res://addons/angelica/images/64/1f53c.png[/img]
+bbcode_text = "[url=up][img]res://img/64/1f53c.png[/img]
                 
 				
 				
@@ -268,7 +270,7 @@ bbcode_text = "[url=up][img]res://addons/angelica/images/64/1f53c.png[/img]
 				
 				
 				
-[img]res://addons/angelica/images/64/1f53d.png[/img]
+[img]res://img/64/1f53d.png[/img]
 [/url]"
 text = "
                 
@@ -289,13 +291,13 @@ __meta__ = {
 }
 
 [node name="right_control" type="RichTextLabel" parent="."]
-modulate = Color( 2.3098, 1, 17.9216, 0.0980392 )
-margin_left = 578.0
-margin_top = 20.0
+modulate = Color( 2.3, 0.64, 3, 0.1 )
+margin_left = 593.0
+margin_top = 18.3439
 margin_right = 657.0
-margin_bottom = 319.0
+margin_bottom = 319.344
 bbcode_enabled = true
-bbcode_text = "[url=up][img]res://addons/angelica/images/64/1f53c.png[/img]
+bbcode_text = "[url=up][img]res://img/64/1f53c.png[/img]
                 
 				
 				
@@ -306,7 +308,7 @@ bbcode_text = "[url=up][img]res://addons/angelica/images/64/1f53c.png[/img]
 				
 				
 				
-[img]res://addons/angelica/images/64/1f53d.png[/img]
+[img]res://img/64/1f53d.png[/img]
 [/url]"
 meta_underlined = false
 text = "
@@ -327,6 +329,9 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Player" parent="." instance=ExtResource( 15 )]
+position = Vector2( 117.829, 177.932 )
 
 [connection signal="area_entered" from="Left" to="Left" method="_on_area_entered"]
 [connection signal="area_entered" from="Right" to="Right" method="_on_area_entered"]

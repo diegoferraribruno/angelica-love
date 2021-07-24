@@ -64,10 +64,6 @@ one_shot = true
 [node name="TimerB" type="Timer" parent="."]
 
 [node name="closebutton2" parent="." instance=ExtResource( 2 )]
-margin_left = 0.432373
-margin_top = 2.21619
-margin_right = 35.4324
-margin_bottom = 33.2162
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerB" to="." method="_on_TimerB_timeout"]

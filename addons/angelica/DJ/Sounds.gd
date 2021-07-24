@@ -1,8 +1,8 @@
 extends Node
 var icons = {
-	"kenney":"[img]res://addons/angelica/images/16/1f3ae.png[/img]",
-	"kylan":"[img]res://addons/angelica/images/16/1f3ba.png[/img]",
-	"openpath1":"[img]res://addons/angelica/images/16/1f941.png[/img]"}
+	"kenney":"1f3ae",
+	"kylan":"1f3ba",
+	"openpath1":"1f941"}
 var audiopacks = {"kenney":{
 	"a":"res://addons/kenney_interface_sounds/back_001.wav",
 	"s":"res://addons/kenney_interface_sounds/back_002.wav",

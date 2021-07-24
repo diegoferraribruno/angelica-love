@@ -18,17 +18,15 @@ onready var beat = $LineEdit.text
 onready var audiopack = track[tracknumber]["audiopack"]
 onready var notes = $"../Sounds".audiopacks[audiopack]
 onready var icon = $"../Sounds".icons[audiopack]
-#onready var notes = $"../Sounds".kenneyandkylan
-#onready var beats = $"../Sounds".kylan
 onready var playsound = notes["a"]
+
+export var superbutton : PackedScene
+
 func placeholder (count):
 	tracknumber = count
 	$LineEdit.placeholder_text = "track "+ str(count)
 
-export var superbutton : PackedScene
 
-#func audiopack(audiopack):
-#	track[tracknumber] = audiopack
 func _on_Loop_pressed():
 	if looping == true:
 		looping = false
@@ -47,16 +45,13 @@ func _on_Playing_pressed():
 		playing = false
 		$Playing.pressed = false
 
-
 func _ready():
 	if looping == true:
 		$Loop.pressed = true
-#	for i in beats:
-#		$MenuButton.get_popup().add_item(i)
-#	$MenuButton.get_popup().connect("id_pressed", self, "_on_SpinBox_value_changed")
-
-#		$MenuButton2.get_popup().add_item(i)
-#	$MenuButton2.get_popup().connect("id_pressed", self, "_on_MenuButton2_value_changed")
+		looping = true
+	else:
+		$Loop.pressed = false
+		looping = false
 	bpms = 130
 	var instance = superbutton.instance()
 	add_child(instance)
@@ -109,9 +104,7 @@ func _on_LineEdit_text_changed(new_text):
 		if line[length] in notes:
 				var stream = load(notes[line[length]])
 				funk(stream)
-#		if line[length] in beats:
-#				var stream = load(beats[line[length]])
-#				funk(stream)
+
 var play_head = 0
 func _on_LineEdit_text_entered(new_text) -> void:
 	beat = new_text
@@ -132,9 +125,6 @@ func _on_LineEdit_text_entered(new_text) -> void:
 		if nota in notes:
 			var stream = load(notes[nota])
 			funk(stream)
-#		if nota in beats:
-#			var stream = load(beats[nota])
-#			funk(stream)
 		$Agulha.position.x = play_head*8
 		play_head += 1
 		if play_head >= new_text.length()+1:
@@ -148,7 +138,6 @@ func loopcheck() -> void:
 			stop()
 	if looping == false and playing == true:
 		stop()
-#		$Playing.pressed = false
 
 func funk(stream):
 	if playing == true:
@@ -165,25 +154,10 @@ func _on_MenuButton2_value_changed(value):
 	var key = keys[value]
 	var stream = load(notes[key])
 	funk(stream)
-	
-func _on_SpinBox_value_changed(value):
-#	var keys = beats.keys()
-#	var key = keys[value]
-#	var stream = load(beats[key])
-#	funk(stream)
-	pass
-
-func _on_SpinBox2_value_changed(value):
-#	var keys = beats.keys()
-#	var key = keys[value]
-#	var stream = load(beats[key])
-#	funk(stream)
-	pass
 
 func _on_SpeedTune_value_changed(value):
 	bpms = value
 	$"SpeedTune".value = bpms
-
 
 func loadbeat(track):
 		$Loop.pressed = track["loop"]
@@ -193,6 +167,7 @@ func loadbeat(track):
 		volume = track["volume"]
 		fx = track["fx"]
 		loop = track["loop"]
+		looping = track["loop"]
 		bpms = track["BPM"]
 		audiopack = track["audiopack"]
 
@@ -209,20 +184,15 @@ func stop():
 	if playing == true:
 		playing = false
 		$Playing.pressed = false
-#	_on_Playing_pressed()
 	play_head = 0
 	$Agulha.position.x = 0
-
-
 
 func _on_Notes_meta_clicked(meta):
 	var new_text = $"LineEdit".text
 	if new_text.length() < 16:
 		new_text += meta
 		$"LineEdit".text = new_text
-#	_on_LineEdit_text_entered(meta)
 		_on_LineEdit_text_entered(new_text)
-
 
 func _on_Notes_meta_hover_started(meta):
 	if meta in notes:

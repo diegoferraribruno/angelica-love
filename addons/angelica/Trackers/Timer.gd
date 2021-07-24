@@ -25,11 +25,11 @@ func _on_AngelicaTimer2_timeout():
 
 func _on_Timer_timeout():
 	
-	angelica.change_state("state_old")
+#	angelica.change_state("state_old")
 	angelica.ai_say("Atention! Timer Expired")
-	angelica.face_change("res://addons/angelica/images/avatar/1f64b.png")
+	angelica.face_change("res://img/avatar/1f64b.png")
 	angelica.alert("Atention! Timer Expired")
-	angelica.change_state("state_old")
+#	angelica.change_state("state_old")
 	
 func _on_TimerB_timeout():
 	if cdtimer > 0:

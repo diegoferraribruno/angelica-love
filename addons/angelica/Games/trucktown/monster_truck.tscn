@@ -6,7 +6,7 @@
 [ext_resource path="res://addons/angelica/Games/trucktown/Materials/car_window.tres" type="Material" id=4]
 [ext_resource path="res://addons/angelica/Games/trucktown/Materials/car_grill.tres" type="Material" id=5]
 [ext_resource path="res://addons/angelica/Games/trucktown/Materials/car_red_body.tres" type="Material" id=6]
-[ext_resource path="res://addons/angelica/images/avatar/1f64e.png" type="Texture" id=7]
+[ext_resource path="res://img/avatar/1f64e.png" type="Texture" id=7]
 [ext_resource path="res://addons/angelica/Games/trucktown/truck_driver.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PhysicsMaterial" id=1]

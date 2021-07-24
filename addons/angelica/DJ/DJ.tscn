@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/Hint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/DJ/DJ.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/DJ/Music.gd" type="Script" id=3]
 [ext_resource path="res://addons/angelica/DJ/DJmono.tres" type="DynamicFont" id=4]
 [ext_resource path="res://addons/angelica/DJ/Sounds.gd" type="Script" id=5]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=6]
@@ -37,6 +38,7 @@ position = Vector2( 1.12245, 1.83627 )
 script = ExtResource( 2 )
 
 [node name="Music" type="Node" parent="."]
+script = ExtResource( 3 )
 
 [node name="Sounds" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -82,7 +84,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Menu" type="RichTextLabel" parent="."]
 modulate = Color( 1, 0, 0.683333, 1 )
 margin_left = 264.0
 margin_top = 6.0
@@ -90,8 +92,10 @@ margin_right = 507.0
 margin_bottom = 47.0
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[url=add music][img]res://addons/angelica/images/32/23ec.png[/img][/url] [url=save music][img]res://addons/angelica/images/32/23eb.png[/img][/url] [url=clear all][img]res://addons/angelica/images/16/1f5d9.png[/img][/url] [url=rewind][img]res://addons/angelica/images/32/23ee.png[/img][/url] [url=loop all][img]res://addons/angelica/images/32/1f504.png[/img][/url] [url=dj play][img]res://addons/angelica/images/32/25b6.png[/img][/url]"
-text = "     "
+bbcode_text = "[url=add music][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear all][img]res://img/16/1f5d9.png[/img][/url] [url=rewind][img]res://img/32/23ee.png[/img][/url] [url=loop all][img]res://img/32/1f504.png[/img][/url] [url=play][img]res://img/32/25b6.png[/img][/url]
+"
+text = "     
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,7 +109,7 @@ margin_right = 144.0
 margin_bottom = 36.0561
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[url=list music][img]res://addons/angelica/images/16/1f3b5.png[/img][/url]"
+bbcode_text = "[url=list music][img]res://img/16/1f3b5.png[/img][/url]"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -130,10 +134,10 @@ __meta__ = {
 
 [node name="SavePopUp" type="Panel" parent="."]
 visible = false
-margin_left = 66.0
-margin_top = -1.0
-margin_right = 340.0
-margin_bottom = 64.0
+margin_left = 63.0
+margin_top = 3.0
+margin_right = 337.0
+margin_bottom = 48.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true,
@@ -142,13 +146,13 @@ __meta__ = {
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="SavePopUp"]
 modulate = Color( 1, 0, 0.683333, 1 )
-margin_left = 26.0
-margin_top = 20.0
-margin_right = 305.0
-margin_bottom = 80.0
+margin_left = 36.0
+margin_top = 8.0
+margin_right = 270.0
+margin_bottom = 68.0
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[url=cancel]Please, change music name[img]res://addons/angelica/images/16/1f5d9.png[/img][/url]   "
+bbcode_text = "[url=cancel]Please, change music name[img]res://img/16/1f5d9.png[/img][/url]   "
 text = "Please, change music name   "
 scroll_active = false
 __meta__ = {
@@ -163,9 +167,9 @@ position = Vector2( 4, 6 )
 [connection signal="gui_input" from="MusicName" to="." method="_on_MusicName_gui_input"]
 [connection signal="text_changed" from="MusicName" to="." method="_on_Loop_text_changed"]
 [connection signal="text_entered" from="MusicName" to="." method="_on_Loop_text_entered"]
-[connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
-[connection signal="meta_hover_ended" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_hover_ended"]
-[connection signal="meta_hover_started" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_hover_started"]
+[connection signal="meta_clicked" from="Menu" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="meta_hover_ended" from="Menu" to="." method="_on_RichTextLabel_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Menu" to="." method="_on_RichTextLabel_meta_hover_started"]
 [connection signal="meta_clicked" from="RichTextLabel4" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="meta_hover_ended" from="RichTextLabel4" to="." method="_on_RichTextLabel4_meta_hover_ended"]
 [connection signal="meta_hover_started" from="RichTextLabel4" to="." method="_on_RichTextLabel4_meta_hover_started"]

@@ -5,11 +5,11 @@ onready var screenSize = get_viewport().get_visible_rect().size
 var following = false
 var dragging_start_position = Vector2()
 var lastmouseposition = Vector2()
-onready var calendar_button_node = get_node("Command2/LineEdit2/CalendarButton")
+onready var calendar_button_node = get_node("CommandLine/CalendarButton")
 
 func _ready():
 	canva_populate()
-	$Command2/LineEdit2.grab_focus()
+	$CommandLine.grab_focus()
 	screenSize = get_viewport().get_visible_rect().size
 	get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
 	_on_viewport_size_changed()
@@ -17,6 +17,7 @@ func _ready():
 	calendar_button_node.connect("date_selected", self, "your_func_here")
 
 func your_func_here(date_obj):
+	$"CommandLine".text += date_obj
 	print(date_obj.date()) # Use the date_obj wisely :)
 func canva_populate():
 	canva = {
@@ -64,14 +65,12 @@ func _on_Control_mouse_entered():
 	expand()
 	
 func expand():
-	$Command2/AnimationPlayer.play("ShowLineEdit")
-	$Command2/LineEdit2.grab_focus()
 
+	$CommandLine.grab_focus()
 
 func _on_Control_mouse_exited():
 #	$Command2/AnimationPlayer.play("HideLineEdit")
 	pass # Replace with function body.
-
 
 func _on_Container_gui_input(event):
 	if Input.is_action_pressed("Click"):
@@ -84,11 +83,11 @@ func _on_Container_mouse_exited():
 	pass # Replace with function body.
 
 
-func _on_LineEdit2_focus_exited():
-	$"Command2/LineEdit2".visible = false
-	$"Command2/LineEdit".visible = false
+func _on_CommandLine_focus_exited():
+	$"CommandLine".visible = false
+	$"CommandLine".visible = false
 
-func _on_LineEdit2_text_entered(new_text):
+func _on_CommandLine_text_entered(new_text):
 	$"../Body".text_entered(new_text)
 	if canva["autohide"] == true:
 		$Command2/AnimationPlayer.play("HideLineEdit")
@@ -96,24 +95,23 @@ func _on_LineEdit2_text_entered(new_text):
 #func _on_LineEdit_gui_input(event):
 #	if Input.is_action_pressed("Click"):
 ##		if not get_local_mouse_position() in $Container.rect_size:
-#			$Command2/LineEdit.grab_focus(false)
+#			$CommandLine.grab_focus(false)
 			
-func _on_LineEdit2_mouse_exited():
+func _on_CommandLine_mouse_exited():
 #	if canva["autohide"] == true:
 #		$Command2/AnimationPlayer.play("HideLineEdit")
 		pass
-#	$Command2/LineEdit.grab_focus(false)
+#	$CommandLine.grab_focus(false)
 
-func _on_LineEdit2_text_changed(new_text):
-	$"Command2/LineEdit".text = $"Command2/LineEdit2".text
+func _on_CommandLine_text_changed(new_text):
+	$"CommandLine".text = $"CommandLine".text
 	
 func newcommand():
-	$Command2/LineEdit.clear()
-	$Command2/LineEdit2.clear()
+	$CommandLine.clear()
+	$CommandLine.clear()
 
 func append_emoji(argument):
-	$Command2/LineEdit.text += "[img]res://addons/angelica/images/32/"+argument+".png[/img]"
-	$Command2/LineEdit2.text += "[img]res://addons/angelica/images/32/"+argument+".png[/img]"
+	$CommandLine.text += "[img]res://img/32/"+argument+".png[/img]"
+	$CommandLine.text += "[img]res://img/32/"+argument+".png[/img]"
 	$"EmojiPanel".visible = false
-	$Command2/LineEdit2.grab_focus()
-	
+	$CommandLine.grab_focus()

@@ -1,0 +1,79 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://addons/angelica/Brain/Emoji.gd" type="Script" id=1]
+[ext_resource path="res://addons/angelica/Body/Brain.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/Brain/Memory.gd" type="Script" id=3]
+[ext_resource path="res://addons/kenney_interface_sounds/drop_001.wav" type="AudioStream" id=4]
+[ext_resource path="res://addons/angelica/Brain/Greetings.gd" type="Script" id=5]
+[ext_resource path="res://addons/angelica/Brain/nvc/feelings.gd" type="Script" id=6]
+[ext_resource path="res://addons/angelica/Brain/nvc/Necessities.gd" type="Script" id=7]
+[ext_resource path="res://addons/angelica/Brain/nvc/NotFeelings.gd" type="Script" id=8]
+[ext_resource path="res://addons/angelica/Brain/Sentences.gd" type="Script" id=9]
+[ext_resource path="res://addons/angelica/Brain/UserDefault.gd" type="Script" id=10]
+[ext_resource path="res://addons/angelica/Body/Commands.gd" type="Script" id=11]
+[ext_resource path="res://addons/angelica/Body/Load.gd" type="Script" id=12]
+[ext_resource path="res://addons/angelica/Brain/Audio.gd" type="Script" id=13]
+[ext_resource path="res://addons/angelica/Brain/ShortTermMemory.gd" type="Script" id=14]
+[ext_resource path="res://addons/angelica/Brain/VisualMemory.gd" type="Script" id=15]
+[ext_resource path="res://addons/angelica/Brain/Help.gd" type="Script" id=16]
+[ext_resource path="res://addons/angelica/Brain/Privacy.gd" type="Script" id=17]
+
+[node name="Brain" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Memory" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Emotional" type="Node" parent="Memory"]
+script = ExtResource( 6 )
+
+[node name="NotFeelings" type="Node" parent="Memory"]
+script = ExtResource( 8 )
+
+[node name="Necessities" type="Node" parent="Memory"]
+script = ExtResource( 7 )
+
+[node name="Help" type="Node" parent="Memory"]
+script = ExtResource( 16 )
+
+[node name="Sentences" type="Node" parent="Memory"]
+script = ExtResource( 9 )
+
+[node name="Privacy" type="Node" parent="Memory"]
+script = ExtResource( 17 )
+
+[node name="VisualMemory" type="Node" parent="Memory"]
+script = ExtResource( 15 )
+
+[node name="UserDefault" type="Node" parent="Memory"]
+script = ExtResource( 10 )
+
+[node name="Session" type="Node" parent="Memory"]
+script = ExtResource( 14 )
+
+[node name="Emoji" type="Node" parent="Memory"]
+script = ExtResource( 1 )
+
+[node name="History" type="Node" parent="Memory"]
+script = ExtResource( 11 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Memory"]
+stream = ExtResource( 4 )
+volume_db = 5.266
+
+[node name="Greetings" type="Node" parent="Memory"]
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Preload" type="Node" parent="."]
+
+[node name="LoadSave" type="Node" parent="."]
+script = ExtResource( 12 )
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource( 13 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

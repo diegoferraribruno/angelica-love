@@ -10091,23 +10091,23 @@ height = 0.0
 
 [sub_resource type="AtlasTexture" id=2014]
 flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 31, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2015]
 flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 31, 0, 31, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2016]
 flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 93, 0, 31, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2017]
 flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 62, 0, 31, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2018]
 flags = 4
@@ -10116,30 +10116,30 @@ region = Rect2( 688, 688, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=2019]
 flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 31, 32 )
 
 [sub_resource type="AtlasTexture" id=2020]
 flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 32, 0, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 31, 0, 31, 32 )
 
 [sub_resource type="AtlasTexture" id=2021]
 flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 64, 0, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 93, 0, 31, 32 )
 
 [sub_resource type="AtlasTexture" id=2022]
 flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 96, 0, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 62, 0, 31, 32 )
 
 [sub_resource type="SpriteFrames" id=2023]
 animations = [ {
-"frames": [ SubResource( 2014 ), SubResource( 2015 ), SubResource( 2014 ), SubResource( 2015 ), SubResource( 2016 ), SubResource( 2017 ), SubResource( 2016 ), SubResource( 2015 ) ],
+"frames": [ SubResource( 2014 ), SubResource( 2015 ), SubResource( 2016 ), SubResource( 2017 ) ],
 "loop": true,
-"name": "stand",
-"speed": 6.0
+"name": "xperma",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 2018 ) ],
 "loop": true,
@@ -10151,15 +10151,15 @@ animations = [ {
 "name": "run-h",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 2019 ), SubResource( 2020 ), SubResource( 2021 ), SubResource( 2022 ) ],
-"loop": true,
-"name": "xperma",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run-v",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 2019 ), SubResource( 2020 ), SubResource( 2019 ), SubResource( 2020 ), SubResource( 2021 ), SubResource( 2022 ), SubResource( 2021 ), SubResource( 2020 ) ],
+"loop": true,
+"name": "stand",
+"speed": 6.0
 } ]
 
 [sub_resource type="AtlasTexture" id=2024]
@@ -10499,6 +10499,7 @@ __meta__ = {
 }
 
 [node name="headface" parent="." instance=ExtResource( 11 )]
+visible = false
 position = Vector2( 0.629959, -26.5685 )
 frames = SubResource( 2069 )
 animation = "sadface"
@@ -10515,6 +10516,36 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.84183, -19.6431 )
 shape = SubResource( 2070 )
+
+[node name="AvatarHead2" type="RichTextLabel" parent="Area2D"]
+visible = false
+margin_left = -21.7272
+margin_top = -58.3975
+margin_right = 23.2728
+margin_bottom = -18.3975
+bbcode_enabled = true
+bbcode_text = "[img]res://img/16/1f943.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarHead" type="RichTextLabel" parent="."]
+margin_left = -15.0
+margin_top = -42.0
+margin_right = 30.0
+margin_bottom = -2.0
+bbcode_enabled = true
+bbcode_text = "[img]res://img/32/1f60a.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mask721" type="Sprite" parent="AvatarHead"]
+visible = false
+position = Vector2( 15.7137, 15.915 )
+texture = ExtResource( 15 )
 
 [connection signal="timeout" from="Delay" to="." method="_on_Delay_timeout"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]

@@ -5,8 +5,15 @@ export var Player : PackedScene
 export var Kill : PackedScene
 export var Goodie : PackedScene
 onready var screensize := get_viewport_rect().size
-
+var initialize = [
+	"title [center][rainbow]Share Your Love[/rainbow][/center]",
+#	"dj clear",
+#	"dj play Love-01",
+#	"track fps",
+	]
 func _ready():
+	for i in initialize:
+		get_node("../../Body").input_entered(i)
 	randomize()
 	$"ColorRect".margin_right = screensize.x
 	$"ColorRect".margin_bottom = screensize.y

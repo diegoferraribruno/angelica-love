@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://addons/angelica/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/angelica/Studio/FloatingTitle.gd" type="Script" id=2]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=4]
 
@@ -18,10 +18,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 15.0
-margin_top = 3.0
-margin_right = 1010.0
-margin_bottom = 114.0
+margin_left = 41.0
+margin_top = 24.0
+margin_right = 1322.0
+margin_bottom = 135.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 7

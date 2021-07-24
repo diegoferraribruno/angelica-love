@@ -1,6 +1,6 @@
 extends Node2D
 var close = true
-var icon = "[img]res://addons/angelica/images/16/1f3b9.png[/img]"
+var icon = "1f3b9"
 var playing = false
 var looping = true
 var  tracknumber = 0
@@ -146,7 +146,6 @@ func _on_SpinBox2_value_changed(value):
 func _on_SpeedTune_value_changed(value):
 	bpms = value
 	$"SpeedTune".value = bpms
-
 
 func loadbeat(track):
 		$Loop.pressed = track["loop"]

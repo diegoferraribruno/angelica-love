@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://sprites/spiralbg.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/KillBullet/KillBullet.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/maps/Cursor.gd" type="Script" id=9]
 [ext_resource path="res://addons/Funk-Kylan-130BPM/Trompete #1 - 130 BPM.wav" type="AudioStream" id=10]
 [ext_resource path="res://src/maps/Love.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/maps/XpermaWorld.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fase1"
@@ -66,6 +67,7 @@ animations = [ {
 } ]
 
 [node name="XpermaWorld" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1472.0

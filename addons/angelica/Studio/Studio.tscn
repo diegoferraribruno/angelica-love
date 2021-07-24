@@ -115,16 +115,8 @@ custom_fonts/bold_font = SubResource( 7 )
 custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.74902, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
-bbcode_text = "[url=app obs][img]res://addons/angelica/images/16/1f3a5.png[/img] Open OBS[/url]
-[url=ss][img]res://addons/angelica/images/16/1f4f7.png[/img] ScreenShot[/url]
-[url=selfie][img]res://addons/angelica/images/16/1f4f9.png[/img] Selfie[/url]
-"
 meta_underlined = false
 tab_size = 7
-text = " Open OBS
- ScreenShot
- Selfie
-"
 selection_enabled = true
 override_selected_font_color = true
 custom_effects = [ null, null, null, null, null ]

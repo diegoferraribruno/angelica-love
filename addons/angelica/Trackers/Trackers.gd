@@ -11,7 +11,7 @@ var object = printparent
 var property = "position"
 var myparentvar = ""
 var mini = true
-var icon = "[img]res://addons/angelica/images/16/1f3af.png[/img]"
+var icon = "1f3af"
 
 onready var screenSize = get_viewport().get_visible_rect().size
 var following = false
@@ -60,14 +60,14 @@ func track(command):
 #				myparentvar = get_node(printparent).get(command[2]) 
 				myparentvar = str(command[1])+"."+str(command[2])+": "+str(myparentvar)
 				ai_say(myparentvar)
-				add_tracker(printparent,property,trackerposition,"[img]res://addons/angelica/images/16/1f4e1.png[/img]")
+				add_tracker(printparent,property,trackerposition,"[img]res://img/16/1f4e1.png[/img]")
 		if command.size() == 2 and command[1] != "fps":
 			property = command[1]
 			printparent = "./../../"
 			myparentvar = get_node(printparent).get(command[1])
 			var textmyparentvar = str(command[1])+": "+str(myparentvar)
 			ai_say(textmyparentvar)
-			add_tracker(printparent,property,trackerposition,"[img]res://addons/angelica/images/16/1f4e1.png[/img]")
+			add_tracker(printparent,property,trackerposition,"[img]res://img/16/1f4e1.png[/img]")
 func ai_say(text):
 	pass
 

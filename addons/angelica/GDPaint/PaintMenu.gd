@@ -1,7 +1,7 @@
 extends Node2D
 var close = true
 var mini = true
-var icon = "[img]res://addons/angelica/images/16/1f3a8.png[/img]"
+var icon = "1f3a8"
 onready var brush_settings = $BrushSettings
 onready var label_brush_size = brush_settings.get_node(@"LabelBrushSize")
 onready var label_brush_shape = brush_settings.get_node(@"LabelBrushShape")
@@ -13,7 +13,7 @@ onready var _parent = get_parent()
 onready var paint_control = get_node("../../Paint/PaintControl")
 
 var paintmenu = [
-	"[url=mode_pencil][img]res://addons/angelica/images/16/1f58c.png[/img][/url][url=mode_rectangle][img]res://addons/angelica/images/16/25fb.png[/img][/url] [url=mode_circle][img]res://addons/angelica/images/16/2690.png[/img][/url][url=undo_stroke][img]res://addons/angelica/images/16/21aa.png[/img][/url] [url=rewind][img]res://addons/angelica/images/16/1f501.png[/img][/url] [url=mode_none][img]res://addons/angelica/images/16/1f6c7.png[/img][/url][url=clear_picture][img]res://addons/angelica/images/16/1f5d1.png[/img][/url][url=glow][img]res://addons/angelica/images/16/1f4a1.png[/img][/url]"
+	"[url=mode_pencil][img]res://img/16/1f58c.png[/img][/url][url=mode_rectangle][img]res://img/16/25fb.png[/img][/url] [url=mode_circle][img]res://img/16/2690.png[/img][/url][url=undo_stroke][img]res://img/16/21aa.png[/img][/url] [url=rewind][img]res://img/16/1f501.png[/img][/url] [url=mode_none][img]res://img/16/1f6c7.png[/img][/url][url=clear_picture][img]res://img/16/1f5d1.png[/img][/url][url=glow][img]res://img/16/1f4a1.png[/img][/url]"
 ]
 
 # Called when the node enters the scene tree for the first time.
