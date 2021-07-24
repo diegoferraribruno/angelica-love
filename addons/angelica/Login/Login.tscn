@@ -34,29 +34,29 @@ script = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -1.0
-margin_top = 2.41083
-margin_right = 504.0
-margin_bottom = 309.411
+margin_top = 2.0
+margin_right = 490.0
+margin_bottom = 222.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel2" type="Panel" parent="."]
-margin_left = 225.308
-margin_top = -31.9188
-margin_right = 285.308
-margin_bottom = 18.0812
+margin_left = 198.322
+margin_top = -28.744
+margin_right = 258.322
+margin_bottom = 21.256
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 134.175
-margin_top = 53.4848
-margin_right = 392.175
-margin_bottom = 83.4848
+margin_left = 116.0
+margin_top = 57.0
+margin_right = 358.0
+margin_bottom = 87.0
 max_length = 16
 clear_button_enabled = true
 script = ExtResource( 4 )
@@ -65,10 +65,10 @@ __meta__ = {
 }
 
 [node name="Sillyword" type="LineEdit" parent="."]
-margin_left = 133.175
-margin_top = 93.4848
-margin_right = 390.175
-margin_bottom = 123.485
+margin_left = 115.524
+margin_top = 100.0
+margin_right = 356.524
+margin_bottom = 130.0
 max_length = 16
 secret = true
 clear_button_enabled = true
@@ -82,11 +82,15 @@ visible = false
 position = Vector2( -115.173, 37.7191 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 22.9966
-margin_top = 53.4848
-margin_right = 125.997
-margin_bottom = 133.485
+margin_left = 13.1748
+margin_top = 59.0
+margin_right = 105.175
+margin_bottom = 139.0
 custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]Name:
+
+Sillyword:[/right]"
 text = "Name:
 
 Sillyword:"
@@ -97,7 +101,7 @@ __meta__ = {
 
 [node name="body" type="Sprite" parent="."]
 modulate = Color( 1.1, 1.1, 1.1, 1 )
-position = Vector2( 438.061, 99.523 )
+position = Vector2( 411.075, 102.698 )
 texture = ExtResource( 7 )
 
 [node name="Ballon" type="Sprite" parent="body"]
@@ -105,10 +109,10 @@ position = Vector2( 34.5927, -65.9469 )
 texture = ExtResource( 8 )
 
 [node name="AvatarHead" type="RichTextLabel" parent="."]
-margin_left = 403.051
-margin_top = 33.6037
-margin_right = 478.051
-margin_bottom = 117.604
+margin_left = 376.065
+margin_top = 36.7785
+margin_right = 451.065
+margin_bottom = 120.779
 rect_clip_content = false
 bbcode_enabled = true
 bbcode_text = "[url=res://img/64/1f605.png][img]res://img/64/1f605.png[/img][/url]"
@@ -123,16 +127,16 @@ visible = false
 position = Vector2( -393.858, 96.1532 )
 
 [node name="Login" type="RichTextLabel" parent="."]
-margin_left = 108.498
-margin_top = 26.5017
-margin_right = 392.498
-margin_bottom = 49.5017
+margin_left = 118.238
+margin_top = 152.408
+margin_right = 350.238
+margin_bottom = 181.408
 rect_clip_content = false
 bbcode_enabled = true
-bbcode_text = "[url=login]login[/url] [url=cancel]calcel[/url]
+bbcode_text = "[url=login]login[/url] [url=cancel]cancel[/url]
 
 "
-text = "login calcel
+text = "login cancel
 
 "
 scroll_active = false
@@ -142,14 +146,14 @@ __meta__ = {
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 234.141, -28.6649 )
+position = Vector2( 207.155, -25.4901 )
 
 [node name="VSlider" type="VSlider" parent="."]
 modulate = Color( 2, 0.8, 0.8, 1 )
-margin_left = 403.758
-margin_top = 135.057
-margin_right = 419.758
-margin_bottom = 196.057
+margin_left = 382.429
+margin_top = 133.99
+margin_right = 398.429
+margin_bottom = 194.99
 max_value = 2.0
 step = 0.1
 value = 1.0
@@ -159,10 +163,10 @@ __meta__ = {
 
 [node name="VSliderG" type="VSlider" parent="."]
 modulate = Color( 0.8, 2, 0.8, 1 )
-margin_left = 427.758
-margin_top = 135.057
-margin_right = 443.758
-margin_bottom = 196.057
+margin_left = 408.429
+margin_top = 133.99
+margin_right = 424.429
+margin_bottom = 194.99
 max_value = 2.0
 step = 0.1
 value = 1.0
@@ -172,10 +176,10 @@ __meta__ = {
 
 [node name="VSliderB" type="VSlider" parent="."]
 modulate = Color( 1, 1, 3, 1 )
-margin_left = 454.758
-margin_top = 135.057
-margin_right = 470.758
-margin_bottom = 196.057
+margin_left = 433.429
+margin_top = 133.99
+margin_right = 449.429
+margin_bottom = 194.99
 max_value = 2.0
 step = 0.1
 value = 1.0
@@ -183,7 +187,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="focus_entered" from="Sillyword" to="Sillyword" method="_on_Sillyword_focus_entered"]
 [connection signal="text_entered" from="Sillyword" to="." method="_on_LineEdit_text_entered"]
 [connection signal="meta_clicked" from="AvatarHead" to="AvatarHead" method="_on_AvatarHead_meta_clicked"]

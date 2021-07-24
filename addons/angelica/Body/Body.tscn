@@ -22,22 +22,27 @@ visible = false
 position = Vector2( 1004.14, 577.855 )
 
 [node name="Mini" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 981.347, 535.463 )
 
 [node name="Hint" parent="." instance=ExtResource( 21 )]
+visible = false
 position = Vector2( 8.39134, 44.6763 )
 
 [node name="Trackers" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 1230.37, 206.956 )
 
 [node name="DJ" parent="." instance=ExtResource( 5 )]
 pause_mode = 1
+visible = false
 position = Vector2( 687.227, 87.8167 )
 
 [node name="Login" parent="." instance=ExtResource( 10 )]
-position = Vector2( 76.8264, 50.9555 )
+position = Vector2( 450.601, 234.067 )
 
 [node name="Rest" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 997.43, 393.74 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

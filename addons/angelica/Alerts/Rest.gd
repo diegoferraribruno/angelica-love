@@ -23,7 +23,7 @@ func _on_TimeOut_timeout():
 #		get_parent().input_entered("dj clear")
 #		if sound[0][0] == true:
 #			$"../Alerts/Alarm".play()
-	$"yoga".start()
+	$"yoga".play()
 
 func _on_Blink_timeout():
 #	if !quiet:

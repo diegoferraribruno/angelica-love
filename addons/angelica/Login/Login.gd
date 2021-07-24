@@ -22,11 +22,11 @@ func _ready():
 func append_emoji(argument):
 	$"Sillyword".text += '"'+argument+'",'
 	$"AvatarHead".bbcode_text = "[img]res://img/32/"+argument+".png[/img]"
-	
-func _on_LineEdit_text_entered(new_text):
-	body.synapse("name "+new_text)
-	
-	pass # Replace with function body.
+#
+#func _on_LineEdit_text_entered(new_text):
+#	body.synapse("name "+new_text)
+#
+#	pass # Replace with function body.
 
 
 func _on_Login_meta_clicked(meta):
@@ -34,6 +34,8 @@ func _on_Login_meta_clicked(meta):
 		"login":
 			user["name"] = $"LineEdit".text
 			user["emoji"] = $"AvatarHead".emoji
+			body.synapse("chat")
+			self.queue_free()
 		"cancel":
 			$"LineEdit".text = ""
 			$"Sillyword".text = ""
