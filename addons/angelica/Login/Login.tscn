@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=2]
@@ -8,9 +8,11 @@
 [ext_resource path="res://addons/angelica/Login/AvatarHead.gd" type="Script" id=6]
 [ext_resource path="res://sprites/emojione32/1f3c3.png" type="Texture" id=7]
 [ext_resource path="res://sprites/emojione32/1f5e9.png" type="Texture" id=8]
+[ext_resource path="res://addons/angelica/fonts/Player.tres" type="DynamicFont" id=9]
+[ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.92549, 0.670588, 0.670588, 1 )
+bg_color = Color( 0.964706, 0.301961, 0.301961, 1 )
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -21,77 +23,190 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.820312, 0.820312, 0.820312, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://addons/angelica/fonts/ComicNeue_Bold.otf"
 
 [sub_resource type="DynamicFont" id=3]
 size = 21
+use_filter = true
+extra_spacing_bottom = 18
 font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.964706, 1, 1, 1 )
+border_width_left = 8
+border_width_top = 4
+border_width_right = 8
+border_width_bottom = 4
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.321569, 0.321569, 0.321569, 1 )
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 1
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Login" type="Node2D"]
 position = Vector2( 128.48, 141.921 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 309.418, 391.077 ]
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -1.0
 margin_top = 2.0
-margin_right = 490.0
-margin_bottom = 222.0
+margin_right = 441.0
+margin_bottom = 286.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Panel3" type="Panel" parent="."]
+margin_left = 24.0
+margin_top = 113.0
+margin_right = 419.0
+margin_bottom = 262.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel5" type="Panel" parent="."]
+margin_left = 269.0
+margin_top = 113.0
+margin_right = 419.0
+margin_bottom = 262.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel4" type="Panel" parent="."]
+margin_left = 123.0
+margin_top = 26.0
+margin_right = 355.0
+margin_bottom = 63.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Panel2" type="Panel" parent="."]
-margin_left = 198.322
-margin_top = -28.744
-margin_right = 258.322
-margin_bottom = 21.256
+margin_left = 172.0
+margin_top = -38.0
+margin_right = 246.0
+margin_bottom = 22.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 116.0
-margin_top = 57.0
-margin_right = 358.0
-margin_bottom = 87.0
+margin_left = 135.0
+margin_top = 30.0
+margin_right = 344.0
+margin_bottom = 62.0
+focus_next = NodePath("../Sillyword")
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color_selected = Color( 0.968627, 0.960784, 0.960784, 1 )
+custom_colors/font_color = Color( 0.996078, 0.988235, 0.988235, 1 )
 max_length = 16
 clear_button_enabled = true
+placeholder_text = "Player"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sillyword" type="LineEdit" parent="."]
-margin_left = 115.524
-margin_top = 100.0
-margin_right = 356.524
-margin_bottom = 130.0
-max_length = 16
-secret = true
-clear_button_enabled = true
-script = ExtResource( 5 )
+[node name="Login" type="RichTextLabel" parent="."]
+margin_left = 363.94
+margin_top = 20.5243
+margin_right = 425.94
+margin_bottom = 97.5243
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[url=login][img]res://img/48/1f3ab.png[/img][/url]
+[url=cancel][img]res://img/32/1f6c7.png[/img][/url]"
+text = "
+"
+scroll_active = false
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EmojiPanel" parent="Sillyword" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -115.173, 37.7191 )
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 13.1748
-margin_top = 59.0
-margin_right = 105.175
-margin_bottom = 139.0
+margin_left = 21.0595
+margin_top = 33.5892
+margin_right = 113.059
+margin_bottom = 96.5892
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[right]Name:
-
 Sillyword:[/right]"
 text = "Name:
+Sillyword:"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 275.0
+margin_top = 126.0
+margin_right = 409.0
+margin_bottom = 260.0
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[center]Diego
+
+
+
+[url=previous]
+[img]res://img/16/2b05.png[/img][/url]  [url=next][img]res://img/16/27a1.png[/img][/url]
+
+Sillyword:[/center]"
+text = "Diego
+
+
+
+
+  
 
 Sillyword:"
 scroll_active = false
@@ -99,20 +214,59 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="body" type="Sprite" parent="."]
-modulate = Color( 1.1, 1.1, 1.1, 1 )
-position = Vector2( 411.075, 102.698 )
-texture = ExtResource( 7 )
+[node name="VSlider" type="VSlider" parent="."]
+modulate = Color( 3, 0.94, 0.94, 1 )
+margin_left = 182.938
+margin_top = 148.22
+margin_right = 201.938
+margin_bottom = 229.22
+custom_styles/slider = SubResource( 4 )
+custom_styles/grabber_area_highlight = SubResource( 6 )
+custom_styles/grabber_area = SubResource( 6 )
+max_value = 2.0
+step = 0.1
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Ballon" type="Sprite" parent="body"]
-position = Vector2( 34.5927, -65.9469 )
-texture = ExtResource( 8 )
+[node name="VSliderG" type="VSlider" parent="."]
+modulate = Color( 0.8, 2.5, 0.8, 1 )
+margin_left = 207.938
+margin_top = 148.22
+margin_right = 228.938
+margin_bottom = 229.22
+custom_styles/slider = SubResource( 4 )
+custom_styles/grabber_area_highlight = SubResource( 6 )
+custom_styles/grabber_area = SubResource( 6 )
+max_value = 2.0
+step = 0.1
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSliderB" type="VSlider" parent="."]
+modulate = Color( 1, 1.82031, 4, 1 )
+margin_left = 235.938
+margin_top = 148.22
+margin_right = 256.938
+margin_bottom = 229.22
+custom_styles/slider = SubResource( 4 )
+custom_styles/grabber_area_highlight = SubResource( 6 )
+custom_styles/grabber_area = SubResource( 6 )
+max_value = 2.0
+step = 0.1
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AvatarHead" type="RichTextLabel" parent="."]
-margin_left = 376.065
-margin_top = 36.7785
-margin_right = 451.065
-margin_bottom = 120.779
+margin_left = 66.4491
+margin_top = 140.949
+margin_right = 141.449
+margin_bottom = 224.95
 rect_clip_content = false
 bbcode_enabled = true
 bbcode_text = "[url=res://img/64/1f605.png][img]res://img/64/1f605.png[/img][/url]"
@@ -124,73 +278,48 @@ __meta__ = {
 
 [node name="EmojiPanel" parent="AvatarHead" instance=ExtResource( 2 )]
 visible = false
-position = Vector2( -393.858, 96.1532 )
+position = Vector2( -109.116, 79.7742 )
 
-[node name="Login" type="RichTextLabel" parent="."]
-margin_left = 118.238
-margin_top = 152.408
-margin_right = 350.238
-margin_bottom = 181.408
-rect_clip_content = false
-bbcode_enabled = true
-bbcode_text = "[url=login]login[/url] [url=cancel]cancel[/url]
-
-"
-text = "login cancel
-
-"
-scroll_active = false
-script = ExtResource( 6 )
+[node name="Sillyword" type="LineEdit" parent="."]
+margin_left = 122.47
+margin_top = 69.5297
+margin_right = 354.47
+margin_bottom = 105.53
+focus_previous = NodePath("../LineEdit")
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 9 )
+max_length = 16
+secret = true
+clear_button_enabled = true
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="EmojiPanel" parent="Sillyword" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -137.852, 31.4195 )
+
+[node name="body" type="Sprite" parent="."]
+modulate = Color( 1.1, 1.1, 1.1, 1 )
+position = Vector2( 99.0111, 206.719 )
+texture = ExtResource( 7 )
+
+[node name="Ballon" type="Sprite" parent="body"]
+position = Vector2( 40.1867, -57.2683 )
+texture = ExtResource( 8 )
 
 [node name="SuperButton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 207.155, -25.4901 )
+position = Vector2( 187.944, -29.3554 )
 
-[node name="VSlider" type="VSlider" parent="."]
-modulate = Color( 2, 0.8, 0.8, 1 )
-margin_left = 382.429
-margin_top = 133.99
-margin_right = 398.429
-margin_bottom = 194.99
-max_value = 2.0
-step = 0.1
-value = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Player" parent="." instance=ExtResource( 10 )]
+position = Vector2( 340.407, 220.14 )
+script = null
 
-[node name="VSliderG" type="VSlider" parent="."]
-modulate = Color( 0.8, 2, 0.8, 1 )
-margin_left = 408.429
-margin_top = 133.99
-margin_right = 424.429
-margin_bottom = 194.99
-max_value = 2.0
-step = 0.1
-value = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VSliderB" type="VSlider" parent="."]
-modulate = Color( 1, 1, 3, 1 )
-margin_left = 433.429
-margin_top = 133.99
-margin_right = 449.429
-margin_bottom = 194.99
-max_value = 2.0
-step = 0.1
-value = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="focus_entered" from="Sillyword" to="Sillyword" method="_on_Sillyword_focus_entered"]
-[connection signal="text_entered" from="Sillyword" to="." method="_on_LineEdit_text_entered"]
-[connection signal="meta_clicked" from="AvatarHead" to="AvatarHead" method="_on_AvatarHead_meta_clicked"]
 [connection signal="meta_clicked" from="Login" to="." method="_on_Login_meta_clicked"]
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
 [connection signal="value_changed" from="VSliderG" to="." method="_on_VSliderG_value_changed"]
 [connection signal="value_changed" from="VSliderB" to="." method="_on_VSliderB_value_changed"]
+[connection signal="meta_clicked" from="AvatarHead" to="AvatarHead" method="_on_AvatarHead_meta_clicked"]
+[connection signal="focus_entered" from="Sillyword" to="Sillyword" method="_on_Sillyword_focus_entered"]
+[connection signal="text_entered" from="Sillyword" to="." method="_on_LineEdit_text_entered"]

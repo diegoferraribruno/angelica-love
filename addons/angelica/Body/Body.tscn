@@ -18,11 +18,9 @@ sort_enabled = false
 script = ExtResource( 35 )
 
 [node name="Next" parent="." instance=ExtResource( 9 )]
-visible = false
 position = Vector2( 1004.14, 577.855 )
 
 [node name="Mini" parent="." instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 981.347, 535.463 )
 
 [node name="Hint" parent="." instance=ExtResource( 21 )]

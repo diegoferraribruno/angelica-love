@@ -13,21 +13,14 @@ func _ready():
 	var head = good[rand_range(0,goodsize)]
 	$"AvatarHead".bbcode_text = "[url=res://img/64/1f605.png][img]res://img/64/"+head+".png[/img][/url]"
 	$"AvatarHead".emoji = head
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+ 
 func append_emoji(argument):
 	$"Sillyword".text += '"'+argument+'",'
 	$"AvatarHead".bbcode_text = "[img]res://img/32/"+argument+".png[/img]"
-#
-#func _on_LineEdit_text_entered(new_text):
-#	body.synapse("name "+new_text)
-#
-#	pass # Replace with function body.
 
+func _on_LineEdit_text_entered(new_text):
+	$"LineEdit".focus_next
+	$"Sillyword".grab_focus
 
 func _on_Login_meta_clicked(meta):
 	match meta:
@@ -44,6 +37,7 @@ func modulate():
 	var color = Color(rgb[0],rgb[1],rgb[2])
 	var color2 = color.to_html(false)
 	$"body".modulate = color
+	$"LineEdit".modulate = color
 	user["color"] = "#"+color2
 
 func _on_VSlider_value_changed(value):

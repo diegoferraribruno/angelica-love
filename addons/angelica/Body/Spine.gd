@@ -187,7 +187,10 @@ func synapse(new_text):
 					visible = false
 					self.add_child(instance)
 				if command[1] == "play":
-					get_node("DJ").add_and_play(command[2])
+					if command.size()>2:
+						get_node("DJ").add_and_play(command[2])
+					else:
+						get_node("DJ")._on_RichTextLabel_meta_clicked(command[1])
 				elif command[1] == "clear":
 					get_node("DJ")._on_RichTextLabel_meta_clicked(command[1])
 		_:
