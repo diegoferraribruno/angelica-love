@@ -13,7 +13,6 @@ var quit = [
 var close = true
 var town = null
 
-
 func _ready():
 	for i in initialize:
 		get_node("../../Body").input_entered(i)

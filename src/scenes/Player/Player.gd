@@ -62,7 +62,7 @@ func _input(event):
 		else:
 			touch = false
 func _process(delta):
-	$headface.modulate.a  = clamp(health/10 + 0.4,0,1)
+	$AvatarHead.modulate.a  = clamp(health/10 + 0.4,0.4,1)
 #	body.modulate.a  = health/10
 	if health < 6:
 		$Baloon.visible = true
@@ -72,9 +72,9 @@ func _process(delta):
 #		changeface("happyface")
 		
 	if health  > 10:
-		$"AvatarHead/mask721".visible = true
+		$"mask".visible = true
 	else:
-		$"AvatarHead/mask721".visible = false
+		$"mask".visible = false
 func _on_Cooldown_timeout():
 	can_shoot = true
 	$Gun/AnimatedSprite.set_frame(0)
@@ -171,11 +171,14 @@ func changeface(animation):
 		$"AvatarHead".bbcode_text = "[img]res://img/32/"+good[rand_range(0,goodsize)]+".png[/img]"
 	else:
 		$"AvatarHead".bbcode_text = "[img]res://img/32/"+bad[rand_range(0,badsize)]+".png[/img]"
-#	$headface.play(animation)
-#	$headface.set_frame(face)
-#	$headface.stop()
+#	$AvatarHead.play(animation)
+#	$AvatarHead.set_frame(face)
+#	$AvatarHead.stop()
 
 
 func _on_Timer_timeout():
 	self.health = 18
 	
+
+func _on_AvatarHead_meta_clicked(meta):
+	pass # Replace with function body.

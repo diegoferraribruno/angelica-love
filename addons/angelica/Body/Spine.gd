@@ -30,6 +30,7 @@ var editor = preload("res://addons/angelica/Editor/Editor.tscn")
 var dj = preload("res://addons/angelica/DJ/DJ.tscn")
 var dock = preload("res://addons/angelica/Dock/Dock.tscn")
 var mini = preload("res://addons/angelica/Chat/ChatMini.tscn")
+
 func text_entered(argument):
 	synapse(argument)
 func input_entered(argument):
@@ -64,12 +65,6 @@ func synapse(new_text):
 				get_node("Dock").queue_free()
 		"mini":
 			$Mini.visible = !$Mini.visible
-#			if self.has_node("Mini") == false:
-#				var instance = mini.instance()
-#				self.add_child(instance)
-#			elif self.has_node("Mini"):
-#				$mini.visible = false
-#				ai_say("Mini Console Off")
 		"volume":
 			volume_change()
 		"reset":

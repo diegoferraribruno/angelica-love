@@ -1,11 +1,14 @@
 extends RichTextLabel
+
 var emoji = ""
 
 func append_emoji(argument):
 	emoji = argument
-	bbcode_text = "[url][img]res://img/64/"+argument+".png[/img][/url]"
+	$"AvatarHead".bbcode_text = "[url][img]res://img/64/"+argument+".png[/img][/url]"
 	$"EmojiPanel".visible = false
 
-func _on_AvatarHead_meta_clicked(meta):
+
+func _on_Player_mouse_entered():
 	$"EmojiPanel".visible = true
 	pass # Replace with function body.
+
