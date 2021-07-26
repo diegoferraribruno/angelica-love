@@ -27,10 +27,13 @@ var ai_prefs = {
 	, "sounds" : true
 	, "rest" : true
 	, "rest_time" : 3000
+	, "rest_timer" : 60
 	, "blink" : true
 	, "blink_time" : 600
+	, "blink_timer" : 20
 	, "yoga" : true
-	, "yoga_time" : 3060
+	, "yoga_time" : 2860
+	, "yoga_timer": 300
 #	, "icons" :{
 #		"command":"1f4f1",
 #		"mini":"1f64b",
@@ -76,6 +79,7 @@ var ai_prefs = {
 #		"save":"1f4be",
 #		"folder":"1f4c1",
 #		"demo":"1f608",
+		"rest":"1f441-1f5e8",
 		"bye":"274c"
 	}
 	, "side_dock":{
@@ -93,7 +97,7 @@ var ai_prefs = {
 var user = {
 	"id":"",
 	"name":"Me",
-	"emoji":"1f3a7",
+	"emoji":"1f913",
 	"sillyword":"sillyword",
 	"color": "#dfbdfbff",
 	"hashtags":[],

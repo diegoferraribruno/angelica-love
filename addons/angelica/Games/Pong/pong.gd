@@ -3,16 +3,16 @@ var close = true
 var icon = "1f3d3"
 var initialize = [
 	"title [center][rainbow]Its Pong Time![/rainbow][/center]",
-	"volume",
-	"volume",
-	"volume",
-	"dj clear",
-	"dj play playing",
-	"track fps",
+#	"volume",
+#	"volume",
+#	"volume",
+#	"dj clear",
+#	"dj play playing",
+#	"track fps",
 	]
 var quit = [
 	"title",
-	"dj clear"
+#	"dj clear"
 ]
 
 func _ready():

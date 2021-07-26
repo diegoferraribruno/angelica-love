@@ -18,6 +18,7 @@ var touch := true
 var time := 0.04
 var bullet_type := 0
 
+onready var mask = $mask
 onready var health_bar = $Health
 onready var cooldown = $Cooldown
 onready var gun := $Gun
@@ -39,8 +40,11 @@ func _ready():
 		Color(0.3, 2.0, 1.0),
 		Color(0.3, 0.0, 1.0),
 	]
-	var corpo_cor = P1color[0]
-	body.modulate = Color(P1color[rand_range(0,6)])
+	var corpo_cor = P1color[rand_range(0,6)]
+	body.modulate = Color(corpo_cor)
+	mask.modulate = Color(corpo_cor)
+	$"Baloon".modulate = Color(corpo_cor)
+	
 	face = rand_range(0, 16)
 	changeface("happyface")
 	
@@ -72,9 +76,9 @@ func _process(delta):
 #		changeface("happyface")
 		
 	if health  > 10:
-		$"mask".visible = true
+		mask.visible = true
 	else:
-		$"mask".visible = false
+		mask.visible = false
 func _on_Cooldown_timeout():
 	can_shoot = true
 	$Gun/AnimatedSprite.set_frame(0)

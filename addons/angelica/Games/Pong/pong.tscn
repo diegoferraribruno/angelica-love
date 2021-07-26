@@ -246,10 +246,12 @@ volume_db = -5.818
 stream = ExtResource( 12 )
 
 [node name="Player1" type="KinematicBody2D" parent="."]
+visible = false
 position = Vector2( 141.421, 131.522 )
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+position = Vector2( -49.3891, 36.0406 )
 shape = SubResource( 11 )
 
 [node name="left_control" type="RichTextLabel" parent="."]
@@ -331,7 +333,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 15 )]
-position = Vector2( 117.829, 177.932 )
+position = Vector2( 181.901, 235.33 )
 
 [connection signal="area_entered" from="Left" to="Left" method="_on_area_entered"]
 [connection signal="area_entered" from="Right" to="Right" method="_on_area_entered"]

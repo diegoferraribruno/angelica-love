@@ -7,5 +7,4 @@ extends Node2D
 ######## Angelica - Love 200 #######
 #2021-08-02 100 days of existence ##
 ##come and have a piece of it!######
-#  
 ####################################

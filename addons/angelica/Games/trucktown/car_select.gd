@@ -1,14 +1,14 @@
 extends Node2D
 
 var initialize = [
-	"title [center][rainbow]Truck Town Demo Remix![/rainbow][/center]",
-	"dj clear",
-	"dj play playing",
-	"track fps",
+	"title [center][rainbow]Truck Town Demo Remix - WIP[/rainbow][/center]",
+#	"dj clear",
+#	"dj play playing",
+#	"track fps",
 	]
 var quit = [
 	"title",
-	"dj clear"
+#	"dj clear"
 ]
 var close = true
 var town = null

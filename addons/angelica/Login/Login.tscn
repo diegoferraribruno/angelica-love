@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://addons/angelica/Login/LineEdit.gd" type="Script" id=4]
 [ext_resource path="res://addons/angelica/Login/Sillyword.gd" type="Script" id=5]
 [ext_resource path="res://addons/angelica/Login/Player.gd" type="Script" id=6]
+[ext_resource path="res://src/scenes/Player/PlayerLoader.gd" type="Script" id=7]
 [ext_resource path="res://addons/angelica/fonts/Player.tres" type="DynamicFont" id=9]
 [ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=10]
 
@@ -33,18 +34,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.820312, 0.820312, 0.820312, 1 )
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="DynamicFontData" id=5]
@@ -53,7 +42,7 @@ font_path = "res://addons/angelica/fonts/ComicNeue_Bold.otf"
 [sub_resource type="DynamicFont" id=6]
 size = 21
 use_filter = true
-extra_spacing_bottom = -10
+extra_spacing_bottom = -5
 font_data = SubResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=7]
@@ -76,6 +65,18 @@ border_width_bottom = 1
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.820312, 0.820312, 0.820312, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.819608, 0.819608, 0.819608, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Login" type="Node2D"]
 position = Vector2( 128.48, 141.921 )
 script = ExtResource( 3 )
@@ -93,22 +94,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel3" type="Panel" parent="."]
-margin_left = 24.0
-margin_top = 113.0
-margin_right = 419.0
-margin_bottom = 262.0
-custom_styles/panel = SubResource( 2 )
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 172.0
+margin_top = -38.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel5" type="Panel" parent="."]
-margin_left = 269.0
+[node name="Panel3" type="Panel" parent="."]
+margin_left = 25.1892
 margin_top = 113.0
-margin_right = 419.0
+margin_right = 420.189
 margin_bottom = 262.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -119,16 +120,6 @@ margin_top = 25.2508
 margin_right = 363.99
 margin_bottom = 62.2508
 custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel2" type="Panel" parent="."]
-margin_left = 172.0
-margin_top = -38.0
-margin_right = 246.0
-margin_bottom = 22.0
-custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -168,10 +159,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 1.99661
-margin_top = 33.7458
-margin_right = 122.997
-margin_bottom = 150.746
+margin_left = 2.0
+margin_top = 34.0
+margin_right = 123.0
+margin_bottom = 141.0
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
 bbcode_text = "[right]Name:
@@ -187,40 +178,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 275.0
-margin_top = 126.0
-margin_right = 409.0
-margin_bottom = 260.0
-custom_fonts/normal_font = ExtResource( 9 )
-bbcode_enabled = true
-bbcode_text = "[center]Diego
-
-
-
-[url=previous]
-[img]res://img/16/2b05.png[/img][/url]  [url=next][img]res://img/16/27a1.png[/img][/url]
-
-Sillyword:[/center]"
-text = "Diego
-
-
-
-
-  
-
-Sillyword:"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="VSlider" type="VSlider" parent="."]
 modulate = Color( 3, 0.94, 0.94, 1 )
-margin_left = 182.938
-margin_top = 148.22
-margin_right = 201.938
-margin_bottom = 229.22
+margin_left = 166.102
+margin_top = 151.949
+margin_right = 185.102
+margin_bottom = 232.949
 custom_styles/slider = SubResource( 7 )
 custom_styles/grabber_area_highlight = SubResource( 8 )
 custom_styles/grabber_area = SubResource( 8 )
@@ -233,10 +196,10 @@ __meta__ = {
 
 [node name="VSliderG" type="VSlider" parent="."]
 modulate = Color( 0.8, 2.5, 0.8, 1 )
-margin_left = 207.938
-margin_top = 148.22
-margin_right = 228.938
-margin_bottom = 229.22
+margin_left = 203.776
+margin_top = 150.746
+margin_right = 224.776
+margin_bottom = 231.746
 custom_styles/slider = SubResource( 7 )
 custom_styles/grabber_area_highlight = SubResource( 8 )
 custom_styles/grabber_area = SubResource( 8 )
@@ -249,10 +212,10 @@ __meta__ = {
 
 [node name="VSliderB" type="VSlider" parent="."]
 modulate = Color( 1, 1.82031, 4, 1 )
-margin_left = 235.938
-margin_top = 148.22
-margin_right = 256.938
-margin_bottom = 229.22
+margin_left = 238.911
+margin_top = 150.746
+margin_right = 259.911
+margin_bottom = 231.746
 custom_styles/slider = SubResource( 7 )
 custom_styles/grabber_area_highlight = SubResource( 8 )
 custom_styles/grabber_area = SubResource( 8 )
@@ -262,6 +225,50 @@ value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SuperButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 187.944, -29.3554 )
+
+[node name="LoadPlayer" type="Node2D" parent="."]
+position = Vector2( 277.944, 123.367 )
+
+[node name="Panel5" type="Panel" parent="LoadPlayer"]
+margin_top = -1.0
+margin_right = 132.0
+margin_bottom = 130.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="RichTextLabel" parent="LoadPlayer"]
+margin_top = -14.6682
+margin_right = 134.0
+margin_bottom = 119.332
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[center][url=previous]
+[img]res://img/16/2b05.png[/img][/url] [url=load]Load[/url] [url=next][img]res://img/16/27a1.png[/img][/url][/center]"
+text = "
+ Load "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="LoadPlayer" instance=ExtResource( 10 )]
+position = Vector2( 65.3591, 113.154 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 7 )
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+position = Vector2( 100.527, 225.169 )
+script = ExtResource( 6 )
+
+[node name="EmojiPanel" parent="Player" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -121.061, -108.802 )
 
 [node name="Sillyword" type="LineEdit" parent="."]
 margin_left = 128.463
@@ -283,22 +290,6 @@ __meta__ = {
 visible = false
 position = Vector2( -137.852, 31.4195 )
 
-[node name="SuperButton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 187.944, -29.3554 )
-
-[node name="PlayerRegistered" parent="." instance=ExtResource( 10 )]
-position = Vector2( 340.407, 220.14 )
-collision_layer = 3
-collision_mask = 3
-script = null
-
-[node name="Player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 103.047, 217.609 )
-script = ExtResource( 6 )
-
-[node name="EmojiPanel" parent="Player" instance=ExtResource( 2 )]
-position = Vector2( -121.061, -108.802 )
-
 [connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="meta_clicked" from="Login" to="." method="_on_Login_meta_clicked"]
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
@@ -306,4 +297,3 @@ position = Vector2( -121.061, -108.802 )
 [connection signal="value_changed" from="VSliderB" to="." method="_on_VSliderB_value_changed"]
 [connection signal="focus_entered" from="Sillyword" to="Sillyword" method="_on_Sillyword_focus_entered"]
 [connection signal="text_entered" from="Sillyword" to="." method="_on_LineEdit_text_entered"]
-[connection signal="mouse_entered" from="Player" to="Player" method="_on_Player_mouse_entered"]

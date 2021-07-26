@@ -30,6 +30,7 @@ var editor = preload("res://addons/angelica/Editor/Editor.tscn")
 var dj = preload("res://addons/angelica/DJ/DJ.tscn")
 var dock = preload("res://addons/angelica/Dock/Dock.tscn")
 var mini = preload("res://addons/angelica/Chat/ChatMini.tscn")
+var rest = preload("res://addons/angelica/Health/Rest.tscn")
 
 func text_entered(argument):
 	synapse(argument)
@@ -56,7 +57,14 @@ func synapse(new_text):
 	if new_text is String:
 		command = new_text.split(" ", true, 4)
 	match command[0]:
-		
+		"rest":
+			if self.has_node("Rest") == false:
+				var instance = rest.instance()
+				self.add_child(instance)
+			elif game.has_node("Rest"):
+				get_node("../Game/Pong").queue_free()
+				ai_say("Good game!")
+			$"Rest".visible = !$"Rest".visible
 		"dock":
 			if self.has_node("Dock") == false:
 				var instance = dock.instance()
@@ -86,7 +94,7 @@ func synapse(new_text):
 			elif game.has_node("Pong"):
 				get_node("../Game/Pong").queue_free()
 				ai_say("Good game!")
-				quit("dj clear")
+#				quit("dj clear")
 		"chat":
 			if self.has_node("Chat") == false:
 				var instance = chat.instance()
