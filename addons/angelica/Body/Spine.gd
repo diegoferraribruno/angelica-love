@@ -61,10 +61,8 @@ func synapse(new_text):
 			if self.has_node("Rest") == false:
 				var instance = rest.instance()
 				self.add_child(instance)
-			elif game.has_node("Rest"):
-				get_node("../Game/Pong").queue_free()
-				ai_say("Good game!")
-			$"Rest".visible = !$"Rest".visible
+			elif has_node("Rest"):
+				$"Rest".visible = !$"Rest".visible
 		"dock":
 			if self.has_node("Dock") == false:
 				var instance = dock.instance()

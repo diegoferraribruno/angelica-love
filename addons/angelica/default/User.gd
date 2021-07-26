@@ -96,7 +96,7 @@ var ai_prefs = {
 
 var user = {
 	"id":"",
-	"name":"Me",
+	"name":"Player",
 	"emoji":"1f913",
 	"sillyword":"sillyword",
 	"color": "#dfbdfbff",

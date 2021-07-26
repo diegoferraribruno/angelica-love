@@ -295,5 +295,6 @@ position = Vector2( -137.852, 31.4195 )
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
 [connection signal="value_changed" from="VSliderG" to="." method="_on_VSliderG_value_changed"]
 [connection signal="value_changed" from="VSliderB" to="." method="_on_VSliderB_value_changed"]
+[connection signal="meta_clicked" from="LoadPlayer/Load" to="LoadPlayer/Player" method="_on_Load_meta_clicked"]
 [connection signal="focus_entered" from="Sillyword" to="Sillyword" method="_on_Sillyword_focus_entered"]
 [connection signal="text_entered" from="Sillyword" to="." method="_on_LineEdit_text_entered"]

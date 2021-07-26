@@ -2,31 +2,29 @@ extends Node2D
 onready var user = get_node("../User").ai_prefs
 var icon = "1f441-1f5e8"
 var mini = true
+var close = true
 var autohide
-
-onready var autopause = user["autopause"]
-onready var blink = user["blink"]
-onready var rest = user["rest"]
-onready var yoga = user["yoga"]
 
 func _ready():
 	$"Blink".wait_time = user["blink_time"]
 	$"Rest".wait_time = user["rest_time"]
 	$"Yoga".wait_time = user["yoga_time"]
-	print($"Blink".wait_time)
-	$"Blink".start(0)
-	$"Rest".start(0)
-	$"Yoga".start(0)
-	$"CheckBox".pressed = blink
-	$"CheckBox2".pressed = rest
-	$"CheckBox3".pressed = yoga
-	$"CheckBox4".pressed = autopause
+	if user["blink"] == true:
+		$"Blink".start(0)
+	if user["rest"] == true:
+		$"Rest".start(0)
+	if user["yoga"] == true:
+		$"Yoga".start(0)
+	$"CheckBox".pressed = user["blink"]
+	$"CheckBox2".pressed = user["rest"]
+	$"CheckBox3".pressed = user["yoga"]
+	$"CheckBox4".pressed = user["autopause"]
 	$"CheckBox5".pressed = user["sounds"]
 	$"BigAlert".position = Vector2(0,0)-position
 
 func autopause() -> void:
 	$"BigAlert".position = Vector2(0,0)-position
-	if autopause == true:
+	if user["autopause"] == true:
 		get_tree().paused = !get_tree().paused
 		ai_say("Game pause is "+ str(get_tree().paused))
 	$"Yoga".paused = !$"Yoga".paused
@@ -98,29 +96,29 @@ func convert_time(time):
 	return "%02d:%02d:%02d" % [hour, minutes, seconds]
 
 func _on_CheckBox_pressed():
-	if blink == true:
-		blink = false
+	if user["blink"] == true:
+		user["blink"] = false
 		$Blink.stop()
 	else:
-		blink = true
+		user["blink"] = true
 #		$"Blink".wait_time = user["blink_time"]
 		$"Blink".start()
 
 func _on_CheckBox2_pressed():
-	if rest == true:
-		rest = false
+	if user["rest"] == true:
+		user["rest"]  = false
 		$Rest.stop()
 	else:
-		rest = true
+		user["rest"]  = true
 #		$"Rest".wait_time = user["rest_time"]
 		$"Rest".start()
 
 func _on_CheckBox3_pressed():
-	if yoga == true:
-		yoga = false
+	if user["yoga"] == true:
+		user["yoga"] = false
 		$Yoga.stop()
 	else:
-		yoga = true
+		user["yoga"] = true
 #		$"Yoga".wait_time = user["yoga_time"]
 		$"Yoga".start()
 
@@ -138,9 +136,8 @@ func _on_CheckBox4_pressed():
 	togle_autopause()
 
 func togle_autopause():
-	autopause = !autopause 
-	user["autopause"] = autopause
-	get_parent().ai_say("auto pause is set to "+ str(autopause))
+	user["autopause"] = !user["autopause"] 
+	get_parent().ai_say("auto pause is set to "+ str(user["autopause"] ))
 
 func ai_say(new_text):
 	get_parent().ai_say(new_text)

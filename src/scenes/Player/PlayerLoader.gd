@@ -33,3 +33,8 @@ func _on_Area2D_body_entered(body):
 	
 func _on_Area2D_body_exited(body):
 	pass
+
+
+func _on_Load_meta_clicked(meta):
+	_on_AvatarHead_meta_clicked(meta)
+	pass # Replace with function body.
