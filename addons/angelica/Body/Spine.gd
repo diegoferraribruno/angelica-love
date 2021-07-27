@@ -9,7 +9,7 @@ extends YSort
 ################################################
 ################################################
 
-onready var user = $User
+onready var user = $"../User"
 onready var alarm = $"AudioStreamPlayer"
 onready var game = get_parent().get_node("Game")
 onready var screenSize = get_viewport().get_visible_rect().size

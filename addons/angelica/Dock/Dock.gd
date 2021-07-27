@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var screenSize = get_viewport().get_visible_rect().size
-onready var user = $"../User"
+onready var user = $"../../User"
 #onready var icons = {
 #	"command":"1f4f1",
 #	"mini":"1f64b",
