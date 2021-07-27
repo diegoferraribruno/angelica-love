@@ -36,13 +36,13 @@ func _on_viewport_size_changed():
 
 func _process(_delta):
 	if following:
-			var mouse_actual_pos = get_global_mouse_position()
-			var dif_window_pos = dragging_start_position-mouse_actual_pos
-			var slideinterwindow =  parent_start_position - dif_window_pos 
-			if mouse_actual_pos.x > 12 and mouse_actual_pos.x < (screenSize.x-66):
-				get_parent().position.x = slideinterwindow.x
-			if  mouse_actual_pos.y > 12 and mouse_actual_pos.y < (screenSize.y-66) :
-				get_parent().position.y = slideinterwindow.y
+		var mouse_actual_pos = get_global_mouse_position()
+		var dif_window_pos = dragging_start_position-mouse_actual_pos
+		var slideinterwindow =  parent_start_position - dif_window_pos 
+		if mouse_actual_pos.x > 12 and mouse_actual_pos.x < (screenSize.x-66):
+			get_parent().position.x = slideinterwindow.x
+		if  mouse_actual_pos.y > 12 and mouse_actual_pos.y < (screenSize.y-66) :
+			get_parent().position.y = slideinterwindow.y
 
 func unfollow():
 	following = false

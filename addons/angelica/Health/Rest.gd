@@ -1,5 +1,5 @@
 extends Node2D
-onready var user = get_node("../User").ai_prefs
+onready var user = get_node("../../User").ai_prefs
 var icon = "1f441-1f5e8"
 var mini = true
 var close = true
@@ -52,8 +52,8 @@ func _on_TimeOut_timeout():
 func _on_Blink_timeout():
 	autopause()
 	visible = true
-	$BigAlert.visible = true
-	$"BigAlert/Label".visible = true
+	$"BigAlert".visible = true
+#	$"BigAlert/Label".visible = true
 	$"BigAlert/Text".bbcode_text = "[center][img=400px]res://img/64/1f441-1f5e8.png[/img]\nRelax your eyes!\n[url=skip]skip[/url]   [url=5min]+5 min[/url] [/center]"
 	sound("blink")
 	$TimeOut.wait_time = user["blink_timer"]
@@ -66,7 +66,7 @@ func _on_Yoga_timeout():
 	big_alert("[center][rainbow]Time for yoga!\n[url=skip]skip[/url]  [url=5min]+5 min[/url] [/center]")
 	$TimeOut.wait_time = user["yoga_timer"]
 	$TimeOut.start()
-	$"Yoga".stop()
+#	$"Yoga".stop()
 
 func _on_Rest_timeout():
 	autopause()
@@ -75,16 +75,16 @@ func _on_Rest_timeout():
 	big_alert("[center][fade start=4 length=14]Time for yoga![/fade]\n[url=skip]skip[/url]  [url=5min]+5 min[/url] [/center]")
 	$TimeOut.wait_time = user["rest_timer"]
 	$TimeOut.start()
-	$"Rest".stop()
+#	$"Rest".stop()
 
 func _on_Updater_timeout():
-	$"BigAlert/Label".text = str(convert_time(int($TimeOut.get_time_left())))
+	$"BigAlert/Label".text = str(convert_time(int($"TimeOut".get_time_left())))
 	$"ShotPause".text = str(convert_time(int($"Blink".get_time_left())))
 	$"LongPause".text = str(convert_time(int($"Rest".get_time_left())))
 	$"YogaPause".text = str(convert_time(int($"Yoga".get_time_left())))
 
 func big_alert(text):
-	$"BigAlert/Label".visible = true
+#	$"BigAlert/Label".visible = true
 	$BigAlert.visible = true
 	$"BigAlert/Text".bbcode_text = text
 

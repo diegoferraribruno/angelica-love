@@ -8,7 +8,7 @@ extends RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bbcode_text = "[img]res://addons/angelica/images/avatar/1f64b.png[/img]"
+	bbcode_text = "[img]res://img/avatar/1f64b.png[/img]"
 	pass # Replace with function body.
 
 

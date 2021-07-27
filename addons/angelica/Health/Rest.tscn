@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/OpenPathMusic44v1/flexatone.wav" type="AudioStream" id=2]
@@ -17,39 +17,40 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="DynamicFontData" id=62]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=65]
+[sub_resource type="DynamicFont" id=3]
 size = 14
-font_data = SubResource( 62 )
+font_data = SubResource( 2 )
 
-[sub_resource type="DynamicFontData" id=63]
-font_path = "res://addons/angelica/fonts/OpenSans-Regular.ttf"
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://addons/angelica/fonts/NotoMono-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=66]
+[sub_resource type="DynamicFont" id=5]
 size = 14
-font_data = SubResource( 63 )
+font_data = SubResource( 4 )
 
-[sub_resource type="DynamicFontData" id=64]
+[sub_resource type="DynamicFont" id=6]
+size = 14
+outline_size = 1
+outline_color = Color( 0.206543, 0.40692, 0.550781, 1 )
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=7]
 font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=67]
+[sub_resource type="DynamicFont" id=8]
 size = 43
 outline_size = 4
 outline_color = Color( 0.345098, 0.345098, 0.345098, 1 )
 extra_spacing_space = 2
-font_data = SubResource( 64 )
+font_data = SubResource( 7 )
 
-[sub_resource type="DynamicFont" id=68]
+[sub_resource type="DynamicFont" id=9]
 size = 140
 outline_size = 7
-font_data = SubResource( 63 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 64, 77 )
+font_data = SubResource( 4 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
@@ -59,274 +60,282 @@ region = Rect2( 64, 0, 64, 77 )
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 128, 0, 64, 77 )
+region = Rect2( 384, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 192, 0, 64, 77 )
+region = Rect2( 128, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 256, 0, 64, 77 )
+region = Rect2( 576, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 320, 0, 64, 77 )
+region = Rect2( 640, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 384, 0, 64, 77 )
+region = Rect2( 704, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 448, 0, 64, 77 )
+region = Rect2( 768, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 512, 0, 64, 77 )
+region = Rect2( 832, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 576, 0, 64, 77 )
+region = Rect2( 896, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 640, 0, 64, 77 )
+region = Rect2( 960, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 704, 0, 64, 77 )
+region = Rect2( 0, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 768, 0, 64, 77 )
+region = Rect2( 64, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 832, 0, 64, 77 )
+region = Rect2( 128, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 896, 0, 64, 77 )
+region = Rect2( 192, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 960, 0, 64, 77 )
+region = Rect2( 256, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1024, 0, 64, 77 )
+region = Rect2( 320, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1088, 0, 64, 77 )
+region = Rect2( 384, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1152, 0, 64, 77 )
+region = Rect2( 448, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1216, 0, 64, 77 )
+region = Rect2( 512, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1280, 0, 64, 77 )
+region = Rect2( 576, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1344, 0, 64, 77 )
+region = Rect2( 640, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1408, 0, 64, 77 )
+region = Rect2( 704, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=32]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1472, 0, 64, 77 )
+region = Rect2( 768, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1536, 0, 64, 77 )
+region = Rect2( 832, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1600, 0, 64, 77 )
+region = Rect2( 896, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1664, 0, 64, 77 )
+region = Rect2( 960, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=36]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1728, 0, 64, 77 )
+region = Rect2( 1024, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1792, 0, 64, 77 )
+region = Rect2( 1088, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=38]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1856, 0, 64, 77 )
+region = Rect2( 1152, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=39]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1920, 0, 64, 77 )
+region = Rect2( 1216, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=40]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1984, 0, 64, 77 )
+region = Rect2( 1280, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=41]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2048, 0, 64, 77 )
+region = Rect2( 1344, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=42]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2112, 0, 64, 77 )
+region = Rect2( 1408, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=43]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2176, 0, 64, 77 )
+region = Rect2( 1472, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=44]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2240, 0, 64, 77 )
+region = Rect2( 1536, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=45]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2304, 0, 64, 77 )
+region = Rect2( 1600, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=46]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2368, 0, 64, 77 )
+region = Rect2( 1664, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=47]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2432, 0, 64, 77 )
+region = Rect2( 1728, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=48]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2496, 0, 64, 77 )
+region = Rect2( 1792, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=49]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2560, 0, 64, 77 )
+region = Rect2( 1856, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=50]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2624, 0, 64, 77 )
+region = Rect2( 1920, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=51]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 64, 77 )
+region = Rect2( 1984, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=52]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 384, 0, 64, 77 )
+region = Rect2( 2048, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=53]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 128, 0, 64, 77 )
+region = Rect2( 2112, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=54]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 576, 0, 64, 77 )
+region = Rect2( 2176, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=55]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 640, 0, 64, 77 )
+region = Rect2( 2240, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=56]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 704, 0, 64, 77 )
+region = Rect2( 2304, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=57]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 768, 0, 64, 77 )
+region = Rect2( 2368, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=58]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 832, 0, 64, 77 )
+region = Rect2( 2432, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=59]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 896, 0, 64, 77 )
+region = Rect2( 2496, 0, 64, 77 )
 
 [sub_resource type="AtlasTexture" id=60]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 960, 0, 64, 77 )
+region = Rect2( 2560, 0, 64, 77 )
 
-[sub_resource type="SpriteFrames" id=61]
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2624, 0, 64, 77 )
+
+[sub_resource type="SpriteFrames" id=62]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "invert",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
-"loop": true,
-"name": "complete",
-"speed": 0.5
-}, {
-"frames": [ SubResource( 51 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"frames": [ SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "surya",
+"speed": 0.5
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ) ],
+"loop": true,
+"name": "complete",
 "speed": 0.5
 } ]
 
 [node name="Rest" type="Node2D"]
 position = Vector2( 3.0375, 4.612 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 57.8736 ]
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 352.0
@@ -337,17 +346,17 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 44.0
+margin_left = 71.0163
 margin_top = 17.0
-margin_right = 310.0
+margin_right = 337.016
 margin_bottom = 65.0
-custom_fonts/bold_font = SubResource( 65 )
-custom_fonts/normal_font = SubResource( 65 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center]Hello,  this is important.
-Please take regular breaks.[/center]"
-text = "Hello,  this is important.
-Please take regular breaks."
+bbcode_text = "[center]Hello,  for your human body safety,
+please take regular pauses.[/center]"
+text = "Hello,  for your human body safety,
+please take regular pauses."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -357,55 +366,56 @@ margin_left = 40.0
 margin_top = 65.0
 margin_right = 338.0
 margin_bottom = 151.0
-custom_fonts/normal_font = SubResource( 66 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
-bbcode_text = "Next Short Pause in
-Next Long Pause in
-Next Yoga Pause in
+bbcode_enabled = true
+bbcode_text = "Short Pause in
+Long Pause in
+Yoga Pause in
 Auto Pause Game         Sound Alerts"
-text = "Next Short Pause in
-Next Long Pause in
-Next Yoga Pause in
+text = "Short Pause in
+Long Pause in
+Yoga Pause in
 Auto Pause Game         Sound Alerts"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ShotPause" type="RichTextLabel" parent="."]
-margin_left = 179.254
-margin_top = 63.1515
-margin_right = 257.254
-margin_bottom = 86.1515
-custom_fonts/normal_font = SubResource( 66 )
+margin_left = 158.0
+margin_top = 65.0
+margin_right = 236.0
+margin_bottom = 85.0
+custom_fonts/normal_font = SubResource( 6 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LongPause" type="RichTextLabel" parent="."]
-margin_left = 179.254
+margin_left = 158.254
 margin_top = 86.0
-margin_right = 257.254
+margin_right = 236.254
 margin_bottom = 106.0
-custom_fonts/normal_font = SubResource( 66 )
+custom_fonts/normal_font = SubResource( 6 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="YogaPause" type="RichTextLabel" parent="."]
-margin_left = 179.254
+margin_left = 158.254
 margin_top = 106.0
-margin_right = 246.254
+margin_right = 225.254
 margin_bottom = 124.0
-custom_fonts/normal_font = SubResource( 66 )
+custom_fonts/normal_font = SubResource( 6 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 22.653, 13.2142 )
+position = Vector2( 21.653, 13.2142 )
 
 [node name="TimeOut" type="Timer" parent="."]
 wait_time = 20.0
@@ -492,7 +502,7 @@ modulate = Color( 1, 1, 1, 0.466667 )
 margin_left = 112.653
 margin_right = 1217.65
 margin_bottom = 639.0
-custom_fonts/normal_font = SubResource( 67 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.905882, 0.556863, 0.921569, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][url=superbutton][img=400px]res://img/64/1f441-1f5e8.png[/img][/url]
@@ -510,7 +520,7 @@ margin_left = 393.0
 margin_top = 526.0
 margin_right = 980.0
 margin_bottom = 718.0
-custom_fonts/font = SubResource( 68 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.490196, 0.490196, 0.490196, 0.811765 )
 custom_colors/font_outline_modulate = Color( 0.913725, 0.913725, 0.913725, 0.133333 )
 text = "00:00:00"
@@ -522,18 +532,18 @@ __meta__ = {
 modulate = Color( 0, 4.07, 4.62, 1 )
 position = Vector2( 257.254, 600.5 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 61 )
+frames = SubResource( 62 )
 animation = "complete"
-frame = 18
+frame = 41
 playing = true
 
 [node name="yoga2" type="AnimatedSprite" parent="BigAlert"]
 modulate = Color( 3.66, 2.16, 5.2, 1 )
 position = Vector2( 1041.75, 598.351 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 61 )
+frames = SubResource( 62 )
 animation = "surya"
-frame = 4
+frame = 8
 playing = true
 flip_h = true
 

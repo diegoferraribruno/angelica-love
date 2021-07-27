@@ -1,5 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://addons/angelica/Login/Login.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/angelica/Health/Rest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Chat/ChatMini.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/angelica/Trackers/Trackers.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/angelica/Alerts/Next.tscn" type="PackedScene" id=9]
@@ -32,3 +34,9 @@ stream = ExtResource( 17 )
 
 [node name="Dock" parent="." instance=ExtResource( 18 )]
 position = Vector2( 0, -1.68179 )
+
+[node name="Login" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24.344, 279.78 )
+
+[node name="Rest" parent="." instance=ExtResource( 2 )]
+position = Vector2( 20.453, 66.5175 )

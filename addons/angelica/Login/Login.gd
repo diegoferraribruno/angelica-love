@@ -7,7 +7,7 @@ var bad = ["1f610","1f611","1f636","1f644","1f60f","1f623","1f625","1f62e","1f91
 var rgb = [1,1,1]
 
 onready var body = get_node("../Body")
-onready var user = get_node("../User").user
+onready var user = get_node("../../User").user
 onready var emoji = user["emoji"]
 var user_list = {}
 var FILE_NAME = "user://users"
@@ -51,7 +51,7 @@ func new_user_list():
 	
 		
 func new_user():
-	var pre = "user://"+user["name"]
+	var pre = "user://"+$"LineEdit".text
 	var dirs = ["","/notes","/screenshots","/preferences","/music"]
 	var directory = Directory.new()
 	for i in dirs:
@@ -92,6 +92,7 @@ func _on_Login_meta_clicked(meta):
 				else:
 					var user_details = {"name":name,"emoji":user["emoji"], "color":user["color"], "sillyword":$"Sillyword".text}
 					user_list[name] = user_details
+					new_user()
 			else:
 				get_node("../Body").ai_say("Please write a user name.")
 		"cancel":

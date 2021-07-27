@@ -112,7 +112,7 @@ func synapse(new_text):
 				get_node("../Game/CarSelect").queue_free()
 #				$"../".visible = true
 				ai_say("Good game!")
-				quit("dj clear")
+#				quit("dj clear")
 		"love":
 			var instance = love.instance()
 			if game.has_node("Love") == false:
@@ -122,7 +122,7 @@ func synapse(new_text):
 				get_node("../Game/Love").queue_free()
 #				$"../".visible = true
 				ai_say("Good game!")
-				quit("dj clear")
+#				quit("dj clear")
 		"login":
 			var instance = login.instance()
 			if get_parent().has_node("Login") == false:
@@ -136,7 +136,7 @@ func synapse(new_text):
 			elif game.has_node("XpermaWorld"):
 				get_node("../Game/XpermaWorld").queue_free()
 				ai_say("Good game!")
-				quit("dj clear")
+#				quit("dj clear")
 		"glow":
 			if get_node("../Paint").has_node("Glow") == false:
 				var instance = glow.instance()
