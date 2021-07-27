@@ -9,5 +9,5 @@ func _process(delta):
 #	$CommandBar.visible = true
 func quit():
 	get_node("Body").quit()
-func ai_say():
-	get_node("Body").ai_say()
+func ai_say(argument):
+	get_node("Body").ai_say(argument)
