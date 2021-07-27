@@ -7,3 +7,7 @@ func _process(delta):
 		else:
 			$Body.visible = true
 #	$CommandBar.visible = true
+func quit():
+	get_node("Body").quit()
+func ai_say():
+	get_node("Body").ai_say()

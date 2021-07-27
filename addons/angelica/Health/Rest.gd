@@ -66,7 +66,7 @@ func _on_Yoga_timeout():
 	big_alert("[center][rainbow]Time for yoga!\n[url=skip]skip[/url]  [url=5min]+5 min[/url] [/center]")
 	$TimeOut.wait_time = user["yoga_timer"]
 	$TimeOut.start()
-	$"yoga".stop()
+	$"Yoga".stop()
 
 func _on_Rest_timeout():
 	autopause()

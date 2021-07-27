@@ -58,11 +58,11 @@ func synapse(new_text):
 		command = new_text.split(" ", true, 4)
 	match command[0]:
 		"rest":
-			if self.has_node("Rest") == false:
+			if get_parent().has_node("Rest") == false:
 				var instance = rest.instance()
-				self.add_child(instance)
-			elif has_node("Rest"):
-				$"Rest".visible = !$"Rest".visible
+				get_parent().add_child(instance)
+			elif get_parent().has_node("Rest"):
+				$"../Rest".visible = !$"../Rest".visible
 		"dock":
 			if self.has_node("Dock") == false:
 				var instance = dock.instance()
@@ -125,14 +125,10 @@ func synapse(new_text):
 				quit("dj clear")
 		"login":
 			var instance = login.instance()
-			if self.has_node("Login") == false:
-#				$"../".visible = false
-				add_child(instance)
-			elif self.has_node("Login"):
-				get_node("Login").queue_free()
-#				$"../".visible = true
-				ai_say("Good game!")
-				quit("dj clear")
+			if get_parent().has_node("Login") == false:
+				get_parent().add_child(instance)
+			elif get_parent().has_node("Login"):
+				get_parent().get_node("Login").queue_free()
 		"xperma":
 			if game.has_node("XpermaWorld") == false:
 				var instance = xperma.instance()
@@ -149,7 +145,6 @@ func synapse(new_text):
 			else:
 				get_node("../Paint/Glow").queue_free()
 				ai_say("Glow removed!")
-#				get_node("../../").get_tree().get_root().set_transparent_background(true)
 		"title":
 			if command.size() == 1 :
 				title.get_parent().visible = !title.get_parent().visible

@@ -1,5 +1,19 @@
 extends Node
 
+var user = {
+	"id":"",
+	"name":"Player",
+	"emoji":"1f913",
+	"sillyword":"sillyword",
+	"color": "#dfbdfbff",
+	"rgb":[1,1,1],
+	"hashtags":[],
+	"links":[],
+	"notes": [], 
+	"initialize":["title welcome to this mess","about","notes","list links"],
+	"userdata" : ["email@gmail.com","signature"]
+	}
+
 var ai_prefs = {
 	"ai_version":"190"
 	, "ai_date" : "2021-23-07"
@@ -64,10 +78,7 @@ var ai_prefs = {
 #		}
 	, "dock":{
 		"login":"1f4db",
-#		"hide":"1f4bb",
 		"xperma":"1f4ab",
-#		"editor":"1f4df",
-#		"list notes":"1f4d4",
 		"list links":"1f30e",
 		"#":"0023-20e3",
 		"mini":"1f4df",
@@ -75,10 +86,7 @@ var ai_prefs = {
 		"pong":"1f3d3",
 		"truck":"1f69a",
 		"love":"2665",
-#		"help":"2753",
-#		"save":"1f4be",
-#		"folder":"1f4c1",
-#		"demo":"1f608",
+
 		"rest":"1f441-1f5e8",
 		"bye":"274c"
 	}
@@ -92,17 +100,13 @@ var ai_prefs = {
 		"paint":"1f3a8",
 		"glow":"1f4a1"
 		}
-}
-
-var user = {
-	"id":"",
-	"name":"Player",
-	"emoji":"1f913",
-	"sillyword":"sillyword",
-	"color": "#dfbdfbff",
-	"hashtags":[],
-	"links":[],
-	"notes": [], 
-	"initialize":["title welcome to this mess","about","notes","list links"],
-	"userdata" : ["email@gmail.com","signature"]
+	, "float-menu":{
+#		"help":"2753",
+#		"save":"1f4be",
+		"folder":"1f4c1",
+#		"demo":"1f608",
+#		"editor":"1f4df",
+#		"list notes":"1f4d4",
+#		"hide":"1f4bb",
 	}
+}

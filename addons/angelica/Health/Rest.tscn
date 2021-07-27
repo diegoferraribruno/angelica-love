@@ -17,34 +17,34 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=62]
 font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=65]
 size = 14
-font_data = SubResource( 2 )
+font_data = SubResource( 62 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=63]
 font_path = "res://addons/angelica/fonts/OpenSans-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=66]
 size = 14
-font_data = SubResource( 4 )
+font_data = SubResource( 63 )
 
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=64]
 font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=67]
 size = 43
 outline_size = 4
 outline_color = Color( 0.345098, 0.345098, 0.345098, 1 )
 extra_spacing_space = 2
-font_data = SubResource( 6 )
+font_data = SubResource( 64 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=68]
 size = 140
 outline_size = 7
-font_data = SubResource( 4 )
+font_data = SubResource( 63 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
@@ -341,8 +341,8 @@ margin_left = 44.0
 margin_top = 17.0
 margin_right = 310.0
 margin_bottom = 65.0
-custom_fonts/bold_font = SubResource( 3 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 65 )
+custom_fonts/normal_font = SubResource( 65 )
 bbcode_enabled = true
 bbcode_text = "[center]Hello,  this is important.
 Please take regular breaks.[/center]"
@@ -357,7 +357,7 @@ margin_left = 40.0
 margin_top = 65.0
 margin_right = 338.0
 margin_bottom = 151.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 66 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_text = "Next Short Pause in
 Next Long Pause in
@@ -376,7 +376,7 @@ margin_left = 179.254
 margin_top = 63.1515
 margin_right = 257.254
 margin_bottom = 86.1515
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 66 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -387,7 +387,7 @@ margin_left = 179.254
 margin_top = 86.0
 margin_right = 257.254
 margin_bottom = 106.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 66 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -398,7 +398,7 @@ margin_left = 179.254
 margin_top = 106.0
 margin_right = 246.254
 margin_bottom = 124.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 66 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -492,7 +492,7 @@ modulate = Color( 1, 1, 1, 0.466667 )
 margin_left = 112.653
 margin_right = 1217.65
 margin_bottom = 639.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 67 )
 custom_colors/default_color = Color( 0.905882, 0.556863, 0.921569, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][url=superbutton][img=400px]res://img/64/1f441-1f5e8.png[/img][/url]
@@ -510,7 +510,7 @@ margin_left = 393.0
 margin_top = 526.0
 margin_right = 980.0
 margin_bottom = 718.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 68 )
 custom_colors/font_color = Color( 0.490196, 0.490196, 0.490196, 0.811765 )
 custom_colors/font_outline_modulate = Color( 0.913725, 0.913725, 0.913725, 0.133333 )
 text = "00:00:00"
@@ -524,7 +524,7 @@ position = Vector2( 257.254, 600.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 61 )
 animation = "complete"
-frame = 23
+frame = 18
 playing = true
 
 [node name="yoga2" type="AnimatedSprite" parent="BigAlert"]
@@ -533,7 +533,7 @@ position = Vector2( 1041.75, 598.351 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 61 )
 animation = "surya"
-frame = 8
+frame = 4
 playing = true
 flip_h = true
 

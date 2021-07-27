@@ -38,7 +38,7 @@ var menu_bottom = [
 #	"[url=command][img]res://img/32/1f4f1.png[/img][/url] ",
 ]
 var menu_side = [""]
-onready var user_dock = $"../User".ai_prefs
+onready var user_dock = $"../../User".ai_prefs
 func _ready():
 	var menu = []
 	for i in user_dock["dock"]:

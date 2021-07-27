@@ -6,7 +6,7 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.894118 )
 border_width_left = 8
-border_width_top = 38
+border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
 border_color = Color( 0.184314, 0.184314, 0.184314, 1 )
@@ -29,19 +29,17 @@ script = ExtResource( 2 )
 [node name="Panel" type="Panel" parent="."]
 margin_top = -1.0
 margin_right = 486.0
-margin_bottom = 182.0
+margin_bottom = 153.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SuperButton" parent="." instance=ExtResource( 1 )]
-
 [node name="Interface" type="RichTextLabel" parent="."]
 margin_left = 8.0
-margin_top = 46.0
+margin_top = 14.0
 margin_right = 219.0
-margin_bottom = 168.0
+margin_bottom = 136.0
 focus_mode = 2
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0.87451, 0.690196, 0, 1 )
@@ -64,9 +62,9 @@ __meta__ = {
 
 [node name="Interface2" type="RichTextLabel" parent="."]
 margin_left = 236.352
-margin_top = 72.2162
+margin_top = 40.2162
 margin_right = 255.352
-margin_bottom = 135.216
+margin_bottom = 103.216
 focus_mode = 2
 bbcode_enabled = true
 bbcode_text = "[url=to_note][img]res://img/16/2b05.png[/img][/url]
@@ -83,13 +81,16 @@ __meta__ = {
 
 [node name="LineEdit" type="TextEdit" parent="."]
 margin_left = 258.0
-margin_top = 43.0
+margin_top = 11.0
 margin_right = 474.0
-margin_bottom = 170.0
+margin_bottom = 138.0
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SuperButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 103.216 )
 
 [connection signal="meta_clicked" from="Interface2" to="." method="_on_Interface2_meta_clicked"]

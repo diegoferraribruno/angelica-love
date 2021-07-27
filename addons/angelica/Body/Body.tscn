@@ -1,12 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://addons/angelica/default/User.gd" type="Script" id=1]
-[ext_resource path="res://addons/angelica/Health/Rest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Chat/ChatMini.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/angelica/Trackers/Trackers.tscn" type="PackedScene" id=4]
-[ext_resource path="res://addons/angelica/DJ/DJ.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/angelica/Alerts/Next.tscn" type="PackedScene" id=9]
-[ext_resource path="res://addons/angelica/Login/Login.tscn" type="PackedScene" id=10]
 [ext_resource path="res://addons/kenney_interface_sounds/switch_002.wav" type="AudioStream" id=17]
 [ext_resource path="res://addons/angelica/Dock/Dock.tscn" type="PackedScene" id=18]
 [ext_resource path="res://addons/angelica/Themes/Hint.tscn" type="PackedScene" id=21]
@@ -21,7 +17,7 @@ script = ExtResource( 35 )
 position = Vector2( 814.877, 534.033 )
 
 [node name="Mini" parent="." instance=ExtResource( 3 )]
-position = Vector2( 918.419, 334.966 )
+position = Vector2( 22.4308, 583.685 )
 
 [node name="Hint" parent="." instance=ExtResource( 21 )]
 visible = false
@@ -31,21 +27,8 @@ position = Vector2( 8.39134, 44.6763 )
 visible = false
 position = Vector2( 1230.37, 206.956 )
 
-[node name="DJ" parent="." instance=ExtResource( 5 )]
-pause_mode = 1
-position = Vector2( 687.227, 87.8167 )
-
-[node name="Login" parent="." instance=ExtResource( 10 )]
-position = Vector2( 228.114, 369.678 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 
 [node name="Dock" parent="." instance=ExtResource( 18 )]
 position = Vector2( 0, -1.68179 )
-
-[node name="Rest" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128.331, 84.4972 )
-
-[node name="User" type="Node" parent="."]
-script = ExtResource( 1 )

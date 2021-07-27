@@ -2,7 +2,7 @@ extends KinematicBody2D
 var emoji = ""
 
 func append_emoji(argument):
-	get_parent().append_emoji(argument)
+	get_parent().change_emoji(argument)
 	get_node("AvatarHead").bbcode_text = "[url][img]res://img/32/"+argument+".png[/img][/url]"
 	$"EmojiPanel".visible = false
 

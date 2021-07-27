@@ -11,7 +11,7 @@ var about = {
 	"suppermenu_v":["clear","edit chat","copy all","list links","list notes"],
 }
 
-onready var user = get_parent().get_node("User").user
+onready var user = get_node("../../User").user
 onready var ai_prefs = $User.ai_prefs
 
 onready var nvc = $NVC.nvc

@@ -10161,7 +10161,7 @@ animations = [ {
 radius = 14.8848
 height = 0.0
 
-[sub_resource type="CapsuleShape2D" id=2024]
+[sub_resource type="CapsuleShape2D" id=2029]
 radius = 13.622
 height = 14.2625
 
@@ -10249,7 +10249,7 @@ __meta__ = {
 position = Vector2( 1, 5 )
 frames = SubResource( 2022 )
 animation = "stand"
-frame = 4
+frame = 1
 playing = true
 offset = Vector2( 0, -15 )
 
@@ -10289,7 +10289,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.84183, -19.6431 )
-shape = SubResource( 2024 )
+shape = SubResource( 2029 )
 
 [node name="Object" type="RichTextLabel" parent="."]
 margin_left = -16.0
