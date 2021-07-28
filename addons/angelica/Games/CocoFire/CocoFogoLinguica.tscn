@@ -33,51 +33,47 @@ font_data = ExtResource( 2 )
 [node name="Super-Flying-Shit-On-Fire" type="Node2D"]
 
 [node name="Panel" type="RichTextLabel" parent="."]
-margin_left = 2.0
-margin_right = 621.0
-margin_bottom = 395.0
+margin_right = 640.0
+margin_bottom = 360.0
 custom_styles/normal = SubResource( 3 )
 custom_colors/default_color = Color( 0.27451, 0.0313726, 0.337255, 1 )
 bbcode_text = "
 
 
 
-EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAA
+EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAA
 
 
 
-
-
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 
 
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 "
 text = "
 
 
 
-EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAA
+EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAA
 
 
 
-
-
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 
 
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 "
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 121.202, 169.106 )
+position = Vector2( 136.661, 166.879 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -118,10 +114,10 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 39.0594
-margin_top = 250.654
-margin_right = 617.059
-margin_bottom = 334.654
+margin_left = 44.3568
+margin_top = 224.168
+margin_right = 622.357
+margin_bottom = 308.168
 bbcode_enabled = true
 bbcode_text = "[img]res://img/32/1f4bb.png[/img]           [img]res://img/32/1f3ae.png[/img]           [img]res://img/32/1f35f.png[/img]             [img]res://img/32/1f354.png[/img]         [img]res://img/64/1f422.png[/img]          [img]res://img/32/2605.png[/img]            [img]res://img/32/1f344.png[/img]         "
 text = "                                                                           "
@@ -131,10 +127,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 514.773
-margin_top = 168.011
-margin_right = 606.773
-margin_bottom = 252.011
+margin_left = 526.687
+margin_top = 166.26
+margin_right = 618.687
+margin_bottom = 250.26
 bbcode_enabled = true
 bbcode_text = "[img]res://img/64/1f6bd.png[/img]"
 scroll_active = false
@@ -144,7 +140,7 @@ __meta__ = {
 
 [node name="Bullet" type="Node2D" parent="."]
 modulate = Color( 13.29, 1.16, 1.73, 1 )
-position = Vector2( 254.62, 143.973 )
+position = Vector2( 227.701, 147.043 )
 rotation = -1.5708
 __meta__ = {
 "_edit_group_": true
@@ -162,8 +158,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Bullet2" type="Node2D" parent="."]
+modulate = Color( 13.29, 1.16, 1.73, 1 )
+position = Vector2( 323.053, 124.795 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Bullet2"]
+margin_left = -8.0
+margin_top = -7.0
+margin_right = 13.0
+margin_bottom = 11.0
+bbcode_enabled = true
+bbcode_text = "[img]res://img/16/1f525.png[/img][img]res://img/16/1f4a7.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bullet3" type="Node2D" parent="."]
+modulate = Color( 13.29, 1.16, 1.73, 1 )
+position = Vector2( 282.793, 170.352 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Bullet3"]
+margin_left = -8.0
+margin_top = -7.0
+margin_right = 13.0
+margin_bottom = 11.0
+bbcode_enabled = true
+bbcode_text = "[img]res://img/16/1f525.png[/img][img]res://img/16/1f4a7.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Enemy" type="Node2D" parent="."]
-position = Vector2( 406.834, 217.774 )
+position = Vector2( 431.829, 191.179 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -220,27 +256,27 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 72.0
-margin_top = 17.0
-margin_right = 535.0
-margin_bottom = 78.0
+margin_left = 64.2973
+margin_top = 19.0
+margin_right = 588.297
+margin_bottom = 80.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 7
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center][rainbow]Flying-Poop-On-Fire[/rainbow][/center]"
-text = "Flying-Poop-On-Fire"
+bbcode_text = "[center][wave][rainbow]Flying-Poop-Shooting-Fire[/rainbow][/wave][/center]"
+text = "Flying-Poop-Shooting-Fire"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title2" type="RichTextLabel" parent="."]
-margin_left = 29.0
-margin_top = 335.0
-margin_right = 594.0
-margin_bottom = 381.0
+margin_left = 43.8325
+margin_top = 305.335
+margin_right = 608.832
+margin_bottom = 351.335
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 7

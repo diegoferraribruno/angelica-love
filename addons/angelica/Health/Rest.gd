@@ -4,7 +4,7 @@ var icon = "1f441-1f5e8"
 var mini = true
 var close = true
 var autohide
-
+var editing = "short pause"
 func _ready():
 	$"Blink".wait_time = user["blink_time"]
 	$"Rest".wait_time = user["rest_time"]
@@ -147,3 +147,39 @@ func sound(alarm):
 
 func _on_CheckBox5_pressed():
 	user["sounds"] = !user["sounds"]
+
+
+func _on_RichTextLabel2_meta_clicked(meta):
+	$"ChangeSetting/title".text = meta
+	editing = meta
+	$"ChangeSetting".position = get_local_mouse_position() - Vector2(20, -20)
+	$"ChangeSetting".visible = true
+func _on_RichTextLabel3_meta_clicked(meta):
+	match editing:
+		"short pause":
+			editing = "blink"
+		"long pause":
+			editing = "rest"
+		"yoga pause":
+			editing = "yoga"
+	var time = (editing+"_time")
+	match meta:
+		"1min":
+			user[time] += 60
+		"5min":
+			user[time] += 300
+		"10min":
+			user[time] += 600
+		"-1min":
+			user[time] += -60
+		"-5min":
+			user[time] += -300
+		"-10min":
+			user[time] += -600
+	if user[time] <= 0:
+		user[time] = 60
+	$"Blink".wait_time = user["blink_time"]
+	$"Rest".wait_time = user["rest_time"]
+	$"Yoga".wait_time = user["yoga_time"]
+	var timer = editing.capitalize()
+	get_node(timer).start(0)

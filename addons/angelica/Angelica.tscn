@@ -25,7 +25,7 @@ margin_right = 3.0
 margin_bottom = 5.0
 
 [node name="Title" parent="Paint" instance=ExtResource( 2 )]
-position = Vector2( -14.8633, -2.51074 )
+position = Vector2( 6.46348, 8.71388 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2.5199, 10.0793 )

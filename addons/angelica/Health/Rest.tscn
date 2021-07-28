@@ -4,6 +4,7 @@
 [ext_resource path="res://addons/OpenPathMusic44v1/flexatone.wav" type="AudioStream" id=2]
 [ext_resource path="res://addons/angelica/Health/Rest.gd" type="Script" id=3]
 [ext_resource path="res://img/yoga/rect893c.png" type="Texture" id=4]
+[ext_resource path="res://addons/angelica/Health/Changesetting.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0941176, 0.262745, 0.384314, 0.909804 )
@@ -331,18 +332,6 @@ animations = [ {
 "speed": 0.5
 } ]
 
-[sub_resource type="StyleBoxFlat" id=63]
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [node name="Rest" type="Node2D"]
 position = Vector2( 3.0375, 4.612 )
 script = ExtResource( 3 )
@@ -382,14 +371,14 @@ margin_bottom = 151.0
 custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "Short Pause in
-Long Pause in
-Yoga Pause in
-Auto Pause Game         Sound Alerts"
+bbcode_text = "[url=short pause]Short Pause[/url] in
+[url=long pause]Long Pause[/url] in
+[url=yoga pause]Yoga Pause[/url] in
+Auto Pause Game     Sound Alerts"
 text = "Short Pause in
 Long Pause in
 Yoga Pause in
-Auto Pause Game         Sound Alerts"
+Auto Pause Game     Sound Alerts"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -547,7 +536,7 @@ position = Vector2( 257.254, 600.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 62 )
 animation = "complete"
-frame = 38
+frame = 35
 playing = true
 
 [node name="yoga2" type="AnimatedSprite" parent="BigAlert"]
@@ -556,20 +545,57 @@ position = Vector2( 1041.75, 598.351 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 62 )
 animation = "surya"
-frame = 3
+frame = 5
 playing = true
 flip_h = true
 
-[node name="Panel4" type="Panel" parent="."]
-margin_left = 256.0
-margin_top = 59.0
-margin_right = 336.0
-margin_bottom = 84.0
-custom_styles/panel = SubResource( 63 )
+[node name="ChangeSetting" type="Node2D" parent="."]
+position = Vector2( 61, 137.5 )
+script = ExtResource( 5 )
+
+[node name="Panel2" type="Panel" parent="ChangeSetting"]
+margin_right = 245.0
+margin_bottom = 80.0
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="title" type="RichTextLabel" parent="ChangeSetting"]
+margin_left = 113.976
+margin_top = 9.0
+margin_right = 212.976
+margin_bottom = 27.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "Short Pause"
+text = "Short Pause"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ChangeSetting"]
+margin_left = 78.0
+margin_top = 27.0
+margin_right = 236.0
+margin_bottom = 71.0
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center][url=1min]+1min[/url] [url=5min]+5min[/url] [url=10min]+10min[/url][/center]
+[center][url=-1min]-1min[/url]  [url=-5min]-5min[/url]  [url=-10min]-10min[/url][/center]"
+text = "+1min +5min +10min
+-1min  -5min  -10min"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuperButton" parent="ChangeSetting" instance=ExtResource( 1 )]
+position = Vector2( 14.0163, 13.652 )
+
+[connection signal="meta_clicked" from="RichTextLabel2" to="." method="_on_RichTextLabel2_meta_clicked"]
 [connection signal="timeout" from="TimeOut" to="." method="_on_TimeOut_timeout"]
 [connection signal="timeout" from="Blink" to="." method="_on_Blink_timeout"]
 [connection signal="timeout" from="Rest" to="." method="_on_Rest_timeout"]
@@ -581,3 +607,5 @@ __meta__ = {
 [connection signal="pressed" from="CheckBox4" to="." method="_on_CheckBox4_pressed"]
 [connection signal="pressed" from="CheckBox5" to="." method="_on_CheckBox5_pressed"]
 [connection signal="meta_clicked" from="BigAlert/Text" to="." method="_on_BigAlert_meta_clicked"]
+[connection signal="meta_clicked" from="ChangeSetting/title" to="." method="_on_RichTextLabel2_meta_clicked"]
+[connection signal="meta_clicked" from="ChangeSetting/RichTextLabel3" to="." method="_on_RichTextLabel3_meta_clicked"]
