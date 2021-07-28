@@ -18,10 +18,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 41.0
-margin_top = 24.0
-margin_right = 1322.0
-margin_bottom = 135.0
+margin_left = 60.3784
+margin_top = 4.64886
+margin_right = 1312.38
+margin_bottom = 115.649
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 7

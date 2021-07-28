@@ -49,12 +49,12 @@ Game="*res://src/singletons/Game.gd"
 [display]
 
 window/size/width=1366
-window/size/height=768
+window/size/height=708
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Godoxel/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [input]
 

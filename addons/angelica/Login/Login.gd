@@ -6,7 +6,7 @@ var good = ["1f600","1f601","1f602","1f603","1f604","1f605","1f606","1f609","1f6
 var bad = ["1f610","1f611","1f636","1f644","1f60f","1f623","1f625","1f62e","1f910","1f62f","1f62a","1f62b","1f634","1f924","1f612","1f613","1f614","1f615","2639","1f641","1f616","1f61e","1f61f","1f624","1f622","1f62d","1f626","1f627","1f628","1f629","1f62c","1f630","1f633","1f635","1f621","1f479","1f922","1f915","1f912","1f637"]
 var rgb = [1,1,1]
 
-onready var body = get_node("../Body")
+onready var body = get_node("../")
 onready var user = get_node("../../User").user
 onready var emoji = user["emoji"]
 var user_list = {}
@@ -29,14 +29,14 @@ func load_user_list():
 		if typeof(data) == TYPE_DICTIONARY:
 			user_list = data
 			if data.size() == 0:
-				get_node("../Body").ai_say("OH! oh nobdy registered yet")
+				body.ai_say("OH! oh nobdy registered yet")
 			else:
 				$"LoadPlayer".visible
 				for i in user_list:
 					$"LoadPlayer/RichTextLabel".bbcode_text += "[center][url="+i+"][img]res://img/16/"+user_list[i]["emoji"]+".png[/img][color="+user_list[i]["color"]+"] "+i+"[/color][/url][/center]"
 					
 #			lastposition = ai_prefs[11]
-#			get_node("../Body").ai_say("OH! it is you [b][color="+user["color"]+"]"+user["name"]+"[/color][/b]?")
+#			body.ai_say("OH! it is you [b][color="+user["color"]+"]"+user["name"]+"[/color][/b]?")
 	else:
 			new_user_list()
 #			printerr("No saved data! type 'save' to make a new file. \n Remember to aways save after making changes.")
@@ -47,7 +47,7 @@ func new_user_list():
 	file.open(FILE_NAME, File.WRITE)
 	file.store_string(to_json(user_list))
 	file.close()
-	get_node("../Body").ai_say("users file created")
+	body.ai_say("users file created")
 	
 		
 func new_user():
@@ -80,7 +80,7 @@ func _on_Login_meta_clicked(meta):
 			if name != "":
 				if name in user_list:
 					if check_silly_word(name) == true:
-						get_node("../Body").ai_say("match password")
+						body.ai_say("match password")
 						user["name"] = name
 	#					user["emoji"] = emoji
 						user_list[name]["emoji"] = user["emoji"]
@@ -94,7 +94,7 @@ func _on_Login_meta_clicked(meta):
 					user_list[name] = user_details
 					new_user()
 			else:
-				get_node("../Body").ai_say("Please write a user name.")
+				body.ai_say("Please write a user name.")
 		"cancel":
 			$"LineEdit".text = ""
 			$"Sillyword".text = ""
@@ -105,7 +105,7 @@ func check_silly_word(name):
 		print(savedsillyword)
 		return true
 	else:
-		get_node("../Body").ai_say("Silly Word does not match")
+		body.ai_say("Silly Word does not match")
 		return false
 		
 func modulate():

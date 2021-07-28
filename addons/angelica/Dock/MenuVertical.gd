@@ -50,8 +50,8 @@ func construct_menu():
 	var text_menu = "\n"
 	for i in menu_bottom:
 		text_menu += "[right]"+i+"[/right]\n"
-	bbcode_text = text_menu + "[right][img]res://img/48/0001.png[/img][/right]\n"
-	reflex.bbcode_text = text_menu + "[right][img]res://img/48/0001.png[/img][/right]\n"
+	bbcode_text = text_menu + "[right][img]res://img/48/0000.png[/img][/right]\n"
+	reflex.bbcode_text = text_menu + "[right][img]res://img/48/0000.png[/img][/right]\n"
 
 var clonemenu = menu_bottom
 

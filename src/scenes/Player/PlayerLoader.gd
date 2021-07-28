@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var user = get_node("../../../../User").user
+onready var user = get_parent().get_node("../../../../User").user
 onready var emoji = user["emoji"]
 
 #

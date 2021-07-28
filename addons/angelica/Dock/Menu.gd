@@ -3,8 +3,8 @@ extends RichTextLabel
 onready var hint= get_node("../../../Hint")
 onready var reflex = get_node("../Reflex/Menu_reflex")
 
-var menu_bottom = [""
-]
+var menu_bottom = [""]
+
 func _ready() -> void:
 	connect("meta_clicked", self, "handle")
 	menu_show()
@@ -12,7 +12,7 @@ func _ready() -> void:
 #	yield(get_tree().add_child(Timer,"Timer",4,false),"TimeOut")
 #	construct_menu()
 func handle(argument):
-	get_node("../../..").input_entered(argument)
+	get_node("../../../").input_entered(argument)
 	
 func menu_show():
 	yield(get_tree().create_timer(1), "timeout")

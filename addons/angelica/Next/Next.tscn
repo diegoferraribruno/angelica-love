@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/angelica/Alerts/NextFeatures.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/Next/NextFeatures.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.894118 )
@@ -28,7 +28,7 @@ script = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_top = -1.0
-margin_right = 486.0
+margin_right = 446.0
 margin_bottom = 153.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
@@ -36,7 +36,7 @@ __meta__ = {
 }
 
 [node name="Interface" type="RichTextLabel" parent="."]
-margin_left = 8.0
+margin_left = 12.0
 margin_top = 14.0
 margin_right = 219.0
 margin_bottom = 136.0
@@ -61,9 +61,9 @@ __meta__ = {
 }
 
 [node name="Interface2" type="RichTextLabel" parent="."]
-margin_left = 236.352
+margin_left = 219.0
 margin_top = 40.2162
-margin_right = 255.352
+margin_right = 238.0
 margin_bottom = 103.216
 focus_mode = 2
 bbcode_enabled = true
@@ -80,9 +80,9 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="TextEdit" parent="."]
-margin_left = 258.0
+margin_left = 238.0
 margin_top = 11.0
-margin_right = 474.0
+margin_right = 434.0
 margin_bottom = 138.0
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 3 )

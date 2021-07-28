@@ -14,8 +14,8 @@ onready var alarm = $"AudioStreamPlayer"
 onready var game = get_parent().get_node("Game")
 onready var screenSize = get_viewport().get_visible_rect().size
 onready var title = get_node("../Paint/Title/Title")
-#onready var Cbar = get_node("../CommandBar")
 onready var music = {"main":{"BPM":130,"name":"playing"},"tracks":{"0":{"BPM":260,"audiopack":"kenney","beat":"Ambient","fx":0,"loop":true,"volume":0},"1":{"BPM":130,"audiopack":"kylan","beat":"<><<>><< ","fx":0,"loop":true,"volume":0},"2":{"BPM":130,"audiopack":"openpath1","beat":"Diego01","fx":0,"loop":true,"volume":-11.428571}}}
+#onready var Cbar = get_node("../CommandBar")
 
 var paint = preload("res://addons/angelica/GDPaint/PaintTools.tscn")
 var pong = preload("res://addons/angelica/Games/Pong/pong.tscn")
@@ -31,6 +31,8 @@ var dj = preload("res://addons/angelica/DJ/DJ.tscn")
 var dock = preload("res://addons/angelica/Dock/Dock.tscn")
 var mini = preload("res://addons/angelica/Chat/ChatMini.tscn")
 var rest = preload("res://addons/angelica/Health/Rest.tscn")
+var next = preload("res://addons/angelica/Next/Next.tscn")
+var star = preload("res://addons/angelica/Star/Star.tscn")
 
 func text_entered(argument):
 	synapse(argument)
@@ -58,17 +60,29 @@ func synapse(new_text):
 		command = new_text.split(" ", true, 4)
 	match command[0]:
 		"rest":
-			if get_parent().has_node("Rest") == false:
+			if self.has_node("Rest") == false:
 				var instance = rest.instance()
-				get_parent().add_child(instance)
-			elif get_parent().has_node("Rest"):
-				$"../Rest".visible = !$"../Rest".visible
+				self.add_child(instance)
+			elif self.has_node("Rest"):
+				$"Rest".visible = !$"Rest".visible
+		"next":
+			if self.has_node("Next") == false:
+				var instance = rest.instance()
+				self.add_child(instance)
+			elif self.has_node("Next"):
+				$"Next".visible = !$"Next".visible
+		"star":
+			if self.has_node("Star") == false:
+				var instance = star.instance()
+				self.add_child(instance)
+			elif self.has_node("Star"):
+				$"Star".visible = !$"Star".visible
 		"dock":
-			if self.has_node("Dock") == false:
+			if get_parent().has_node("Dock") == false:
 				var instance = dock.instance()
 				self.add_child(instance)
 			else:
-				get_node("Dock").queue_free()
+				get_parent().get_node("Dock").queue_free()
 		"mini":
 			$Mini.visible = !$Mini.visible
 		"volume":
@@ -102,8 +116,8 @@ func synapse(new_text):
 				ai_say("Chat Off")
 				
 		"truck":
-			var instance = truck.instance()
 			if game.has_node("CarSelect") == false:
+				var instance = truck.instance()
 #				$"../".visible = false
 				game.add_child(instance)
 			elif game.has_node("CarSelect"):
@@ -125,10 +139,10 @@ func synapse(new_text):
 #				quit("dj clear")
 		"login":
 			var instance = login.instance()
-			if get_parent().has_node("Login") == false:
-				get_parent().add_child(instance)
-			elif get_parent().has_node("Login"):
-				get_parent().get_node("Login").queue_free()
+			if self.has_node("Login") == false:
+				self.add_child(instance)
+			elif self.has_node("Login"):
+				get_node("Login").queue_free()
 		"xperma":
 			if game.has_node("XpermaWorld") == false:
 				var instance = xperma.instance()
@@ -153,23 +167,23 @@ func synapse(new_text):
 				title.bbcode_text = new_text
 				title.get_parent().visible = true
 		"paint":
-			var instance = paint.instance()
 			if self.has_node("PaintTools") == false:
+				var instance = paint.instance()
 				visible = true
 				self.add_child(instance)
 			else:
 				get_node("PaintTools").visible = !get_node("PaintTools").visible 
 		"studio":
-			var instance = studio.instance()
 			if self.has_node("Studio") == false:
+				var instance = studio.instance()
 				visible = true
 				self.add_child(instance)
 			elif self.has_node("Studio"):
 				get_node("Studio").visible = !get_node("Studio").visible
 		"dj":
 			if command.size() == 1:
-				var instance = dj.instance()
 				if self.has_node("DJ") == false:
+					var instance = dj.instance()
 					visible = true
 					self.add_child(instance)
 				elif self.has_node("DJ"):

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/angelica/Games/CocoFire/CocoFogoLinguica.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/angelica/Star/Star.gd" type="Script" id=3]
+
+[node name="Star" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CocoFogoLinguica" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2, 0 )
+
+[node name="SuperButton" parent="." instance=ExtResource( 2 )]
+position = Vector2( 16.6489, 15.4597 )

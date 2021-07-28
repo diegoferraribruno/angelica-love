@@ -4,9 +4,9 @@
 [ext_resource path="res://addons/angelica/Health/Rest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Chat/ChatMini.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/angelica/Trackers/Trackers.tscn" type="PackedScene" id=4]
-[ext_resource path="res://addons/angelica/Alerts/Next.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/angelica/Star/Star.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/angelica/Next/Next.tscn" type="PackedScene" id=9]
 [ext_resource path="res://addons/kenney_interface_sounds/switch_002.wav" type="AudioStream" id=17]
-[ext_resource path="res://addons/angelica/Dock/Dock.tscn" type="PackedScene" id=18]
 [ext_resource path="res://addons/angelica/Themes/Hint.tscn" type="PackedScene" id=21]
 [ext_resource path="res://addons/angelica/Body/Spine.gd" type="Script" id=35]
 
@@ -16,10 +16,12 @@ sort_enabled = false
 script = ExtResource( 35 )
 
 [node name="Next" parent="." instance=ExtResource( 9 )]
-position = Vector2( 814.877, 534.033 )
+visible = false
+position = Vector2( 20.1954, 493.052 )
 
 [node name="Mini" parent="." instance=ExtResource( 3 )]
-position = Vector2( 22.4308, 583.685 )
+visible = false
+position = Vector2( 970.347, 491.032 )
 
 [node name="Hint" parent="." instance=ExtResource( 21 )]
 visible = false
@@ -32,11 +34,10 @@ position = Vector2( 1230.37, 206.956 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 
-[node name="Dock" parent="." instance=ExtResource( 18 )]
-position = Vector2( 0, -1.68179 )
-
 [node name="Login" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24.344, 279.78 )
+position = Vector2( 874.261, 99.8186 )
 
 [node name="Rest" parent="." instance=ExtResource( 2 )]
-position = Vector2( 20.453, 66.5175 )
+position = Vector2( 506.884, 463.858 )
+
+[node name="Star" parent="." instance=ExtResource( 5 )]

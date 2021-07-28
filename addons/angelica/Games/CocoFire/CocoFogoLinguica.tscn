@@ -1,0 +1,254 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/angelica/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://img/64/2691.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.4, 0.0980392, 0.588235, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.635294, 0.164706, 0.164706, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 24.7312
+height = 9.3089
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+outline_size = 2
+outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 4
+extra_spacing_bottom = 2
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[node name="Super-Flying-Shit-On-Fire" type="Node2D"]
+
+[node name="Panel" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_right = 621.0
+margin_bottom = 395.0
+custom_styles/normal = SubResource( 3 )
+custom_colors/default_color = Color( 0.27451, 0.0313726, 0.337255, 1 )
+bbcode_text = "
+
+
+
+EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAA
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+"
+text = "
+
+
+
+EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAA
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 121.202, 169.106 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Player"]
+margin_left = -19.4588
+margin_top = -69.5746
+margin_right = 58.5412
+margin_bottom = 35.4254
+bbcode_enabled = true
+bbcode_text = "[img]res://img/32/1f525.png[/img]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shadow" type="Sprite" parent="Player"]
+modulate = Color( 1, 1, 1, 0.364706 )
+position = Vector2( 0.943207, 60.1982 )
+scale = Vector2( 1, 0.447573 )
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Player"]
+modulate = Color( 9.83, 1.75, 1, 1 )
+margin_left = -31.0
+margin_top = -42.0
+margin_right = 37.0
+margin_bottom = 26.0
+bbcode_enabled = true
+bbcode_text = "[img]res://img/64/1f4a9.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.152863, -4.85413 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 39.0594
+margin_top = 250.654
+margin_right = 617.059
+margin_bottom = 334.654
+bbcode_enabled = true
+bbcode_text = "[img]res://img/32/1f4bb.png[/img]           [img]res://img/32/1f3ae.png[/img]           [img]res://img/32/1f35f.png[/img]             [img]res://img/32/1f354.png[/img]         [img]res://img/64/1f422.png[/img]          [img]res://img/32/2605.png[/img]            [img]res://img/32/1f344.png[/img]         "
+text = "                                                                           "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 514.773
+margin_top = 168.011
+margin_right = 606.773
+margin_bottom = 252.011
+bbcode_enabled = true
+bbcode_text = "[img]res://img/64/1f6bd.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bullet" type="Node2D" parent="."]
+modulate = Color( 13.29, 1.16, 1.73, 1 )
+position = Vector2( 254.62, 143.973 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Bullet"]
+margin_left = -8.0
+margin_top = -7.0
+margin_right = 13.0
+margin_bottom = 11.0
+bbcode_enabled = true
+bbcode_text = "[img]res://img/16/1f525.png[/img][img]res://img/16/1f4a7.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2( 406.834, 217.774 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="shadow" type="Sprite" parent="Enemy"]
+modulate = Color( 1, 1, 1, 0.364706 )
+position = Vector2( 7.30002, 17.8197 )
+scale = Vector2( 0.7, 0.448 )
+texture = ExtResource( 3 )
+
+[node name="Hot-Dog" type="Node2D" parent="Enemy"]
+modulate = Color( 2, 0.73, 0.73, 1 )
+position = Vector2( 55.3096, -22.5522 )
+rotation = 2.35619
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Enemy/Hot-Dog"]
+margin_left = 3.05176e-05
+margin_top = -2.1189
+margin_right = 82.0
+margin_bottom = 74.8811
+bbcode_enabled = true
+bbcode_text = " [img]res://img/64/1f32d.png[/img]"
+text = " "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Enemy"]
+margin_left = -22.5298
+margin_top = -63.0432
+margin_right = 90.4702
+margin_bottom = 46.9568
+bbcode_enabled = true
+bbcode_text = " [img]res://img/32/1f440.png[/img][img]res://img/16/1f442.png[/img]
+  [img]res://img/16/1f443.png[/img]
+   [img]res://img/16/1f48b.png[/img]"
+text = " 
+  
+   "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Enemy"]
+margin_left = -37.4393
+margin_top = -30.2494
+margin_right = -11.4393
+margin_bottom = -3.24937
+bbcode_enabled = true
+bbcode_text = "[img]res://img/16/270a.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 72.0
+margin_top = 17.0
+margin_right = 535.0
+margin_bottom = 78.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 7
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][rainbow]Flying-Poop-On-Fire[/rainbow][/center]"
+text = "Flying-Poop-On-Fire"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="RichTextLabel" parent="."]
+margin_left = 29.0
+margin_top = 335.0
+margin_right = 594.0
+margin_bottom = 381.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 7
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Later, only on angelica"
+text = "Later, only on angelica"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

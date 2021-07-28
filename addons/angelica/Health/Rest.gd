@@ -36,10 +36,8 @@ func _on_TimeOut_timeout():
 #	$"TimeOut".stop()
 	$"BigAlert".visible = false
 #	$"BigAlert".position = $"BigAlert".position-position
-	
 	if autohide == true:
 		visible = false
-		
 	sound("timeout")
 ###antes da pause
 #	if yoga == true:

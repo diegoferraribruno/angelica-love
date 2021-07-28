@@ -77,33 +77,34 @@ var ai_prefs = {
 #		"xperma":"1f4ab",
 #		}
 	, "dock":{
-		"login":"1f4db",
 		"xperma":"1f4ab",
-		"list links":"1f30e",
-		"#":"0023-20e3",
-		"mini":"1f4df",
-		"chat":"1f5e8",
-		"pong":"1f3d3",
-		"truck":"1f69a",
 		"love":"2665",
-
+		"truck":"1f69a",
+		"pong":"1f3d3",
+		"login":"1f4db",
+		"chat":"1f5e8",
+		"mini":"1f4df",
+		"star":"2605",
+		"next":"26a0",
 		"rest":"1f441-1f5e8",
 		"bye":"274c"
 	}
 	, "side_dock":{
-		"studio":"1f3ac",
-		"ss":"1f4f7",
-		"selfie":"1f4f9",
 		"volume":"1f4e2",
 		"dj":"1f3a7",
 		"pause":"23ef",
+		"studio":"1f3ac",
+		"ss":"1f4f7",
+		"selfie":"1f4f9",
 		"paint":"1f3a8",
 		"glow":"1f4a1"
 		}
 	, "float-menu":{
+		"#":"0023-20e3",
+		"list links":"1f30e",
+		"folder":"1f4c1",
 #		"help":"2753",
 #		"save":"1f4be",
-		"folder":"1f4c1",
 #		"demo":"1f608",
 #		"editor":"1f4df",
 #		"list notes":"1f4d4",

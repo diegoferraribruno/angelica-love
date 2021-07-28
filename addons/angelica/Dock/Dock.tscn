@@ -11,7 +11,7 @@
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.298039, 0.298039, 0.298039, 0.494118 )
+bg_color = Color( 0.2, 0.2, 0.2, 0.317647 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -32,9 +32,9 @@ anchor_top = 0.119444
 anchor_right = -0.025
 anchor_bottom = 0.119444
 margin_left = 62.0
-margin_top = 338.0
+margin_top = 351.0
 margin_right = 575.0
-margin_bottom = 369.0
+margin_bottom = 382.0
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
@@ -42,8 +42,8 @@ __meta__ = {
 }
 
 [node name="Reflex" type="Node2D" parent="State_machine/Bottom"]
-modulate = Color( 1, 1, 1, 0.490196 )
-position = Vector2( 57.8141, 314.383 )
+modulate = Color( 1, 1, 1, 0.372549 )
+position = Vector2( 57.8141, 327.383 )
 scale = Vector2( 1, -1 )
 
 [node name="Menu_reflex" type="RichTextLabel" parent="State_machine/Bottom/Reflex"]
@@ -76,9 +76,9 @@ anchor_top = 0.107444
 anchor_right = -0.025
 anchor_bottom = 0.107444
 margin_left = 58.0
-margin_top = 297.0
+margin_top = 310.0
 margin_right = 589.0
-margin_bottom = 347.0
+margin_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_clip_content = false
@@ -110,7 +110,7 @@ __meta__ = {
 }
 
 [node name="Reflex" type="Node2D" parent="State_machine/Right"]
-modulate = Color( 1, 1, 1, 0.490196 )
+modulate = Color( 1, 1, 1, 0.254902 )
 position = Vector2( -10.7415, -0.209481 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
@@ -130,7 +130,7 @@ custom_colors/default_color = Color( 0.698039, 0.666667, 0.666667, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 bbcode_enabled = true
-bbcode_text = "[img]res://img/48/0001.png[/img]"
+bbcode_text = "[img]res://img/48/0000.png[/img]"
 meta_underlined = false
 tab_size = 1
 scroll_active = false
@@ -153,7 +153,7 @@ custom_colors/default_color = Color( 0.698039, 0.666667, 0.666667, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 bbcode_enabled = true
-bbcode_text = "[img]res://img/48/0001.png[/img]"
+bbcode_text = "[img]res://img/48/0000.png[/img]"
 meta_underlined = false
 tab_size = 1
 scroll_active = false
