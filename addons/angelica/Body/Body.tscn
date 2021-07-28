@@ -38,6 +38,7 @@ stream = ExtResource( 17 )
 position = Vector2( 874.261, 99.8186 )
 
 [node name="Rest" parent="." instance=ExtResource( 2 )]
-position = Vector2( 506.884, 463.858 )
+position = Vector2( 537.175, 460.294 )
 
 [node name="Star" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3.5636, 62.3629 )

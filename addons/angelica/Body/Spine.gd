@@ -34,21 +34,27 @@ var rest = preload("res://addons/angelica/Health/Rest.tscn")
 var next = preload("res://addons/angelica/Next/Next.tscn")
 var star = preload("res://addons/angelica/Star/Star.tscn")
 
+
+func _ready():
+	initialize()
+
 func text_entered(argument):
 	synapse(argument)
 func input_entered(argument):
 	synapse(argument)
 	
 func ai_say(argument):
+	if $"Mini".visible == false:
+		$"Mini".visible = true
 	$"Mini/ChatMini".bbcode_text += argument+"\n"
 
 func studio(argument):
 	synapse(argument)
 
 func initialize():
-	for i in user["initialize"]:
+	for i in user.user["initialize"]:
 		synapse(i)
-		yield(get_tree().create_timer(1), "timeout")
+		yield(get_tree().create_timer(0.5), "timeout")
 
 func quit(argument):
 #	for i in quit:
@@ -203,6 +209,19 @@ func synapse(new_text):
 						get_node("DJ")._on_RichTextLabel_meta_clicked(command[1])
 				elif command[1] == "clear":
 					get_node("DJ")._on_RichTextLabel_meta_clicked(command[1])
+		"ss":
+			screen_shot(false)
+		"ps":
+			var arg = [""]
+			var args = PoolStringArray(arg)
+			OS.execute("gnome-screenshot", args, false)
+		"ps5":
+			var arg = ["-d -5"]
+			var args = PoolStringArray(arg)
+			OS.execute("gnome-screenshot", args, false) 
+		"selfie":
+			screen_shot(true)
+			yield(get_tree().create_timer(0.2), "timeout")
 		_:
 			ai_say("command not processed: " + new_text)
 #			if self.has_node("Mini") == true:
@@ -213,6 +232,57 @@ func synapse(new_text):
 #				self.add_child(instance)
 #			ai_
 
+func screen_shot(selfie):
+	if user.user["name"] != "Player":
+		if selfie == false:
+			visible = false
+			get_node("../Dock").visible = false
+		yield(get_tree(), "idle_frame")
+		yield(get_tree(), "idle_frame")
+		var image = get_viewport().get_texture().get_data()
+		image.flip_y()
+		image.save_png("user://"+user.user["name"]+"/screenshots/ssAngelica"+datetime_to_string(OS.get_date())+"-"+datetime_to_string(OS.get_time())+".png")
+		ai_say("File saved to" +str(OS.get_user_data_dir()))
+		if selfie == false:
+			visible = true
+			get_node("../Dock").visible = true
+	else:
+		ai_say("Please [url=login]login[/url] first so we can know where to save your pictures")
+#					get_node("../../CommandBar").visible = true
+#				ai_say(text)
+
+func datetime_to_string(date):
+	if (
+		date.has("year")
+		and date.has("month")
+		and date.has("day")
+		and date.has("hour")
+		and date.has("minute")
+		and date.has("second")
+	):
+		# Date and time.
+		return "{year}-{month}-{day} {hour}:{minute}:{second}".format({
+			year = str(date.year).pad_zeros(2),
+			month = str(date.month).pad_zeros(2),
+			day = str(date.day).pad_zeros(2),
+			hour = str(date.hour).pad_zeros(2),
+			minute = str(date.minute).pad_zeros(2),
+			second = str(date.second).pad_zeros(2),
+		})
+	elif date.has("year") and date.has("month") and date.has("day"):
+		# Date only.
+		return "{year}-{month}-{day}".format({
+			year = str(date.year).pad_zeros(2),
+			month = str(date.month).pad_zeros(2),
+			day = str(date.day).pad_zeros(2),
+		})
+	else:
+		# Time only.
+		return "{hour}-{minute}-{second}".format({
+			hour = str(date.hour).pad_zeros(2),
+			minute = str(date.minute).pad_zeros(2),
+			second = str(date.second).pad_zeros(2),
+		})
 
 func volume_change()-> void:
 		var bus_idx = AudioServer.get_bus_index("Master")
@@ -221,3 +291,4 @@ func volume_change()-> void:
 		if volume <= -30:
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0)
 		alarm.play()
+

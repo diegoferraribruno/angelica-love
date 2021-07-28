@@ -10,7 +10,7 @@ var user = {
 	"hashtags":[],
 	"links":[],
 	"notes": [], 
-	"initialize":["title welcome to this mess","about","notes","list links"],
+	"initialize":["title Welcome to this mess","about","notes","list links"],
 	"userdata" : ["email@gmail.com","signature"]
 	}
 

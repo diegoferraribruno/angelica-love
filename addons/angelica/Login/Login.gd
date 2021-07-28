@@ -58,6 +58,7 @@ func new_user():
 		var dir = pre+i
 		directory.make_dir(dir)
 		print (dir)
+	
 
 func append_emoji(argument):
 #	$"Player".emoji = argument
@@ -90,8 +91,9 @@ func _on_Login_meta_clicked(meta):
 						body.synapse("chat")
 						self.queue_free()
 				else:
-					var user_details = {"name":name,"emoji":user["emoji"], "color":user["color"], "sillyword":$"Sillyword".text}
+					var user_details = {"name":name,"emoji":user["emoji"], "color":user["color"], "sillyword":$"Sillyword".text, "rgb":user["rgb"]}
 					user_list[name] = user_details
+					new_user_list()
 					new_user()
 			else:
 				body.ai_say("Please write a user name.")
