@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/angelica/Body/Body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/Studio/FloatingTitle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Skin.gd" type="Script" id=3]
 [ext_resource path="res://addons/angelica/GDPaint/paint_root.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/angelica/Dock/Dock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/angelica/default/User.gd" type="Script" id=7]
+[ext_resource path="res://addons/angelica/Games/Pong/PongPlayer.gd" type="Script" id=8]
 
 [node name="Angelica" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -32,3 +34,24 @@ position = Vector2( 2.5199, 10.0793 )
 
 [node name="Dock" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1.7818, -5.24539 )
+
+[node name="HideButton" type="Node2D" parent="."]
+
+[node name="AngelicaButton" type="RichTextLabel" parent="HideButton"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+margin_left = 1300.31
+margin_top = 659.0
+margin_right = 1351.31
+margin_bottom = 698.0
+bbcode_enabled = true
+bbcode_text = "[url=dock][img]res://img/16/268a.png[/img][/url][url=hide][img]res://img/32/1f4f1.png[/img][/url]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 626.211, 322.327 )
+script = ExtResource( 8 )
+
+[connection signal="meta_clicked" from="HideButton/AngelicaButton" to="." method="_on_AngelicaButton_meta_clicked"]

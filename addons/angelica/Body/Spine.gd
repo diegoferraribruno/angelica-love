@@ -292,3 +292,7 @@ func volume_change()-> void:
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0)
 		alarm.play()
 
+
+
+func _on_RichTextLabel_meta_clicked(meta):
+	synapse(meta)

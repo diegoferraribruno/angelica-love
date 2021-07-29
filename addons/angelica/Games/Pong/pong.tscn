@@ -14,7 +14,6 @@
 [ext_resource path="res://addons/kenney_interface_sounds/confirmation_002.wav" type="AudioStream" id=12]
 [ext_resource path="res://addons/angelica/Games/Pong/Player1.gd" type="Script" id=13]
 [ext_resource path="res://addons/angelica/Games/Pong/pong.gd" type="Script" id=14]
-[ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -64,6 +63,9 @@ extents = Vector2( 50.4294, 161.644 )
 extents = Vector2( 320, 18.494 )
 
 [sub_resource type="CapsuleShape2D" id=11]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 40, 40 )
 
 [node name="Pong" type="Node2D"]
 pause_mode = 2
@@ -255,6 +257,7 @@ position = Vector2( -49.3891, 36.0406 )
 shape = SubResource( 11 )
 
 [node name="left_control" type="RichTextLabel" parent="."]
+visible = false
 modulate = Color( 2.3098, 1, 17.9216, 0.0980392 )
 margin_left = -12.6832
 margin_top = 20.0
@@ -293,6 +296,7 @@ __meta__ = {
 }
 
 [node name="right_control" type="RichTextLabel" parent="."]
+visible = false
 modulate = Color( 2.3, 0.64, 3, 0.1 )
 margin_left = 593.0
 margin_top = 18.3439
@@ -332,8 +336,70 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="." instance=ExtResource( 15 )]
-position = Vector2( 181.901, 235.33 )
+[node name="UP_P1" type="Area2D" parent="."]
+position = Vector2( -37.0127, 159.169 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UP_P1"]
+position = Vector2( -1.25992, -68.0357 )
+shape = SubResource( 12 )
+
+[node name="left_control" type="RichTextLabel" parent="UP_P1"]
+modulate = Color( 2.3098, 1, 17.9216, 0.0980392 )
+margin_left = -34.0
+margin_top = -101.0
+margin_right = 35.0
+margin_bottom = -29.0
+bbcode_enabled = true
+bbcode_text = "[img]res://img/64/1f53c.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UP_P2" type="Area2D" parent="."]
+position = Vector2( -37.0127, 159.169 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UP_P2"]
+position = Vector2( -1.25992, -68.0357 )
+shape = SubResource( 12 )
+
+[node name="left_control2" type="RichTextLabel" parent="UP_P2"]
+modulate = Color( 2.3098, 1, 17.9216, 0.0980392 )
+margin_left = -142.455
+margin_top = -112.292
+margin_right = -57.455
+margin_bottom = 203.708
+bbcode_enabled = true
+bbcode_text = "[url=up][img]res://img/64/1f53c.png[/img]
+                
+				
+				
+				
+				[url=down]
+				
+				
+				
+				
+				
+[img]res://img/64/1f53d.png[/img]
+[/url]"
+text = "
+                
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="area_entered" from="Left" to="Left" method="_on_area_entered"]
 [connection signal="area_entered" from="Right" to="Right" method="_on_area_entered"]

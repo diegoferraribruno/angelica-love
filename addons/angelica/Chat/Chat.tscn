@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://addons/angelica/fonts/new_dynamicfontdata.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/angelica/Chat/nvc.gd" type="Script" id=2]
@@ -19,12 +19,12 @@ bg_color = Color( 0.0196078, 0.0470588, 0.0470588, 0.72549 )
 border_width_left = 8
 border_width_top = 42
 border_width_right = 8
-border_width_bottom = 36
+border_width_bottom = 40
 border_color = Color( 0.0318604, 0.325178, 0.339844, 1 )
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 9
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 corner_detail = 11
 
 [sub_resource type="StyleBoxFlat" id=3]
@@ -68,15 +68,21 @@ outline_size = 2
 outline_color = Color( 0.270588, 0.184314, 0.290196, 0.72549 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 8.0
+bg_color = Color( 0.0117647, 0.0313726, 0.0313726, 1 )
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="Chat" type="Node2D"]
 script = ExtResource( 11 )
 
 [node name="Skin" type="Panel" parent="."]
 pause_mode = 2
-margin_left = 0.168335
-margin_top = 0.775513
-margin_right = 624.168
-margin_bottom = 308.776
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 626.0
+margin_bottom = 288.0
 mouse_filter = 1
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
@@ -101,7 +107,7 @@ __meta__ = {
 margin_left = 18.0
 margin_top = 45.0
 margin_right = 466.0
-margin_bottom = 267.0
+margin_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -131,7 +137,7 @@ __meta__ = {
 margin_left = 472.0
 margin_top = 50.0
 margin_right = 612.0
-margin_bottom = 261.0
+margin_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -176,10 +182,12 @@ __meta__ = {
 position = Vector2( 4.71939, 2.83163 )
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 8.22453
-margin_top = 278.439
-margin_right = 466.225
-margin_bottom = 302.439
+margin_left = 10.5017
+margin_top = 257.0
+margin_right = 468.502
+margin_bottom = 279.0
+custom_styles/normal = SubResource( 9 )
+clear_button_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/angelica/Dock/Menu.gd" type="Script" id=1]
 [ext_resource path="res://addons/angelica/Themes/Hint.tscn" type="PackedScene" id=2]
@@ -8,10 +8,8 @@
 [ext_resource path="res://addons/angelica/Dock/dock_bottom_spacing.tres" type="DynamicFont" id=9]
 [ext_resource path="res://addons/angelica/Dock/dock_side_spacing.tres" type="DynamicFont" id=10]
 
-[sub_resource type="Theme" id=1]
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.2, 0.2, 0.2, 0.317647 )
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.85098, 0.34902, 0.823529, 0.160784 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -35,8 +33,7 @@ margin_left = 62.0
 margin_top = 351.0
 margin_right = 575.0
 margin_bottom = 382.0
-theme = SubResource( 1 )
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,7 +101,7 @@ margin_left = -9.0
 margin_top = 4.0
 margin_right = 12.0
 margin_bottom = 173.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

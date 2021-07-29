@@ -153,7 +153,8 @@ func _on_RichTextLabel2_meta_clicked(meta):
 	$"ChangeSetting/title".text = meta
 	editing = meta
 	$"ChangeSetting".position = get_local_mouse_position() - Vector2(20, -20)
-	$"ChangeSetting".visible = true
+	$"ChangeSetting".visible = !$"ChangeSetting".visible
+	
 func _on_RichTextLabel3_meta_clicked(meta):
 	match editing:
 		"short pause":

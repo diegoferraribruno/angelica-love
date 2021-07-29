@@ -10,5 +10,13 @@ extends CanvasLayer
 
 func quit():
 	get_node("Body").quit()
+
 func ai_say(argument):
 	get_node("Body").ai_say(argument)
+
+func _on_AngelicaButton_meta_clicked(meta):
+	match meta:
+		"hide":
+			get_node("Body").visible = !get_node("Body").visible
+		"dock":
+			get_node("Dock").visible = !get_node("Dock").visible

@@ -91,6 +91,7 @@ var ai_prefs = {
 	}
 	, "side_dock":{
 		"volume":"1f4e2",
+		"radio":"1f4fb",
 		"dj":"1f3a7",
 		"pause":"23ef",
 		"studio":"1f3ac",

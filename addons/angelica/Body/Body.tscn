@@ -35,10 +35,13 @@ position = Vector2( 1230.37, 206.956 )
 stream = ExtResource( 17 )
 
 [node name="Login" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 874.261, 99.8186 )
 
 [node name="Rest" parent="." instance=ExtResource( 2 )]
-position = Vector2( 537.175, 460.294 )
+visible = false
+position = Vector2( 516.993, 428.34 )
 
 [node name="Star" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 33.8542, 55.2357 )
