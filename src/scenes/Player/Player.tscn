@@ -10086,61 +10086,51 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=2013]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 688, 688, 16, 16 )
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2014]
 flags = 4
 atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2015]
 flags = 4
 atlas = ExtResource( 17 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2016]
 flags = 4
 atlas = ExtResource( 17 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=2017]
-flags = 4
-atlas = ExtResource( 17 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=2018]
+[sub_resource type="AtlasTexture" id=2017]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 31, 32 )
 
-[sub_resource type="AtlasTexture" id=2019]
+[sub_resource type="AtlasTexture" id=2018]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 31, 0, 31, 32 )
 
-[sub_resource type="AtlasTexture" id=2020]
+[sub_resource type="AtlasTexture" id=2019]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 93, 0, 31, 32 )
 
-[sub_resource type="AtlasTexture" id=2021]
+[sub_resource type="AtlasTexture" id=2020]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 62, 0, 31, 32 )
 
+[sub_resource type="AtlasTexture" id=2021]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 688, 688, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=2022]
 animations = [ {
-"frames": [ SubResource( 2013 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 2014 ), SubResource( 2015 ), SubResource( 2016 ), SubResource( 2017 ) ],
-"loop": true,
-"name": "xperma",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run-h",
@@ -10151,10 +10141,20 @@ animations = [ {
 "name": "run-v",
 "speed": 9.0
 }, {
-"frames": [ SubResource( 2018 ), SubResource( 2019 ), SubResource( 2018 ), SubResource( 2019 ), SubResource( 2020 ), SubResource( 2021 ), SubResource( 2020 ), SubResource( 2019 ) ],
+"frames": [ SubResource( 2013 ), SubResource( 2014 ), SubResource( 2015 ), SubResource( 2016 ) ],
+"loop": true,
+"name": "xperma",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 2017 ), SubResource( 2018 ), SubResource( 2017 ), SubResource( 2018 ), SubResource( 2019 ), SubResource( 2020 ), SubResource( 2019 ), SubResource( 2018 ) ],
 "loop": true,
 "name": "stand",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 2021 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2023]
@@ -10175,10 +10175,10 @@ flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 800, 832, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=2027]
+[sub_resource type="AtlasTexture" id=2029]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 192, 624, 16, 16 )
+atlas = ExtResource( 14 )
+region = Rect2( 1120, 800, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=2028]
 animations = [ {
@@ -10187,7 +10187,7 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2027 ), SubResource( 2025 ), SubResource( 2027 ) ],
+"frames": [ SubResource( 2029 ) ],
 "loop": false,
 "name": "tiro",
 "speed": 5.0
@@ -10233,29 +10233,28 @@ show_behind_parent = true
 position = Vector2( 25.8502, -42.6683 )
 frames = SubResource( 2012 )
 
-[node name="Talk" type="RichTextLabel" parent="."]
-margin_left = 18.0
-margin_top = -53.0
-margin_right = 38.0
-margin_bottom = -34.0
+[node name="Talk" type="RichTextLabel" parent="Baloon"]
+margin_left = -7.8502
+margin_top = -9.27104
+margin_right = 12.1498
+margin_bottom = 9.72896
 bbcode_enabled = true
-bbcode_text = "[img]res://img/16/1f4b2.png[/img]"
+bbcode_text = "[img]res://img/16/2764.png[/img]"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Body" type="AnimatedSprite" parent="."]
-position = Vector2( 1, 5 )
+position = Vector2( 0, 5 )
 frames = SubResource( 2022 )
 animation = "stand"
-frame = 5
 playing = true
 offset = Vector2( 0, -15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
-position = Vector2( 0.841843, -8.69906 )
+position = Vector2( 0, -8.699 )
 rotation = 1.5708
 shape = SubResource( 2023 )
 
@@ -10272,9 +10271,9 @@ __meta__ = {
 }
 
 [node name="AvatarHead" type="RichTextLabel" parent="."]
-margin_left = -15.0
+margin_left = -16.0
 margin_top = -42.0
-margin_right = 30.0
+margin_right = 29.1081
 margin_bottom = -2.0
 bbcode_enabled = true
 bbcode_text = "[img]res://img/32/1f913.png[/img]"
@@ -10288,7 +10287,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0.84183, -19.6431 )
+position = Vector2( 0, -19.643 )
 shape = SubResource( 2024 )
 
 [node name="Object" type="RichTextLabel" parent="."]
@@ -10305,7 +10304,7 @@ __meta__ = {
 }
 
 [node name="mask" type="Sprite" parent="."]
-position = Vector2( 0.7137, -26.085 )
+position = Vector2( 0, -24 )
 texture = ExtResource( 15 )
 
 [node name="Label" type="RichTextLabel" parent="."]
@@ -10323,12 +10322,12 @@ __meta__ = {
 }
 
 [node name="Gun" type="Node2D" parent="."]
-position = Vector2( 0.26226, -8.54457 )
+position = Vector2( 0, -7.545 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gun"]
-position = Vector2( 25, 1.9 )
+position = Vector2( 17.7402, -1.43032 )
 frames = SubResource( 2028 )
 animation = "tiro"
 

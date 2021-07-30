@@ -134,7 +134,7 @@ func move(delta):
 		body.play("run-v")
 	else:
 		body.flip_h = true
-		body.play("run-h")
+		body.play("stand")
 
 func shoot():
 #	var bullet = Bullet.instance()

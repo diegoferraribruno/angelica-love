@@ -34,10 +34,6 @@ var rest = preload("res://addons/angelica/Health/Rest.tscn")
 var next = preload("res://addons/angelica/Next/Next.tscn")
 var star = preload("res://addons/angelica/Star/Star.tscn")
 
-
-func _ready():
-	initialize()
-
 func text_entered(argument):
 	synapse(argument)
 func input_entered(argument):
@@ -73,20 +69,20 @@ func synapse(new_text):
 				$"Rest".visible = !$"Rest".visible
 		"next":
 			if self.has_node("Next") == false:
-				var instance = rest.instance()
+				var instance = next.instance()
 				self.add_child(instance)
 			elif self.has_node("Next"):
-				$"Next".visible = !$"Next".visible
+				$"Next".queue_free()
 		"star":
 			if self.has_node("Star") == false:
 				var instance = star.instance()
 				self.add_child(instance)
 			elif self.has_node("Star"):
-				$"Star".visible = !$"Star".visible
+				$"Star".queue_free()
 		"dock":
 			if get_parent().has_node("Dock") == false:
 				var instance = dock.instance()
-				self.add_child(instance)
+				get_parent().add_child(instance)
 			else:
 				get_parent().get_node("Dock").queue_free()
 		"mini":
@@ -95,7 +91,7 @@ func synapse(new_text):
 			volume_change()
 		"reset":
 			get_tree().reload_current_scene()
-		"init":
+		"initialize":
 			initialize()
 		"folder":
 			ai_say("opening folder: "+str(OS.get_user_data_dir()))
@@ -222,6 +218,8 @@ func synapse(new_text):
 		"selfie":
 			screen_shot(true)
 			yield(get_tree().create_timer(0.2), "timeout")
+		"save":
+			save_prefs()
 		_:
 			ai_say("command not processed: " + new_text)
 #			if self.has_node("Mini") == true:
@@ -292,7 +290,15 @@ func volume_change()-> void:
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0)
 		alarm.play()
 
-
+func save_prefs():
+	var to_store = get_node("../User").user
+	var FILE_NAME = str("user://"+to_store["name"]+"/preferences/user.json")
+	print(FILE_NAME)
+	var file = File.new()
+	file.open(FILE_NAME, File.WRITE)
+	file.store_string(to_json(to_store))
+	file.close()
+	ai_say("Preferences saved")
 
 func _on_RichTextLabel_meta_clicked(meta):
 	synapse(meta)

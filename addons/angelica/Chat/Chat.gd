@@ -12,7 +12,7 @@ var about = {
 }
 
 onready var user = get_node("../../User").user
-onready var ai_prefs = $User.ai_prefs
+onready var ai_prefs = $User.user
 
 onready var nvc = $NVC.nvc
 var have_feelings = []

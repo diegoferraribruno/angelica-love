@@ -3,20 +3,17 @@ extends Node
 var user = {
 	"id":"",
 	"name":"Player",
-	"emoji":"1f913",
+	"emoji":"23ef",
 	"sillyword":"sillyword",
 	"color": "#dfbdfbff",
 	"rgb":[1,1,1],
 	"hashtags":[],
 	"links":[],
 	"notes": [], 
-	"initialize":["title Welcome to this mess","about","notes","list links"],
-	"userdata" : ["email@gmail.com","signature"]
-	}
-
-var ai_prefs = {
-	"ai_version":"190"
-	, "ai_date" : "2021-23-07"
+	"initialize":["title Welcome to the 100 days party!","dock","rest"],
+	"userdata" : ["email@gmail.com","signature"],
+	"ai_version":"200"
+	, "ai_date" : "2021-02-08"
 	, "about" : "please check for updates at [url=http://diegoferraribruno.itch.io/angelica]my web page[/url] \nIf you wanna chat a bit say: [b]hello[/b]"
 	, "FILE_NAME" : "user://angelica-data.json"
 	, "ai_name" : "Angelica"
@@ -65,7 +62,6 @@ var ai_prefs = {
 #		"volume":"1f4e2",
 #		"edit menu":"1f6a7",
 #		"help":"2753",
-#		"save":"1f4be",
 #		"#":"0023-20e3",
 #		"demo":"1f608",
 #		"bye":"274c",
@@ -87,6 +83,7 @@ var ai_prefs = {
 		"star":"2605",
 		"next":"26a0",
 		"rest":"1f441-1f5e8",
+		"save":"1f4be",
 		"bye":"274c"
 	}
 	, "side_dock":{

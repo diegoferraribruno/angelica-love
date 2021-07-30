@@ -417,7 +417,7 @@ __meta__ = {
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 21.653, 13.2142 )
+position = Vector2( 18.8246, 17.4568 )
 
 [node name="TimeOut" type="Timer" parent="."]
 wait_time = 20.0
@@ -536,7 +536,7 @@ position = Vector2( 257.254, 600.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 62 )
 animation = "complete"
-frame = 2
+frame = 39
 playing = true
 
 [node name="yoga2" type="AnimatedSprite" parent="BigAlert"]
@@ -545,6 +545,7 @@ position = Vector2( 1041.75, 598.351 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 62 )
 animation = "surya"
+frame = 6
 playing = true
 flip_h = true
 

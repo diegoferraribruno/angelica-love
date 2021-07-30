@@ -44,6 +44,7 @@ func _ready():
 	body.modulate = Color(corpo_cor)
 	mask.modulate = Color(corpo_cor)
 	$"Baloon".modulate = Color(corpo_cor)
+	$"Gun".modulate = Color(corpo_cor)
 	
 	face = rand_range(0, 16)
 	changeface("happyface")

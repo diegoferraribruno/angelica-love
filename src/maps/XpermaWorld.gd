@@ -1,4 +1,4 @@
-extends Node2D
+extends YSort
 
 var initialize = [
 	"title [center][rainbow]This is how it all started...[/rainbow][/center]",

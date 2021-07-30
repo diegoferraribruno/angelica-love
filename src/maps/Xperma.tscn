@@ -66,7 +66,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="XpermaWorld" type="Node2D"]
+[node name="XpermaWorld" type="YSort"]
 script = ExtResource( 12 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -84,7 +84,7 @@ anims/Fase1 = SubResource( 1 )
 [node name="spiralbg" type="Sprite" parent="."]
 modulate = Color( 2.24804, 2.24804, 2.24804, 1 )
 position = Vector2( 708.338, 421.916 )
-rotation = 50.6615
+rotation = 0.396017
 scale = Vector2( 1.82165, 1.82165 )
 texture = ExtResource( 1 )
 offset = Vector2( -18, 10 )
