@@ -61,8 +61,12 @@ func load_user_prefs():
 				body.ai_say("OH! oh nobdy registered yet")
 			else:
 				for i in get_node("../../User").user:
-					print(i)
-					get_node("../../User").user[i] = data[i]
+					if i in data:
+						get_node("../../User").user[i] = data[i]
+				for i in data:
+					if not i in get_node("../../User").user:
+						get_node("../../User").user[i] = data[i]
+						
 		file.close()
 
 func new_user_list():

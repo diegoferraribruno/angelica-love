@@ -536,7 +536,7 @@ position = Vector2( 257.254, 600.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 62 )
 animation = "complete"
-frame = 39
+frame = 36
 playing = true
 
 [node name="yoga2" type="AnimatedSprite" parent="BigAlert"]
@@ -545,7 +545,7 @@ position = Vector2( 1041.75, 598.351 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 62 )
 animation = "surya"
-frame = 6
+frame = 1
 playing = true
 flip_h = true
 

@@ -189,3 +189,6 @@ func _on_MusicName_gui_input(event):
 		if has_node("MusicPop") == false:
 			var instance = musiclist.instance()
 			get_node(".").add_child(instance)
+			
+func add_app(x,y):
+	pass

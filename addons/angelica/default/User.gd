@@ -1,5 +1,4 @@
 extends Node
-
 var user = {
 	"id":"",
 	"name":"Player",
@@ -109,3 +108,11 @@ var user = {
 #		"hide":"1f4bb",
 	}
 }
+#var apps = {}
+#
+#func add_app_position(app,app_xy):
+#	apps[app] = app_xy
+#	print(apps)
+#
+#func save_apps():
+#

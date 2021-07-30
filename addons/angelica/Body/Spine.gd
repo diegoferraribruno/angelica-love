@@ -13,7 +13,6 @@ onready var user = $"../User"
 onready var alarm = $"AudioStreamPlayer"
 onready var game = get_parent().get_node("Game")
 onready var screenSize = get_viewport().get_visible_rect().size
-onready var title = get_node("../Paint/Title/Title")
 onready var music = {"main":{"BPM":130,"name":"playing"},"tracks":{"0":{"BPM":260,"audiopack":"kenney","beat":"Ambient","fx":0,"loop":true,"volume":0},"1":{"BPM":130,"audiopack":"kylan","beat":"<><<>><< ","fx":0,"loop":true,"volume":0},"2":{"BPM":130,"audiopack":"openpath1","beat":"Diego01","fx":0,"loop":true,"volume":-11.428571}}}
 #onready var Cbar = get_node("../CommandBar")
 
@@ -33,6 +32,7 @@ var mini = preload("res://addons/angelica/Chat/ChatMini.tscn")
 var rest = preload("res://addons/angelica/Health/Rest.tscn")
 var next = preload("res://addons/angelica/Next/Next.tscn")
 var star = preload("res://addons/angelica/Star/Star.tscn")
+var title = preload("res://addons/angelica/Studio/FloatingTitle.tscn")
 
 func text_entered(argument):
 	synapse(argument)
@@ -61,6 +61,8 @@ func synapse(new_text):
 	if new_text is String:
 		command = new_text.split(" ", true, 4)
 	match command[0]:
+		"user":
+			print_user()
 		"rest":
 			if self.has_node("Rest") == false:
 				var instance = rest.instance()
@@ -162,12 +164,15 @@ func synapse(new_text):
 				get_node("../Paint/Glow").queue_free()
 				ai_say("Glow removed!")
 		"title":
-			if command.size() == 1 :
-				title.get_parent().visible = !title.get_parent().visible
+			if get_node("../Paint").has_node("Title") == false:
+				var instance = title.instance()
+				get_node("../Paint").add_child(instance)
+			if command.size() == 1:
+					get_node("../Paint/Title").visible = !get_node("../Paint/Title").visible
 			else:
 				new_text = new_text.replace("title ","")
-				title.bbcode_text = new_text
-				title.get_parent().visible = true
+				get_node("../Paint/Title/RichTextLabel").bbcode_text = new_text
+				get_node("../Paint/Title").visible = true
 		"paint":
 			if self.has_node("PaintTools") == false:
 				var instance = paint.instance()
@@ -300,5 +305,11 @@ func save_prefs():
 	file.close()
 	ai_say("Preferences saved")
 
+func print_user():
+	ai_say(str(user.user))
+	
 func _on_RichTextLabel_meta_clicked(meta):
 	synapse(meta)
+	
+func add_app(app,app_xy):
+	get_node("../").add_app(app,app_xy)

@@ -1,13 +1,14 @@
 extends CanvasLayer
+var apps = {}
 
-#func _process(delta):
-#	if (Input.is_action_just_pressed("ui_help")):
-#		if $Body.visible == true:
-#			$Body.visible = false
-#		else:
-#			$Body.visible = true
-#	$CommandBar.visible = true
-
+func add_app(app,app_xy):
+	$User.user[app] = {}
+	$User.user[app]["position"] = var2str(app_xy)
+	apps[app] = {}
+	apps[app]["position"] = app_xy
+	if $User.user["name"] != "Player":
+		$Body.save_prefs()
+ 
 func quit():
 	get_node("Body").quit()
 
@@ -20,3 +21,4 @@ func _on_AngelicaButton_meta_clicked(meta):
 			get_node("Body").visible = !get_node("Body").visible
 		"dock":
 			get_node("Dock").visible = !get_node("Dock").visible
+

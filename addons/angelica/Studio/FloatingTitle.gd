@@ -7,5 +7,5 @@ func _ready():
 
 func _on_viewport_size_changed():
 	var screensize = get_viewport_rect().size
-	$"Title".margin_right = screensize.x-64
-	$"Title".margin_left = 64
+	$"RichTextLabel".margin_right = screensize.x-64
+	$"RichTextLabel".margin_left = 64

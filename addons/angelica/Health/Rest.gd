@@ -184,3 +184,5 @@ func _on_RichTextLabel3_meta_clicked(meta):
 	$"Yoga".wait_time = user["yoga_time"]
 	var timer = editing.capitalize()
 	get_node(timer).start(0)
+func add_app(x,y):
+	pass
