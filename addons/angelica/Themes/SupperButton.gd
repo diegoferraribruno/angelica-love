@@ -2,6 +2,7 @@ extends Node2D
 
 onready var screenSize = get_viewport().get_visible_rect().size
 onready var app_name = get_parent().name
+onready var hint = $"Hint"
 
 #"1f49f","2b55",1f5e8
 var supperbutton = "[url=Menu][img]res://img/32/1f49f.png[/img][/url]"
@@ -28,13 +29,15 @@ func load_start_position():
 			
 func update_icon():
 	if get_parent().get("icon") != null:
-		supperbutton = "[url=superbutton][img]res://img/32/"+get_parent().icon+".png[/img][/url]"
+		supperbutton = "[url=move][img]res://img/32/"+get_parent().icon+".png[/img][/url]"
 		_on_bbcode_mouse_entered()
 	if get_node("../").get("mini") != null:
-		supperbutton = supperbutton + "[url=minithis] [img]res://img/16/268a.png[/img][/url]"
+		supperbutton = supperbutton + "[url=minimize] [img]res://img/16/268a.png[/img][/url]"
 	if get_node("../").get("close") != null:
-		supperbutton = supperbutton + "[url=closebutton] [img]res://img/16/1f6c7.png[/img][/url]"
-
+		supperbutton = supperbutton + "[url=close] [img]res://img/16/1f6c7.png[/img][/url]"
+	if get_node("../").get("menu") != null:
+		supperbutton = supperbutton + get_node("../").menu
+		
 func _on_viewport_size_changed():
 	screenSize = get_viewport().get_visible_rect().size
 	if get_parent().position.x > screenSize.x-20:
@@ -62,34 +65,42 @@ func unfollow():
 
 func handle(meta):
 	match meta:
-		"closebutton":
+		"close":
 			if get_node("../").get("close") != null:
 				if get_node("../").get("quit") != null:
 					get_node("../").quit()
 				get_parent().queue_free()
-		"minithis":
+		"minimize":
 			if get_node("../").get("mini") != null:
 					get_parent().visible = false
-					
+		_:
+			if get_parent().get("menu") != null:
+				get_parent().menu(meta)
+			
 func _on_bbcode_meta_clicked(meta):
 	handle(meta)
 	
 func _on_bbcode_meta_hover_ended(meta):
 	if get_parent().get("icon") != null:
-		$bbcode.bbcode_text = "[url=superbutton][img]res://img/32/"+get_parent().icon+".png[/img][/url]"
+		$bbcode.bbcode_text = "[url=move][img]res://img/32/"+get_parent().icon+".png[/img][/url]"
 	else:
-		$bbcode.bbcode_text = "[url=superbutton][img]res://img/32/1f49f.png[/img][/url]"
+		$bbcode.bbcode_text = "[url=move][img]res://img/32/1f49f.png[/img][/url]"
+	hint.hint("",Vector2(-20,-20))
 	
 func _on_bbcode_meta_hover_started(meta):
 	$bbcode.bbcode_text = supperbutton
+	var pos = get_local_mouse_position()+Vector2(-30,-40)
+	hint.hint(meta,pos)
+	
 #
 func _on_bbcode_gui_input(event):
 	if Input.is_action_just_pressed("Click"):
 		dragging_start_position = get_global_mouse_position()
 		parent_start_position = get_parent().position
-	if Input.is_action_pressed("Click"):
-#		get_parent().z_index = -1 # necessário ver ordenamento das janelas - this code needs an update.
 		following = true
+#	if Input.is_action_pressed("Click"):
+#		get_parent().z_index = -1 # necessário ver ordenamento das janelas - this code needs an update.
+
 	elif Input.is_action_just_released("Click"):
 		unfollow()
 

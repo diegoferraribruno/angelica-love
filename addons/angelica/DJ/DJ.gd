@@ -22,7 +22,7 @@ onready var tracks = []
 onready var bpm = 130
 onready var speed_a = 130
 
-const menu = "[url=add music][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear][img]res://img/16/1f5d9.png[/img][/url] [url=rewind][img]res://img/32/23ee.png[/img][/url] [url=loop all][img]res://img/32/1f504.png[/img][/url] [url=play][img]res://img/32/25b6.png[/img][/url]"
+const controls = "[url=add music][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear][img]res://img/16/1f5d9.png[/img][/url] [url=rewind][img]res://img/32/23ee.png[/img][/url] [url=loop all][img]res://img/32/1f504.png[/img][/url] [url=play][img]res://img/32/25b6.png[/img][/url]"
 
 func _on_SpeedTune2_value_changed(value):
 	speed_a = value
@@ -31,7 +31,7 @@ func _ready():
 	speed_a = 130
 	bpm = 130
 	loadmusic("New track")
-	$Menu.bbcode_text = menu
+	$Menu.bbcode_text = controls
 
 func play_dj(bpm):
 	for i in $Loop.text:

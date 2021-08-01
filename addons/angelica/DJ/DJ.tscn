@@ -167,7 +167,7 @@ __meta__ = {
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4, 6 )
+position = Vector2( 1.88107, -0.356781 )
 
 [connection signal="text_changed" from="Loop" to="." method="_on_Loop_text_changed"]
 [connection signal="text_entered" from="Loop" to="." method="_on_Loop_text_entered"]

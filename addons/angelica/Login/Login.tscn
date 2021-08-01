@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=2]
@@ -6,11 +6,13 @@
 [ext_resource path="res://addons/angelica/Login/LineEdit.gd" type="Script" id=4]
 [ext_resource path="res://addons/angelica/Login/Sillyword.gd" type="Script" id=5]
 [ext_resource path="res://addons/angelica/Login/Player.gd" type="Script" id=6]
+[ext_resource path="res://addons/angelica/Login/new_dynamicfont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://addons/angelica/Login/ConfigPanel.gd" type="Script" id=8]
 [ext_resource path="res://addons/angelica/fonts/Player.tres" type="DynamicFont" id=9]
 [ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.964706, 0.301961, 0.301961, 1 )
+bg_color = Color( 1, 0.521569, 0.521569, 1 )
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -32,6 +34,17 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.756863, 0.709804, 0.709804, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.964706, 1, 1, 1 )
@@ -104,19 +117,166 @@ __meta__ = {
 
 [node name="Panel3" type="Panel" parent="."]
 margin_left = 25.0
-margin_top = 113.0
+margin_top = 123.0
 margin_right = 420.0
-margin_bottom = 218.0
+margin_bottom = 228.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ConfigPanel" type="Panel" parent="."]
+margin_left = 5.34534
+margin_top = 281.742
+margin_right = 447.345
+margin_bottom = 527.742
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel6" type="Panel" parent="ConfigPanel"]
+margin_left = 17.0
+margin_top = 27.0
+margin_right = 422.0
+margin_bottom = 226.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfigPanel"]
+margin_left = 21.0
+margin_top = 44.0
+margin_right = 416.0
+margin_bottom = 220.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Linha1" type="VSplitContainer" parent="ConfigPanel/VBoxContainer"]
+margin_right = 395.0
+margin_bottom = 30.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ConfigPanel/VBoxContainer/Linha1"]
+margin_right = 395.0
+margin_bottom = 14.0
+split_offset = 20
+
+[node name="Label" type="Label" parent="ConfigPanel/VBoxContainer/Linha1/HSplitContainer"]
+margin_right = 68.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+text = "\"name\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ConfigPanel/VBoxContainer/Linha1/HSplitContainer"]
+margin_left = 80.0
+margin_right = 395.0
+margin_bottom = 14.0
+
+[node name="TextEdit" type="LineEdit" parent="ConfigPanel/VBoxContainer/Linha1/HSplitContainer/HSplitContainer"]
+margin_right = 48.0
+margin_bottom = 14.0
+custom_styles/normal = SubResource( 9 )
+
+[node name="Update" type="RichTextLabel" parent="ConfigPanel/VBoxContainer/Linha1/HSplitContainer/HSplitContainer"]
+margin_left = 60.0
+margin_right = 315.0
+margin_bottom = 14.0
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[url=login][img]res://img/16/1f3ab.png[/img][/url] [url=cancel][img]res://img/16/1f6c7.png[/img][/url]"
+text = " "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="ConfigPanel/VBoxContainer/Linha1"]
+margin_top = 26.0
+margin_right = 395.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Linha2" type="VSplitContainer" parent="ConfigPanel/VBoxContainer"]
+margin_top = 34.0
+margin_right = 395.0
+margin_bottom = 64.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ConfigPanel/VBoxContainer/Linha2"]
+margin_right = 395.0
+margin_bottom = 14.0
+split_offset = 20
+
+[node name="Label" type="Label" parent="ConfigPanel/VBoxContainer/Linha2/HSplitContainer"]
+margin_right = 68.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+text = "\"name\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ConfigPanel/VBoxContainer/Linha2/HSplitContainer"]
+margin_left = 80.0
+margin_right = 395.0
+margin_bottom = 14.0
+
+[node name="TextEdit" type="LineEdit" parent="ConfigPanel/VBoxContainer/Linha2/HSplitContainer/HSplitContainer"]
+margin_right = 48.0
+margin_bottom = 14.0
+custom_styles/normal = SubResource( 9 )
+
+[node name="Update" type="RichTextLabel" parent="ConfigPanel/VBoxContainer/Linha2/HSplitContainer/HSplitContainer"]
+margin_left = 60.0
+margin_right = 315.0
+margin_bottom = 14.0
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[url=login][img]res://img/16/1f3ab.png[/img][/url] [url=cancel][img]res://img/16/1f6c7.png[/img][/url]"
+text = " "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="ConfigPanel/VBoxContainer/Linha2"]
+margin_top = 26.0
+margin_right = 395.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Login" type="RichTextLabel" parent="."]
-margin_left = 363.94
-margin_top = 20.5243
-margin_right = 425.94
-margin_bottom = 97.5243
+margin_left = 359.809
+margin_top = 13.4719
+margin_right = 431.809
+margin_bottom = 106.472
+rect_clip_content = false
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[url=login][img]res://img/64/1f3ab.png[/img][/url]
+[url=cancel][img]res://img/32/1f6c7.png[/img][/url][img]res://img/32/2699.png[/img]"
+text = "
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Login2" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 362.158
+margin_top = 296.703
+margin_right = 424.158
+margin_bottom = 373.703
 rect_clip_content = false
 bbcode_enabled = true
 bbcode_text = "[url=login][img]res://img/48/1f3ab.png[/img][/url]
@@ -131,9 +291,9 @@ __meta__ = {
 [node name="VSlider" type="VSlider" parent="."]
 modulate = Color( 3, 0.94, 0.94, 1 )
 margin_left = 151.102
-margin_top = 124.949
+margin_top = 134.949
 margin_right = 170.102
-margin_bottom = 205.949
+margin_bottom = 215.949
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 4 )
@@ -147,9 +307,9 @@ __meta__ = {
 [node name="VSliderG" type="VSlider" parent="."]
 modulate = Color( 0.8, 2.5, 0.8, 1 )
 margin_left = 188.776
-margin_top = 123.746
+margin_top = 133.746
 margin_right = 209.776
-margin_bottom = 204.746
+margin_bottom = 214.746
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 4 )
@@ -163,9 +323,9 @@ __meta__ = {
 [node name="VSliderB" type="VSlider" parent="."]
 modulate = Color( 1, 1.82031, 4, 1 )
 margin_left = 223.911
-margin_top = 123.746
+margin_top = 133.746
 margin_right = 244.911
-margin_bottom = 204.746
+margin_bottom = 214.746
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 4 )
@@ -180,7 +340,7 @@ __meta__ = {
 position = Vector2( 187.944, -29.3554 )
 
 [node name="LoadPlayer" type="Node2D" parent="."]
-position = Vector2( 269.944, 120.367 )
+position = Vector2( 276.944, 130.367 )
 
 [node name="Panel5" type="Panel" parent="LoadPlayer"]
 margin_top = -1.0
@@ -204,7 +364,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 85.527, 198.169 )
+position = Vector2( 85.527, 208.169 )
 script = ExtResource( 6 )
 
 [node name="EmojiPanel" parent="Player" instance=ExtResource( 2 )]
@@ -212,10 +372,10 @@ visible = false
 position = Vector2( -121.061, -108.802 )
 
 [node name="Panel4" type="Panel" parent="."]
-margin_left = 131.99
-margin_top = 25.2508
-margin_right = 363.99
-margin_bottom = 62.2508
+margin_left = 132.0
+margin_top = 27.0
+margin_right = 352.0
+margin_bottom = 64.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -223,9 +383,9 @@ __meta__ = {
 
 [node name="LineEdit" type="LineEdit" parent="."]
 margin_left = 143.241
-margin_top = 30.7492
+margin_top = 32.7492
 margin_right = 352.241
-margin_bottom = 62.7492
+margin_bottom = 64.7492
 focus_next = NodePath("../Sillyword")
 custom_styles/normal = SubResource( 6 )
 custom_fonts/font = ExtResource( 9 )
@@ -240,10 +400,10 @@ __meta__ = {
 }
 
 [node name="Sillyword" type="LineEdit" parent="."]
-margin_left = 131.463
-margin_top = 70.2788
-margin_right = 363.463
-margin_bottom = 109.279
+margin_left = 131.0
+margin_top = 72.0
+margin_right = 352.0
+margin_bottom = 111.0
 focus_previous = NodePath("../LineEdit")
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 9 )
@@ -261,25 +421,28 @@ position = Vector2( -137.852, 31.4195 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 2.0
-margin_top = 34.0
+margin_top = 36.0
 margin_right = 123.0
-margin_bottom = 114.0
+margin_bottom = 116.0
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
 bbcode_text = "[right]Name:
 
-Password:
-(3 emojis)[/right]"
+Silly word:
+(or emojis)[/right]"
 text = "Name:
 
-Password:
-(3 emojis)"
+Silly word:
+(or emojis)"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="meta_clicked" from="ConfigPanel/VBoxContainer/Linha1/HSplitContainer/HSplitContainer/Update" to="." method="_on_Login_meta_clicked"]
+[connection signal="meta_clicked" from="ConfigPanel/VBoxContainer/Linha2/HSplitContainer/HSplitContainer/Update" to="." method="_on_Login_meta_clicked"]
 [connection signal="meta_clicked" from="Login" to="." method="_on_Login_meta_clicked"]
+[connection signal="meta_clicked" from="Login2" to="." method="_on_Login_meta_clicked"]
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
 [connection signal="value_changed" from="VSliderG" to="." method="_on_VSliderG_value_changed"]
 [connection signal="value_changed" from="VSliderB" to="." method="_on_VSliderB_value_changed"]

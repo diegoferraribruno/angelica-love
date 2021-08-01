@@ -13,7 +13,7 @@ sort_enabled = false
 script = ExtResource( 35 )
 
 [node name="Mini" parent="." instance=ExtResource( 3 )]
-position = Vector2( 970.347, 491.032 )
+position = Vector2( 15.3035, 533.795 )
 
 [node name="Hint" parent="." instance=ExtResource( 21 )]
 visible = false
@@ -26,4 +26,4 @@ position = Vector2( 1230.37, 206.956 )
 stream = ExtResource( 17 )
 
 [node name="Login" parent="." instance=ExtResource( 1 )]
-position = Vector2( 517.901, 219.199 )
+position = Vector2( 476.92, 383.124 )

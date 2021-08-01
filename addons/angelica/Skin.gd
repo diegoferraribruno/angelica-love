@@ -20,5 +20,7 @@ func _on_AngelicaButton_meta_clicked(meta):
 		"hide":
 			get_node("Body").visible = !get_node("Body").visible
 		"dock":
-			get_node("Dock").visible = !get_node("Dock").visible
-
+			if has_node("Dock"):
+				get_node("Dock").visible = !get_node("Dock").visible
+			else:
+				get_node("Body").synapse("dock")

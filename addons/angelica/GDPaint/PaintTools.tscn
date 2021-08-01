@@ -227,17 +227,16 @@ __meta__ = {
 
 [node name="ColorPicker" type="ColorPicker" parent="ColorPickerBrush"]
 visible = false
-margin_left = 321.853
-margin_top = 162.828
-margin_right = 643.853
-margin_bottom = 624.828
+margin_left = 333.853
+margin_top = 174.828
+margin_right = 655.853
+margin_bottom = 636.828
 theme = ExtResource( 8 )
 custom_constants/h_width = -10
 custom_constants/sv_width = -14
 alignment = 1
 
 [node name="EmojiPanel" parent="." instance=ExtResource( 6 )]
-visible = false
 position = Vector2( 177, 8 )
 
 [node name="SuperButton" parent="." instance=ExtResource( 3 )]

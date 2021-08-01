@@ -7,12 +7,13 @@ const UNDO_NONE = -1
 onready var screenSize = get_viewport().get_visible_rect().size
 # How large is the image (it's actually the size of DrawingAreaBG, because that's our background canvas).
 var IMAGE_SIZE = screenSize
-
+var emoji_preload = preload("res://addons/angelica/GDPaint/PaintBullets/Bullet.tscn")
 # Enums for the various modes and brush shapes that can be applied.
 enum BrushModes {
 	NONE,
 	PENCIL,
 	ERASER,
+	EMOJI,
 	CIRCLE_SHAPE,
 	RECTANGLE_SHAPE,
 	REWIND,
@@ -82,7 +83,7 @@ func _physics_process(delta):
 			# If the mouse is inside the canvas and the mouse is 1px away from the position of the mouse last _process call.
 			if mouse_pos.distance_to(last_mouse_pos) >= 1:
 				# If we are in pencil or eraser mode, then we need to draw.
-				if brush_mode == BrushModes.PENCIL or brush_mode == BrushModes.ERASER:
+				if brush_mode == BrushModes.PENCIL:
 					# If undo has not been set, meaning we've started a new stroke, then store the size of the
 					# draw_elements_list so we can undo from this point in time.
 					if undo_set == false:
@@ -90,6 +91,8 @@ func _physics_process(delta):
 						undo_element_list_num = brush_data_list.size()
 					# Add the brush object to draw_elements_array.
 					add_brush(mouse_pos, brush_mode)
+				elif  brush_mode == BrushModes.EMOJI:
+					draw_emoji()
 
 
 		else:
@@ -212,6 +215,10 @@ func add_brush(mouse_pos, type):
 	brush_data_list.append(new_brush)
 	update()
 
+func draw_emoji():
+					var novo_node = emoji_preload.instance()
+					novo_node.position = get_global_mouse_position()
+					add_child(novo_node)
 #var num = 1
 #var neg = -1
 func _draw():
@@ -220,6 +227,7 @@ func _draw():
 #		num = num*neg
 #		if num > 0:
 			match brush.brush_type:
+				
 				BrushModes.PENCIL:
 					# If the brush shape is a rectangle, then we need to make a Rect2 so we can use draw_rect.
 					# Draw_rect draws a rectagle at the top left corner, using the scale for the size.
@@ -231,6 +239,8 @@ func _draw():
 					# making the radius half of brush size (so the circle is brush size pixels in diameter).
 					elif brush.brush_shape == BrushShapes.CIRCLE:
 						draw_circle(brush.brush_pos, brush.brush_size / 2, brush.brush_color)
+				BrushModes.EMOJI:
+					pass
 				BrushModes.ERASER:
 					# NOTE: this is a really cheap way of erasing that isn't really erasing!
 					# However, this gives similar results in a fairy simple way!
