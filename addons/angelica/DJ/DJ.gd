@@ -96,7 +96,7 @@ func _on_RichTextLabel_meta_clicked(meta):
 func save_music():
 	var mymusic = {}
 	var m_name = $"MusicName".text
-	if m_name != "New track" and m_name != "":
+	if m_name != "":
 		mymusic = {
 			"main":{"name":m_name,"BPM":$"SpeedTune".value},
 			"tracks":{

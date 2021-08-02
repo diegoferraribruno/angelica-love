@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/Hint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/DJ/DJ.gd" type="Script" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0352941, 0.172549, 0.207843, 0.678431 )
+content_margin_top = 13.0
+bg_color = Color( 0.0352941, 0.172549, 0.207843, 0.823529 )
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -33,12 +34,6 @@ outline_size = 1
 outline_color = Color( 0, 0.458824, 0.733333, 1 )
 font_data = SubResource( 3 )
 
-[sub_resource type="DynamicFontData" id=5]
-font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
-
-[sub_resource type="DynamicFont" id=6]
-font_data = SubResource( 5 )
-
 [node name="DJ" type="Node2D"]
 position = Vector2( 1.12245, 1.83627 )
 script = ExtResource( 2 )
@@ -58,9 +53,9 @@ __meta__ = {
 }
 
 [node name="Loop" type="LineEdit" parent="."]
-margin_left = 492.0
+margin_left = 465.571
 margin_top = 11.0
-margin_right = 601.0
+margin_right = 609.571
 margin_bottom = 35.0
 hint_tooltip = "Selected tracks"
 custom_styles/normal = SubResource( 2 )
@@ -76,16 +71,15 @@ __meta__ = {
 [node name="MusicName" type="LineEdit" parent="."]
 margin_left = 145.0
 margin_top = 11.0
-margin_right = 253.0
+margin_right = 289.0
 margin_bottom = 35.0
 hint_tooltip = "Music Name"
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.443137, 0.839216, 0.960784, 1 )
-text = "New track"
 max_length = 10
 clear_button_enabled = true
-placeholder_text = "Music name"
+placeholder_text = "New track"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -138,29 +132,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SavePopUp" type="Panel" parent="."]
+[node name="SavePopUp" type="RichTextLabel" parent="."]
 visible = false
-margin_left = 131.25
-margin_top = 3.67864
-margin_right = 408.25
-margin_bottom = 56.6786
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="SavePopUp"]
-modulate = Color( 1, 0, 0.683333, 1 )
-margin_left = 19.0103
-margin_top = 16.4949
-margin_right = 343.01
-margin_bottom = 65.4949
-custom_fonts/normal_font = SubResource( 6 )
+modulate = Color( 1, 0.27451, 0.768627, 1 )
+margin_left = 48.0
+margin_top = -1.0
+margin_right = 618.0
+margin_bottom = 48.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[url=cancel]Please, change music name [img]res://img/16/1f5d9.png[/img][/url]   "
+bbcode_text = "[center][url=cancel] Please, add a track or music name before save  [img]res://img/16/1f5d9.png[/img][/url]   [/center]"
 meta_underlined = false
-text = "Please, change music name    "
+text = " Please, add a track or music name before save     "
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -180,6 +164,6 @@ position = Vector2( 1.88107, -0.356781 )
 [connection signal="meta_clicked" from="RichTextLabel4" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="meta_hover_ended" from="RichTextLabel4" to="." method="_on_RichTextLabel4_meta_hover_ended"]
 [connection signal="meta_hover_started" from="RichTextLabel4" to="." method="_on_RichTextLabel4_meta_hover_started"]
-[connection signal="meta_clicked" from="SavePopUp/RichTextLabel2" to="." method="_on_RichTextLabel_meta_clicked"]
-[connection signal="meta_hover_ended" from="SavePopUp/RichTextLabel2" to="." method="_on_RichTextLabel_meta_hover_ended"]
-[connection signal="meta_hover_started" from="SavePopUp/RichTextLabel2" to="." method="_on_RichTextLabel_meta_hover_started"]
+[connection signal="meta_clicked" from="SavePopUp" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="meta_hover_ended" from="SavePopUp" to="." method="_on_RichTextLabel_meta_hover_ended"]
+[connection signal="meta_hover_started" from="SavePopUp" to="." method="_on_RichTextLabel_meta_hover_started"]

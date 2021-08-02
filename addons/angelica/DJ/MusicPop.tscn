@@ -29,8 +29,8 @@ margin_bottom = 118.0
 custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[img]res://addons/angelica/images/16/1f3b5.png[/img] [url=suspense]Suspense[/url]
-[img]res://addons/angelica/images/16/1f3b5.png[/img] [url=funk][url=demo]Demo[/url]"
+bbcode_text = "[img]res://img/16/1f3b5.png[/img] [url=suspense]Suspense[/url]
+[img]res://img/16/1f3b5.png[/img] [url=funk][url=demo]Demo[/url]"
 text = " Suspense
  Demo"
 script = ExtResource( 1 )

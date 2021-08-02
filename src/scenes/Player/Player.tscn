@@ -10249,7 +10249,7 @@ __meta__ = {
 position = Vector2( 0, 5 )
 frames = SubResource( 2022 )
 animation = "stand"
-frame = 4
+frame = 2
 playing = true
 offset = Vector2( 0, -15 )
 
