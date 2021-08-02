@@ -112,7 +112,7 @@ var audiopacks = {"kenney":{
 	"*":"res://addons/OpenPathMusic44v1/cymbal-china-mallet.wav",
 	"(":"res://addons/OpenPathMusic44v1/cymbal-china-stick.wav",
 	")":"res://addons/OpenPathMusic44v1/cymbal-hihat-foot-1.wav",
-	"_":"res://addons/OpenPathMusic44v1/cymbal-hihat-foot-2.wav",
+	"`":"res://addons/OpenPathMusic44v1/cymbal-hihat-foot-2.wav",
 	"+":"res://addons/OpenPathMusic44v1/cymbal-hihat-foot-open.wav",
 	"q":"res://addons/OpenPathMusic44v1/cymbal-hihat-lick.wav",
 	"w":"res://addons/OpenPathMusic44v1/cymbal-hihat-open-stick-1.wav",

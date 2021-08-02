@@ -43,14 +43,13 @@ __meta__ = {
 }
 
 [node name="Hide" type="RichTextLabel" parent="."]
-margin_left = 418.0
+margin_left = 420.0
 margin_top = 7.0
-margin_right = 459.0
+margin_right = 461.0
 margin_bottom = 43.0
 rect_clip_content = false
 bbcode_enabled = true
-bbcode_text = "[url=hide] [img]res://img/32/1f6c7.png[/img][/url]"
-text = " "
+bbcode_text = "[url=hide][img]res://img/32/1f6c7.png[/img][/url]"
 scroll_active = false
 script = ExtResource( 4 )
 __meta__ = {

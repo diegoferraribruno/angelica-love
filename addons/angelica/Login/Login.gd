@@ -188,4 +188,10 @@ func _on_RichTextLabel_meta_clicked(meta):
 	$"Player".get_node("Label").bbcode_text =  "[center]"+meta+"[/center]"
 	rgb = user_list[meta]["rgb"]
 	modulate()
+	$"Sillyword/EmojiPanel".visible = true
 	pass # Replace with function body.
+
+
+func _on_Sillyword_gui_input(event):
+	if Input.is_action_just_pressed("Click"):
+		$"Sillyword/EmojiPanel".visible = true

@@ -9,7 +9,7 @@ var mini = true
 
 var loop = ""
 var count = 0
-var trackerposition = Vector2(0,28)
+var trackerposition = Vector2(0,32)
 var playing = false
 var m_name = "New track"
 var allmusic
@@ -20,7 +20,7 @@ onready var tracks = []
 onready var bpm = 130
 onready var speed_a = 130
 
-const controls = "[url=add music][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear][img]res://img/16/1f5d9.png[/img][/url] [url=rewind][img]res://img/32/23ee.png[/img][/url] [url=loop all][img]res://img/32/1f504.png[/img][/url] [url=play][img]res://img/32/25b6.png[/img][/url]"
+const controls = "[url=add music][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear][img]res://img/32/1f5d9.png[/img][/url]"
 
 func _on_SpeedTune2_value_changed(value):
 	speed_a = value
@@ -75,6 +75,8 @@ func _on_RichTextLabel_meta_clicked(meta):
 			$LineEdit.text += OS.clipboard
 		"add music":
 			var m_name = $"MusicName".text
+			if m_name == "":
+				m_name = "New track"
 			if m_name in allmusic:
 				loadmusic(m_name)
 		"clear":
@@ -96,7 +98,7 @@ func _on_RichTextLabel_meta_clicked(meta):
 func save_music():
 	var mymusic = {}
 	var m_name = $"MusicName".text
-	if m_name != "":
+	if m_name != "New track" and m_name != "":
 		mymusic = {
 			"main":{"name":m_name,"BPM":$"SpeedTune".value},
 			"tracks":{
@@ -139,7 +141,7 @@ func loadmusic(m_name):
 	for i in allmusic[m_name]["tracks"]:
 		var audiopack = allmusic[m_name]["tracks"][i]["audiopack"]
 		var instance = track.instance()
-		instance.position = trackerposition*count+Vector2(0,40)
+		instance.position = trackerposition*count+Vector2(0,78)
 		get_node(".").add_child(instance)
 		instance.icon = $"Sounds".icons[audiopack]
 		instance.loadbeat(allmusic[m_name]["tracks"][i])
@@ -148,7 +150,7 @@ func loadmusic(m_name):
 #		instance.z_index = -1
 		count += 1
 		tracks.append(instance)
-		if m_name == "New track":
+		if m_name == "New track" or m_name == "":
 			var tbpm = $"SpeedTune".value
 			instance.bpms = tbpm
 			instance._on_SpeedTune_value_changed(tbpm)
@@ -160,7 +162,7 @@ func remove_track(track):
 	for i in tracks:
 		count = tracks.find(i)
 		i.placeholder(count)
-		i.position = trackerposition*count+Vector2(0,40)
+		i.position = trackerposition*count+Vector2(0,42)
 func _on_SpeedTune_value_changed(value):
 	bpm = value
 
@@ -192,3 +194,12 @@ func _on_MusicName_gui_input(event):
 			
 func add_app(x,y):
 	pass
+
+
+func _on_MusicName_text_changed(new_text):
+	pass # Replace with function body.
+
+
+func _on_MusicName_text_entered(new_text):
+	loadmusic(new_text)
+	pass # Replace with function body.

@@ -58,10 +58,11 @@ func _ready():
 	update_notes()
 
 func update_notes():
-	var bbcode = ""
+	var bbcode = "[center] Track nº: "+str(tracknumber)+" [img]res://img/16/"+icon+".png[/img]" + audiopack + " Audio Pack [url=close][img]res://img/16/274e.png[/img][/url][/center]\n [url=_]__[/url]"
 	for i in notes:
 		bbcode += "[url="+i+"]"+i+"[/url] "
 	$"Notes".bbcode_text = bbcode
+	$"Notes".visible = true
 	
 func _on_Menu_meta_clicked(meta):
 	match meta:
@@ -81,6 +82,7 @@ func _on_Menu_meta_clicked(meta):
 			get_node("SuperButton").update_icon()
 			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
 			update_notes()
+
 		"kylan":
 			audiopack = meta
 			notes = $"../Sounds".audiopacks[audiopack]
@@ -188,11 +190,14 @@ func stop():
 	$Agulha.position.x = 0
 
 func _on_Notes_meta_clicked(meta):
-	var new_text = $"LineEdit".text
-	if new_text.length() < 16:
-		new_text += meta
-		$"LineEdit".text = new_text
-		_on_LineEdit_text_entered(new_text)
+	if meta == "close":
+		$"Notes".visible = false
+	else:
+		var new_text = $"LineEdit".text
+		if new_text.length() < 16:
+			new_text += meta
+			$"LineEdit".text = new_text
+			_on_LineEdit_text_entered(new_text)
 
 func _on_Notes_meta_hover_started(meta):
 	if meta in notes:
@@ -200,3 +205,16 @@ func _on_Notes_meta_hover_started(meta):
 		$"Notes/AudioStreamPlayer".set_stream(stream)
 		$"Notes/AudioStreamPlayer".volume_db = volume
 		$"Notes/AudioStreamPlayer".play()
+
+func _on_LineEdit_focus_entered():
+	$"Notes".visible = true
+#	$"Notes".grab_focus()
+
+func _on_LineEdit_focus_exited():
+	pass # Replace with fun body.
+	
+func _on_Notes_focus_exited():
+	pass # Replace with function body.
+
+func _on_Notes_mouse_exited():
+		$"Notes".visible = false
