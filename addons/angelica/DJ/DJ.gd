@@ -6,16 +6,14 @@ var close = true
 var mini = true
 
 #var audacitypath = ["flatpak run org.audacityteam.Audacity","flatpak list"]
-var user = {
-	"name":"default"
-	}
+
 var loop = ""
 var count = 0
 var trackerposition = Vector2(0,28)
 var playing = false
 var m_name = "New track"
 var allmusic
-
+onready var user = get_node("../../User").user
 onready var track = load("res://addons/angelica/DJ/Track.tscn")
 onready var musiclist = load("res://addons/angelica/DJ/MusicPop.tscn")
 onready var tracks = []
@@ -94,6 +92,7 @@ func _on_RichTextLabel_meta_clicked(meta):
 				get_node(".").add_child(instance)
 		"cancel":
 			$"SavePopUp".visible = false
+
 func save_music():
 	var mymusic = {}
 	var m_name = $"MusicName".text
@@ -110,6 +109,7 @@ func save_music():
 #		$Music.music[m_name] = mymusic
 		allmusic[m_name] = mymusic
 		var FILE_NAME = "user://"+user["name"]+"/music/music.json"
+		print (FILE_NAME)
 		var file = File.new()
 		file.open(FILE_NAME, File.WRITE)
 		file.store_string(to_json(allmusic))

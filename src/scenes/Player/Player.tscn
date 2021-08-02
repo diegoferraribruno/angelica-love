@@ -10086,51 +10086,61 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=2013]
 flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 32, 32 )
+atlas = ExtResource( 3 )
+region = Rect2( 688, 688, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=2014]
 flags = 4
 atlas = ExtResource( 17 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2015]
 flags = 4
 atlas = ExtResource( 17 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2016]
 flags = 4
 atlas = ExtResource( 17 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2017]
 flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 31, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2018]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 31, 0, 31, 32 )
+region = Rect2( 0, 0, 31, 32 )
 
 [sub_resource type="AtlasTexture" id=2019]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 93, 0, 31, 32 )
+region = Rect2( 31, 0, 31, 32 )
 
 [sub_resource type="AtlasTexture" id=2020]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 62, 0, 31, 32 )
+region = Rect2( 93, 0, 31, 32 )
 
 [sub_resource type="AtlasTexture" id=2021]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 688, 688, 16, 16 )
+atlas = ExtResource( 6 )
+region = Rect2( 62, 0, 31, 32 )
 
 [sub_resource type="SpriteFrames" id=2022]
 animations = [ {
+"frames": [ SubResource( 2013 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2014 ), SubResource( 2015 ), SubResource( 2016 ), SubResource( 2017 ) ],
+"loop": true,
+"name": "xperma",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run-h",
@@ -10141,20 +10151,10 @@ animations = [ {
 "name": "run-v",
 "speed": 9.0
 }, {
-"frames": [ SubResource( 2013 ), SubResource( 2014 ), SubResource( 2015 ), SubResource( 2016 ) ],
-"loop": true,
-"name": "xperma",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 2017 ), SubResource( 2018 ), SubResource( 2017 ), SubResource( 2018 ), SubResource( 2019 ), SubResource( 2020 ), SubResource( 2019 ), SubResource( 2018 ) ],
+"frames": [ SubResource( 2018 ), SubResource( 2019 ), SubResource( 2018 ), SubResource( 2019 ), SubResource( 2020 ), SubResource( 2021 ), SubResource( 2020 ), SubResource( 2019 ) ],
 "loop": true,
 "name": "stand",
 "speed": 6.0
-}, {
-"frames": [ SubResource( 2021 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2023]
@@ -10175,10 +10175,10 @@ flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 800, 832, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=2029]
+[sub_resource type="AtlasTexture" id=2027]
 flags = 4
-atlas = ExtResource( 14 )
-region = Rect2( 1120, 800, 32, 32 )
+atlas = ExtResource( 3 )
+region = Rect2( 192, 624, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=2028]
 animations = [ {
@@ -10187,7 +10187,7 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2029 ) ],
+"frames": [ SubResource( 2027 ), SubResource( 2025 ), SubResource( 2027 ) ],
 "loop": false,
 "name": "tiro",
 "speed": 5.0
@@ -10249,6 +10249,7 @@ __meta__ = {
 position = Vector2( 0, 5 )
 frames = SubResource( 2022 )
 animation = "stand"
+frame = 4
 playing = true
 offset = Vector2( 0, -15 )
 
