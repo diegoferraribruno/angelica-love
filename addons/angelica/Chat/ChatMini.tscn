@@ -123,9 +123,9 @@ __meta__ = {
 
 [node name="ChatMini" type="RichTextLabel" parent="."]
 margin_left = 29.0
-margin_top = 23.0
-margin_right = 310.0
-margin_bottom = 86.0
+margin_top = 21.0
+margin_right = 314.0
+margin_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )

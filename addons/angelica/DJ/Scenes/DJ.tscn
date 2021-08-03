@@ -114,7 +114,7 @@ __meta__ = {
 }
 
 [node name="Menu" type="RichTextLabel" parent="."]
-modulate = Color( 1, 0.1, 2, 1 )
+modulate = Color( 1, 0.1, 1.16, 1 )
 margin_left = 326.0
 margin_top = 11.0
 margin_right = 433.0

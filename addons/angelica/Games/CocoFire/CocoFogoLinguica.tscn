@@ -3,13 +3,14 @@
 [ext_resource path="res://addons/angelica/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://img/64/2691.png" type="Texture" id=3]
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.4, 0.0980392, 0.588235, 1 )
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.498039, 0.211765, 0.054902, 1 )
 border_width_left = 8
-border_width_top = 8
+border_width_top = 52
 border_width_right = 8
-border_width_bottom = 8
-border_color = Color( 0.635294, 0.164706, 0.164706, 1 )
+border_width_bottom = 52
+border_color = Color( 0.439216, 0.101961, 0.101961, 1 )
+border_blend = true
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -19,10 +20,10 @@ corner_radius_bottom_left = 8
 radius = 24.7312
 height = 9.3089
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 36
-outline_size = 2
-outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
+outline_size = 3
+outline_color = Color( 0.0862745, 0.0862745, 0.0862745, 0.647059 )
 use_mipmaps = true
 use_filter = true
 extra_spacing_top = 4
@@ -33,9 +34,9 @@ font_data = ExtResource( 2 )
 [node name="Super-Flying-Shit-On-Fire" type="Node2D"]
 
 [node name="Panel" type="RichTextLabel" parent="."]
-margin_right = 640.0
-margin_bottom = 360.0
-custom_styles/normal = SubResource( 3 )
+margin_right = 601.0
+margin_bottom = 380.0
+custom_styles/normal = SubResource( 1 )
 custom_colors/default_color = Color( 0.27451, 0.0313726, 0.337255, 1 )
 bbcode_text = "
 
@@ -52,28 +53,27 @@ EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEIT
 ----------------------------------------------------------------------------------------------------------------------------
 
 "
-text = "
+text = "EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEIAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAIAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAA
 
 
 
-EITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAEITAAAAA
 
 
 
-----------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------
 
 
 
-----------------------------------------------------------------------------------------------------------------------------
-
-"
+--------------------------------------------------------------------------------------------------------------------"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 136.661, 166.879 )
+position = Vector2( 64.5887, 161.884 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -114,10 +114,10 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 44.3568
-margin_top = 224.168
-margin_right = 622.357
-margin_bottom = 308.168
+margin_left = 22.3297
+margin_top = 239.811
+margin_right = 600.33
+margin_bottom = 323.811
 bbcode_enabled = true
 bbcode_text = "[img]res://img/32/1f4bb.png[/img]           [img]res://img/32/1f3ae.png[/img]           [img]res://img/32/1f35f.png[/img]             [img]res://img/32/1f354.png[/img]         [img]res://img/64/1f422.png[/img]          [img]res://img/32/2605.png[/img]            [img]res://img/32/1f344.png[/img]         "
 text = "                                                                           "
@@ -127,10 +127,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 526.687
-margin_top = 166.26
-margin_right = 618.687
-margin_bottom = 250.26
+margin_left = 497.661
+margin_top = 161.674
+margin_right = 572.661
+margin_bottom = 245.674
 bbcode_enabled = true
 bbcode_text = "[img]res://img/64/1f6bd.png[/img]"
 scroll_active = false
@@ -140,7 +140,7 @@ __meta__ = {
 
 [node name="Bullet" type="Node2D" parent="."]
 modulate = Color( 13.29, 1.16, 1.73, 1 )
-position = Vector2( 227.701, 147.043 )
+position = Vector2( 143.615, 156.668 )
 rotation = -1.5708
 __meta__ = {
 "_edit_group_": true
@@ -160,7 +160,7 @@ __meta__ = {
 
 [node name="Bullet2" type="Node2D" parent="."]
 modulate = Color( 13.29, 1.16, 1.73, 1 )
-position = Vector2( 323.053, 124.795 )
+position = Vector2( 257.655, 163.786 )
 rotation = -1.5708
 __meta__ = {
 "_edit_group_": true
@@ -180,7 +180,7 @@ __meta__ = {
 
 [node name="Bullet3" type="Node2D" parent="."]
 modulate = Color( 13.29, 1.16, 1.73, 1 )
-position = Vector2( 282.793, 170.352 )
+position = Vector2( 209.386, 186.651 )
 rotation = -1.5708
 __meta__ = {
 "_edit_group_": true
@@ -199,7 +199,7 @@ __meta__ = {
 }
 
 [node name="Enemy" type="Node2D" parent="."]
-position = Vector2( 431.829, 191.179 )
+position = Vector2( 417.155, 187.826 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -256,14 +256,14 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 64.2973
-margin_top = 19.0
-margin_right = 588.297
-margin_bottom = 80.0
+margin_left = 6.63641
+margin_top = 11.2549
+margin_right = 590.636
+margin_bottom = 56.2549
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 7
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center][wave][rainbow]Flying-Poop-Shooting-Fire[/rainbow][/wave][/center]"
 text = "Flying-Poop-Shooting-Fire"
@@ -273,16 +273,16 @@ __meta__ = {
 }
 
 [node name="Title2" type="RichTextLabel" parent="."]
-margin_left = 43.8325
-margin_top = 305.335
-margin_right = 608.832
-margin_bottom = 351.335
+margin_left = 19.8477
+margin_top = 325.932
+margin_right = 584.847
+margin_bottom = 371.932
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 7
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center]Later, only on angelica"
+bbcode_text = "[center][color=yellow]Later, only on angelica[/color][/center]"
 text = "Later, only on angelica"
 scroll_active = false
 __meta__ = {

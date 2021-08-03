@@ -19,7 +19,7 @@ script = ExtResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Player" parent="Game" instance=ExtResource( 5 )]
-position = Vector2( 961.189, 596.724 )
+position = Vector2( 888.135, 630.578 )
 script = ExtResource( 8 )
 
 [node name="Paint" type="Node2D" parent="."]

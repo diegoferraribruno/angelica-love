@@ -33,6 +33,10 @@ __meta__ = {
 [node name="Hint" parent="." instance=ExtResource( 2 )]
 visible = false
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="gui_input" from="bbcode" to="." method="_on_bbcode_gui_input"]
 [connection signal="meta_clicked" from="bbcode" to="." method="_on_bbcode_meta_clicked"]
 [connection signal="meta_hover_ended" from="bbcode" to="." method="_on_bbcode_meta_hover_ended"]
