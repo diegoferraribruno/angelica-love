@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://addons/angelica/Studio/Studio.tres" type="StyleBox" id=1]
+[ext_resource path="res://addons/angelica/fonts/Studio.tres" type="StyleBox" id=1]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/angelica/GDPaint/HScrollBarBrushSize.gd" type="Script" id=4]
 [ext_resource path="res://addons/angelica/GDPaint/PaintMenu.gd" type="Script" id=7]

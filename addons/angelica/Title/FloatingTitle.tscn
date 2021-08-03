@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://addons/angelica/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://addons/angelica/Studio/FloatingTitle.gd" type="Script" id=2]
-[ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/angelica/Title/FloatingTitle.gd" type="Script" id=1]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/angelica/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/angelica/Title/TitleEditor.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -14,7 +14,7 @@ use_mipmaps = true
 use_filter = true
 extra_spacing_top = 4
 extra_spacing_bottom = 2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 6.0
@@ -39,9 +39,9 @@ font_path = "res://addons/angelica/fonts/OpenSans-Regular.ttf"
 font_data = SubResource( 3 )
 
 [node name="Title" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
-[node name="SuperButton" parent="." instance=ExtResource( 4 )]
+[node name="SuperButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13.8775, 3.32649 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -66,7 +66,7 @@ visible = false
 position = Vector2( 2.79271, 54.3935 )
 script = ExtResource( 5 )
 
-[node name="SuperButton" parent="Editor" instance=ExtResource( 4 )]
+[node name="SuperButton" parent="Editor" instance=ExtResource( 2 )]
 position = Vector2( 13.2142, 3.77548 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Editor"]
@@ -97,7 +97,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EmojiPanel" parent="Editor" instance=ExtResource( 3 )]
+[node name="EmojiPanel" parent="Editor" instance=ExtResource( 4 )]
 visible = false
 position = Vector2( 29.8878, 94.9999 )
 

@@ -14,6 +14,8 @@ onready var alarm = $"AudioStreamPlayer"
 onready var game = get_parent().get_node("Game")
 onready var screenSize = get_viewport().get_visible_rect().size
 onready var music = {"main":{"BPM":130,"name":"playing"},"tracks":{"0":{"BPM":260,"audiopack":"kenney","beat":"Ambient","fx":0,"loop":true,"volume":0},"1":{"BPM":130,"audiopack":"kylan","beat":"<><<>><< ","fx":0,"loop":true,"volume":0},"2":{"BPM":130,"audiopack":"openpath1","beat":"Diego01","fx":0,"loop":true,"volume":-11.428571}}}
+
+export var dj : PackedScene
 #onready var Cbar = get_node("../CommandBar")
 
 var paint = preload("res://addons/angelica/GDPaint/PaintTools.tscn")
@@ -26,13 +28,13 @@ var glow = preload("res://addons/angelica/WorldEnviroments/Glow.tscn")
 var studio = preload("res://addons/angelica/Studio/Studio.tscn")
 var chat = preload("res://addons/angelica/Chat/Chat.tscn")
 var editor = preload("res://addons/angelica/Editor/Editor.tscn")
-var dj = preload("res://addons/angelica/DJ/DJ.tscn")
+#var dj = preload("res://addons/angelica/DJ/DJ.tscn")
 var dock = preload("res://addons/angelica/Dock/Dock.tscn")
 var mini = preload("res://addons/angelica/Chat/ChatMini.tscn")
 var rest = preload("res://addons/angelica/Health/Rest.tscn")
 var next = preload("res://addons/angelica/Next/Next.tscn")
 var star = preload("res://addons/angelica/Star/Star.tscn")
-var title = preload("res://addons/angelica/Studio/FloatingTitle.tscn")
+var title = preload("res://addons/angelica/Title/FloatingTitle.tscn")
 
 func text_entered(argument):
 	synapse(argument)
@@ -139,7 +141,7 @@ func synapse(new_text):
 			elif game.has_node("Love"):
 				get_node("../Game/Love").queue_free()
 #				$"../".visible = true
-				ai_say("Good game!")
+				ai_say("What was that?")
 #				quit("dj clear")
 		"login":
 			var instance = login.instance()
@@ -227,13 +229,6 @@ func synapse(new_text):
 			save_prefs()
 		_:
 			ai_say("command not processed: " + new_text)
-#			if self.has_node("Mini") == true:
-#				if get_node("Mini").visible == false:
-#					 get_node("Mini").visible = true
-#			else:
-#				var instance = chat.instance()
-#				self.add_child(instance)
-#			ai_
 
 func screen_shot(selfie):
 	if user.user["name"] != "Player":
@@ -251,8 +246,6 @@ func screen_shot(selfie):
 			get_node("../Dock").visible = true
 	else:
 		ai_say("Please [url=login]login[/url] first so we can know where to save your pictures")
-#					get_node("../../CommandBar").visible = true
-#				ai_say(text)
 
 func datetime_to_string(date):
 	if (
@@ -303,7 +296,7 @@ func save_prefs():
 	file.open(FILE_NAME, File.WRITE)
 	file.store_string(to_json(to_store))
 	file.close()
-	ai_say("Preferences saved")
+#	ai_say("Preferences saved")
 
 func print_user():
 	ai_say(str(user.user))

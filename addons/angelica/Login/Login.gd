@@ -27,7 +27,11 @@ func _ready():
 	$"Player".emoji = head
 	user_temp["emoji"] = head
 	load_user_list()
- 
+	ai_say("welcome")
+
+func ai_say(text):
+	get_parent().ai_say("welcome")
+
 func load_user_list():
 	var file = File.new()
 	if file.file_exists(FILE_NAME):

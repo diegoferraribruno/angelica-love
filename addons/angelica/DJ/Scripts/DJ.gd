@@ -14,8 +14,8 @@ var playing = false
 var m_name = "New track"
 var allmusic
 onready var user = get_node("../../User").user
-onready var track = load("res://addons/angelica/DJ/Track.tscn")
-onready var musiclist = load("res://addons/angelica/DJ/MusicPop.tscn")
+onready var track = load("res://addons/angelica/DJ/Scenes/Track.tscn")
+onready var musiclist = load("res://addons/angelica/DJ/Scenes/MusicPop.tscn")
 onready var tracks = []
 onready var bpm = 130
 onready var speed_a = 130

@@ -10,7 +10,6 @@ var pitch = 1
 var loop = true
 var fx = 0
 
-onready var ascript = load("res://addons/angelica/DJ/SuperAudioStream.gd")
 onready var bpms = 130
 var loadtrack
 var track = {0:{"BPM":130,"volume":0,"pitch":1,"beat":"aaaa","loop":true,"audiopack":"kenney"}}

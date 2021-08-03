@@ -7,7 +7,7 @@
 [ext_resource path="res://addons/angelica/fonts/style/pre_line_edit.tres" type="DynamicFontData" id=5]
 [ext_resource path="res://addons/angelica/Studio/Studio.gd" type="Script" id=6]
 [ext_resource path="res://addons/angelica/Studio/StudioBody.gd" type="Script" id=7]
-[ext_resource path="res://addons/angelica/Studio/Studio.tres" type="StyleBox" id=8]
+[ext_resource path="res://addons/angelica/fonts/Studio.tres" type="StyleBox" id=8]
 
 [sub_resource type="Theme" id=1]
 
