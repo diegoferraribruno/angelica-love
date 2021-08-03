@@ -106,8 +106,18 @@ var user = {
 #		"editor":"1f4df",
 #		"list notes":"1f4d4",
 #		"hide":"1f4bb",
-	}
-}
+		}
+	, "Chat":{"position":"Vector2( 13, 119 )"},
+		"DJ":{"position":"Vector2( 722.122, 44.836 )"},
+		"Login":{"position":"Vector2( 480.48, 229.921 )"},
+		"Mini":{"position":"Vector2( 515.843, 508.705 )"},
+		"Next":{"position":"Vector2( 15, 500 )"},
+		"PaintTools":{"position":"Vector2( 1200.4, -3.9577 )"},
+		"Rest":{"position":"Vector2( 946.037, 499.612 )"},
+		"Star":{"position":"Vector2( 685, 61 )"},
+		"Studio":{"position":"Vector2( 1086, 240 )"}
+		}
+
 #var apps = {}
 #
 #func add_app_position(app,app_xy):
