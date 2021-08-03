@@ -4,7 +4,7 @@ var playernum = 0
 var close = true
 var playing = false
 var looping = true
-var  tracknumber = 0
+var tracknumber = 0
 var volume = 0
 var fx 
 var loop = true
@@ -25,16 +25,18 @@ export var superbutton : PackedScene
 func placeholder (count):
 	tracknumber = count
 	$LineEdit.placeholder_text = "track "+ str(count)
+	update_notes()
 
 
 func _on_Loop_pressed():
 	if looping == true:
 		looping = false
-		$Loop.pressed = false
+#		$Loop.pressed = false
 	elif looping == false:
-		$Loop.pressed = true
+#		$Loop.pressed = true
 		looping = true
-
+	update_control()
+	
 func _on_Playing_pressed():
 	if playing == false:
 		$Playing.pressed = true
@@ -44,6 +46,7 @@ func _on_Playing_pressed():
 	elif playing == true:
 		playing = false
 		$Playing.pressed = false
+	update_control()
 
 func _ready():
 	if looping == true:
@@ -56,21 +59,25 @@ func _ready():
 	var instance = superbutton.instance()
 	add_child(instance)
 	update_notes()
+	update_control()
+	$"Notes".visible = false
+
 
 func update_notes():
-	var bbcode = "[center] Track nº: "+str(tracknumber)+" [img]res://img/16/"+icon+".png[/img]" + audiopack + " Audio Pack [url=close][img]res://img/16/274e.png[/img][/url][/center]\n [url=_]__[/url]"
+	var bbcode = "[center][img]res://img/16/"+icon+".png[/img]  Audio Pack: " + audiopack + ". Track nº: "+str(tracknumber)+" [url=close][img]res://img/16/274e.png[/img][/url][/center]\n [url=_]__[/url]"
 	for i in notes:
 		bbcode += "[url="+i+"]"+i+"[/url] "
 	$"Notes".bbcode_text = bbcode
-	$"Notes".visible = true
+#	$"Notes".visible = true
 	
 func _on_Menu_meta_clicked(meta):
 	match meta:
-		"play beat":
-			if playing == false:
-				bpms = $SpeedTune.value
-				_on_LineEdit_text_entered($LineEdit.text)
-			playing = !playing
+		"play track":
+			_on_Playing_pressed()
+#			if playing == false:
+#				bpms = $SpeedTune.value
+#				_on_LineEdit_text_entered($LineEdit.text)
+#			playing = !playing
 		"paste":
 			$LineEdit.text += OS.clipboard
 		"copy":
@@ -81,6 +88,7 @@ func _on_Menu_meta_clicked(meta):
 			icon = $"../Sounds".icons[audiopack]
 			get_node("SuperButton").update_icon()
 			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
+			$"Notes".visible = true
 			update_notes()
 
 		"kylan":
@@ -90,6 +98,8 @@ func _on_Menu_meta_clicked(meta):
 			get_node("SuperButton").update_icon()
 			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
 			update_notes()
+			$"Notes".visible = true
+
 		"openpath1":
 			audiopack = meta
 			notes = $"../Sounds".audiopacks[audiopack]
@@ -97,6 +107,24 @@ func _on_Menu_meta_clicked(meta):
 			get_node("SuperButton").update_icon()
 			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
 			update_notes()
+			$"Notes".visible = true
+
+		"rewind":
+			stop_playing()
+		"loop":
+			_on_Loop_pressed()
+
+func update_control():
+	var rewind = "[url=rewind][img]res://img/16/23ee.png[/img][/url] "
+	var loopbutton = "[url=loop][img]res://img/16/1f502.png[/img][/url] "
+	var playbutton = "[url=play track][img]res://img/16/25b6.png[/img][/url]" 
+	if playing == true:
+		playbutton = "[url=play track][img]res://img/16/23f8.png[/img][/url]"
+	if looping == true:
+		loopbutton = "[url=loop][img]res://img/16/1f504.png[/img][/url] "
+	$"Menu3".bbcode_text = rewind + loopbutton + playbutton
+
+
 func _on_LineEdit_text_changed(new_text):
 	beat = new_text
 	var line = new_text
@@ -137,15 +165,16 @@ func loopcheck() -> void:
 		var new_text = $LineEdit.text
 		_on_LineEdit_text_entered(new_text)
 		if $LineEdit.text == "":
-			stop()
+			stop_playing()
 	if looping == false and playing == true:
-		stop()
+		stop_playing()
 
 func funk(stream):
 	if playing == true:
 		var newaudio = players[playernum]
 		newaudio.set_stream(stream)
 		newaudio.volume_db = volume
+		newaudio.pitch_scale = $"Pitch".value
 		newaudio.play()
 		playernum +=1
 	if playernum > 15:
@@ -182,12 +211,13 @@ func _on_VSlider_value_changed(value):
 func _on_Timer_timeout():
 	_on_LineEdit_text_entered(beat)
 
-func stop():
+func stop_playing():
 	if playing == true:
 		playing = false
 		$Playing.pressed = false
 	play_head = 0
 	$Agulha.position.x = 0
+	update_control()
 
 func _on_Notes_meta_clicked(meta):
 	if meta == "close":
@@ -207,8 +237,10 @@ func _on_Notes_meta_hover_started(meta):
 		$"Notes/AudioStreamPlayer".play()
 
 func _on_LineEdit_focus_entered():
-	$"Notes".visible = true
+	pass
+#	$"Notes".visible = true
 #	$"Notes".grab_focus()
+
 
 func _on_LineEdit_focus_exited():
 	pass # Replace with fun body.
@@ -218,3 +250,18 @@ func _on_Notes_focus_exited():
 
 func _on_Notes_mouse_exited():
 		$"Notes".visible = false
+
+
+func _on_LineEdit_gui_input(event):
+	if Input.is_action_just_pressed("Click"):
+		$"Notes".visible = true
+	
+
+
+func _on_Timer2_timeout():
+	$"Notes".visible = false
+	pass # Replace with function body.
+
+
+func _on_Pitch_value_changed(value):
+	pass # Replace with function body.

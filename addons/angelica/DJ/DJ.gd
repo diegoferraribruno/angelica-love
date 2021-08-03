@@ -9,7 +9,7 @@ var mini = true
 
 var loop = ""
 var count = 0
-var trackerposition = Vector2(0,32)
+var trackerposition = Vector2(0,34)
 var playing = false
 var m_name = "New track"
 var allmusic
@@ -54,13 +54,14 @@ func loop_all():
 		var x = int(i)
 		if x < tracks.size():
 			tracks[x]._on_Loop_pressed()
+			
 
 func rewind():
 	for i in $Loop.text:
 		var x = int(i)
 		if x < tracks.size():
 			tracks[x].loopcheck()
-			tracks[x].stop()
+			tracks[x].stop_playing()
 
 func _on_RichTextLabel_meta_clicked(meta):
 	match meta:
@@ -141,7 +142,7 @@ func loadmusic(m_name):
 	for i in allmusic[m_name]["tracks"]:
 		var audiopack = allmusic[m_name]["tracks"][i]["audiopack"]
 		var instance = track.instance()
-		instance.position = trackerposition*count+Vector2(0,78)
+		instance.position = trackerposition*count+Vector2(0,82)
 		get_node(".").add_child(instance)
 		instance.icon = $"Sounds".icons[audiopack]
 		instance.loadbeat(allmusic[m_name]["tracks"][i])
@@ -162,7 +163,7 @@ func remove_track(track):
 	for i in tracks:
 		count = tracks.find(i)
 		i.placeholder(count)
-		i.position = trackerposition*count+Vector2(0,42)
+		i.position = trackerposition*count+Vector2(0,82)
 func _on_SpeedTune_value_changed(value):
 	bpm = value
 

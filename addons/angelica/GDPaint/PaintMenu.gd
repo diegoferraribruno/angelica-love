@@ -13,7 +13,7 @@ onready var _parent = get_parent()
 onready var paint_control = get_node("../../Paint/PaintControl")
 
 var paintmenu = [
-	"[url=mode_pencil][img]res://img/16/1f58c.png[/img][url=mode_emoji][img]res://img/16/1f600.png[/img][/url][url=mode_rectangle][img]res://img/16/25fb.png[/img][/url] [url=mode_circle][img]res://img/16/2690.png[/img][/url][url=undo_stroke][img]res://img/16/21aa.png[/img][/url] [url=rewind][img]res://img/16/1f501.png[/img][/url] [url=mode_none][img]res://img/16/1f6c7.png[/img][/url][url=clear_picture][img]res://img/16/1f5d1.png[/img][/url][url=glow][img]res://img/16/1f4a1.png[/img][/url]"
+	"[url=mode_pencil][img]res://img/16/1f58c.png[/img][url=mode_emoji][img]res://img/16/1f496.png[/img][/url][url=mode_rectangle][img]res://img/16/25fb.png[/img][/url] [url=mode_circle][img]res://img/16/2690.png[/img][/url][url=undo_stroke][img]res://img/16/21aa.png[/img][/url] [url=rewind][img]res://img/16/1f501.png[/img][/url] [url=mode_none][img]res://img/16/1f6c7.png[/img][/url][url=clear_picture][img]res://img/16/1f5d1.png[/img][/url][url=glow][img]res://img/16/1f4a1.png[/img][/url]"
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -48,11 +48,11 @@ func button_pressed(button_name):
 
 	if button_name == "mode_pencil":
 		paint_control.brush_mode = paint_control.BrushModes.PENCIL
-		brush_settings.modulate = Color(2, 2, 2, 1)
+		brush_settings.modulate = Color(0.5, 1.2, 3, 1)
 		tool_name = "Pencil"	
 	if button_name == "mode_emoji":
 		paint_control.brush_mode = paint_control.BrushModes.EMOJI
-		brush_settings.modulate = Color(1, 1, 1, 1)
+		brush_settings.modulate = Color(1.5, 1.5, 1.5, 1)
 		tool_name = "Emoji"
 		var brushsize = $"BrushSettings/HScrollBarBrushSize"
 		brushsize.visible = true

@@ -108,8 +108,7 @@ func change_emoji(argument):
 	$"Player/AvatarHead".bbcode_text = "[img]res://img/32/"+argument+".png[/img]"
 
 func _on_LineEdit_text_entered(new_text):
-	$"LineEdit".focus_next
-	$"Sillyword".grab_focus
+	$"Sillyword".grab_focus()
 
 func _on_Login_meta_clicked(meta):
 	match meta:

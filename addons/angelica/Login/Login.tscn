@@ -126,6 +126,7 @@ __meta__ = {
 }
 
 [node name="ConfigPanel" type="Panel" parent="."]
+visible = false
 margin_left = 5.34534
 margin_top = 281.742
 margin_right = 447.345

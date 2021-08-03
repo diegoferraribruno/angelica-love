@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 var type := 0
 var shooter
 var speed := 2
@@ -23,6 +23,7 @@ func _physics_process(delta):
 		position.y = screensize.y
 	if position.y > screensize.y:
 		position.y = 0
+	
 func _on_Timer_timeout():
 	queue_free()
 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/angelica/Studio/Studio.tres" type="StyleBox" id=1]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/angelica/GDPaint/HScrollBarBrushSize.gd" type="Script" id=4]
-[ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/angelica/GDPaint/PaintMenu.gd" type="Script" id=7]
 [ext_resource path="res://addons/angelica/GDPaint/color_picker.tres" type="Theme" id=8]
 [ext_resource path="res://addons/angelica/GDPaint/paint_tools.png" type="Texture" id=9]
@@ -23,15 +22,12 @@
 [node name="PaintTools" type="Node2D"]
 position = Vector2( 512.404, 9.04231 )
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Background" type="Panel" parent="."]
 pause_mode = 2
-margin_left = -2.0
-margin_right = 104.0
-margin_bottom = 221.0
+margin_top = 3.0
+margin_right = 99.0
+margin_bottom = 250.0
 mouse_filter = 1
 theme = SubResource( 1 )
 custom_styles/panel = ExtResource( 1 )
@@ -40,20 +36,21 @@ __meta__ = {
 }
 
 [node name="LabelTools" type="Label" parent="."]
-margin_left = 31.5297
-margin_top = 6.52973
-margin_right = 139.53
-margin_bottom = 20.5297
-text = "Tool: Off"
+margin_left = 15.592
+margin_top = 180.49
+margin_right = 74.592
+margin_bottom = 211.49
+text = "Tool:
+Off"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelStats" type="Label" parent="."]
 modulate = Color( 0.414062, 0.414062, 0.414062, 1 )
-margin_left = 32.5279
+margin_left = 5.61549
 margin_top = 133.225
-margin_right = 91.5279
+margin_right = 64.6155
 margin_bottom = 147.225
 text = "00000"
 align = 1
@@ -62,10 +59,10 @@ __meta__ = {
 }
 
 [node name="PaintMenu" type="RichTextLabel" parent="."]
-margin_left = 9.0
-margin_top = 54.0
-margin_right = 35.0
-margin_bottom = 216.0
+margin_left = 71.0
+margin_top = 56.0
+margin_right = 97.0
+margin_bottom = 241.0
 bbcode_enabled = true
 bbcode_text = "[url=mode_pencil][img]res://img/16/1f58c.png[/img][/url][url=mode_rectangle][img]res://img/16/25fb.png[/img][/url][url=mode_circle][img]res://img/16/2690.png[/img][/url]
 [img]res://img/16/21aa.png[/img][url=mode_none][img]res://img/16/1f6c7.png[/img][/url][url=clear_picture][img]res://img/16/1f5d1.png[/img][/url][url=glow][img]res://img/16/1f4a1.png[/img][/url][url=rewind][img]res://img/16/1f501.png[/img][/url]"
@@ -102,19 +99,19 @@ __meta__ = {
 }
 
 [node name="BrushSettings" type="Control" parent="."]
-margin_left = 35.0
-margin_top = 37.0
-margin_right = 103.0
-margin_bottom = 89.0
+margin_left = 2.0
+margin_top = 52.0
+margin_right = 63.0
+margin_bottom = 104.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelBrushSize" type="Label" parent="BrushSettings"]
-margin_left = -1.0
-margin_top = 27.4703
-margin_right = 56.0
-margin_bottom = 43.4703
+margin_left = 10.0
+margin_top = 25.0
+margin_right = 54.0
+margin_bottom = 41.0
 text = "4px"
 align = 1
 __meta__ = {
@@ -138,10 +135,10 @@ __meta__ = {
 }
 
 [node name="HScrollBarBrushSize" type="HSlider" parent="BrushSettings"]
-margin_left = -1.0
-margin_top = 13.0
-margin_right = 58.0
-margin_bottom = 29.0
+margin_left = 9.0
+margin_top = 6.0
+margin_right = 57.0
+margin_bottom = 25.0
 min_value = 2.0
 max_value = 120.0
 step = 2.0
@@ -210,36 +207,33 @@ __meta__ = {
 }
 
 [node name="ColorPickerBrush" type="ColorPickerButton" parent="."]
-margin_left = 10.0
-margin_top = 31.0
-margin_right = 93.0
-margin_bottom = 47.0
+margin_left = 15.0
+margin_top = 100.0
+margin_right = 57.0
+margin_bottom = 124.0
 theme = ExtResource( 8 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-color = Color( 0.945098, 0.678431, 0.937255, 1 )
+color = Color( 0.5, 1.2, 3, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorPicker" type="ColorPicker" parent="ColorPickerBrush"]
 visible = false
-margin_left = 341.853
-margin_top = 182.828
-margin_right = 663.853
-margin_bottom = 644.828
+margin_left = 361.853
+margin_top = 202.828
+margin_right = 683.853
+margin_bottom = 664.828
 theme = ExtResource( 8 )
 custom_constants/h_width = -10
 custom_constants/sv_width = -14
 alignment = 1
 
-[node name="EmojiPanel" parent="." instance=ExtResource( 6 )]
-position = Vector2( 177, 8 )
-
 [node name="SuperButton" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.25, 0.125001 )
+position = Vector2( 28.2811, 7.9307 )
 
 [connection signal="focus_exited" from="BrushSettings/HScrollBarBrushSize" to="BrushSettings/HScrollBarBrushSize" method="_on_HScrollBarBrushSize_focus_exited"]
