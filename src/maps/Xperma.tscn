@@ -66,28 +66,29 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="XpermaWorld" type="YSort"]
+[node name="XpermaWorld" type="Node2D"]
 script = ExtResource( 12 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1472.0
 margin_bottom = 868.0
-color = Color( 2, 2, 2, 1 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="spiralbg" type="Sprite" parent="."]
+modulate = Color( 0.556863, 0.0980392, 0.541176, 1 )
+position = Vector2( 708.338, 421.916 )
+rotation = -1.21221
+scale = Vector2( 1.82165, 1.82165 )
+z_as_relative = false
+texture = ExtResource( 1 )
+offset = Vector2( -18, 10 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Fase1"
 anims/Fase1 = SubResource( 1 )
-
-[node name="spiralbg" type="Sprite" parent="."]
-modulate = Color( 2.24804, 2.24804, 2.24804, 1 )
-position = Vector2( 708.338, 421.916 )
-rotation = 0.396017
-scale = Vector2( 1.82165, 1.82165 )
-texture = ExtResource( 1 )
-offset = Vector2( -18, 10 )
 
 [node name="Xperma" type="YSort" parent="."]
 script = ExtResource( 4 )

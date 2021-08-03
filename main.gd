@@ -8,6 +8,7 @@ extends Node2D
 #2021-08-02 100 days of existence ##
 ##come and have a piece of it!######
 ####################################
+
 #var cena_preload = preload("res://src/scenes/Goodies/Goodies.tscn")
 #var num_iteracoes = 1
 #var touch_main = false
@@ -44,18 +45,9 @@ extends Node2D
 #		  print("Tempo médio teste 1: ", tempo_medio_teste_1, ". Número de testes: ", num_teste_1)
 #
 #
-## TESTE SÓ COM ADD_CHILD        
+# TESTE SÓ COM ADD_CHILD        
 #func teste1():
 #	 for i in num_iteracoes:
 #		  var novo_node = cena_preload.instance()
 #		  novo_node.position = get_global_mouse_position()
-#		  add_child(novo_node)
-#
-##
-## TESTE COM DUPLICATE.     
-#func teste1():
-#	 var novo_base:KinematicBody2D = cena_preload.instance()
-#	 for i in num_iteracoes:
-#		  var novo_node:KinematicBody2D = novo_base.duplicate()
-#		  novo_node.position = Vector2(rand_range(-1000, 1000),rand_range(-1000, 1000))
 #		  add_child(novo_node)

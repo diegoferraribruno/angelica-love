@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/angelica/Themes/SupperButton.gd" type="Script" id=1]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.gd" type="Script" id=1]
 [ext_resource path="res://addons/angelica/Themes/Hint.tscn" type="PackedScene" id=2]
 
 [sub_resource type="DynamicFontData" id=1]

@@ -3,7 +3,7 @@
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/DJ/Track.gd" type="Script" id=2]
 [ext_resource path="res://addons/angelica/DJ/Notes.gd" type="Script" id=3]
-[ext_resource path="res://addons/angelica/DJ/DJmono.tres" type="DynamicFont" id=4]
+[ext_resource path="res://addons/angelica/fonts/DJmono.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0313726, 0.258824, 0.352941, 0.776471 )
@@ -17,16 +17,16 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://addons/angelica/fonts/OpenSans-Light.ttf"
 
 [sub_resource type="DynamicFont" id=3]
 size = 17
 outline_size = 1
 outline_color = Color( 0, 0.458824, 0.733333, 1 )
-font_data = SubResource( 7 )
+font_data = SubResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=4]
 content_margin_top = 13.0
 bg_color = Color( 0.0352941, 0.172549, 0.207843, 0.823529 )
 border_width_left = 8
@@ -39,13 +39,13 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0.0941176, 0.121569, 0.423529 )
 border_width_left = 1
 border_width_right = 1
 border_color = Color( 0.494118, 0.941176, 1, 0.976471 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=6]
 content_margin_left = 6.0
 content_margin_right = 6.0
 draw_center = false
@@ -56,14 +56,14 @@ border_width_bottom = 1
 border_color = Color( 0.529412, 1, 0.976471, 0.52549 )
 border_blend = true
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=7]
 font_path = "res://addons/angelica/fonts/OpenSans-Light.ttf"
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 17
 outline_size = 1
 outline_color = Color( 0, 0.458824, 0.733333, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 7 )
 
 [node name="Track" type="Node2D"]
 position = Vector2( -0.224503, -0.831635 )
@@ -71,7 +71,7 @@ script = ExtResource( 2 )
 superbutton = ExtResource( 1 )
 
 [node name="line" type="Panel" parent="."]
-margin_left = 1.0
+margin_left = -7.0
 margin_top = 1.0
 margin_right = 531.0
 margin_bottom = 35.0
@@ -114,8 +114,8 @@ margin_left = 26.0
 margin_top = -131.0
 margin_right = 501.0
 margin_bottom = 4.0
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[url=a]a[/url] [url=b]b[/url]"
@@ -135,7 +135,7 @@ margin_left = 223.0
 margin_top = 4.0
 margin_right = 233.0
 margin_bottom = 30.0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,7 +146,7 @@ margin_top = 6.0
 margin_right = 384.607
 margin_bottom = 30.0
 hint_tooltip = "Type 16 beats here"
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.431373, 1, 0.827451, 1 )
 max_length = 16
@@ -266,7 +266,7 @@ margin_left = 393.0
 margin_top = 7.0
 margin_right = 453.0
 margin_bottom = 32.0
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
 bbcode_text = "[url=rewind][img]res://img/16/23ee.png[/img][/url] [url=loop ][img]res://img/16/1f504.png[/img][/url] [url=play][img]res://img/16/25b6.png[/img][/url]
 "
@@ -281,10 +281,10 @@ __meta__ = {
 [connection signal="meta_clicked" from="Menu" to="." method="_on_Menu_meta_clicked"]
 [connection signal="meta_clicked" from="Menu2" to="." method="_on_Menu_meta_clicked"]
 [connection signal="focus_exited" from="Notes" to="." method="_on_Notes_focus_exited"]
-[connection signal="meta_clicked" from="Notes" to="." method="_on_Notes_meta_clicked"]
 [connection signal="meta_clicked" from="Notes" to="Notes" method="_on_Notes_meta_clicked"]
-[connection signal="meta_hover_started" from="Notes" to="." method="_on_Notes_meta_hover_started"]
+[connection signal="meta_clicked" from="Notes" to="." method="_on_Notes_meta_clicked"]
 [connection signal="meta_hover_started" from="Notes" to="Notes" method="_on_Notes_meta_hover_started"]
+[connection signal="meta_hover_started" from="Notes" to="." method="_on_Notes_meta_hover_started"]
 [connection signal="mouse_exited" from="Notes" to="." method="_on_Notes_mouse_exited"]
 [connection signal="focus_entered" from="LineEdit" to="." method="_on_LineEdit_focus_entered"]
 [connection signal="focus_exited" from="LineEdit" to="." method="_on_LineEdit_focus_exited"]

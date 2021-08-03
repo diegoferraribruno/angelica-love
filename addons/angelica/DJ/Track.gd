@@ -6,20 +6,20 @@ var playing = false
 var looping = true
 var tracknumber = 0
 var volume = 0
-var fx 
+var pitch = 1
 var loop = true
+var fx = 0
 
 onready var ascript = load("res://addons/angelica/DJ/SuperAudioStream.gd")
 onready var bpms = 130
 var loadtrack
-var track = {0:{"BPM":130,"volume":0,"fx":0,"beat":"aaaa","loop":true,"audiopack":"kenney"}}
+var track = {0:{"BPM":130,"volume":0,"pitch":1,"beat":"aaaa","loop":true,"audiopack":"kenney"}}
 
 onready var beat = $LineEdit.text
 onready var audiopack = track[tracknumber]["audiopack"]
 onready var notes = $"../Sounds".audiopacks[audiopack]
 onready var icon = $"../Sounds".icons[audiopack]
 onready var playsound = notes["a"]
-
 export var superbutton : PackedScene
 
 func placeholder (count):
@@ -174,7 +174,7 @@ func funk(stream):
 		var newaudio = players[playernum]
 		newaudio.set_stream(stream)
 		newaudio.volume_db = volume
-		newaudio.pitch_scale = $"Pitch".value
+		newaudio.pitch_scale = pitch
 		newaudio.play()
 		playernum +=1
 	if playernum > 15:
@@ -190,6 +190,10 @@ func _on_SpeedTune_value_changed(value):
 	bpms = value
 	$"SpeedTune".value = bpms
 
+func _on_Pitch_value_changed(value):
+	pitch = value
+	$"Pitch".value = pitch
+
 func loadbeat(track):
 		$Loop.pressed = track["loop"]
 		$SpeedTune.value = track["BPM"]
@@ -201,7 +205,9 @@ func loadbeat(track):
 		looping = track["loop"]
 		bpms = track["BPM"]
 		audiopack = track["audiopack"]
-
+		if track.has("pitch"):
+			pitch = track["pitch"]
+			$"Pitch".value = pitch
 func _on_Beat1_tree_exiting():
 	get_parent().remove_track(self)
 
@@ -234,13 +240,13 @@ func _on_Notes_meta_hover_started(meta):
 		var stream = load(notes[meta])
 		$"Notes/AudioStreamPlayer".set_stream(stream)
 		$"Notes/AudioStreamPlayer".volume_db = volume
+		$"Notes/AudioStreamPlayer".pitch_scale = pitch
 		$"Notes/AudioStreamPlayer".play()
 
 func _on_LineEdit_focus_entered():
 	pass
 #	$"Notes".visible = true
 #	$"Notes".grab_focus()
-
 
 func _on_LineEdit_focus_exited():
 	pass # Replace with fun body.
@@ -251,17 +257,11 @@ func _on_Notes_focus_exited():
 func _on_Notes_mouse_exited():
 		$"Notes".visible = false
 
-
 func _on_LineEdit_gui_input(event):
 	if Input.is_action_just_pressed("Click"):
 		$"Notes".visible = true
-	
-
 
 func _on_Timer2_timeout():
 	$"Notes".visible = false
 	pass # Replace with function body.
 
-
-func _on_Pitch_value_changed(value):
-	pass # Replace with function body.

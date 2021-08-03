@@ -98,7 +98,8 @@ func _on_bbcode_gui_input(event):
 		dragging_start_position = get_global_mouse_position()
 		parent_start_position = get_parent().position
 		following = true
-#	if Input.is_action_pressed("Click"):
+	if Input.is_action_pressed("Click"):
+		following = true
 #		get_parent().z_index = -1 # necessário ver ordenamento das janelas - this code needs an update.
 
 	elif Input.is_action_just_released("Click"):

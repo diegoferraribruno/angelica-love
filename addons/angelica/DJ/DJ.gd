@@ -20,7 +20,7 @@ onready var tracks = []
 onready var bpm = 130
 onready var speed_a = 130
 
-const controls = "[url=add music][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear][img]res://img/32/1f5d9.png[/img][/url]"
+const controls = "[url=load tracks][img]res://img/32/23ec.png[/img][/url] [url=save music][img]res://img/32/23eb.png[/img][/url] [url=clear][img]res://img/32/1f5d9.png[/img][/url]"
 
 func _on_SpeedTune2_value_changed(value):
 	speed_a = value
@@ -74,7 +74,7 @@ func _on_RichTextLabel_meta_clicked(meta):
 #			$TextEdit.text = ""
 		"paste":
 			$LineEdit.text += OS.clipboard
-		"add music":
+		"load tracks":
 			var m_name = $"MusicName".text
 			if m_name == "":
 				m_name = "New track"
@@ -103,11 +103,11 @@ func save_music():
 		mymusic = {
 			"main":{"name":m_name,"BPM":$"SpeedTune".value},
 			"tracks":{
-					0:{"BPM":130,"volume":0,"fx":0,"beat":"","loop":true,"audiopack":""}
+					0:{"BPM":130,"volume":0,"fx":0,"beat":"","loop":true,"audiopack":"","pitch":1}
 				}
 			}
 		for i in tracks:
-			var newtrack = {"BPM":i.bpms,"volume":i.volume,"fx":i.fx,"beat":i.beat,"loop":i.looping,"audiopack":i.audiopack}
+			var newtrack = {"BPM":i.bpms,"volume":i.volume,"fx":i.fx,"beat":i.beat,"loop":i.looping,"audiopack":i.audiopack,"pitch":i.pitch}
 			mymusic["tracks"][tracks.find(i)] = newtrack
 #		$Music.music[m_name] = mymusic
 		allmusic[m_name] = mymusic
@@ -135,14 +135,14 @@ func loadmusic(m_name):
 	allmusic["New track"] = {
 		"main":{"name":"New track","icon":""},
 		"tracks":{
-			0:{"BPM":130,"volume":0,"fx":0,"beat":"","loop":true,"audiopack":"kenney"}
+			0:{"BPM":130,"volume":0,"fx":0,"beat":"","loop":true,"audiopack":"kenney","pitch":1}
 		}}
 	allmusic["playing"] = get_parent().music
 	count = tracks.size()
 	for i in allmusic[m_name]["tracks"]:
 		var audiopack = allmusic[m_name]["tracks"][i]["audiopack"]
 		var instance = track.instance()
-		instance.position = trackerposition*count+Vector2(0,82)
+		instance.position = trackerposition*count+Vector2(0,92)
 		get_node(".").add_child(instance)
 		instance.icon = $"Sounds".icons[audiopack]
 		instance.loadbeat(allmusic[m_name]["tracks"][i])
@@ -163,7 +163,7 @@ func remove_track(track):
 	for i in tracks:
 		count = tracks.find(i)
 		i.placeholder(count)
-		i.position = trackerposition*count+Vector2(0,82)
+		i.position = trackerposition*count+Vector2(0,92)
 func _on_SpeedTune_value_changed(value):
 	bpm = value
 
