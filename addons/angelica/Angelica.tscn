@@ -51,4 +51,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Shades" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.552941 )
+margin_right = 1993.0
+margin_bottom = 1123.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="meta_clicked" from="HideButton/AngelicaButton" to="." method="_on_AngelicaButton_meta_clicked"]

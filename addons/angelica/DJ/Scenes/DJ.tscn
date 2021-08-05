@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/DJ/Scripts/Sounds.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://addons/angelica/DJ/Scripts/Music.gd" type="Script" id=5]
 [ext_resource path="res://img/64/1f3b6.png" type="Texture" id=6]
 [ext_resource path="res://addons/angelica/fonts/DJmono.tres" type="DynamicFont" id=7]
+[ext_resource path="res://addons/angelica/DJ/Scenes/show_spectrum.tscn" type="PackedScene" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_top = 13.0
@@ -61,11 +62,6 @@ font_data = SubResource( 6 )
 position = Vector2( 33.1225, 1.83627 )
 script = ExtResource( 4 )
 
-[node name="1f3b6" type="Sprite" parent="."]
-modulate = Color( 0, 0.721569, 1, 1 )
-position = Vector2( 467.774, 49.4459 )
-texture = ExtResource( 6 )
-
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 5 )
 
@@ -80,6 +76,23 @@ custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 5.0
+margin_right = 520.0
+margin_bottom = 94.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="show_spectrum" parent="." instance=ExtResource( 8 )]
+position = Vector2( 435.203, 16.4283 )
+
+[node name="1f3b6" type="Sprite" parent="."]
+modulate = Color( 0, 0.721569, 1, 1 )
+position = Vector2( 472.825, 46.0785 )
+texture = ExtResource( 6 )
 
 [node name="Loop" type="LineEdit" parent="."]
 margin_left = 173.423
@@ -195,13 +208,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SuperButton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 20.2262, 26.2706 )
-
 [node name="Label" type="RichTextLabel" parent="."]
-margin_left = 84.0
+margin_left = 93.0
 margin_top = 51.0
-margin_right = 180.0
+margin_right = 189.0
 margin_bottom = 79.0
 custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
@@ -210,6 +220,10 @@ text = "Tracks n º"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SuperButton" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1.3, 1, 1, 1 )
+position = Vector2( 20.2262, 26.2706 )
 
 [connection signal="text_changed" from="Loop" to="." method="_on_Loop_text_changed"]
 [connection signal="text_entered" from="Loop" to="." method="_on_Loop_text_entered"]
@@ -225,6 +239,7 @@ __meta__ = {
 [connection signal="meta_clicked" from="RichTextLabel4" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="meta_hover_ended" from="RichTextLabel4" to="." method="_on_RichTextLabel4_meta_hover_ended"]
 [connection signal="meta_hover_started" from="RichTextLabel4" to="." method="_on_RichTextLabel4_meta_hover_started"]
+[connection signal="value_changed" from="SpeedTune" to="." method="_on_SpeedTune_value_changed"]
 [connection signal="meta_clicked" from="SavePopUp" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="meta_hover_ended" from="SavePopUp" to="." method="_on_RichTextLabel_meta_hover_ended"]
 [connection signal="meta_hover_started" from="SavePopUp" to="." method="_on_RichTextLabel_meta_hover_started"]

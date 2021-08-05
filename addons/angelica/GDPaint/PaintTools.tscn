@@ -59,9 +59,9 @@ __meta__ = {
 }
 
 [node name="PaintMenu" type="RichTextLabel" parent="."]
-margin_left = 71.0
+margin_left = 67.0
 margin_top = 56.0
-margin_right = 97.0
+margin_right = 93.0
 margin_bottom = 241.0
 bbcode_enabled = true
 bbcode_text = "[url=mode_pencil][img]res://img/16/1f58c.png[/img][/url][url=mode_rectangle][img]res://img/16/25fb.png[/img][/url][url=mode_circle][img]res://img/16/2690.png[/img][/url]
@@ -108,10 +108,10 @@ __meta__ = {
 }
 
 [node name="LabelBrushSize" type="Label" parent="BrushSettings"]
-margin_left = 10.0
-margin_top = 25.0
-margin_right = 54.0
-margin_bottom = 41.0
+margin_left = 14.0
+margin_top = 26.0
+margin_right = 58.0
+margin_bottom = 42.0
 text = "4px"
 align = 1
 __meta__ = {
@@ -135,10 +135,10 @@ __meta__ = {
 }
 
 [node name="HScrollBarBrushSize" type="HSlider" parent="BrushSettings"]
-margin_left = 9.0
+margin_left = 12.0
 margin_top = 6.0
-margin_right = 57.0
-margin_bottom = 25.0
+margin_right = 58.0
+margin_bottom = 22.0
 min_value = 2.0
 max_value = 120.0
 step = 2.0
@@ -207,9 +207,9 @@ __meta__ = {
 }
 
 [node name="ColorPickerBrush" type="ColorPickerButton" parent="."]
-margin_left = 15.0
+margin_left = 18.0
 margin_top = 100.0
-margin_right = 57.0
+margin_right = 60.0
 margin_bottom = 124.0
 theme = ExtResource( 8 )
 custom_styles/hover = SubResource( 2 )
@@ -224,10 +224,10 @@ __meta__ = {
 
 [node name="ColorPicker" type="ColorPicker" parent="ColorPickerBrush"]
 visible = false
-margin_left = 361.853
-margin_top = 202.828
-margin_right = 683.853
-margin_bottom = 664.828
+margin_left = 373.853
+margin_top = 214.828
+margin_right = 695.853
+margin_bottom = 676.828
 theme = ExtResource( 8 )
 custom_constants/h_width = -10
 custom_constants/sv_width = -14

@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/Dock/Float.gd" type="Script" id=2]
 [ext_resource path="res://addons/angelica/Dock/MenuFloat.gd" type="Script" id=3]
-[ext_resource path="res://addons/angelica/Themes/SuperButton.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.298039, 0.298039, 0.298039, 0.494118 )
@@ -112,8 +111,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SuperButton" type="Node2D" parent="." instance=ExtResource( 1 )]
-script = ExtResource( 4 )
+[node name="SuperButton" parent="." instance=ExtResource( 1 )]
 
 [connection signal="meta_hover_ended" from="Menu" to="Menu" method="_on_Menu_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Menu" to="Menu" method="_on_Menu_meta_hover_started"]

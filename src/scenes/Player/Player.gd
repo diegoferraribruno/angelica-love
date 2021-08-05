@@ -66,7 +66,7 @@ func _input(event):
 			touch = true
 		else:
 			touch = false
-func _process(delta):
+func _process(_delta):
 	$AvatarHead.modulate.a  = clamp(health/10 + 0.4,0.4,1)
 #	body.modulate.a  = health/10
 	if health < 6:
@@ -98,7 +98,7 @@ func set_health(value:float):
 			bullet_type = 0
 	
 
-func move(delta):
+func move(_delta):
 	if position.x < 0:
 		position.x = screensize.x
 	if position.x > screensize.x:

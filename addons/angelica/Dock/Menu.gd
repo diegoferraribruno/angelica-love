@@ -34,6 +34,7 @@ func construct_menu():
 		text_menu += i
 	bbcode_text = text_menu + "[img]res://img/48/0000.png[/img][/center]"
 	reflex.bbcode_text = text_menu + "[img]res://img/48/0000.png[/img][/center]"
+	print (text_menu)
 
 var clonemenu = menu_bottom
 func _on_Menu_meta_hover_started(meta):

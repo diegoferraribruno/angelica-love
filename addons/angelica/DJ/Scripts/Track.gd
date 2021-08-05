@@ -26,7 +26,6 @@ func placeholder (count):
 	$LineEdit.placeholder_text = "track "+ str(count)
 	update_notes()
 
-
 func _on_Loop_pressed():
 	if looping == true:
 		looping = false
@@ -35,7 +34,7 @@ func _on_Loop_pressed():
 #		$Loop.pressed = true
 		looping = true
 	update_control()
-	
+
 func _on_Playing_pressed():
 	if playing == false:
 		$Playing.pressed = true
@@ -176,8 +175,11 @@ func funk(stream):
 		newaudio.pitch_scale = pitch
 		newaudio.play()
 		playernum +=1
+	
 	if playernum > 15:
 		playernum = 0
+	
+#	$"show_spectrum".update()
 
 func _on_MenuButton2_value_changed(value):
 	var keys = notes.keys()
@@ -207,6 +209,7 @@ func loadbeat(track):
 		if track.has("pitch"):
 			pitch = track["pitch"]
 			$"Pitch".value = pitch
+
 func _on_Beat1_tree_exiting():
 	get_parent().remove_track(self)
 
@@ -264,3 +267,6 @@ func _on_Timer2_timeout():
 	$"Notes".visible = false
 	pass # Replace with function body.
 
+func _on_Menu3_meta_hover_started(meta):
+	get_node("SuperButton")._on_bbcode_meta_hover_ended(meta)
+	pass # Replace with function body.

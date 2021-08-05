@@ -52,7 +52,7 @@ func _on_Blink_timeout():
 	visible = true
 	$"BigAlert".visible = true
 #	$"BigAlert/Label".visible = true
-	$"BigAlert/Text".bbcode_text = "[center][img=400px]res://img/64/1f441-1f5e8.png[/img]\nRelax your eyes!\n[url=skip]skip[/url]   [url=5min]+5 min[/url] [/center]"
+	$"BigAlert/Text".bbcode_text = "[center][img=200px]res://img/64/1f441-1f5e8.png[/img]\nRelax your eyes!\n[url=skip]skip[/url]   [url=5min]+5 min[/url] [/center]"
 	sound("blink")
 	$TimeOut.wait_time = user["blink_timer"]
 	$TimeOut.start()
@@ -61,7 +61,7 @@ func _on_Yoga_timeout():
 	autopause()
 	sound("yoga")
 	visible = true
-	big_alert("[center][rainbow]Time for yoga!\n[url=skip]skip[/url]  [url=5min]+5 min[/url] [/center]")
+	big_alert("[center]Time for yoga!\n[url=skip]skip[/url]  [url=5min]+5 min[/url] [/center]")
 	$TimeOut.wait_time = user["yoga_timer"]
 	$TimeOut.start()
 #	$"Yoga".stop()
@@ -70,7 +70,7 @@ func _on_Rest_timeout():
 	autopause()
 	if user["sounds"] == true:
 		$"Alarm".play()
-	big_alert("[center][fade start=4 length=14]Time for yoga![/fade]\n[url=skip]skip[/url]  [url=5min]+5 min[/url] [/center]")
+	big_alert("[center][fade start=4 length=14]Time for 5 minutes break![/fade]\n[url=skip]skip[/url]  [url=5min]+5 min[/url] [/center]")
 	$TimeOut.wait_time = user["rest_timer"]
 	$TimeOut.start()
 #	$"Rest".stop()

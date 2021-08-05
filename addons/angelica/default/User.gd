@@ -11,10 +11,10 @@ var user = {
 	"notes": [], 
 	"initialize":["title Welcome to the 100 days party!","dock","rest"],
 	"userdata" : ["email@gmail.com","signature"],
-	"ai_version":"200"
-	, "ai_date" : "2021-02-08"
-	, "about" : "please check for updates at [url=http://diegoferraribruno.itch.io/angelica]my web page[/url] \nIf you wanna chat a bit say: [b]hello[/b]"
-	, "FILE_NAME" : "user://angelica-data.json"
+	"ai_version":"200",
+	"ai_date" : "2021-02-08",
+	"about" : "please check for updates at [url=http://diegoferraribruno.itch.io/angelica]my web page[/url] \nIf you wanna chat a bit say: [b]hello[/b]"
+	,"FILE_NAME" : "user://angelica-data.json"
 	, "ai_name" : "Angelica"
 	, "ai_color" : "#ffbbdd"
 	, "need" : ""

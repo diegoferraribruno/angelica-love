@@ -61,6 +61,8 @@ func _process(_delta):
 
 func unfollow():
 	following = false
+	
+	#This is saving window position... ridiculous. needs improvement!
 	get_node("../../").add_app(get_parent().name,get_parent().position)
 
 func handle(meta):
@@ -107,3 +109,7 @@ func _on_bbcode_gui_input(event):
 
 func _on_bbcode_mouse_entered():
 	$bbcode.bbcode_text = supperbutton
+
+func hint(meta,pos):
+	var posi = get_local_mouse_position()+Vector2(-30,-40)
+	hint.hint(meta,posi)

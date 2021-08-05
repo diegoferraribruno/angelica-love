@@ -12,7 +12,7 @@ func _ready():
 	if type == 7:
 		damage_amount = 4
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	position += Vector2.RIGHT.rotated(rotation) * speed
 
 #	if position.x < 0:

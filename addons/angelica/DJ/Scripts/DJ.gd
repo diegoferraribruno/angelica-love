@@ -164,43 +164,44 @@ func remove_track(track):
 		count = tracks.find(i)
 		i.placeholder(count)
 		i.position = trackerposition*count+Vector2(0,92)
+	
 func _on_SpeedTune_value_changed(value):
 	bpm = value
-
+	
 func _on_Loop_text_entered(new_text):
 	pass # Replace with function body.
-
+	
 func _on_Loop_text_changed(new_text):
 	pass # Replace with function body.
-
+	
 func _on_RichTextLabel_meta_hover_started(meta):
 	$"Hint".visible = true
 	var mouse = get_local_mouse_position()
 	$Hint.hint(meta,mouse)
-
+	
 func _on_RichTextLabel4_meta_hover_ended(meta):
 	$"Hint".visible = true
 	var mouse = get_local_mouse_position()
-
+	
 func _on_RichTextLabel_meta_hover_ended(meta):
 	$"Hint".visible = false
+	
 func _on_RichTextLabel4_meta_hover_started(meta):
 	$"Hint".visible = false
-
+	
 func _on_MusicName_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 		if has_node("MusicPop") == false:
 			var instance = musiclist.instance()
 			get_node(".").add_child(instance)
-			
+	
+#This is a temp dummy func for superbutton when it is in a subwindow that does not have position record.
 func add_app(x,y):
-	pass
-
-
+	pass 
+	
 func _on_MusicName_text_changed(new_text):
-	pass # Replace with function body.
-
-
+	pass
+	
 func _on_MusicName_text_entered(new_text):
 	loadmusic(new_text)
-	pass # Replace with function body.
+	pass

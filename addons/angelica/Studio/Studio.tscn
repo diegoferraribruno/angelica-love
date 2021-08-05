@@ -12,7 +12,6 @@
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="DynamicFont" id=2]
-size = 12
 outline_size = 2
 outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
 use_mipmaps = true
@@ -48,7 +47,7 @@ outline_size = 2
 outline_color = Color( 0.270588, 0.184314, 0.290196, 0.72549 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=10]
 font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
 
 [sub_resource type="DynamicFont" id=9]
@@ -58,20 +57,15 @@ outline_color = Color( 0.129412, 0.129412, 0.129412, 1 )
 extra_spacing_bottom = -3
 extra_spacing_char = 1
 extra_spacing_space = 1
-font_data = SubResource( 8 )
+font_data = SubResource( 10 )
 
 [node name="Studio" type="Node2D"]
 script = ExtResource( 6 )
 
-[node name="Hint" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3.58658, 74.2902 )
-
 [node name="Background" type="Panel" parent="."]
 pause_mode = 2
-margin_left = 6.0
-margin_top = 4.0
-margin_right = 193.0
-margin_bottom = 230.0
+margin_right = 225.0
+margin_bottom = 181.0
 mouse_filter = 1
 theme = SubResource( 1 )
 custom_styles/panel = ExtResource( 8 )
@@ -80,26 +74,26 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 32.3691
-margin_top = 7.31069
-margin_right = 177.369
-margin_bottom = 32.3107
+margin_left = 52.0
+margin_top = 12.0
+margin_right = 218.0
+margin_bottom = 41.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
 bbcode_enabled = true
-bbcode_text = "[center] Angelica Studio 0.1[/center]"
-text = " Angelica Studio 0.1"
+bbcode_text = "[center]Angelica Studio 0.1[/center]"
+text = "Angelica Studio 0.1"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Body" type="RichTextLabel" parent="."]
-margin_left = 17.0
-margin_top = 39.0
-margin_right = 207.0
-margin_bottom = 223.0
+margin_left = 14.0
+margin_top = 48.0
+margin_right = 215.0
+margin_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -125,8 +119,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Hint" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3.58658, 74.2902 )
+
 [node name="SuperButton" parent="." instance=ExtResource( 4 )]
-position = Vector2( 5.86075, 4.72491 )
+position = Vector2( 5.86075, 3.93121 )
 
 [connection signal="meta_hover_ended" from="Body" to="Body" method="_on_Interface_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Body" to="Body" method="_on_Interface_meta_hover_started"]

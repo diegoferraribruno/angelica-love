@@ -50,6 +50,8 @@ Game="*res://src/singletons/Game.gd"
 
 window/size/width=1366
 window/size/height=708
+window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/enabled=true
 window/stretch/aspect="keep"
 
 [editor_plugins]

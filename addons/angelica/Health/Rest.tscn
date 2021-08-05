@@ -1,10 +1,11 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/OpenPathMusic44v1/flexatone.wav" type="AudioStream" id=2]
 [ext_resource path="res://addons/angelica/Health/Rest.gd" type="Script" id=3]
 [ext_resource path="res://img/yoga/rect893c.png" type="Texture" id=4]
 [ext_resource path="res://addons/angelica/Health/Changesetting.gd" type="Script" id=5]
+[ext_resource path="res://img/64/1f635.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0941176, 0.262745, 0.384314, 0.909804 )
@@ -12,7 +13,7 @@ border_width_left = 8
 border_width_top = 52
 border_width_right = 8
 border_width_bottom = 8
-border_color = Color( 0.113725, 0.380392, 0.423529, 1 )
+border_color = Color( 0.0862745, 0.239216, 0.34902, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -25,19 +26,20 @@ font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 size = 14
 font_data = SubResource( 2 )
 
-[sub_resource type="DynamicFontData" id=65]
+[sub_resource type="DynamicFontData" id=4]
 font_path = "res://addons/angelica/fonts/OpenSans-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=66]
-size = 13
-extra_spacing_bottom = 3
-font_data = SubResource( 65 )
+[sub_resource type="DynamicFont" id=5]
+size = 15
+outline_size = 1
+outline_color = Color( 0.238647, 0.486277, 0.664062, 1 )
+font_data = SubResource( 4 )
 
 [sub_resource type="DynamicFontData" id=6]
 font_path = "res://addons/angelica/fonts/OpenSans-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=7]
-size = 14
+size = 15
 outline_size = 1
 outline_color = Color( 0.206543, 0.40692, 0.550781, 1 )
 font_data = SubResource( 6 )
@@ -373,30 +375,30 @@ __meta__ = {
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 margin_left = 40.0
-margin_top = 63.0
+margin_top = 59.0
 margin_right = 285.0
-margin_bottom = 152.0
-custom_fonts/normal_font = SubResource( 66 )
+margin_bottom = 148.0
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[url=short pause]Short Pause[/url] in
 [url=long pause]Long Pause[/url] in
 [url=yoga pause]Yoga Pause[/url] in
-Auto Pause Game              Sound Alerts"
+Auto Pause Game         Sound Alerts"
 text = "Short Pause in
 Long Pause in
 Yoga Pause in
-Auto Pause Game              Sound Alerts"
+Auto Pause Game         Sound Alerts"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ShotPause" type="RichTextLabel" parent="."]
-margin_left = 132.031
-margin_top = 66.0
-margin_right = 210.031
-margin_bottom = 86.0
+margin_left = 148.285
+margin_top = 60.0
+margin_right = 226.285
+margin_bottom = 80.0
 custom_fonts/normal_font = SubResource( 7 )
 scroll_active = false
 __meta__ = {
@@ -404,10 +406,10 @@ __meta__ = {
 }
 
 [node name="LongPause" type="RichTextLabel" parent="."]
-margin_left = 132.285
-margin_top = 88.0
-margin_right = 210.285
-margin_bottom = 108.0
+margin_left = 148.285
+margin_top = 82.1515
+margin_right = 226.285
+margin_bottom = 102.152
 custom_fonts/normal_font = SubResource( 7 )
 scroll_active = false
 __meta__ = {
@@ -415,10 +417,10 @@ __meta__ = {
 }
 
 [node name="YogaPause" type="RichTextLabel" parent="."]
-margin_left = 132.0
-margin_top = 109.0
-margin_right = 209.0
-margin_bottom = 127.0
+margin_left = 148.285
+margin_top = 105.152
+margin_right = 225.285
+margin_bottom = 123.152
 custom_fonts/normal_font = SubResource( 7 )
 scroll_active = false
 __meta__ = {
@@ -449,9 +451,9 @@ autostart = true
 
 [node name="CheckBox" type="CheckBox" parent="."]
 margin_left = 12.5072
-margin_top = 62.1515
+margin_top = 57.1515
 margin_right = 36.5072
-margin_bottom = 86.1515
+margin_bottom = 81.1515
 pressed = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -459,9 +461,9 @@ __meta__ = {
 
 [node name="CheckBox2" type="CheckBox" parent="."]
 margin_left = 12.5072
-margin_top = 83.1515
+margin_top = 82.1515
 margin_right = 36.5072
-margin_bottom = 107.152
+margin_bottom = 106.152
 pressed = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -479,19 +481,19 @@ __meta__ = {
 
 [node name="CheckBox4" type="CheckBox" parent="."]
 margin_left = 12.5072
-margin_top = 126.152
+margin_top = 127.152
 margin_right = 36.5072
-margin_bottom = 150.152
+margin_bottom = 151.152
 pressed = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBox5" type="CheckBox" parent="."]
-margin_left = 160.277
-margin_top = 126.152
-margin_right = 184.277
-margin_bottom = 150.152
+margin_left = 170.277
+margin_top = 127.152
+margin_right = 194.277
+margin_bottom = 151.152
 pressed = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -501,8 +503,10 @@ __meta__ = {
 visible = false
 
 [node name="Panel" type="Panel" parent="BigAlert"]
-margin_right = 1352.0
-margin_bottom = 749.0
+margin_left = 81.0
+margin_top = 11.0
+margin_right = 1276.0
+margin_bottom = 677.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -510,11 +514,12 @@ __meta__ = {
 
 [node name="Text" type="RichTextLabel" parent="BigAlert"]
 modulate = Color( 1, 1, 1, 0.466667 )
-margin_left = 112.653
-margin_right = 1217.65
-margin_bottom = 639.0
+margin_left = 131.24
+margin_top = 96.4813
+margin_right = 1236.24
+margin_bottom = 638.481
 custom_fonts/normal_font = SubResource( 9 )
-custom_colors/default_color = Color( 0.905882, 0.556863, 0.921569, 1 )
+custom_colors/default_color = Color( 0.419608, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][url=superbutton][img=400px]res://img/64/1f441-1f5e8.png[/img][/url]
 Relax your eyes!
@@ -527,10 +532,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="BigAlert"]
-margin_left = 393.0
-margin_top = 526.0
-margin_right = 980.0
-margin_bottom = 718.0
+margin_left = 404.672
+margin_top = 198.763
+margin_right = 991.672
+margin_bottom = 390.763
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.490196, 0.490196, 0.490196, 0.811765 )
 custom_colors/font_outline_modulate = Color( 0.913725, 0.913725, 0.913725, 0.133333 )
@@ -540,23 +545,12 @@ __meta__ = {
 }
 
 [node name="yoga" type="AnimatedSprite" parent="BigAlert"]
-modulate = Color( 0, 4.07, 4.62, 1 )
-position = Vector2( 257.254, 600.5 )
-scale = Vector2( 2, 2 )
+modulate = Color( 2, 6, 6, 1 )
+position = Vector2( 682.349, 438.199 )
 frames = SubResource( 63 )
 animation = "complete"
-frame = 15
+frame = 23
 playing = true
-
-[node name="yoga2" type="AnimatedSprite" parent="BigAlert"]
-modulate = Color( 3.66, 2.16, 5.2, 1 )
-position = Vector2( 1041.75, 598.351 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 63 )
-animation = "surya"
-frame = 2
-playing = true
-flip_h = true
 
 [node name="ChangeSetting" type="Node2D" parent="."]
 visible = false
@@ -604,6 +598,10 @@ __meta__ = {
 
 [node name="SuperButton" parent="ChangeSetting" instance=ExtResource( 1 )]
 position = Vector2( 14.0163, 13.652 )
+
+[node name="1f635" type="Sprite" parent="."]
+position = Vector2( 267.094, 95.4242 )
+texture = ExtResource( 6 )
 
 [connection signal="meta_clicked" from="RichTextLabel2" to="." method="_on_RichTextLabel2_meta_clicked"]
 [connection signal="timeout" from="TimeOut" to="." method="_on_TimeOut_timeout"]
