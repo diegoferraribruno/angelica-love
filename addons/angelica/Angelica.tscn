@@ -52,7 +52,7 @@ __meta__ = {
 }
 
 [node name="Shades" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0.552941 )
+modulate = Color( 1, 1, 1, 0.5 )
 margin_right = 1993.0
 margin_bottom = 1123.0
 mouse_filter = 2

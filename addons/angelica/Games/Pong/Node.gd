@@ -1,2 +1,0 @@
-extends Node
-#nothing here

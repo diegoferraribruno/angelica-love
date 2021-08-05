@@ -12,7 +12,7 @@ extends YSort
 onready var user = $"../User"
 onready var alarm = $"AudioStreamPlayer"
 onready var game = get_parent().get_node("Game")
-onready var screenSize = get_viewport().get_visible_rect().size
+onready var screensize = get_viewport().get_visible_rect().size
 onready var music = {"main":{"BPM":130,"name":"playing"},"tracks":{"0":{"BPM":260,"audiopack":"kenney","beat":"Ambient","fx":0,"loop":true,"volume":0},"1":{"BPM":130,"audiopack":"kylan","beat":"<><<>><< ","fx":0,"loop":true,"volume":0},"2":{"BPM":130,"audiopack":"openpath1","beat":"Diego01","fx":0,"loop":true,"volume":-11.428571}}}
 
 export var dj : PackedScene
