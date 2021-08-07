@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://addons/angelica/Games/Pong/logic/ceiling_floor.gd" type="Script" id=1]
 [ext_resource path="res://addons/angelica/Games/Pong/logic/wall_left.gd" type="Script" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://addons/kenney_interface_sounds/drop_002.wav" type="AudioStream" id=10]
 [ext_resource path="res://addons/kenney_interface_sounds/confirmation_001.wav" type="AudioStream" id=11]
 [ext_resource path="res://addons/kenney_interface_sounds/confirmation_002.wav" type="AudioStream" id=12]
-[ext_resource path="res://addons/angelica/Games/Pong/Player1.gd" type="Script" id=13]
 [ext_resource path="res://addons/angelica/Games/Pong/pong.gd" type="Script" id=14]
 
 [sub_resource type="CanvasItemMaterial" id=1]
@@ -61,10 +60,6 @@ extents = Vector2( 50.4294, 161.644 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 320, 18.494 )
-
-[sub_resource type="CapsuleShape2D" id=11]
-radius = 9.78438
-height = 0.0
 
 [node name="Pong" type="Node2D"]
 pause_mode = 2
@@ -246,30 +241,6 @@ volume_db = -5.818
 [node name="victory" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 
-[node name="AirHokey" type="KinematicBody2D" parent="."]
-position = Vector2( 141.421, 131.522 )
-script = ExtResource( 13 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AirHokey"]
-shape = SubResource( 11 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="AirHokey"]
-modulate = Color( 1.01569, 1.01961, 3.01569, 1 )
-margin_left = -15.7985
-margin_top = -16.1069
-margin_right = 64.2015
-margin_bottom = 46.8931
-bbcode_enabled = true
-bbcode_text = "[img]res://img/32/23fa.png[/img]"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Area2D" type="Area2D" parent="AirHokey"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="AirHokey/Area2D"]
-shape = SubResource( 11 )
-
 [node name="left_control" type="RichTextLabel" parent="."]
 modulate = Color( 2.3098, 1, 17.9216, 0.0980392 )
 margin_left = -12.6832
@@ -354,7 +325,6 @@ __meta__ = {
 [connection signal="area_entered" from="RightWall" to="RightWall" method="_on_wall_area_entered"]
 [connection signal="area_entered" from="Ceiling" to="Ceiling" method="_on_area_entered"]
 [connection signal="area_entered" from="Floor" to="Floor" method="_on_area_entered"]
-[connection signal="area_entered" from="AirHokey/Area2D" to="AirHokey" method="_on_Area2D_area_entered"]
 [connection signal="meta_hover_ended" from="left_control" to="Left" method="_on_left_control_meta_hover_ended"]
 [connection signal="meta_hover_started" from="left_control" to="Left" method="_on_left_control_meta_hover_started"]
 [connection signal="meta_hover_ended" from="right_control" to="Right" method="_on_right_control_meta_hover_ended"]

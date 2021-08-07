@@ -5,6 +5,7 @@ var ambience = [
 	"res://addons/SFX/insect-sounds-at-night2.ogg",
 	"res://addons/SFX/insect-sounds-at-night2.ogg",
 	"res://addons/SFX/rural-village-morning-ambience.ogg",
+	"res://addons/SFX/rural-village-morning-ambience.ogg",
 	"res://addons/SFX/Berimb18 - Kitdepontos.Com.Br.ogg",
 	"res://addons/SFX/Berimb19 - Kitdepontos.Com.Br.ogg",
 	"res://addons/SFX/wind-sound-effect-free.ogg",

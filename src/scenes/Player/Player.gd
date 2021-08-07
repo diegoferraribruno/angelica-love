@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var Bullet : PackedScene
 onready var covid = $Covid
 onready var screensize := get_viewport_rect().size
+onready var max_height := screensize.y/2
 const max_health := 20
 const anime_run_h := 18
 var health := 20.0 setget set_health
@@ -103,8 +104,8 @@ func move(_delta):
 		position.x = screensize.x
 	if position.x > screensize.x:
 		position.x = 0
-	if position.y < 0:
-		position.y = screensize.y
+	if position.y < max_height:
+		position.y = max_height
 	if position.y > screensize.y:
 		position.y = 0
 	

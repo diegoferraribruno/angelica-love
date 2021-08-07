@@ -5,6 +5,7 @@ export var Player : PackedScene
 export var Kill : PackedScene
 export var Goodie : PackedScene
 onready var screensize := get_viewport_rect().size
+onready var max_height := screensize.y/2
 var initialize = [
 	"title [center][rainbow]Share Your Love[/rainbow][/center]",
 #	"dj clear",
@@ -17,16 +18,20 @@ func _ready():
 	randomize()
 	$"ColorRect".margin_right = screensize.x
 	$"ColorRect".margin_bottom = screensize.y
+	$"ColorRect".margin_top = max_height
+	_on_Timer_timeout()
 	for i in 10:
 		var instance = TreeScene.instance()
-		instance.position = Vector2(screensize.x,rand_range(10,screensize.y))
+		instance.position = Vector2(screensize.x,rand_range(max_height,screensize.y))
 		instance.modulate = Color(0.75,0.75,0.75)
 		add_child(instance)
-		yield(get_tree().create_timer(1.5), "timeout")
+		yield(get_tree().create_timer(1), "timeout")
 		
 func _on_Timer_timeout():
 		var instance = Player.instance()
-		instance.position = Vector2(-16 ,rand_range(36,screensize.y-10))
+		var script = load("res://src/scenes/Player/Friend.gd")
+		instance.set_script(script)
+		instance.position = Vector2(-16 ,rand_range(max_height,screensize.y-10))
 		add_child(instance)
 #		var friend = preload("res://src/scenes/Player/Friend.gd")
 #		get_child(instance).set_script(friend)
@@ -37,20 +42,21 @@ func gameover():
 
 func _on_GoodiesTimer_timeout():
 	var instanceb = Goodie.instance()
-	instanceb.position = Vector2(screensize.x+32,rand_range(10,600))
+	instanceb.position = Vector2(screensize.x+32,rand_range(max_height,600))
 	add_child(instanceb)
 
 func _on_BadTimer_timeout():
 	var instance = Kill.instance()
-	instance.position = Vector2(1040,rand_range(10,600))
+	instance.position = Vector2(1040,rand_range(max_height,600))
 	add_child(instance)
 	
 func _on_Player1Timer_timeout():
 	var instance = Player.instance()
 	var script = load("res://src/scenes/Player/Player.gd")
-#	instance.set_script("res://src/scenes/Player/Player.gd")
+#	var script = load("res://src/scenes/Player/Friend.gd")
+#	instance.set_script(script)
 	instance.name = "Player1"
-	instance.position = Vector2(-16,rand_range(10,600))
+	instance.position = Vector2(-16,rand_range(max_height,600))
 	add_child(instance)
 	$"Player1".set_script(script)
 	$"Player1".health = 40

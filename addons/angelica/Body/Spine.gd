@@ -24,6 +24,7 @@ var truck = preload("res://addons/angelica/Games/trucktown/car_select.tscn")
 var love = preload("res://src/maps/Love.tscn")
 var login = preload("res://addons/angelica/Login/Login.tscn")
 var xperma = preload("res://src/maps/Xperma.tscn")
+var city = preload("res://src/maps/City.tscn")
 var glow = preload("res://addons/angelica/WorldEnviroments/Glow.tscn")
 var studio = preload("res://addons/angelica/Studio/Studio.tscn")
 var chat = preload("res://addons/angelica/Chat/Chat.tscn")
@@ -158,6 +159,13 @@ func synapse(new_text):
 			elif game.has_node("XpermaWorld"):
 				get_node("../Game/XpermaWorld").queue_free()
 				ai_say("Good game!")
+		"city":
+			if game.has_node("City") == false:
+				var instance = city.instance()
+				game.add_child(instance)
+			elif game.has_node("City"):
+				get_node("../Game/City").queue_free()
+				ai_say("Good Morning")
 #				quit("dj clear")
 		"glow":
 			if get_node("../Paint").has_node("Glow") == false:

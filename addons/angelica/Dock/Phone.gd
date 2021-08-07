@@ -39,10 +39,11 @@ var interface = [
 	"[url=pong][img]res://img/32/1f3d3.png[/img][/url] ", 
 	"[center]W.I.P.[/center]",
 	"\n",
+	"[url=city][img]res://img/32/1f307.png[/img][/url] ",
 	"[url=radio][img]res://img/32/1f4fb.png[/img][/url] ",
 	"[url=star][img]res://img/32/2605.png[/img][/url] ",
 	"[url=chat][img]res://img/32/1f5e8.png[/img][/url] ",
-	"[url=next][img]res://img/32/26a0.png[/img][/url] ", 
+	"[url=next][img]res://img/32/26a0.png[/img][/url]", 
 	]
 
 func _ready():
