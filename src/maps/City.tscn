@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/maps/City.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Background/building.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/maps/Sun.gd" type="Script" id=3]
-[ext_resource path="res://src/maps/Floor.gd" type="Script" id=4]
-[ext_resource path="res://addons/angelica/WorldEnviroments/Glow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/maps/Atmoground.gd" type="Script" id=5]
 [ext_resource path="res://src/maps/Atmosphere.gd" type="Script" id=6]
 
 [sub_resource type="Gradient" id=1]
@@ -34,6 +33,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sun" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Atmoground" type="ColorRect" parent="."]
+margin_top = 355.633
+margin_right = 1013.45
+margin_bottom = 895.633
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.532
 autostart = true
@@ -44,14 +55,6 @@ one_shot = true
 autostart = true
 
 [node name="Timer3" type="Timer" parent="."]
-
-[node name="Sun" type="Node2D" parent="."]
-script = ExtResource( 3 )
-
-[node name="Floor" type="Node2D" parent="."]
-script = ExtResource( 4 )
-
-[node name="Glow" parent="." instance=ExtResource( 5 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

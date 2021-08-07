@@ -23,7 +23,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = false
 tracks/0/keys = {
-"times": PoolRealArray( -7.2, 0.7, 15.4, 42, 50.8, 76.1, 95.7, 129.2, 264.9 ),
+"times": PoolRealArray( -7.2, 0.7, 15.4, 42, 50.8, 76.1, 95.7, 129.2, 303.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0.356863, 0.356863, 0.356863, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1.28627, 1.28627, 1.28627, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -35,7 +35,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 33.5, 53.7, 66.6, 77.5, 95.3, 110.1, 129.9, 153.9, 176.7, 192.4, 212.9, 245.9, 266.4 ),
+"times": PoolRealArray( 0, 33.5, 53.7, 66.6, 82.2, 95.3, 110.1, 129.9, 171, 188, 220.4, 247.5, 281.3, 303.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0.788235, 0.941176, 0.407843, 1 ), Color( 0.556863, 0.745098, 0.117647, 1 ), Color( 1, 0.937255, 0.662745, 1 ), Color( 0.972549, 0.988235, 0.984314, 1 ), Color( 0.968627, 0.984314, 0.984314, 1 ), Color( 0.980392, 0.980392, 0.980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.788235, 0.941176, 0.407843, 0.698039 ), Color( 0.788235, 0.941176, 0.407843, 0.698039 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1.5, 1.5, 1.5, 1 ) ]
@@ -76,10 +76,11 @@ Goodie = ExtResource( 10 )
 [node name="City" parent="." instance=ExtResource( 12 )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 modulate = Color( 0.888272, 0.843285, 0.564928, 1 )
 margin_right = 1028.0
 margin_bottom = 606.0
-color = Color( 0.99665, 0.99665, 0.99665, 1 )
+color = Color( 0.980333, 0.980412, 0.980412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,11 +88,10 @@ __meta__ = {
 [node name="abertura" parent="." instance=ExtResource( 11 )]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 8.906
+wait_time = 10.227
 
 [node name="BadTimer" type="Timer" parent="."]
 wait_time = 3.327
-autostart = true
 
 [node name="GoodiesTimer" type="Timer" parent="."]
 wait_time = 6.068

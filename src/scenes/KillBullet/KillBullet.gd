@@ -12,14 +12,14 @@ func _ready():
 #	look_at(get_global_mouse_position())
 
 func _physics_process(delta):
-	if position.x < 0:
-		position.x = screensize.x
-	if position.x > screensize.x:
-		position.x = 0
-	if position.y < 0:
-		position.y = screensize.y
-	if position.y > screensize.y:
-		position.y = 0
+#	if position.x < 0:
+#		position.x = screensize.x
+#	if position.x > screensize.x:
+#		position.x = 0
+#	if position.y < 0:
+#		position.y = screensize.y
+#	if position.y > screensize.y:
+#		position.y = 0
 #	motion = Vector2(-0.4,0)
 	position += (Vector2.LEFT) * speed 
 

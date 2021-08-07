@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/angelica/Body/Body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/DJ/Scenes/DJ.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Skin.gd" type="Script" id=3]
 [ext_resource path="res://addons/angelica/GDPaint/paint_root.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/scenes/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/angelica/GDPaint/Paint.gd" type="Script" id=6]
 [ext_resource path="res://addons/angelica/default/User.gd" type="Script" id=7]
-[ext_resource path="res://addons/angelica/Games/Pong/PongPlayer.gd" type="Script" id=8]
 
 [node name="Angelica" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -17,10 +15,6 @@ script = ExtResource( 7 )
 
 [node name="Game" type="Node2D" parent="."]
 script = ExtResource( 6 )
-
-[node name="Player" parent="Game" instance=ExtResource( 5 )]
-position = Vector2( 888.135, 630.578 )
-script = ExtResource( 8 )
 
 [node name="Paint" type="Node2D" parent="."]
 pause_mode = 2

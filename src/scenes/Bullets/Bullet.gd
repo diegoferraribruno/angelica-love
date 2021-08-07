@@ -2,7 +2,7 @@ extends Area2D
 var type := 0
 var shooter
 var speed := 6
-var damage_amount := -4
+var damage_amount := -3
 onready var screensize := get_viewport_rect().size
 
 func _ready():

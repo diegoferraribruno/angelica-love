@@ -11,12 +11,12 @@ var motion := Vector2.ZERO
 var acceleration := 0.1
 var max_speed := 160
 var can_shoot = true
-var morrendo := false
+var morrendo := true
 var face := 1
-var animation :="happyface"
-var drag := Vector2(2,0)
-var touch := true
-var time := 0.04
+#var animation :="sface"
+var drag := Vector2(-100,0)
+var touch := false
+var time := 0.02
 var bullet_type := 0
 
 onready var mask = $mask
@@ -28,6 +28,8 @@ onready var body = $Body
 
 var good = ["1f600","1f601","1f602","1f603","1f604","1f605","1f606","1f609","1f60a","1f60b","1f60e","1f60d","1f618","1f617","1f619","1f61a","263a","1f642","1f60c","1f913","1f61b","1f61c","1f61d","1f643","1f607","1f608"]
 var bad = ["1f610","1f611","1f636","1f644","1f60f","1f623","1f625","1f62e","1f910","1f62f","1f62a","1f62b","1f634","1f924","1f612","1f613","1f614","1f615","2639","1f641","1f616","1f61e","1f61f","1f624","1f622","1f62d","1f626","1f627","1f628","1f629","1f62c","1f630","1f633","1f635","1f621","1f479","1f922","1f915","1f912","1f637"]
+onready var happyface = good[rand_range(0,good.size())]
+onready var sadface = bad[rand_range(0,bad.size())]
 
 
 func _ready():
@@ -46,9 +48,10 @@ func _ready():
 	mask.modulate = Color(corpo_cor)
 	$"Baloon".modulate = Color(corpo_cor)
 	$"Gun".modulate = Color(corpo_cor)
+	body.play("stand")
 	
 	face = rand_range(0, 16)
-	changeface("happyface")
+	changeface("sadface")
 	$"Label".visible = false
 	
 func _physics_process(delta):
@@ -72,7 +75,7 @@ func _process(_delta):
 #	body.modulate.a  = health/10
 	if health < 6:
 		$Baloon.visible = true
-#		changeface("sadface")
+		changeface("sadface")
 	else:
 		$Baloon.visible = false
 #		changeface("happyface")
@@ -100,15 +103,16 @@ func set_health(value:float):
 	
 
 func move(_delta):
-	if position.x < 0:
-		position.x = screensize.x
-	if position.x > screensize.x:
-		position.x = 0
-	if position.y < max_height:
-		position.y = max_height
-	if position.y > screensize.y:
-		position.y = 0
-	
+	if position.x < -64:
+		queue_free()
+##		position.x = screensize.x
+#	if position.x > screensize.x:
+#		position.x = 0
+#	if position.y < max_height:
+#		position.y = max_height
+#	if position.y > screensize.y:
+#		position.y = 0
+#
 #	motion = lerp(
 #		motion,
 #		Vector2(
@@ -125,18 +129,18 @@ func move(_delta):
 #	)
 #	motion = motion + drag
 	motion = move_and_slide(drag)
-	
-	if motion.x < -anime_run_h:
-		body.play("run-h")
-		body.flip_h = false
-	elif motion.x > anime_run_h:
-		body.play("run-h")
-		body.flip_h = true
-	elif motion.y > anime_run_h or motion.y < -anime_run_h:
-		body.play("run-v")
-	else:
-		body.flip_h = true
-		body.play("run-h")
+#	body.play("run-h")
+#	if motion.x < -anime_run_h:
+#		body.play("run-h")
+#		body.flip_h = false
+#	elif motion.x > anime_run_h:
+#		body.play("run-h")
+#		body.flip_h = true
+#	elif motion.y > anime_run_h or motion.y < -anime_run_h:
+#		body.play("run-v")
+#	else:
+#		body.flip_h = true
+#		body.play("run-h")
 
 func shoot():
 #	var bullet = Bullet.instance()
@@ -152,6 +156,21 @@ func shoot():
 	
 func damage(damage: int):
 	self.health -= damage
+	if damage < 0:
+		body.play("run-h")
+		body.flip_h = true
+		changeface("happyface")
+		if position.x < screensize.x/2:
+			drag = Vector2(3,0)
+		else:
+			drag = Vector2(-5,0)
+			
+	else:
+		changeface("sadface")
+		drag = Vector2(-100,0)
+		body.play("stand")
+			
+		
 	
 func _on_Delay_timeout():
 	var bullet = Bullet.instance()
@@ -165,18 +184,20 @@ func _on_Delay_timeout():
 	$Gun/AnimatedSprite.set_frame(1)
 
 func _on_Area2D_body_entered(body):
-	drag.x = -5
+#	drag.x = -5
+	pass
 
 func _on_Area2D_body_exited(body):
-	drag.x = -2
+#	drag.x = -2
+	pass
 
 func changeface(animation):
 	var goodsize = good.size()
 	var badsize = bad.size()
 	if animation == "happyface":
-		$"AvatarHead".bbcode_text = "[img]res://img/32/"+good[rand_range(0,goodsize)]+".png[/img]"
+		$"AvatarHead".bbcode_text = "[img]res://img/32/"+happyface+".png[/img]"
 	else:
-		$"AvatarHead".bbcode_text = "[img]res://img/32/"+bad[rand_range(0,badsize)]+".png[/img]"
+		$"AvatarHead".bbcode_text = "[img]res://img/32/"+sadface+".png[/img]"
 #	$AvatarHead.play(animation)
 #	$AvatarHead.set_frame(face)
 #	$AvatarHead.stop()

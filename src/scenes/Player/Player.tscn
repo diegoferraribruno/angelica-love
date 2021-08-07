@@ -1,7 +1,6 @@
-[gd_scene load_steps=2046 format=2]
+[gd_scene load_steps=2044 format=2]
 
 [ext_resource path="res://sprites/emojione32/1f5e9.png" type="Texture" id=1]
-[ext_resource path="res://src/scenes/Bullets/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/sprites16x45.png" type="Texture" id=3]
 [ext_resource path="res://sprites/emojione32/rundown2.png" type="Texture" id=4]
 [ext_resource path="res://sprites/emojione32/rundown1.png" type="Texture" id=5]
@@ -11,7 +10,6 @@
 [ext_resource path="res://sprites/emojione32/1f6b6.png" type="Texture" id=9]
 [ext_resource path="res://sprites/emojione32/1f3c3.png" type="Texture" id=10]
 [ext_resource path="res://sprites/emojione32/1f5ef.png" type="Texture" id=12]
-[ext_resource path="res://src/scenes/Player/Player.gd" type="Script" id=13]
 [ext_resource path="res://sprites/sprites720p.png" type="Texture" id=14]
 [ext_resource path="res://sprites/mask720.png" type="Texture" id=15]
 [ext_resource path="res://addons/kenney_interface_sounds/confirmation_002.wav" type="AudioStream" id=16]
@@ -10194,8 +10192,6 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-script = ExtResource( 13 )
-Bullet = ExtResource( 2 )
 
 [node name="Delay" type="Timer" parent="."]
 wait_time = 0.02
@@ -10249,7 +10245,7 @@ __meta__ = {
 position = Vector2( -1, 5 )
 frames = SubResource( 2022 )
 animation = "stand"
-frame = 5
+frame = 4
 playing = true
 offset = Vector2( 0, -15 )
 
