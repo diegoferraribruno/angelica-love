@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/angelica/DJ/Scripts/MusicList.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.145098, 0.145098, 0.145098, 0.854902 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://addons/angelica/fonts/OpenSans-Light.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 17
+outline_size = 1
+outline_color = Color( 0, 0.458824, 0.733333, 1 )
+font_data = SubResource( 2 )
+
+[node name="MusicPop" type="Node2D"]
+z_index = 5
+
+[node name="MusicList" type="RichTextLabel" parent="."]
+margin_left = 126.0
+margin_top = 35.0
+margin_right = 328.0
+margin_bottom = 118.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[img]res://img/16/1f3b5.png[/img] [url=suspense]Suspense[/url]
+[img]res://img/16/1f3b5.png[/img] [url=funk][url=demo]Demo[/url]"
+text = " Suspense
+ Demo"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="meta_clicked" from="MusicList" to="MusicList" method="_on_MusicList_meta_clicked"]
+[connection signal="mouse_exited" from="MusicList" to="MusicList" method="_on_Music_List_mouse_exited"]

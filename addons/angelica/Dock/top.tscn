@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/angelica/Dock/MenuTop.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.298039, 0.298039, 0.298039, 0.494118 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="top" type="Node2D"]
+visible = false
+
+[node name="Reflex" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.490196 )
+position = Vector2( 43.8107, -28.1972 )
+scale = Vector2( 1, -1 )
+
+[node name="Menu_reflex" type="RichTextLabel" parent="Reflex"]
+anchor_top = -0.012
+anchor_bottom = -0.012
+margin_left = -2.0
+margin_top = -36.0
+margin_right = 529.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_clip_content = false
+size_flags_horizontal = 5
+size_flags_vertical = 8
+custom_colors/default_color = Color( 0.698039, 0.666667, 0.666667, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+bbcode_enabled = true
+bbcode_text = "[img]res://img/48/0000.png[/img]"
+meta_underlined = false
+tab_size = 1
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="RichTextLabel" parent="."]
+anchor_top = -0.012
+anchor_bottom = -0.012
+margin_left = 43.0
+margin_top = 6.84
+margin_right = 573.0
+margin_bottom = 40.84
+grow_horizontal = 0
+grow_vertical = 0
+rect_clip_content = false
+size_flags_horizontal = 5
+size_flags_vertical = 8
+custom_colors/default_color = Color( 0.698039, 0.666667, 0.666667, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+bbcode_enabled = true
+bbcode_text = "[img]res://img/48/0000.png[/img]"
+meta_underlined = false
+tab_size = 1
+scroll_active = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="Panel" parent="."]
+margin_left = 52.0
+margin_top = -24.0
+margin_right = 555.0
+margin_bottom = 6.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="meta_hover_ended" from="Menu" to="Menu" method="_on_Menu_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Menu" to="Menu" method="_on_Menu_meta_hover_started"]
+[connection signal="mouse_exited" from="Menu" to="Menu" method="_on_Menu_mouse_exited"]

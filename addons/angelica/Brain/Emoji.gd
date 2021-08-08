@@ -1,4 +1,6 @@
-extends Node
+extends Node2D
+var icon = "1f600"
+var mini = true
 
 const emoji = {
 	"1f600": {
@@ -28470,3 +28472,10 @@ const emoji = {
 		"keywords": ["number", "math", "symbol"]
 	}
 }
+
+
+
+
+func _on_Hide_meta_clicked(meta):
+	visible = false
+	pass # Replace with function body.

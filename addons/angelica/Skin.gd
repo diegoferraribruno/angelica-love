@@ -1,17 +1,37 @@
 extends CanvasLayer
-#
-#func _ready():
-#	get_tree().get_root().set_transparent_background(true)
-#	if OS.get_name() != "HTML5":
-#		OS.window_per_pixel_transparency_enabled = true
+var apps = {}
 
-func _process(delta):
-	if (Input.is_action_just_pressed("ui_help")):
-		if $Body.visible == true:
-			$Body.visible = false
-		else:
-			$Body.visible = true
-		if $CommandBar.visible == true:
-			$CommandBar.visible = false
-		else:
-			$CommandBar.visible = true
+func add_app(app,app_xy):
+	$User.user[app] = {}
+	$User.user[app]["position"] = var2str(app_xy)
+	apps[app] = {}
+	apps[app]["position"] = app_xy
+	if $User.user["name"] != "Player":
+		$Body.save_prefs()
+ 
+func quit():
+	get_node("Body").quit()
+
+func ai_say(argument):
+	get_node("Body").ai_say(argument)
+
+func _on_AngelicaButton_meta_clicked(meta):
+	match meta:
+		"hide":
+			if get_node("Body").visible ==  true:
+				get_node("Body").visible = false
+				if has_node("Dock"):
+					get_node("Dock").visible = false
+			else:
+				get_node("Body").visible = true
+				if has_node("Dock"):
+					get_node("Dock").visible = true
+#		"dock":
+#			if has_node("Dock"):
+#				get_node("Dock").visible = !get_node("Dock").visible
+#				if get_node("Dock").visible ==  true:
+#					get_node("Body").visible = true
+#
+#			else:
+#				get_node("Body").synapse("dock")
+#				get_node("Body").visible = true

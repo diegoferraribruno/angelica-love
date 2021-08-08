@@ -34,12 +34,14 @@ func gameover():
 
 func _on_GoodiesTimer_timeout():
 	var instanceb = Goodie.instance()
-	instanceb.position = Vector2(screensize.x+32,rand_range(10,600))
+	instanceb.position = Vector2(rand_range(0,screensize.x),screensize.y)
+	instanceb.motion = Vector2.UP
 	add_child(instanceb)
 
 func _on_BadTimer_timeout():
 	var instance = Kill.instance()
-	instance.position = Vector2(1040,rand_range(10,600))
+	instance.position = Vector2(rand_range(0,screensize.x),0)
+	instance.motion = Vector2.DOWN
 	add_child(instance)
 	
 func _on_Player1Timer_timeout():

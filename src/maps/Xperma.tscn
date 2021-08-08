@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://sprites/spiralbg.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/KillBullet/KillBullet.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/maps/Cursor.gd" type="Script" id=9]
 [ext_resource path="res://addons/Funk-Kylan-130BPM/Trompete #1 - 130 BPM.wav" type="AudioStream" id=10]
 [ext_resource path="res://src/maps/Love.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/maps/XpermaWorld.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fase1"
@@ -66,26 +67,29 @@ animations = [ {
 } ]
 
 [node name="XpermaWorld" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 1472.0
 margin_bottom = 868.0
-color = Color( 2, 2, 2, 1 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="spiralbg" type="Sprite" parent="."]
+modulate = Color( 0.556863, 0.0980392, 0.541176, 1 )
+position = Vector2( 708.338, 421.916 )
+rotation = -1.21221
+scale = Vector2( 1.82165, 1.82165 )
+z_as_relative = false
+texture = ExtResource( 1 )
+offset = Vector2( -18, 10 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Fase1"
 anims/Fase1 = SubResource( 1 )
-
-[node name="spiralbg" type="Sprite" parent="."]
-modulate = Color( 2.24804, 2.24804, 2.24804, 1 )
-position = Vector2( 708.338, 421.916 )
-rotation = 50.6615
-scale = Vector2( 1.82165, 1.82165 )
-texture = ExtResource( 1 )
-offset = Vector2( -18, 10 )
 
 [node name="Xperma" type="YSort" parent="."]
 script = ExtResource( 4 )
@@ -104,7 +108,7 @@ wait_time = 3.327
 autostart = true
 
 [node name="GoodiesTimer" type="Timer" parent="Xperma"]
-wait_time = 6.068
+wait_time = 1.191
 autostart = true
 
 [node name="Player1Timer" type="Timer" parent="Xperma"]
@@ -131,5 +135,7 @@ autoplay = true
 script = ExtResource( 8 )
 
 [connection signal="timeout" from="Xperma/Timer" to="Xperma" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Xperma/BadTimer" to="Xperma" method="_on_BadTimer_timeout"]
+[connection signal="timeout" from="Xperma/GoodiesTimer" to="Xperma" method="_on_GoodiesTimer_timeout"]
 [connection signal="timeout" from="Xperma/Player1Timer" to="Xperma" method="_on_Player1Timer_timeout"]
 [connection signal="finished" from="Xperma/AudioStreamPlayer" to="Xperma/AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]

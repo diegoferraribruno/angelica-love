@@ -10146,20 +10146,20 @@ animations = [ {
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "run-h",
-"speed": 10.0
+"name": "run-v",
+"speed": 9.0
 }, {
 "frames": [ SubResource( 2019 ), SubResource( 2020 ), SubResource( 2021 ), SubResource( 2022 ) ],
 "loop": true,
 "name": "xperma",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "run-v",
-"speed": 9.0
+"name": "run-h",
+"speed": 10.0
 } ]
 
 [sub_resource type="AtlasTexture" id=2024]
@@ -10499,6 +10499,7 @@ __meta__ = {
 }
 
 [node name="headface" parent="." instance=ExtResource( 11 )]
+visible = false
 position = Vector2( 0.629959, -26.5685 )
 frames = SubResource( 2069 )
 animation = "sadface"
@@ -10515,6 +10516,36 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.84183, -19.6431 )
 shape = SubResource( 2070 )
+
+[node name="AvatarHead2" type="RichTextLabel" parent="Area2D"]
+visible = false
+margin_left = -21.7272
+margin_top = -58.3975
+margin_right = 23.2728
+margin_bottom = -18.3975
+bbcode_enabled = true
+bbcode_text = "[img]res://img/16/1f943.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarHead" type="RichTextLabel" parent="."]
+margin_left = -15.0
+margin_top = -42.0
+margin_right = 30.0
+margin_bottom = -2.0
+bbcode_enabled = true
+bbcode_text = "[img]res://img/32/1f60a.png[/img]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mask721" type="Sprite" parent="AvatarHead"]
+visible = false
+position = Vector2( 15.7137, 15.915 )
+texture = ExtResource( 15 )
 
 [connection signal="timeout" from="Delay" to="." method="_on_Delay_timeout"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]

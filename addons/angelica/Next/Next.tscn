@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/angelica/Next/NextFeatures.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.894118 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.184314, 0.184314, 0.184314, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://addons/angelica/fonts/OpenSans-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="Next" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = -1.0
+margin_right = 446.0
+margin_bottom = 153.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Interface" type="RichTextLabel" parent="."]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 219.0
+margin_bottom = 136.0
+focus_mode = 2
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.87451, 0.690196, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[right]Next features:
++ save user preferences
++ save window position
++ save Titles
++ Editor working[/right]"
+text = "Next features:
++ save user preferences
++ save window position
++ save Titles
++ Editor working"
+scroll_following = true
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Interface2" type="RichTextLabel" parent="."]
+margin_left = 219.0
+margin_top = 40.2162
+margin_right = 238.0
+margin_bottom = 103.216
+focus_mode = 2
+bbcode_enabled = true
+bbcode_text = "[url=to_note][img]res://img/16/2b05.png[/img][/url]
+
+[url=to_editor][img]res://img/16/27a1.png[/img][/url]"
+text = "
+
+"
+scroll_following = true
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="TextEdit" parent="."]
+margin_left = 238.0
+margin_top = 11.0
+margin_right = 434.0
+margin_bottom = 138.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuperButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 103.216 )
+
+[connection signal="meta_clicked" from="Interface2" to="." method="_on_Interface2_meta_clicked"]

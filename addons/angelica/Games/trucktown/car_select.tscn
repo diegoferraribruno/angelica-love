@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://addons/angelica/Games/trucktown/car_select.gd" type="Script" id=1]
-[ext_resource path="res://addons/angelica/images/32/1f69a.png" type="Texture" id=2]
-[ext_resource path="res://addons/angelica/images/32/1f69c.png" type="Texture" id=3]
-[ext_resource path="res://addons/angelica/images/32/1f697.png" type="Texture" id=4]
-[ext_resource path="res://addons/angelica/images/32/1f3c6.png" type="Texture" id=5]
+[ext_resource path="res://img/32/1f69a.png" type="Texture" id=2]
+[ext_resource path="res://img/32/1f69c.png" type="Texture" id=3]
+[ext_resource path="res://img/32/1f697.png" type="Texture" id=4]
+[ext_resource path="res://img/32/1f3c6.png" type="Texture" id=5]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -28,24 +29,16 @@
 
 [sub_resource type="StyleBoxEmpty" id=11]
 
-[node name="CarSelect" type="Control"]
-margin_left = 149.132
-margin_top = 143.469
-margin_right = 476.132
-margin_bottom = 217.469
-size_flags_horizontal = 2
-size_flags_vertical = 2
+[node name="CarSelect" type="Node2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "2D",
-"_edit_use_anchors_": false
-}
+
+[node name="SuperButton" parent="." instance=ExtResource( 6 )]
 
 [node name="MiniVan" type="Button" parent="."]
-margin_left = 24.0
-margin_top = 2.0
-margin_right = 68.0
-margin_bottom = 40.0
+margin_left = 30.6742
+margin_top = 11.3439
+margin_right = 74.6742
+margin_bottom = 49.3439
 size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/normal = SubResource( 1 )
@@ -55,10 +48,10 @@ __meta__ = {
 }
 
 [node name="Monstertruck" type="Button" parent="."]
-margin_left = 180.478
-margin_top = 3.0294
-margin_right = 224.478
-margin_bottom = 41.0294
+margin_left = 187.152
+margin_top = 12.3733
+margin_right = 231.152
+margin_bottom = 50.3733
 size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/normal = SubResource( 1 )
@@ -68,10 +61,10 @@ __meta__ = {
 }
 
 [node name="TrailerTruck" type="Button" parent="."]
-margin_left = 61.5
-margin_top = 3.0
-margin_right = 105.5
-margin_bottom = 41.0
+margin_left = 68.1742
+margin_top = 12.3439
+margin_right = 112.174
+margin_bottom = 50.3439
 size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/hover = SubResource( 2 )
@@ -85,10 +78,10 @@ __meta__ = {
 }
 
 [node name="TowTruck" type="Button" parent="."]
-margin_left = 105.001
-margin_top = 0.823792
-margin_right = 183.001
-margin_bottom = 42.8238
+margin_left = 111.675
+margin_top = 10.1677
+margin_right = 189.675
+margin_bottom = 52.1677
 size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/hover = SubResource( 7 )
@@ -104,6 +97,8 @@ __meta__ = {
 [node name="1f697" type="Sprite" parent="TowTruck"]
 position = Vector2( 50, 20 )
 texture = ExtResource( 4 )
+
+[node name="SuperButton2" parent="." instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="MiniVan" to="." method="_on_MiniVan_pressed"]
 [connection signal="pressed" from="Monstertruck" to="." method="_on_Monstertruck_pressed"]

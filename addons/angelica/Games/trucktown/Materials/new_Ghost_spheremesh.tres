@@ -1,6 +1,6 @@
 [gd_resource type="SphereMesh" load_steps=3 format=2]
 
-[ext_resource path="res://addons/angelica/images/avatar/1f646.png" type="Texture" id=1]
+[ext_resource path="res://img/avatar/1f646.png" type="Texture" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )

@@ -1,7 +1,7 @@
 extends Node
 
-const ai_version = "154"
-const ai_date = "2021-06-20"
+const ai_version = "190"
+const ai_date = "20212-07-23"
 const about = "My version is"+ ai_version+" from " +ai_date+" please check for updates at [url=http://diegoferraribruno.itch.io/angelica]my web page[/url] \nIf you wanna chat a bit say: [b]hello[/b]"
 
 onready var memory = get_node("Memory")
@@ -11,24 +11,16 @@ onready var chat = get_node("../Mini")
 #onready var heart = get_node("../Editor/TextEdit")
 #onready var editor = get_node("../Editor")
 onready var Cbar = get_node("../../CommandBar")
+#onready var game = get_node("../../Game")
 onready var game = get_node("../../Game")
 onready var load_save = $"LoadSave"
-var dock = preload("res://addons/angelica/Dock/Dock.tscn")
+
 onready var title = get_node("../../Paint/Title/Title")
-#var state = "show"
-#var state_old = "show"
+
 const FILE_NAME = "user://angelica-data.json"
 var ai_name = "Angelica"
 var ai_color = "#ffbbdd"
-var need = ""
 
-onready var good = $"Memory/Emotional".good
-onready var bad =  $"Memory/Emotional".bad
-onready var needs = $"Memory/Necessities".needs
-onready var notfeeling = $"Memory/NotFeelings".notfeeling
-onready var help = $"Memory/Help".help
-onready var sentences = $"Memory/Sentences".sentences
-onready var greetings = $"Memory/Greetings".greetings
 onready var audio = $"Audio"
 onready var hashtags = $"Memory/UserDefault".hashtags
 onready var links = $"Memory/UserDefault".links
@@ -37,7 +29,7 @@ onready var notes = $"Memory/UserDefault".notes
 #var initialize = ["pause","volume","volume","volume","about","list notes","track ./Angelica/Angelica/Trackers position","track fps","track Player1 position","track Player1 status","track Timer time_left", "print Player1/Inventory tools","list links","pause"]
 var initialize = [
 #	"glow",
-	"title [rainbow]Angelica Love version.[/rainbow]",
+	"title [center][rainbow]Angelica Love version.[/rainbow][/center]",
 	"dock",
 #	"xperma",
 	"about",
@@ -180,83 +172,7 @@ func synapse(new_text)-> void :
 		"selfie":
 			screen_shot(true)
 			yield(get_tree().create_timer(0.2), "timeout")
-		"pong":
-			if game.has_node("Pong") == false:
-				var instance = pong.instance()
-#				$"../".visible = false
-				game.add_child(instance)
-			elif game.has_node("Pong"):
-				get_node("../../Game/Pong").queue_free()
-#				$"../".visible = true
-				ai_say("Good game!")
-		"truck":
-			var instance = truck.instance()
-			if game.has_node("CarSelect") == false:
-#				$"../".visible = false
-				game.add_child(instance)
-			elif game.has_node("CarSelect"):
-				if game.has_node("TownScene"):
-					get_node("../../Game/TownScene").queue_free()
-				get_node("../../Game/CarSelect").queue_free()
-#				$"../".visible = true
-				ai_say("Good game!")
-		"love":
-			var instance = love.instance()
-			if game.has_node("Love") == false:
-#				$"../".visible = false
-				game.add_child(instance)
-			elif game.has_node("Love"):
-				get_node("../../Game/Love").queue_free()
-#				$"../".visible = true
-				ai_say("Good game!")
-		"xperma":
-			if game.has_node("XpermaWorld") == false:
-				var instance = xperma.instance()
-				game.add_child(instance)
-			elif game.has_node("XpermaWorld"):
-				get_node("../../Game/XpermaWorld").queue_free()
-				ai_say("Good game!")
-		"glow":
-			if get_node("../../Paint").has_node("Glow") == false:
-				var instance = glow.instance()
-				get_node("../../Paint").add_child(instance)
-				ai_say("Shinny!")
-			else:
-				get_node("../../Paint/Glow").queue_free()
-				ai_say("Glow removed!")
-#				get_node("../../").get_tree().get_root().set_transparent_background(true)
-		"title":
-			if command.size() == 1 :
-				title.get_parent().visible = !title.get_parent().visible
-			else:
-				new_text = new_text.replace("title ","")
-				title.bbcode_text = new_text
-				title.get_parent().visible = true
-		"paint":
-			var instance = paint.instance()
-			if get_parent().has_node("PaintTools") == false:
-				$"../".visible = true
-				get_parent().add_child(instance)
-			elif get_parent().has_node("PaintTools"):
-				get_node("../PaintTools").visible =  !get_node("../PaintTools").visible 
-		"studio":
-			var instance = studio.instance()
-			if get_parent().has_node("Studio") == false:
-				$"../".visible = true
-				get_parent().add_child(instance)
-			elif get_parent().has_node("Studio"):
-				get_node("../Studio").visible = !get_node("../Studio").visible
-		"dj":
-			var instance = dj.instance()
-			if get_parent().has_node("DJ") == false:
-				$"../".visible = true
-				get_parent().add_child(instance)
-			elif get_parent().has_node("DJ"):
-				if get_parent().get_node("DJ").visible == false:
-					get_parent().get_node("DJ").visible = true
-				else: 
-					get_node("../DJ").queue_free()
-					ai_say("DJ Closed!")
+
 			
 	if command.size() > 1:
 		var ai_name_b = ai_name.to_lower()
@@ -268,7 +184,7 @@ func synapse(new_text)-> void :
 					$"../Trackers".track(command)
 			"name":
 				if command[1] != null:
-					user[1] = command[1]
+					user["name"] = command[1]
 				else:
 					pass
 			"color":
@@ -319,40 +235,7 @@ func synapse(new_text)-> void :
 						ai_say(text+"[/b]")
 					else:
 						ai_say(str("[color="+str(command[1])+"]"+str(command[1])+" is a great color![/color]"))
-				"rsi":
-					if command.size() == 1:
-						var rsi = rsiblink[0][0] 
-						rsiblink[0][0] = !rsi
-						if rsiblink[0][0] == false:
-							$RSI.stop()
-							ai_say("RSI set to " + str(rsiblink[0][0])+ " to turn it on again type [b]rsi[/b]")
-						else:
-							$RSI.start()
-							ai_say("RSI set to " + str(rsiblink[1][0]) + ". to turn it off type [b]rsi[/b]")
-					elif command.size() == 2:
-						var seconds = int(command[1])*60
-						rsiblink[1][0] = int(seconds)
-						$RSI.wait_time = rsiblink[1][0]
-						if rsiblink[0][0] == true:
-							$RSI.start()
-						ai_say("RSI timer interval set to "+ str(command[1]) +" minutes")
-				"blink":
-					if command.size() == 1:
-						var blink = rsiblink[0][1] 
-						rsiblink[0][1] = !blink
-						if rsiblink[0][1] == false:
-							$Blink.stop()
-							ai_say("blink timer is off now. Type [b]blink[/b] to turn it on again")
-						else:
-							$Blink.start()
-							ai_say("Blink timer is set to " + str(rsiblink[1][1]) + " minutes")
-					elif command.size() == 2:
-						var seconds = int(command[1])*60
-						rsiblink[1][1] = int(seconds)
-						$Blink.wait_time = int(seconds)
-						if rsiblink[0][1] == true:
-							$Blink.start()
-						ai_say("Blink timer interval set to "+ str(command[1])+ " minutes.")
+
 	if command.size() == 1 :
 			math(command[0])
 			match command[0]:
@@ -410,7 +293,7 @@ func synapse(new_text)-> void :
 #						ai_say("here is a list of your notes:\n"+str(user[7][0]))
 						var x = 0
 						for i in notes:
-							text += "[url=edit note "+i+"][img]res://addons/angelica/images/16/1f4d4.png[/img]"+i+"[/url] "
+							text += "[url=edit note "+i+"][img]res://img/16/1f4d4.png[/img]"+i+"[/url] "
 							x += 1
 						text = "here are your notes: "+text
 						ai_say(text)
@@ -418,7 +301,7 @@ func synapse(new_text)-> void :
 					"links":
 						var x = 0
 						for i in links:
-							text += "[url="+links[i]+"][img]res://addons/angelica/images/16/1f30e.png[/img]"+i+"[/url] "
+							text += "[url="+links[i]+"][img]res://img/16/1f30e.png[/img]"+i+"[/url] "
 							x += 1
 						ai_say(text)
 						text =""
@@ -651,18 +534,7 @@ func synapse(new_text)-> void :
 		for i in help:
 			append_text(str(i+": "+help[i][0]+"\n"))
 
-	if new_text == " dock ":
-		if get_parent().has_node("Dock") == false:
-			var instance = dock.instance()
-			get_node("../").add_child(instance)
-		else:
-			get_node("../Dock").queue_free()
-	if new_text == " command ":
-		Cbar.visible = !Cbar.visible
-		if Cbar.visible == true:
-			Cbar.expand()
-	if new_text == " chat mini ":
-		chat.visible = !chat.visible 
+	
 	if new_text == " bye ":
 		new_face = "1f64b"
 		face_change(new_face)
@@ -689,104 +561,6 @@ func synapse(new_text)-> void :
 		ai_say("it's about " + str(datetime_to_string(OS.get_time()))+" according to this OS.")
 	if new_text == " date " or new_text == " today ":
 		ai_say(str("today is ", datetime_to_string(OS.get_date()))+" according to this OS.")
-	if new_text == " good ":
-		synapse("list good")
-	if new_text == " bad ":
-		synapse("list bad")
-	if new_text == " sleep ":
-		sleep = true
-		new_face = "1f486"
-		face_change(new_face)
-	if new_text in greetings:
-		new_face = "1f64b"
-		face_change(new_face)
-		ai_say(str(greetings[new_text]))
-		sleep = false
-	if new_text == " new ":
-		sleep = false
-#		interface.set_bbcode("")
-		ai_say(str(sentences["welcome"]))
-		new_face = "1f64e"
-		face_change(new_face)
-		ai_say(str(greetings[" hello "]))
-		have_need = []
-		have_feelings = []
-		inputs = 0
-		satisfied = 0
-	if new_text == " needs ":
-			new_face = "1f481"
-			face_change(new_face) 
-			ai_say(str("This is a list of NEEDS that might be useful to you:"))
-			list(needs)
-	if !sleep:
-		for i in good:
-			for x in good[i]:
-				x = " "+ x + " "
-				if new_text.find(x) != -1:
-					have_feelings.append(x)
-					new_face = "1f646"
-					face_change(new_face)
-					satisfied += 1
-					ai_say(str("Uhu! You really look "+ i.to_lower()+ "!"))
-					if !have_need:
-						ai_say(str("We might feel this way when our needs are satisfied.\n Can you name one of your needs? (if you need a list type: needs)"))
-					break
-		for i in notfeeling:
-			for f in notfeeling[i]:
-				f =  " " + f + " "
-				if new_text.find(f) != -1:
-					new_face = "1f937"
-					face_change(new_face)
-					ai_say(str("Did you said: ", f.to_lower(), "? this is not a feeling.\n", sentences["notfeeling"]))
-					break
-		for i in bad:
-			for y in bad[i]:
-				y = " " + y + " "
-				if new_text.find(y) != -1:
-					have_feelings.append(y)
-					new_face ="1f645"
-					face_change(new_face)
-					satisfied -= 1
-					ai_say(str("Oh! You are ", i.to_lower(), " aren't you?!"))
-					ai_say(str("We might feel this way when our needs are not satisfied.\nCan you identify one of your needs? (for a list of the needs, type: needs)"))
-					break
-		if have_feelings:
-			for i in needs:
-				for y in needs[i]:
-					y = " " + y + " "
-					if new_text.find(y) != -1:
-						if satisfied <= 0:
-							have_need.append(y)
-							new_face ="1f646"
-							face_change(new_face)
-							ai_say(str(i.to_lower(), ", hum?! I miss it too."))
-							break
-						if satisfied > 0:
-							have_need.append(y)
-							new_face ="1f646"
-							face_change(new_face)
-							ai_say(str(i.to_lower(), ", hum?! That is awesome!."))
-							break
-						if satisfied == 0:
-							have_need.append(y)
-							ai_say(str("I am sorry that I can't say: 'i know how does it feel'... \nI hope that you can find someone real to share your feelings and needs."))
-							break
-		text = ""
-		if inputs == 5 and !have_need and !have_feelings:
-			sleep == true
-		if sleep == false:
-			if inputs == 4 and have_need and have_feelings:
-				new_face ="1f937"
-				face_change(new_face)
-				face_change(new_face)
-				ai_say(str("If you want to talk to someone, maybe you could tell them that you feel, ", str(have_feelings), "\n because of your need for ", str(have_need), " and than ask them to do (or stop doing) something concrete that would make your life more joyful!"))
-			if inputs == 10:
-				ai_say(str("Remember that our freedom of choice lies in the space/time between the input and the response."))
-			if inputs == 12:
-				ai_say(str("Ah, just one more thing: help the Open Source Community to improve the world!"))
-			if inputs == 13:
-				sleep = true
-				inputs = 0
 
 func auto_save():
 	if autosave == true:
@@ -807,8 +581,6 @@ func list(what) -> void:
 	
 func ai_say(text):
 	text = "[color="+ ai_color+"][b]"+ai_name+":[/b][/color] "+str(text)+"\n"
-#	interface.append_bbcode(text)
-#	heart.insert_text_at_cursor(text)
 	chatmini.append_bbcode(text)
 	
 func append_text(text):
@@ -823,11 +595,6 @@ func _on_SendButton_button_up():
 	var new_text = get_node("Cbar").get_text()
 	synapse(new_text)
 	
-#func _on_SendButton2_button_up():
-#	var sendtext = heart.text
-#	interface.set_bbcode(sendtext)
-#	get_node("../Editor/Label").text = "chat updated"
-#
 func add_hashtags():
 	var hashtags = user[4]["hashtags"]
 	for i in hashtags:
@@ -998,39 +765,6 @@ func send_mail(to, what, new_text):
 	OS.shell_open(mail_text)
 	if openfolder == true:
 		OS.shell_open(OS.get_user_data_dir())
-
-func _on_Blink_timeout():
-	if !quiet:
-		if autopause == true:
-			get_tree().paused = true
-	#	ai_say("Time to rest your eyes")
-		new_face = "1f64b"
-		face_change(new_face)
-		$"../Alerts".visible = !$"../Alerts".visible
-		$"../Alerts/Label".text = "Take 20 seconds to rest your eyes."
-		if sound[0][0] == true:
-			$"../Alerts/Alarm".play()
-		$Brain/TimeOut.wait_time = 20
-		$Brain/TimeOut.start()
-
-func _on_RSI_timeout():
-	if autopause == true:
-		get_tree().paused = true
-#	ai_say("Time to take a break")
-	new_face = "1f64b"
-	face_change(new_face)
-	$"../Alerts".visible = !$"../Alerts".visible
-	$"../Alerts/Label".text = "Time for 1 min rest (or yoga) \n To deactivate this type [b]rsi[/b]"
-	$"../Alerts/Alarm".play()
-	$Brain/TimeOut.wait_time = 60
-	$Brain/TimeOut.start()
-
-func _on_TimeOut_timeout():
-	if autopause == true:
-		get_tree().paused = false
-		$"../Alerts".visible = false
-		if sound[0][0] == true:
-			$"../Alerts/Alarm".play()
 
 func alert(text):
 	$"../Alerts".alert(text)

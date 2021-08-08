@@ -8,7 +8,7 @@ onready var _initial_pos = position
 onready var _speed = DEFAULT_SPEED
 
 func _process(delta):
-	_speed += delta * 2
+	_speed += delta * 3
 	position += _speed * delta * direction
 
 

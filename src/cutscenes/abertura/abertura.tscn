@@ -4,8 +4,8 @@
 [ext_resource path="res://sprites/spiralbg.png" type="Texture" id=3]
 [ext_resource path="res://sprites/favicon.png" type="Texture" id=4]
 [ext_resource path="res://src/cutscenes/abertura/abertura.gd" type="Script" id=5]
-[ext_resource path="res://addons/fonts/ComicNeue-Regular.otf" type="DynamicFontData" id=6]
-[ext_resource path="res://addons/fonts/ComicNeue_Bold.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://addons/angelica/fonts/ComicNeue-Regular.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://addons/angelica/fonts/ComicNeue_Bold.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Espiral"
@@ -101,10 +101,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 1.2, 2, 2.7, 2.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.4, 0.6, 1.2, 5.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 21, 30, 60, 60, 60, 0, 0 ]
+"values": [ 0, 21, 30, 60, 60, 60 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("credito:visible_characters")
@@ -144,9 +144,9 @@ script = ExtResource( 5 )
 anims/Espiral = SubResource( 1 )
 
 [node name="spiralbg" type="Sprite" parent="."]
-modulate = Color( 0.875781, 0.518352, 0.863561, 1 )
+modulate = Color( 2, 2, 2, 1 )
 position = Vector2( 655.581, 389.253 )
-rotation = 0.332639
+rotation = 1.74845e-07
 scale = Vector2( 1.57454, 1.57454 )
 texture = ExtResource( 3 )
 offset = Vector2( -18, 10 )
@@ -165,6 +165,7 @@ one_shot = true
 autostart = true
 
 [node name="favicon" type="Sprite" parent="."]
+modulate = Color( 3, 3, 3, 1 )
 position = Vector2( 774.129, 161.64 )
 scale = Vector2( 2.92926, 2.92926 )
 texture = ExtResource( 4 )

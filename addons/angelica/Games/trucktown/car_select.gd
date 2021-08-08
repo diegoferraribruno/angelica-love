@@ -1,6 +1,25 @@
-extends Control
+extends Node2D
 
+var initialize = [
+	"title [center][rainbow]Truck Town Demo Remix - WIP[/rainbow][/center]",
+#	"dj clear",
+#	"dj play playing",
+#	"track fps",
+	]
+var quit = [
+	"title",
+#	"dj clear"
+]
+var close = true
 var town = null
+
+func _ready():
+	for i in initialize:
+		get_node("../../Body").input_entered(i)
+		
+func quit():
+	for i in quit:
+		get_node("../../Body").input_entered(i)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("back"):

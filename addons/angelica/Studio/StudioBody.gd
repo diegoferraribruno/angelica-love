@@ -6,10 +6,10 @@ onready var hint = get_node("../../Hint")
 func _ready():
 	visible_characters = 0
 	set_selection_enabled(true)
-	bbcode_text = "[url=ss][img]res://addons/angelica/images/16/1f4f7.png[/img] ScreenShot[/url]\n[url=selfie][img]res://addons/angelica/images/16/1f4f9.png[/img] Selfie[/url]\n[url=app obs][img]res://addons/angelica/images/16/1f3a5.png[/img] OBS Studio[/url]"
+	bbcode_text = "[url=ss][img]res://img/16/1f4f7.png[/img] ScreenShot[/url]\n[url=selfie][img]res://img/16/1f4f9.png[/img] Selfie[/url]\n[url=app obs][img]res://img/16/1f3a5.png[/img] OBS Studio[/url]"
 
 	for i in obs:
-		bbcode_text +="\n[img]res://addons/angelica/images/16/2b50.png[/img] [url=obs "+i+"][img]res://addons/angelica/images/16/1f3a5.png[/img]"+ i +"[/url] "
+		bbcode_text +="\n[img]res://img/16/2b50.png[/img] [url=obs "+i+"][img]res://img/16/1f3a5.png[/img]"+ i +"[/url] "
 #	bbcode_text = "[url=save][save][/url] [url=pong][pong][/url] [url=volume][volume][/url] [url=edit menu][menu][/url] [url=bye][Bye!][/url] [url=hide][hide][/url] [url=mini][mini][/url] [url=link ko-fi][k-f][/url]"
 	connect("meta_clicked", self, "handle")
 func handle(argument):

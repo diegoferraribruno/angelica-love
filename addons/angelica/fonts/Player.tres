@@ -1,0 +1,12 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://addons/angelica/fonts/ComicNeue-Regular.otf"
+
+[resource]
+size = 18
+outline_size = 2
+outline_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+extra_spacing_top = 4
+extra_spacing_char = 2
+font_data = SubResource( 1 )

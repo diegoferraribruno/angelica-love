@@ -1,26 +1,30 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://addons/angelica/fonts/new_dynamicfontdata.tres" type="DynamicFontData" id=1]
-[ext_resource path="res://addons/angelica/Brain/Chat.gd" type="Script" id=3]
+[ext_resource path="res://addons/angelica/Chat/nvc.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/Themes/emojiboard_chat.gd" type="Script" id=3]
 [ext_resource path="res://addons/angelica/Brain/Print.gd" type="Script" id=4]
+[ext_resource path="res://addons/angelica/default/User.gd" type="Script" id=5]
 [ext_resource path="res://addons/angelica/fonts/bottom.tres" type="DynamicFont" id=6]
 [ext_resource path="res://addons/angelica/fonts/open_sans_yellow.tres" type="DynamicFont" id=7]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://addons/angelica/fonts/OpenSans-SemiboldItalic.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/angelica/Chat/Chat.gd" type="Script" id=11]
 
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.176471, 0.176471, 0.176471, 0.941176 )
-border_width_left = 4
-border_width_top = 26
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color( 0.603922, 0.482353, 0.576471, 0.294118 )
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
+bg_color = Color( 0.0196078, 0.0470588, 0.0470588, 0.72549 )
+border_width_left = 8
+border_width_top = 42
+border_width_right = 8
+border_width_bottom = 40
+border_color = Color( 0.0318604, 0.325178, 0.339844, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 corner_detail = 11
 
 [sub_resource type="StyleBoxFlat" id=3]
@@ -64,15 +68,21 @@ outline_size = 2
 outline_color = Color( 0.270588, 0.184314, 0.290196, 0.72549 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 8.0
+bg_color = Color( 0.0117647, 0.0313726, 0.0313726, 1 )
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="Chat" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 11 )
 
 [node name="Skin" type="Panel" parent="."]
 pause_mode = 2
-margin_left = 3.0
-margin_top = -3.0
-margin_right = 627.0
-margin_bottom = 305.0
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 626.0
+margin_bottom = 288.0
 mouse_filter = 1
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
@@ -81,23 +91,23 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 54.9494
-margin_top = -3.0
-margin_right = 689.949
-margin_bottom = 28.0
+margin_left = 60.8979
+margin_top = 7.88776
+margin_right = 582.898
+margin_bottom = 38.8878
 size_flags_horizontal = 5
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 6 )
-text = "Angelica Ver. Alfa 140"
+text = "Chat With Angelica Ver. 140"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Interface" type="RichTextLabel" parent="."]
-margin_left = 16.0
-margin_top = 32.0
-margin_right = 450.0
-margin_bottom = 290.0
+margin_left = 18.0
+margin_top = 45.0
+margin_right = 466.0
+margin_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -123,11 +133,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Note" type="RichTextLabel" parent="."]
-margin_left = 459.0
-margin_top = 144.0
-margin_right = 619.0
-margin_bottom = 296.0
+[node name="UserList" type="RichTextLabel" parent="."]
+margin_left = 472.0
+margin_top = 50.0
+margin_right = 612.0
+margin_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -143,7 +153,9 @@ custom_fonts/bold_font = SubResource( 8 )
 custom_fonts/normal_font = ExtResource( 6 )
 custom_colors/default_color = Color( 0.784314, 0.501961, 0.823529, 1 )
 bbcode_enabled = true
+bbcode_text = "[img]res://img/16/1f469.png[/img] Angelica"
 tab_size = 7
+text = " Angelica"
 scroll_following = true
 selection_enabled = true
 override_selected_font_color = true
@@ -167,7 +179,59 @@ __meta__ = {
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 8 )]
+position = Vector2( 4.71939, 2.83163 )
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 10.5017
+margin_top = 257.0
+margin_right = 468.502
+margin_bottom = 279.0
+custom_styles/normal = SubResource( 9 )
+clear_button_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="emojiboard_link" type="RichTextLabel" parent="LineEdit"]
+margin_left = 476.495
+margin_top = 3.94388
+margin_right = 538.495
+margin_bottom = 21.9439
+bbcode_enabled = true
+bbcode_text = "[url=emojipanel][img]res://img/16/1f60c.png[/img][/url] [url=mini][img]res://img/16/1f4ac.png[/img][/url][url=send] [img]res://img/16/27a1.png[/img][/url]
+"
+text = "  
+"
+scroll_active = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NVC" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="AiAvatar" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 14.0
+margin_top = 229.619
+margin_right = 64.0
+margin_bottom = 275.619
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="User" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="EmojiPanel" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 37.304, 76.989 )
 
 [connection signal="meta_hover_ended" from="Interface" to="Interface" method="_on_Interface_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Interface" to="Interface" method="_on_Interface_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Note" to="Interface" method="_on_Interface2_meta_hover_ended"]
+[connection signal="meta_hover_ended" from="UserList" to="Interface" method="_on_Interface2_meta_hover_ended"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="meta_clicked" from="LineEdit/emojiboard_link" to="LineEdit/emojiboard_link" method="_on_emojiboard_link_meta_clicked"]

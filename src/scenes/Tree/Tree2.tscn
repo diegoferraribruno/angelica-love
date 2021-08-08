@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/emoojione64/1f333.png" type="Texture" id=1]
+[ext_resource path="res://sprites/emoojione64/1f335.png" type="Texture" id=2]
+[ext_resource path="res://sprites/emoojione64/1f334.png" type="Texture" id=3]
+[ext_resource path="res://sprites/emoojione64/1f332.png" type="Texture" id=4]
+[ext_resource path="res://src/scenes/Tree/Tree2.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 1.39011
+height = 13.6879
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "background"
+length = 300.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15.8, 43.2, 72.7, 107.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.221154, 0.221154, 0.221154, 1 ), Color( 0.562255, 0.562255, 0.562255, 1 ), Color( 0.243137, 0.243137, 0.243137, 1 ), Color( 3, 3, 3, 1 ) ]
+}
+
+[node name="Tree2" type="StaticBody2D"]
+modulate = Color( 0.221154, 0.221154, 0.221154, 1 )
+position = Vector2( 0, -10 )
+script = ExtResource( 5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 8.49248, 3.68754 )
+color = Color( 0, 0, 0, 0.0627451 )
+polygon = PoolVector2Array( -23.1431, 5.41407, -15.1971, 6.07623, -6.66005, 6.07623, 0.165128, 6.07623, 13.4084, 5.5465, 24.003, 3.69244, 19.8116, 2.57055, 17.2038, 1.87254, 5.60899, 1.87254, -4.79657, 1.57524, -14.0129, 2.16984 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.112434, 7.18949 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -32, -52 )
+frames = SubResource( 2 )
+frame = 1
+speed_scale = 0.1
+centered = false
+offset = Vector2( 0, -3.171 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "background"
+anims/background = SubResource( 3 )

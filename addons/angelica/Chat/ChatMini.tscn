@@ -1,43 +1,54 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/angelica/fonts/open_sans_bold.tres" type="DynamicFontData" id=1]
-[ext_resource path="res://addons/angelica/Chat/Avatar.gd" type="Script" id=2]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/angelica/Chat/ChatMini.gd" type="Script" id=4]
 [ext_resource path="res://addons/angelica/Chat/Mini.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
-
-[sub_resource type="Theme" id=2]
-VScrollBar/styles/LeftScrollBar = null
-VScrollBar/styles/scroll = SubResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-content_margin_left = 80.0
-content_margin_right = 14.0
-content_margin_top = 10.0
-bg_color = Color( 0, 0, 0, 0.784314 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.760784, 0.560784, 0.937255, 1 )
+bg_color = Color( 0.109804, 0.121569, 0.12549, 0.678431 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.196078, 0.196078, 0.196078, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="Theme" id=3]
+VScrollBar/styles/LeftScrollBar = null
+VScrollBar/styles/scroll = SubResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 80.0
+content_margin_right = 14.0
+content_margin_top = 10.0
+bg_color = Color( 0.780392, 0.905882, 0.333333, 0.431373 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.780392, 0.905882, 0.333333, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="DynamicFont" id=5]
 outline_size = 1
 outline_color = Color( 0.0862745, 0.0862745, 0.0862745, 0.556863 )
 extra_spacing_top = -2
 extra_spacing_bottom = -2
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=6]
 font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 14
 outline_size = 1
 outline_color = Color( 0.0588235, 0.0588235, 0.0588235, 0.529412 )
@@ -46,22 +57,45 @@ use_filter = true
 extra_spacing_top = -3
 extra_spacing_bottom = -4
 extra_spacing_char = 1
-font_data = SubResource( 5 )
+font_data = SubResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 3.0
 content_margin_right = 7.0
 draw_center = false
 expand_margin_right = 12.0
 
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://addons/angelica/fonts/NotoMono-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://addons/angelica/fonts/NotoMono-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 18
+outline_size = 1
+outline_color = Color( 0.376471, 0.439216, 0.192157, 1 )
+font_data = SubResource( 11 )
+
 [node name="Mini" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="ChatMini2" type="RichTextLabel" parent="."]
-margin_left = 11.0
-margin_top = 10.0
-margin_right = 485.0
-margin_bottom = 99.0
+[node name="Panel" type="Panel" parent="."]
+margin_right = 339.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="RichTextLabel" parent="."]
+margin_left = 21.0
+margin_top = 17.0
+margin_right = 318.0
+margin_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -69,10 +103,10 @@ focus_next = NodePath("../LineEdit")
 focus_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 10
-theme = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 6 )
+theme = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.941176, 0.941176, 0.941176, 0.764706 )
 bbcode_enabled = true
 bbcode_text = "
@@ -88,10 +122,10 @@ __meta__ = {
 }
 
 [node name="ChatMini" type="RichTextLabel" parent="."]
-margin_left = 86.0
-margin_top = 14.0
-margin_right = 483.0
-margin_bottom = 96.0
+margin_left = 29.0
+margin_top = 21.0
+margin_right = 314.0
+margin_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -100,16 +134,13 @@ focus_mode = 2
 mouse_default_cursor_shape = 9
 size_flags_horizontal = 2
 size_flags_vertical = 10
-custom_styles/normal = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0.941176, 0.941176, 0.941176, 0.764706 )
 bbcode_enabled = true
-bbcode_text = "
-"
 tab_size = 7
-text = "
-"
 scroll_following = true
 selection_enabled = true
 custom_effects = [ null, null, null, null, null ]
@@ -118,20 +149,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Avatar" type="RichTextLabel" parent="."]
-margin_left = 16.7157
-margin_top = 34.0484
-margin_right = 85.7157
-margin_bottom = 97.0484
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 80.0
+margin_top = 103.0
+margin_right = 264.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 12 )
+placeholder_text = "\\>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="send" type="RichTextLabel" parent="LineEdit"]
+margin_left = 204.762
+margin_right = 247.762
+margin_bottom = 36.0
 bbcode_enabled = true
-bbcode_text = "[img]res://addons/angelica/images/avatar/1f64b.png[/img]
+bbcode_text = "[url=send][img]res://img/32/27a1.png[/img][/url]
 "
 text = "
 "
 scroll_active = false
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="closebutton2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15.874, 96.8315 )
+
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="meta_clicked" from="LineEdit/send" to="." method="_on_send_meta_clicked"]

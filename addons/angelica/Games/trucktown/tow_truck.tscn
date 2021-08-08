@@ -6,8 +6,8 @@
 [ext_resource path="res://addons/angelica/Games/trucktown/Materials/car_grill.tres" type="Material" id=4]
 [ext_resource path="res://addons/angelica/Games/trucktown/follow_camera.gd" type="Script" id=5]
 [ext_resource path="res://addons/angelica/Games/trucktown/Materials/car_red_body.tres" type="Material" id=6]
-[ext_resource path="res://addons/angelica/images/avatar/1f64e.png" type="Texture" id=7]
-[ext_resource path="res://addons/angelica/images/32/000dfb.png" type="Texture" id=8]
+[ext_resource path="res://img/avatar/1f64e.png" type="Texture" id=7]
+[ext_resource path="res://img/32/000dfb.png" type="Texture" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "bus.003"

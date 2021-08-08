@@ -49,12 +49,14 @@ Game="*res://src/singletons/Game.gd"
 [display]
 
 window/size/width=1366
-window/size/height=768
+window/size/height=708
+window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/enabled=true
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/calendar_button/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [input]
 
@@ -111,7 +113,6 @@ common/enable_pause_aware_picking=true
 
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
-2d/options/use_software_skinning=false
 gles2/compatibility/disable_half_float=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 environment/default_environment="res://default_env.tres"
