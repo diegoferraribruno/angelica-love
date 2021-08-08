@@ -70,6 +70,7 @@ animations = [ {
 script = ExtResource( 12 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 1472.0
 margin_bottom = 868.0
 color = Color( 0, 0, 0, 1 )
@@ -107,7 +108,7 @@ wait_time = 3.327
 autostart = true
 
 [node name="GoodiesTimer" type="Timer" parent="Xperma"]
-wait_time = 6.068
+wait_time = 1.191
 autostart = true
 
 [node name="Player1Timer" type="Timer" parent="Xperma"]
@@ -134,5 +135,7 @@ autoplay = true
 script = ExtResource( 8 )
 
 [connection signal="timeout" from="Xperma/Timer" to="Xperma" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Xperma/BadTimer" to="Xperma" method="_on_BadTimer_timeout"]
+[connection signal="timeout" from="Xperma/GoodiesTimer" to="Xperma" method="_on_GoodiesTimer_timeout"]
 [connection signal="timeout" from="Xperma/Player1Timer" to="Xperma" method="_on_Player1Timer_timeout"]
 [connection signal="finished" from="Xperma/AudioStreamPlayer" to="Xperma/AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]

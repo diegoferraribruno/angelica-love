@@ -1,5 +1,5 @@
 extends Area2D
-var motion :=Vector2.ZERO
+var motion := Vector2.LEFT
 var shooter
 var speed := 3
 var acceleration := 0.1
@@ -21,7 +21,7 @@ func _physics_process(delta):
 #	if position.y > screensize.y:
 #		position.y = 0
 #	motion = Vector2(-0.4,0)
-	position += (Vector2.LEFT) * speed 
+	position += motion * speed 
 
 func _process(delta):
 	$Bullet.rotation += 0.006

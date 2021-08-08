@@ -27,7 +27,7 @@ func _process(delta):
 	chao.modulate = Color(g,b,r)
 	
 
-	if b >= 2.2:
+	if b >= 1.8:
 		revert = -3
 	if b < 0.014:
 			revert = 1

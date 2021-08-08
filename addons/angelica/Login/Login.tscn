@@ -66,7 +66,7 @@ border_width_bottom = 1
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxEmpty" id=10]
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
@@ -351,7 +351,7 @@ script = ExtResource( 6 )
 
 [node name="EmojiPanel" parent="Player" instance=ExtResource( 2 )]
 visible = false
-position = Vector2( -121.061, -108.802 )
+position = Vector2( -89.061, -92.802 )
 
 [node name="Panel4" type="Panel" parent="."]
 margin_left = 139.0
@@ -369,7 +369,7 @@ margin_top = 30.0
 margin_right = 324.0
 margin_bottom = 62.0
 focus_next = NodePath("../Sillyword")
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_selected = Color( 0.968627, 0.960784, 0.960784, 1 )

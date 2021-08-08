@@ -36,6 +36,7 @@ var rest = preload("res://addons/angelica/Health/Rest.tscn")
 var next = preload("res://addons/angelica/Next/Next.tscn")
 var star = preload("res://addons/angelica/Star/Star.tscn")
 var title = preload("res://addons/angelica/Title/FloatingTitle.tscn")
+var phone = preload("res://addons/angelica/Dock/Phone.tscn")
 
 func text_entered(argument):
 	synapse(argument)
@@ -69,11 +70,17 @@ func synapse(new_text):
 		"user":
 			print_user()
 		"rest":
-			if self.has_node("Rest") == false:
+			if get_parent().has_node("Rest") == false:
 				var instance = rest.instance()
-				self.add_child(instance)
-			elif self.has_node("Rest"):
-				$"Rest".visible = !$"Rest".visible
+				get_parent().add_child(instance)
+			elif get_parent().has_node("Rest"):
+				$"../Rest".visible = !$"../Rest".visible
+		"phone":
+			if has_node("Phone") == false:
+				var instance = phone.instance()
+				add_child(instance)
+			elif has_node("Phone"):
+				$"Phone".visible = !$"Phone".visible
 		"next":
 			if self.has_node("Next") == false:
 				var instance = next.instance()

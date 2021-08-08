@@ -1,5 +1,5 @@
 extends Area2D
-var motion :=Vector2.ZERO
+var motion := Vector2.LEFT - Vector2(-0.4,0)
 var shooter
 var speed := 3
 var acceleration := 0.1
@@ -12,8 +12,7 @@ func _ready():
 	$Bullet.set_frame(type)
 
 func _physics_process(delta):
-	motion = Vector2(-0.4,0)
-	position += (Vector2.LEFT - motion) * speed 
+	position += motion * speed 
 
 #func _process(delta):
 #		$Bullet.rotation -= 0.006

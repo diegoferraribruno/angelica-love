@@ -48,6 +48,7 @@ func _ready():
 	mask.modulate = Color(corpo_cor)
 	$"Baloon".modulate = Color(corpo_cor)
 	$"Gun".modulate = Color(corpo_cor)
+	$"Label".modulate = Color(corpo_cor)
 	
 	face = rand_range(0, 16)
 	changeface("happyface")
@@ -151,13 +152,11 @@ func shoot():
 #	can_shoot = false
 #	cooldown.start()
 #	$Gun/AnimatedSprite.set_frame(1)
-	$Delay.wait_time = rand_range(0.01,0.2)
-	$Delay.start()
 	
-func damage(damage: int):
-	self.health -= damage
+#	$Delay.wait_time = rand_range(0.01,0.2)
+#	$Delay.start()
 	
-func _on_Delay_timeout():
+#func _on_Delay_timeout():
 	var bullet = Bullet.instance()
 	bullet.global_position = bullet_spawnpoint.global_position
 	bullet.shooter = self
@@ -168,11 +167,14 @@ func _on_Delay_timeout():
 	cooldown.start()
 	$Gun/AnimatedSprite.set_frame(1)
 
+func damage(damage: int):
+	self.health -= damage
+
 func _on_Area2D_body_entered(body):
-	drag.x = -5
+	drag.x = -10
 
 func _on_Area2D_body_exited(body):
-	drag.x = -2
+	drag.x = 0.5
 
 func changeface(animation):
 	var user_face = user["emoji"]

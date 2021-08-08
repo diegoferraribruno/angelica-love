@@ -1,16 +1,18 @@
 extends Node2D
 
-var bg_color = Color(4,2.5,1.1,1)
+var bg_color = Color(3,2,0.8,1)
 var draw_matrix = [Rect2(Vector2(0,-32), Vector2(128, 32))]
 onready var screensize = get_viewport().get_visible_rect().size
 onready var pos =  Vector2(screensize.x/2,screensize.y+256)
 
 func _draw():
 	draw_circle(pos, 256, bg_color)
+	draw_circle(Vector2(pos.x-100,pos.y-64), 32, Color.black)
+	draw_circle(Vector2(pos.x+100,pos.y-64), 32, Color.black)
 
 func reset():
-	position = pos
-	update()
+	position.y = screensize.y/2
+#	update()
 
 func _process(delta):
 	if position.y > -1600:

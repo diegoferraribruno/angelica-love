@@ -1,5 +1,5 @@
 extends Node2D
-onready var user = get_node("../../User").user
+onready var user = get_node("../User").user
 var icon = "1f441-1f5e8"
 var mini = true
 var close = true

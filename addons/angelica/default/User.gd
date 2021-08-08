@@ -72,6 +72,7 @@ var user = {
 #		"xperma":"1f4ab",
 #		}
 	, "dock":{
+		"phone":"1f4f2",
 		"xperma":"1f4ab",
 		"love":"2665",
 		"truck":"1f69a",

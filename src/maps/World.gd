@@ -61,7 +61,7 @@ func _on_Player1Timer_timeout():
 #	$"Player1".set_script(script)
 	$"Player1".health = 40
 	$"Player1".time = 0.015
-	$Player1/Body.modulate = Color(4.0, 4.0, 4.0)
+#	$Player1/Body.modulate = Color(4.0, 4.0, 4.0)
 	$"PlayersTimer".start()
 
 func _on_PlayersTimer_timeout():

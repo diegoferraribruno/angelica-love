@@ -13,6 +13,7 @@ var interface = [
 	"[url=rest][img]res://img/32/1f441-1f5e8.png[/img][/url] ",
 	"[url=save][img]res://img/32/1f4be.png[/img][/url] ",
 	"[url=bye][img]res://img/32/274c.png[/img][/url] ",
+	"[url=dock][img]res://img/32/268a.png[/img][/url]",
 	"[center]Creative[/center]",
 	"\n",
 	"[url=selfie][img]res://img/32/1f4f9.png[/img][/url] ",
