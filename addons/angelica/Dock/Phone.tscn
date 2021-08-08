@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/angelica/fonts/style/pre_line_edit.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Dock/Phone.gd" type="Script" id=3]
+[ext_resource path="res://addons/angelica/Twitter/Twitter.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0862745, 0.0745098, 0.0745098, 0.921569 )
@@ -180,6 +181,9 @@ __meta__ = {
 
 [node name="SuperButton" parent="." instance=ExtResource( 2 )]
 position = Vector2( 109.568, 466.797 )
+
+[node name="Twitter" parent="." instance=ExtResource( 4 )]
+position = Vector2( 15.4597, 72.5416 )
 
 [connection signal="meta_clicked" from="Body2" to="." method="_on_Body_meta_clicked"]
 [connection signal="meta_hover_ended" from="Body2" to="." method="_on_Body_meta_hover_ended"]

@@ -74,3 +74,7 @@ func _on_Body_meta_hover_started(meta):
 func _on_Body_meta_clicked(meta):
 	get_parent().synapse(meta)
 	pass # Replace with function body.
+
+
+func _on_TextEdit_text_changed():
+	pass # Replace with function body.
