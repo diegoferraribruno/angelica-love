@@ -1,4 +1,7 @@
 extends Node2D
+var icon = "1f426"
+var mini = true
+var close = true
 var links = {
 	"Angelica":"http://diegoferraribruno.itch.io/angelica",
 	"Angelica Github":"https://github.com/diegoferraribruno/angelica-love",
@@ -90,3 +93,5 @@ func _on_Buttons_meta_clicked(meta):
 		links_menu()
 	elif meta == "hashtags":
 		hashtag_menu()
+	elif meta == "clear":
+		$"TextEdit".text = ""

@@ -37,6 +37,7 @@ var next = preload("res://addons/angelica/Next/Next.tscn")
 var star = preload("res://addons/angelica/Star/Star.tscn")
 var title = preload("res://addons/angelica/Title/FloatingTitle.tscn")
 var phone = preload("res://addons/angelica/Dock/Phone.tscn")
+var bird = preload("res://addons/angelica/Twitter/Twitter.tscn")
 
 func text_entered(argument):
 	synapse(argument)
@@ -81,6 +82,12 @@ func synapse(new_text):
 				add_child(instance)
 			elif has_node("Phone"):
 				$"Phone".visible = !$"Phone".visible
+		"bird":
+			if has_node("Bird") == false:
+				var instance = bird.instance()
+				add_child(instance)
+			elif has_node("Bird"):
+				$"Bird".visible = !$"Bird".visible
 		"next":
 			if self.has_node("Next") == false:
 				var instance = next.instance()

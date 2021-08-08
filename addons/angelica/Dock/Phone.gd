@@ -14,6 +14,7 @@ var interface = [
 	"[url=save][img]res://img/32/1f4be.png[/img][/url] ",
 	"[url=bye][img]res://img/32/274c.png[/img][/url] ",
 	"[url=dock][img]res://img/32/268a.png[/img][/url]",
+	"[url=bird][img]res://img/32/1f426.png[/img][/url]",
 	"[center]Creative[/center]",
 	"\n",
 	"[url=selfie][img]res://img/32/1f4f9.png[/img][/url] ",
@@ -44,7 +45,8 @@ var interface = [
 	"[url=radio][img]res://img/32/1f4fb.png[/img][/url] ",
 	"[url=star][img]res://img/32/2605.png[/img][/url] ",
 	"[url=chat][img]res://img/32/1f5e8.png[/img][/url] ",
-	"[url=next][img]res://img/32/26a0.png[/img][/url]", 
+	"[url=next][img]res://img/32/26a0.png[/img][/url]",
+	 
 	]
 
 func _ready():

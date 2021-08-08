@@ -101,7 +101,7 @@ var user = {
 		"#":"0023-20e3",
 		"list links":"1f30e",
 		"folder":"1f4c1",
-		"twitter":"1f426",
+		"bird":"1f426",
 #		"help":"2753",
 #		"save":"1f4be",
 #		"demo":"1f608",
