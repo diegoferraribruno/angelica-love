@@ -7,11 +7,11 @@ onready var pos =  Vector2(screensize.x/2,screensize.y+256)
 
 func _draw():
 	draw_circle(pos, 256, bg_color)
-	draw_circle(Vector2(pos.x-100,pos.y-64), 32, Color.black)
-	draw_circle(Vector2(pos.x+100,pos.y-64), 32, Color.black)
+	draw_circle(Vector2(pos.x-100,pos.y-32), 38, Color.black)
+	draw_circle(Vector2(pos.x+100,pos.y-32), 38, Color.black)
 
 func reset():
-	position.y = screensize.y/2
+	position.y = screensize.y/3
 #	update()
 
 func _process(delta):
