@@ -19,12 +19,8 @@ func menu_show():
 	var text_menu = "[center][img]res://img/48/0000.png[/img] "
 	bbcode_text = text_menu
 	for i in menu_bottom:
-		var show_big = i
 		text_menu += i
-		show_big = text_menu+(show_big.replace("32/","48/"))
-		bbcode_text = show_big + "[img]res://img/48/0000.png[/img]"
-		reflex.bbcode_text = show_big + "[img]res://img/48/0000.png[/img]"
-		yield(get_tree().create_timer(0.06), "timeout")
+		yield(get_tree().create_timer(0.07), "timeout")
 		bbcode_text = text_menu + "[img]res://img/48/0000.png[/img]"
 		reflex.bbcode_text = text_menu + "[img]res://img/48/0000.png[/img]"
 

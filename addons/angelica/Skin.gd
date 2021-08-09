@@ -26,12 +26,5 @@ func _on_AngelicaButton_meta_clicked(meta):
 				get_node("Body").visible = true
 				if has_node("Dock"):
 					get_node("Dock").visible = true
-#		"dock":
-#			if has_node("Dock"):
-#				get_node("Dock").visible = !get_node("Dock").visible
-#				if get_node("Dock").visible ==  true:
-#					get_node("Body").visible = true
-#
-#			else:
-#				get_node("Body").synapse("dock")
-#				get_node("Body").visible = true
+				else:
+					get_node("Body/Phone").visible = true

@@ -1,9 +1,9 @@
 extends RichTextLabel
 
-onready var notes = get_parent().notes
-
-func _ready():
-	visible = false
+onready var notes = get_node("../../").notes
+#
+#func _ready():
+#	visible = false
 
 func _on_Notes_meta_clicked(meta):
 	

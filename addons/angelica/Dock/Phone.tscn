@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/angelica/fonts/style/pre_line_edit.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Dock/Phone.gd" type="Script" id=3]
+[ext_resource path="res://addons/angelica/Dock/clock.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0862745, 0.0745098, 0.0745098, 0.921569 )
+draw_center = false
 border_width_left = 8
 border_width_top = 46
 border_width_right = 8
@@ -18,13 +20,12 @@ corner_radius_bottom_left = 12
 corner_detail = 11
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0862745, 0.0745098, 0.0745098, 0.921569 )
-draw_center = false
+bg_color = Color( 0.0862745, 0.0745098, 0.0745098, 0.8 )
 border_width_left = 8
 border_width_top = 46
 border_width_right = 8
 border_width_bottom = 46
-border_color = Color( 0.129412, 0.145098, 0.156863, 1 )
+border_color = Color( 0.129412, 0.145098, 0.156863, 0.796078 )
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -52,12 +53,13 @@ content_margin_right = 2.0
 font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 
 [sub_resource type="DynamicFont" id=7]
+outline_size = 3
+outline_color = Color( 0.270588, 0.270588, 0.270588, 1 )
 extra_spacing_bottom = 6
 extra_spacing_char = 7
 font_data = SubResource( 6 )
 
 [sub_resource type="DynamicFont" id=8]
-outline_size = 2
 outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
 use_mipmaps = true
 use_filter = true
@@ -67,9 +69,13 @@ font_data = ExtResource( 1 )
 
 [node name="Phone" type="Node2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [ 128.054 ]
+}
 
-[node name="Background2" type="Panel" parent="."]
+[node name="Cover" type="Panel" parent="."]
 pause_mode = 2
+visible = false
 margin_right = 256.0
 margin_bottom = 512.0
 mouse_filter = 1
@@ -78,11 +84,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Front" type="Panel" parent="."]
+[node name="Screen" type="Panel" parent="."]
 pause_mode = 2
-margin_left = 4.0
-margin_top = 5.0
-margin_right = 250.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 254.0
 margin_bottom = 510.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 2 )
@@ -90,7 +96,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Body2" type="RichTextLabel" parent="."]
+[node name="footer" type="RichTextLabel" parent="."]
 margin_left = 19.0
 margin_top = 419.0
 margin_right = 241.0
@@ -117,37 +123,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Body" type="RichTextLabel" parent="."]
-margin_left = 19.0
-margin_top = 73.0
-margin_right = 241.0
-margin_bottom = 465.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_pivot_offset = Vector2( 10, 10 )
-focus_next = NodePath("../LineEdit")
-size_flags_horizontal = 4
-size_flags_vertical = 10
-theme = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 0.792157, 0.435294, 0.772549, 1 )
-bbcode_enabled = true
-meta_underlined = false
-tab_size = 7
-scroll_active = false
-override_selected_font_color = true
-custom_effects = [ null, null, null, null, null ]
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 41.74
-margin_top = 13.0
-margin_right = 207.74
-margin_bottom = 42.0
+margin_left = 10.0
+margin_top = 12.0
+margin_right = 117.0
+margin_bottom = 41.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
@@ -159,11 +139,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title2" type="RichTextLabel" parent="."]
-margin_left = 19.8909
-margin_top = 48.1091
-margin_right = 242.891
-margin_bottom = 77.1091
+[node name="clock" type="RichTextLabel" parent="."]
+margin_left = 19.2599
+margin_top = 51.4802
+margin_right = 110.26
+margin_bottom = 81.4802
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
@@ -171,16 +151,76 @@ bbcode_enabled = true
 bbcode_text = "20:04"
 text = "20:04"
 scroll_active = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="clock"]
+autostart = true
+
+[node name="Body" type="RichTextLabel" parent="."]
+margin_left = 19.0
+margin_top = 82.0
+margin_right = 241.0
+margin_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 10, 10 )
+focus_next = NodePath("../LineEdit")
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+meta_underlined = false
+tab_size = 7
+scroll_active = false
+override_selected_font_color = true
+custom_effects = [ null, null, null, null, null ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body2" type="RichTextLabel" parent="."]
+margin_left = 165.784
+margin_top = 10.2162
+margin_right = 244.784
+margin_bottom = 42.2162
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 10, 10 )
+focus_next = NodePath("../LineEdit")
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+meta_underlined = false
+tab_size = 7
+scroll_active = false
+override_selected_font_color = true
+custom_effects = [ null, null, null, null, null ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 109.568, 466.797 )
+position = Vector2( 107.806, 466.797 )
 
-[connection signal="meta_clicked" from="Body2" to="." method="_on_Body_meta_clicked"]
-[connection signal="meta_hover_ended" from="Body2" to="." method="_on_Body_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Body2" to="." method="_on_Body_meta_hover_started"]
+[connection signal="meta_clicked" from="footer" to="." method="_on_Body_meta_clicked"]
+[connection signal="meta_hover_ended" from="footer" to="." method="_on_Body_meta_hover_ended"]
+[connection signal="meta_hover_started" from="footer" to="." method="_on_Body_meta_hover_started"]
+[connection signal="timeout" from="clock/Timer" to="clock" method="_on_Timer_timeout"]
 [connection signal="meta_clicked" from="Body" to="." method="_on_Body_meta_clicked"]
 [connection signal="meta_hover_ended" from="Body" to="." method="_on_Body_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Body" to="." method="_on_Body_meta_hover_started"]
+[connection signal="meta_clicked" from="Body2" to="." method="_on_Body_meta_clicked"]
+[connection signal="meta_hover_ended" from="Body2" to="." method="_on_Body_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Body2" to="." method="_on_Body_meta_hover_started"]

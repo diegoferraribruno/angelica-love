@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://addons/angelica/fonts/new_dynamicfontdata.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/angelica/Chat/nvc.gd" type="Script" id=2]
@@ -11,35 +11,32 @@
 [ext_resource path="res://addons/angelica/fonts/OpenSans-SemiboldItalic.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://addons/angelica/Themes/EmojiPanel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://addons/angelica/Chat/Chat.gd" type="Script" id=11]
+[ext_resource path="res://addons/angelica/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://addons/angelica/Chat/ChatEditor.gd" type="Script" id=13]
 
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0196078, 0.0470588, 0.0470588, 0.72549 )
+bg_color = Color( 0.627451, 0.94902, 0.964706, 0.803922 )
 border_width_left = 8
 border_width_top = 42
 border_width_right = 8
 border_width_bottom = 40
-border_color = Color( 0.0318604, 0.325178, 0.339844, 1 )
+border_color = Color( 0.0470588, 0.752941, 1, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 11
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.729412, 0.317647, 0.878431, 0.027451 )
-border_width_left = 10
-border_width_top = 2
-border_width_right = 12
-border_width_bottom = 2
-border_color = Color( 0.603922, 0.286275, 0.670588, 0.0745098 )
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 20
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+outline_size = 2
+outline_color = Color( 0.054902, 0.490196, 0.639216, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=4]
 VScrollBar/icons/decrement = null
@@ -59,20 +56,38 @@ content_margin_right = 2.0
 content_margin_right = 2.0
 
 [sub_resource type="DynamicFont" id=7]
-size = 17
+outline_size = 3
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 17
-outline_size = 2
-outline_color = Color( 0.270588, 0.184314, 0.290196, 0.72549 )
-font_data = ExtResource( 1 )
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.729412, 0.317647, 0.878431, 0.027451 )
+draw_center = false
+border_width_left = 10
+border_width_top = 2
+border_width_right = 12
+border_width_bottom = 2
+border_color = Color( 0.603922, 0.286275, 0.670588, 0.0745098 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id=9]
 content_margin_left = 8.0
-bg_color = Color( 0.0117647, 0.0313726, 0.0313726, 1 )
+bg_color = Color( 0.0575562, 0.489459, 0.640625, 1 )
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFont" id=11]
+size = 24
+outline_size = 2
+outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 4
+extra_spacing_bottom = 2
+font_data = ExtResource( 12 )
 
 [node name="Chat" type="Node2D"]
 script = ExtResource( 11 )
@@ -81,7 +96,7 @@ script = ExtResource( 11 )
 pause_mode = 2
 margin_left = 2.0
 margin_top = 1.0
-margin_right = 626.0
+margin_right = 496.0
 margin_bottom = 288.0
 mouse_filter = 1
 theme = SubResource( 1 )
@@ -91,22 +106,22 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 60.8979
-margin_top = 7.88776
-margin_right = 582.898
-margin_bottom = 38.8878
+margin_left = 61.0
+margin_top = 8.0
+margin_right = 484.0
+margin_bottom = 39.0
 size_flags_horizontal = 5
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = ExtResource( 6 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 8 )
 text = "Chat With Angelica Ver. 140"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Interface" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 18.0
 margin_top = 45.0
-margin_right = 466.0
+margin_right = 343.0
 margin_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -134,9 +149,9 @@ __meta__ = {
 }
 
 [node name="UserList" type="RichTextLabel" parent="."]
-margin_left = 472.0
+margin_left = 358.0
 margin_top = 50.0
-margin_right = 612.0
+margin_right = 487.0
 margin_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -150,7 +165,7 @@ custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 custom_fonts/italics_font = SubResource( 7 )
 custom_fonts/bold_font = SubResource( 8 )
-custom_fonts/normal_font = ExtResource( 6 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.784314, 0.501961, 0.823529, 1 )
 bbcode_enabled = true
 bbcode_text = "[img]res://img/16/1f469.png[/img] Angelica"
@@ -178,27 +193,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SuperButton" parent="." instance=ExtResource( 8 )]
-position = Vector2( 4.71939, 2.83163 )
-
-[node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 10.5017
+[node name="TextEdit" type="LineEdit" parent="."]
+margin_left = 11.0
 margin_top = 257.0
-margin_right = 468.502
+margin_right = 398.0
 margin_bottom = 279.0
 custom_styles/normal = SubResource( 9 )
-clear_button_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="emojiboard_link" type="RichTextLabel" parent="LineEdit"]
-margin_left = 476.495
+[node name="emojiboard_link" type="RichTextLabel" parent="TextEdit"]
+margin_left = 402.495
 margin_top = 3.94388
-margin_right = 538.495
+margin_right = 464.495
 margin_bottom = 21.9439
 bbcode_enabled = true
-bbcode_text = "[url=emojipanel][img]res://img/16/1f60c.png[/img][/url] [url=mini][img]res://img/16/1f4ac.png[/img][/url][url=send] [img]res://img/16/27a1.png[/img][/url]
+bbcode_text = "[url=emojipanel][img]res://img/16/1f60c.png[/img][/url] [url=editor][img]res://img/16/2328.png[/img][/url][url=send] [img]res://img/16/27a1.png[/img][/url]
 "
 text = "  
 "
@@ -212,7 +223,6 @@ __meta__ = {
 script = ExtResource( 2 )
 
 [node name="AiAvatar" type="RichTextLabel" parent="."]
-visible = false
 margin_left = 14.0
 margin_top = 229.619
 margin_right = 64.0
@@ -226,12 +236,42 @@ __meta__ = {
 [node name="User" type="Node" parent="."]
 script = ExtResource( 5 )
 
+[node name="SuperButton" parent="." instance=ExtResource( 8 )]
+position = Vector2( 4.71939, 2.83163 )
+
 [node name="EmojiPanel" parent="." instance=ExtResource( 10 )]
 visible = false
-position = Vector2( 37.304, 76.989 )
+position = Vector2( 13.9958, 49.443 )
 
-[connection signal="meta_hover_ended" from="Interface" to="Interface" method="_on_Interface_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Interface" to="Interface" method="_on_Interface_meta_hover_started"]
-[connection signal="meta_hover_ended" from="UserList" to="Interface" method="_on_Interface2_meta_hover_ended"]
-[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
-[connection signal="meta_clicked" from="LineEdit/emojiboard_link" to="LineEdit/emojiboard_link" method="_on_emojiboard_link_meta_clicked"]
+[node name="Editor" type="Node2D" parent="."]
+visible = false
+position = Vector2( 2.79271, 54.3935 )
+script = ExtResource( 13 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Editor"]
+margin_left = 10.9092
+margin_top = 242.727
+margin_right = 464.909
+margin_bottom = 283.727
+custom_fonts/normal_font = SubResource( 11 )
+bbcode_enabled = true
+bbcode_text = "[url=emoji][img]res://img/32/1f60c.png[/img][/url] [url=wave][wave]wave[/wave][/url] [url=rainbow][rainbow]rainbow[/rainbow][/url] [url=tornado][tornado radius=5 freq=2]tornado[/tornado][/url] [url=shake][shake rate=5 level=10]shake[/shake][/url]"
+meta_underlined = false
+text = " wave rainbow tornado shake"
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmojiPanel" parent="Editor" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 12.9173, 87.9288 )
+
+[connection signal="meta_hover_ended" from="RichTextLabel" to="RichTextLabel" method="_on_Interface_meta_hover_ended"]
+[connection signal="meta_hover_started" from="RichTextLabel" to="RichTextLabel" method="_on_Interface_meta_hover_started"]
+[connection signal="meta_hover_ended" from="UserList" to="RichTextLabel" method="_on_Interface2_meta_hover_ended"]
+[connection signal="text_entered" from="TextEdit" to="." method="_on_TextEdit_text_entered"]
+[connection signal="meta_clicked" from="TextEdit/emojiboard_link" to="TextEdit/emojiboard_link" method="_on_emojiboard_link_meta_clicked"]
+[connection signal="meta_clicked" from="Editor/RichTextLabel2" to="." method="_on_RichTextLabel2_meta_clicked"]
+[connection signal="meta_clicked" from="Editor/RichTextLabel2" to="Editor" method="_on_RichTextLabel_meta_clicked"]
