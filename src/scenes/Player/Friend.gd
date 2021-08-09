@@ -71,7 +71,7 @@ func _input(event):
 		else:
 			touch = false
 func _process(_delta):
-	$AvatarHead.modulate.a  = clamp(health/10 + 0.4,0.4,1)
+	$AvatarHead.modulate.a = clamp(health/10 + 0.4,0.4,1)
 #	body.modulate.a  = health/10
 	if health < 6:
 		$Baloon.visible = true
