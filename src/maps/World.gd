@@ -5,9 +5,10 @@ export var Player : PackedScene
 export var Kill : PackedScene
 export var Goodie : PackedScene
 onready var screensize := get_viewport_rect().size
-onready var max_height := screensize.y/2
+onready var max_height := screensize.y/3
 var initialize = [
-	"title [center][rainbow]Share Your Love[/rainbow][/center]",
+	"glow"
+#	"title [center][rainbow]Share Your Love[/rainbow][/center]",
 #	"dj clear",
 #	"dj play Love-01",
 #	"track fps",
@@ -16,9 +17,9 @@ func _ready():
 	for i in initialize:
 		get_node("../../Body").input_entered(i)
 	randomize()
-	$"ColorRect".margin_right = screensize.x
-	$"ColorRect".margin_bottom = screensize.y
-	$"ColorRect".margin_top = max_height
+#	$"ColorRect".margin_right = screensize.x
+#	$"ColorRect".margin_bottom = screensize.y
+#	$"ColorRect".margin_top = max_height
 #	_on_Timer_timeout()
 	for i in 10:
 		var instance = TreeScene.instance()

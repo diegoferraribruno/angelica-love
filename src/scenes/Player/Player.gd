@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var Bullet = preload("res://src/scenes/Bullets/Bullet.tscn")
 onready var covid = $Covid
 onready var screensize := get_viewport_rect().size
-onready var max_height := screensize.y/2
+onready var max_height := screensize.y/3
 const max_health := 20
 const anime_run_h := 18
 var health := 20.0 setget set_health
