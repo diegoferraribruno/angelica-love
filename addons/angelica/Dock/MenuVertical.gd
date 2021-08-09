@@ -33,7 +33,7 @@ func handle(argument):
 	get_node("../../..").input_entered(argument)
 	
 func menu_show():
-	yield(get_tree().create_timer(2), "timeout")
+	yield(get_tree().create_timer(0.5), "timeout")
 	var text_menu = ""
 #	bbcode_text = text_menu
 	for i in menu_bottom:

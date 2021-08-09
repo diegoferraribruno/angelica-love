@@ -15,7 +15,7 @@ func handle(argument):
 	get_node("../../../").input_entered(argument)
 	
 func menu_show():
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	var text_menu = "[center][img]res://img/48/0000.png[/img] "
 	bbcode_text = text_menu
 	for i in menu_bottom:

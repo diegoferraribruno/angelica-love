@@ -5,11 +5,14 @@ onready var app_name = get_parent().name
 onready var hint = $"Hint"
 
 #"1f49f","2b55",1f5e8
-var supperbutton = "[url=Menu][img]res://img/32/1f49f.png[/img][/url]"
+var supperbutton = "[url=move][img]res://img/32/1f49f.png[/img][/url]"
 var following = false
+var drag = false
+var touch = false
 var dragging_start_position = Vector2()
 var lastmouseposition = Vector2()
 var parent_start_position = Vector2()
+onready var last_pos = get_parent().position
 
 func _ready():
 	screenSize = get_viewport().get_visible_rect().size
@@ -58,6 +61,9 @@ func _process(_delta):
 			get_parent().position.x = slideinterwindow.x
 		if  mouse_actual_pos.y > 12 and mouse_actual_pos.y < (screenSize.y-66) :
 			get_parent().position.y = slideinterwindow.y
+	if drag == true:
+		get_parent().position = get_global_mouse_position()-position-Vector2(24,28)
+#func _input(event):
 
 func unfollow():
 	following = false
@@ -67,6 +73,11 @@ func unfollow():
 
 func handle(meta):
 	match meta:
+		"move":
+			drag = !drag
+			$"Timer".start()
+			if drag == false:
+				get_node("../../").add_app(get_parent().name,get_parent().position)
 		"close":
 			if get_node("../").get("close") != null:
 				if get_node("../").get("quit") != null:
@@ -95,17 +106,33 @@ func _on_bbcode_meta_hover_started(meta):
 	hint.hint(meta,pos)
 	
 #
-func _on_bbcode_gui_input(event):
-	if Input.is_action_just_pressed("Click"):
-		dragging_start_position = get_global_mouse_position()
-		parent_start_position = get_parent().position
-		following = true
+#func _on_bbcode_gui_input(event):
+#
 #	if Input.is_action_pressed("Click"):
-#		following = true
-#		get_parent().z_index = -1 # necessário ver ordenamento das janelas - this code needs an update.
+#		touch = true
+#		$"Timer".start()
+#
+#		print(touch)
+##	if Input.is_action_just_pressed("Click"):
+#		dragging_start_position = get_global_mouse_position()
+#		parent_start_position = get_parent().position
+##		following = true
+#	else:
+#		touch = false
+#		print (touch)
+#	if event is InputEventScreenTouch:
+#		if event.is_pressed():
+#			$"Timer".start()
+#			dragging_start_position = get_global_mouse_position()
+#			touch = true
+##		else:
+#			touch = false
+##	if Input.is_action_pressed("Click"):
+##		following = true
+##		get_parent().z_index = -1 # necessário ver ordenamento das janelas - this code needs an update.
 
-	elif Input.is_action_just_released("Click"):
-		unfollow()
+#	elif Input.is_action_just_released("Click"):
+#		unfollow()
 
 func _on_bbcode_mouse_entered():
 	$bbcode.bbcode_text = supperbutton
@@ -113,3 +140,28 @@ func _on_bbcode_mouse_entered():
 func hint(meta,pos):
 	var posi = get_local_mouse_position()+Vector2(-30,-40)
 	hint.hint(meta,posi)
+
+
+#func _on_Timer_timeout():
+#	if touch == true:
+#		drag = true
+##		parent_start_position = get_parent().position
+#	elif touch == false:
+##		$"Timer".stop()
+#		drag = false
+
+func _on_Timer_timeout():
+	if last_pos == get_parent().position:
+		$"Timer".stop()
+		drag = false
+		global_position.x
+		if global_position.x > screenSize.x-66:
+			get_parent().position.x = screenSize.x-66-position.x
+		if global_position.y > screenSize.y-76:
+			get_parent().position.y = screenSize.y-80-position.y
+		if global_position.x < 0:
+			get_parent().position.x = 30-position.x
+		if global_position.y < 0:
+			get_parent().position.y = 30-position.y
+
+	last_pos = get_parent().position

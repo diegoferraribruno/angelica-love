@@ -551,7 +551,7 @@ modulate = Color( 2, 6, 6, 1 )
 position = Vector2( 682.349, 438.199 )
 frames = SubResource( 63 )
 animation = "complete"
-frame = 9
+frame = 11
 playing = true
 
 [node name="ChangeSetting" type="Node2D" parent="."]
