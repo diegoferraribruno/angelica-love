@@ -37,10 +37,11 @@ var next = preload("res://addons/angelica/Next/Next.tscn")
 var star = preload("res://addons/angelica/Star/Star.tscn")
 var title = preload("res://addons/angelica/Title/FloatingTitle.tscn")
 var phone = preload("res://addons/angelica/Dock/Phone.tscn")
-var bird = preload("res://addons/angelica/Twitter/Twitter.tscn")
+var bird = preload("res://addons/angelica/Bird/Bird.tscn")
 
 func text_entered(argument):
 	synapse(argument)
+	
 func input_entered(argument):
 	synapse(argument)
 	
@@ -55,7 +56,7 @@ func studio(argument):
 func initialize():
 	for i in user.user["initialize"]:
 		synapse(i)
-		yield(get_tree().create_timer(0.5), "timeout")
+		yield(get_tree().create_timer(0.1), "timeout")
 
 func quit(argument):
 #	for i in quit:
@@ -66,6 +67,8 @@ func synapse(new_text):
 	if new_text is String:
 		command = new_text.split(" ", true, 4)
 	match command[0]:
+		"hide":
+			get_parent()._on_AngelicaButton_meta_clicked(command[0])
 		"shades":
 			$"../Shades".visible = not $"../Shades".visible
 		"user":
@@ -141,23 +144,19 @@ func synapse(new_text):
 		"truck":
 			if game.has_node("CarSelect") == false:
 				var instance = truck.instance()
-#				$"../".visible = false
 				game.add_child(instance)
 			elif game.has_node("CarSelect"):
 				if game.has_node("TownScene"):
 					get_node("../Game/TownScene").queue_free()
 				get_node("../Game/CarSelect").queue_free()
-#				$"../".visible = true
 				ai_say("Good game!")
 #				quit("dj clear")
 		"love":
 			var instance = love.instance()
 			if game.has_node("Love") == false:
-#				$"../".visible = false
 				game.add_child(instance)
 			elif game.has_node("Love"):
 				get_node("../Game/Love").queue_free()
-#				$"../".visible = true
 				ai_say("What was that?")
 #				quit("dj clear")
 		"login":
@@ -177,18 +176,18 @@ func synapse(new_text):
 			if game.has_node("City") == false:
 				var instance = city.instance()
 				game.add_child(instance)
+				synapse("glow on")
 			elif game.has_node("City"):
 				get_node("../Game/City").queue_free()
-				ai_say("Good Morning")
 #				quit("dj clear")
 		"glow":
 			if get_node("../Paint").has_node("Glow") == false:
 				var instance = glow.instance()
 				get_node("../Paint").add_child(instance)
-				ai_say("Shinny!")
-			else:
-				get_node("../Paint/Glow").queue_free()
-				ai_say("Glow removed!")
+			if command.size() > 1 :
+				if command[1] != "on":
+					get_node("../Paint/Glow").queue_free()
+					ai_say("Glow removed!")
 		"title":
 			if get_node("../Paint").has_node("Title") == false:
 				var instance = title.instance()

@@ -2,6 +2,7 @@ extends Node2D
 var icon = "1f426"
 var mini = true
 var close = true
+onready var hint = $"SuperButton/Hint"
 var links = {
 	"Angelica":"http://diegoferraribruno.itch.io/angelica",
 	"Angelica Github":"https://github.com/diegoferraribruno/angelica-love",
@@ -95,3 +96,21 @@ func _on_Buttons_meta_clicked(meta):
 		hashtag_menu()
 	elif meta == "clear":
 		$"TextEdit".text = ""
+
+
+func _on_Buttons_meta_hover_ended(meta):
+	hint.hint("",Vector2(-20,-20))
+
+func _on_bbcode_meta_hover_started(meta):
+	var pos = get_local_mouse_position()+Vector2(-30,-40)
+	hint.hint(meta,pos)
+
+func hint(meta,pos):
+	var posi = get_local_mouse_position()+Vector2(-30,-40)
+	hint.hint(meta,posi)
+
+	pass # Replace with function body.
+
+
+func _on_Buttons_meta_hover_started(meta):
+	pass # Replace with function body.

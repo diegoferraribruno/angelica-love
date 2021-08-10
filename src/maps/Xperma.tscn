@@ -134,6 +134,7 @@ volume_db = -7.345
 autoplay = true
 script = ExtResource( 8 )
 
+[connection signal="tree_exiting" from="." to="." method="_on_XpermaWorld_tree_exiting"]
 [connection signal="timeout" from="Xperma/Timer" to="Xperma" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Xperma/BadTimer" to="Xperma" method="_on_BadTimer_timeout"]
 [connection signal="timeout" from="Xperma/GoodiesTimer" to="Xperma" method="_on_GoodiesTimer_timeout"]

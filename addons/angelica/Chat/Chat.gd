@@ -28,17 +28,19 @@ func _ready():
 	pass # Replace with function body.
 func append_emoji(argument):
 #	print ("append"+argument)
-	$"LineEdit".text += "[img]res://img/16/"+argument+".png[/img]"
+	$"TextEdit".text += "[img]res://img/16/"+argument+".png[/img]"
 	$"EmojiPanel".visible = false
 
 func ai_say(text):
 	text = "[img]res://img/16/"+new_face+".png[/img] [color="+ ai_prefs["ai_color"]+"][b]"+ai_prefs["ai_name"]+":[/b][/color] "+str(text)+"\n"
 	yield(get_tree().create_timer(0.4), "timeout")
-	$"Interface".append_bbcode(text)
+	$"RichTextLabel".append_bbcode(text)
 
 func user_say(argument):
-	$"Interface".append_bbcode("[right][img]res://img/16/"+user["emoji"]+".png[/img] [color="+user["color"]+"][b]"+user["name"]+":[/b] "+argument+"[/color][/right]\n")
-func _on_LineEdit_text_entered(new_text):
+	$"RichTextLabel".append_bbcode("[right][img]res://img/16/"+user["emoji"]+".png[/img] [color="+user["color"]+"][b]"+user["name"]+":[/b] "+argument+"[/color][/right]\n")
+
+func _on_TextEdit_text_entered(new_text):
+	pass # Replace with function body.
 	user_say(new_text)
 	new_text = " " + new_text.to_lower() + " "
 	new_text = new_text.replace(",", " ");
@@ -144,7 +146,7 @@ func _on_LineEdit_text_entered(new_text):
 			if inputs == 13:
 				sleep = true
 				inputs = 0
-		$"LineEdit".text = ""
+		$"TextEdit".text = ""
 		
 func synapse(new_text):
 	var command = []
@@ -188,8 +190,18 @@ func update_user_list():
 func append_text(text):
 #	var history = $"Memory/History"
 #	history.commands.push_front(text)
-	$"Interface".append_bbcode(text)
+	$"RichTextLabel".append_bbcode(text)
 	
 func face_change(new_face):
 #		$AiAvatar.bbcode_text="[img]res://img/48/"+new_face+".png[/img]"
 	pass
+
+
+func _on_RichTextLabel2_meta_clicked(meta):
+	pass # Replace with function body.
+
+
+func _on_emojiboard_link_meta_clicked(meta):
+	pass # Replace with function body.
+
+

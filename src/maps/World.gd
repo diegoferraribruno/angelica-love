@@ -7,7 +7,8 @@ export var Goodie : PackedScene
 onready var screensize := get_viewport_rect().size
 onready var max_height := screensize.y/3
 var initialize = [
-	"glow"
+	"glow on",
+	"hide"
 #	"title [center][rainbow]Share Your Love[/rainbow][/center]",
 #	"dj clear",
 #	"dj play Love-01",
@@ -69,3 +70,6 @@ func _on_PlayersTimer_timeout():
 	$"Timer".start()
 	$"BadTimer".start()
 	pass # Replace with function body.
+
+func _on_Love_tree_exiting():
+	get_node("../../Body").input_entered("glow off")

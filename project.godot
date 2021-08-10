@@ -41,6 +41,7 @@ _global_script_class_icons={
 config/name="Angelica-Love"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+config/quit_on_go_back=false
 
 [autoload]
 
@@ -48,11 +49,11 @@ Game="*res://src/singletons/Game.gd"
 
 [display]
 
-window/size/width=1366
-window/size/height=708
+window/size/width=960
+window/size/height=540
 window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true
-window/stretch/aspect="keep"
+window/stretch/aspect="keep_height"
 
 [editor_plugins]
 

@@ -19,7 +19,7 @@ onready var audiopack = track[tracknumber]["audiopack"]
 onready var notes = $"../Sounds".audiopacks[audiopack]
 onready var icon = $"../Sounds".icons[audiopack]
 onready var playsound = notes["a"]
-export var superbutton : PackedScene
+onready var audiostream = $"Audiopacks/Notes/AudioStreamPlayer"
 
 func placeholder (count):
 	tracknumber = count
@@ -54,22 +54,23 @@ func _ready():
 		$Loop.pressed = false
 		looping = false
 	bpms = 130
-	var instance = superbutton.instance()
-	add_child(instance)
 	update_notes()
 	update_control()
-	$"Notes".visible = false
+#	$"Notes".visible = false
 
 
 func update_notes():
-	var bbcode = "[center][img]res://img/16/"+icon+".png[/img]  Audio Pack: " + audiopack + ". Track nº: "+str(tracknumber)+" [url=close][img]res://img/16/274e.png[/img][/url][/center]\n [url=_]__[/url]"
+	var bbcode = "[center][img]res://img/16/"+icon+".png[/img]  Audio Pack: " + audiopack + ". Track nº: "+str(tracknumber)+" [url=close][img]res://img/16/274e.png[/img][/url][/center]\n [url=_]__[/url] "
 	for i in notes:
 		bbcode += "[url="+i+"]"+i+"[/url] "
-	$"Notes".bbcode_text = bbcode
+	$"Audiopacks/Notes".bbcode_text = bbcode
+	$"SuperButton".bbcode_text = "[url=superbutton][img]res://img/32/"+icon+".png[/img][/url]"
 #	$"Notes".visible = true
 	
 func _on_Menu_meta_clicked(meta):
 	match meta:
+		"clear":
+			queue_free()
 		"play track":
 			_on_Playing_pressed()
 #			if playing == false:
@@ -84,28 +85,31 @@ func _on_Menu_meta_clicked(meta):
 			audiopack = meta
 			notes = $"../Sounds".audiopacks[audiopack]
 			icon = $"../Sounds".icons[audiopack]
-			get_node("SuperButton").update_icon()
-			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
-			$"Notes".visible = true
+#			get_node("SuperButton").update_icon()
+#			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
+#			$"Notes".visible = true
 			update_notes()
 
 		"kylan":
 			audiopack = meta
 			notes = $"../Sounds".audiopacks[audiopack]
 			icon = $"../Sounds".icons[audiopack]
-			get_node("SuperButton").update_icon()
-			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
+#			get_node("SuperButton").update_icon()
+#			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
 			update_notes()
-			$"Notes".visible = true
+#			$"Notes".visible = true
 
 		"openpath1":
 			audiopack = meta
 			notes = $"../Sounds".audiopacks[audiopack]
 			icon = $"../Sounds".icons[audiopack]
-			get_node("SuperButton").update_icon()
-			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
+#			get_node("SuperButton").update_icon()
+#			get_node("SuperButton")._on_bbcode_meta_hover_ended("")
 			update_notes()
-			$"Notes".visible = true
+#			$"Notes".visible = true
+		"superbutton":
+			$"Audiopacks".visible = !$"Audiopacks".visible
+#			$"Notes".visible = !$"Notes".visible 
 
 		"rewind":
 			stop_playing()
@@ -229,7 +233,7 @@ func stop_playing():
 
 func _on_Notes_meta_clicked(meta):
 	if meta == "close":
-		$"Notes".visible = false
+		$"Audiopacks".visible = false
 	else:
 		var new_text = $"LineEdit".text
 		if new_text.length() < 16:
@@ -240,10 +244,10 @@ func _on_Notes_meta_clicked(meta):
 func _on_Notes_meta_hover_started(meta):
 	if meta in notes:
 		var stream = load(notes[meta])
-		$"Notes/AudioStreamPlayer".set_stream(stream)
-		$"Notes/AudioStreamPlayer".volume_db = volume
-		$"Notes/AudioStreamPlayer".pitch_scale = pitch
-		$"Notes/AudioStreamPlayer".play()
+		audiostream.set_stream(stream)
+		audiostream.volume_db = volume
+		audiostream.pitch_scale = pitch
+		audiostream.play()
 
 func _on_LineEdit_focus_entered():
 	pass
@@ -257,16 +261,15 @@ func _on_Notes_focus_exited():
 	pass # Replace with function body.
 
 func _on_Notes_mouse_exited():
-		$"Notes".visible = false
+		$"Audiopacks".visible = false
 
 func _on_LineEdit_gui_input(event):
 	if Input.is_action_just_pressed("Click"):
-		$"Notes".visible = true
+		$"Audiopacks".visible = true
 
 func _on_Timer2_timeout():
-	$"Notes".visible = false
-	pass # Replace with function body.
-
+	$"Audiopacks".visible = false
+	
 func _on_Menu3_meta_hover_started(meta):
-	get_node("SuperButton")._on_bbcode_meta_hover_ended(meta)
+#	get_node("SuperButton")._on_bbcode_meta_hover_ended(meta)
 	pass # Replace with function body.

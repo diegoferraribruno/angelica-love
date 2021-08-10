@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/DJ/Scripts/Track.gd" type="Script" id=2]
 [ext_resource path="res://addons/angelica/DJ/Scripts/Notes.gd" type="Script" id=3]
 [ext_resource path="res://addons/angelica/fonts/DJmono.tres" type="DynamicFont" id=4]
@@ -11,7 +10,7 @@ border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-border_color = Color( 0.0392157, 0.254902, 0.341176, 1 )
+border_color = Color( 0, 0.45098, 0.631373, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -23,17 +22,21 @@ font_path = "res://addons/angelica/fonts/OpenSans-Light.ttf"
 [sub_resource type="DynamicFont" id=3]
 size = 17
 outline_size = 1
-outline_color = Color( 0, 0.458824, 0.733333, 1 )
+outline_color = Color( 0, 0.45098, 0.631373, 1 )
+extra_spacing_space = 7
 font_data = SubResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-content_margin_top = 13.0
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 12.0
+content_margin_bottom = 12.0
 bg_color = Color( 0.0352941, 0.172549, 0.207843, 0.823529 )
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-border_color = Color( 0.00784314, 0.227451, 0.313726, 1 )
+border_color = Color( 0, 0.45098, 0.631373, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -66,54 +69,68 @@ outline_color = Color( 0, 0.458824, 0.733333, 1 )
 font_data = SubResource( 7 )
 
 [node name="Track" type="Node2D"]
-position = Vector2( -0.224503, -0.831635 )
+position = Vector2( -2.16838, 2.16837 )
 script = ExtResource( 2 )
-superbutton = ExtResource( 1 )
 
 [node name="line" type="Panel" parent="."]
-margin_left = -7.0
-margin_top = 1.0
-margin_right = 531.0
-margin_bottom = 35.0
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 522.0
+margin_bottom = 38.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="RichTextLabel" parent="."]
-modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 462.0
-margin_top = 7.0
-margin_right = 522.0
-margin_bottom = 32.0
-custom_fonts/normal_font = SubResource( 3 )
-bbcode_enabled = true
-bbcode_text = "[url=kenney][img]res://img/16/1f3ae.png[/img][/url] [url=kylan][img]res://img/16/1f3ba.png[/img][/url] [url=openpath1][img]res://img/16/1f941.png[/img][/url]"
-text = "  "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Menu2" type="RichTextLabel" parent="."]
-visible = false
-margin_left = 307.558
-margin_top = -11.0093
-margin_right = 474.558
-margin_bottom = 15.9907
+margin_left = 473.056
+margin_top = 4.31821
+margin_right = 517.056
+margin_bottom = 31.3182
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[url=play beat]Play[/url] [url=add beat]Add [/url] [url=copy]Copy[/url] [url=paste]Paste[/url]"
-text = "Play Add  Copy Paste"
+bbcode_text = "[url=copy]c[/url] [url=paste]p[/url]"
+text = "c p"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Notes" type="RichTextLabel" parent="."]
-visible = false
-margin_left = 26.0
-margin_top = -131.0
-margin_right = 501.0
-margin_bottom = 4.0
+[node name="Audiopacks" type="Panel" parent="."]
+margin_left = 14.0561
+margin_top = -128.682
+margin_right = 52.0561
+margin_bottom = 17.3182
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="RichTextLabel" parent="Audiopacks"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+margin_left = 11.0561
+margin_top = 13.0
+margin_right = 33.0561
+margin_bottom = 128.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[url=kenney][img]res://img/16/1f3ae.png[/img][/url]
+[url=kylan][img]res://img/16/1f3ba.png[/img][/url]
+[url=openpath1][img]res://img/16/1f941.png[/img][/url]
+[url=clear][img]res://img/16/1f5d9.png[/img][/url] "
+text = "
+
+
+ "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Notes" type="RichTextLabel" parent="Audiopacks"]
+pause_mode = 2
+margin_left = 41.0
+margin_right = 507.0
+margin_bottom = 130.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/normal_font = SubResource( 3 )
@@ -125,15 +142,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Notes"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audiopacks/Notes"]
 
 [node name="Agulha" type="Node2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( 0.0561218, 4.31821 )
 
 [node name="Panel" type="Panel" parent="Agulha"]
-margin_left = 223.0
+margin_left = 230.0
 margin_top = 4.0
-margin_right = 233.0
+margin_right = 240.0
 margin_bottom = 30.0
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -141,10 +158,10 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 217.607
-margin_top = 6.0
-margin_right = 384.607
-margin_bottom = 30.0
+margin_left = 224.663
+margin_top = 8.31821
+margin_right = 391.663
+margin_bottom = 32.3182
 hint_tooltip = "Type 16 beats here"
 custom_styles/normal = SubResource( 6 )
 custom_fonts/font = ExtResource( 4 )
@@ -158,10 +175,10 @@ __meta__ = {
 
 [node name="SpeedTune" type="SpinBox" parent="."]
 modulate = Color( 0.49, 1.17, 1.16, 1 )
-margin_left = 126.264
-margin_top = 6.8909
-margin_right = 200.265
-margin_bottom = 30.8909
+margin_left = 116.32
+margin_top = 9.20911
+margin_right = 190.321
+margin_bottom = 33.2091
 hint_tooltip = "BPM (press enter after change)"
 max_value = 900.0
 value = 130.0
@@ -172,10 +189,10 @@ __meta__ = {
 
 [node name="Pitch" type="SpinBox" parent="."]
 modulate = Color( 0.49, 1.17, 1.16, 1 )
-margin_left = 51.4247
-margin_top = 6.8909
-margin_right = 125.425
-margin_bottom = 30.8909
+margin_left = 41.4808
+margin_top = 9.20911
+margin_right = 115.481
+margin_bottom = 33.2091
 hint_tooltip = "Pitch Scale (press enter after change)"
 min_value = 0.1
 max_value = 10.0
@@ -210,10 +227,10 @@ __meta__ = {
 
 [node name="VSlider" type="VSlider" parent="."]
 modulate = Color( 0.94, 2.15, 1.98693, 1 )
-margin_left = 200.071
-margin_top = 3.0
-margin_right = 216.071
-margin_bottom = 33.0
+margin_left = 197.127
+margin_top = 5.31821
+margin_right = 213.127
+margin_bottom = 35.3182
 min_value = -40.0
 max_value = 0.0
 step = -1.0
@@ -260,17 +277,31 @@ autostart = true
 
 [node name="AudioStreamPlayer16" type="AudioStreamPlayer" parent="."]
 
+[node name="SuperButton" type="RichTextLabel" parent="."]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+margin_left = 17.0561
+margin_top = 3.31821
+margin_right = 52.0561
+margin_bottom = 38.3182
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[url=superbutton][img]res://img/32/1f49f.png[/img][/url]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Menu3" type="RichTextLabel" parent="."]
 modulate = Color( 1, 0, 0.683333, 1 )
-margin_left = 393.0
-margin_top = 7.0
-margin_right = 453.0
-margin_bottom = 32.0
+margin_left = 404.663
+margin_top = 9.31821
+margin_right = 488.663
+margin_bottom = 34.3182
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[url=rewind][img]res://img/16/23ee.png[/img][/url] [url=loop ][img]res://img/16/1f504.png[/img][/url] [url=play][img]res://img/16/25b6.png[/img][/url]
+bbcode_text = "[url=rewind][img]res://img/16/23ee.png[/img][/url] [url=loop ][img]res://img/16/1f504.png[/img][/url] [url=play][img]res://img/16/25b6.png[/img][/url] 
 "
-text = "  
+text = "   
 "
 scroll_active = false
 __meta__ = {
@@ -278,14 +309,14 @@ __meta__ = {
 }
 
 [connection signal="tree_exiting" from="." to="." method="_on_Beat1_tree_exiting"]
-[connection signal="meta_clicked" from="Menu" to="." method="_on_Menu_meta_clicked"]
 [connection signal="meta_clicked" from="Menu2" to="." method="_on_Menu_meta_clicked"]
-[connection signal="focus_exited" from="Notes" to="." method="_on_Notes_focus_exited"]
-[connection signal="meta_clicked" from="Notes" to="." method="_on_Notes_meta_clicked"]
-[connection signal="meta_clicked" from="Notes" to="Notes" method="_on_Notes_meta_clicked"]
-[connection signal="meta_hover_started" from="Notes" to="." method="_on_Notes_meta_hover_started"]
-[connection signal="meta_hover_started" from="Notes" to="Notes" method="_on_Notes_meta_hover_started"]
-[connection signal="mouse_exited" from="Notes" to="." method="_on_Notes_mouse_exited"]
+[connection signal="mouse_exited" from="Audiopacks" to="." method="_on_Audiopacks_mouse_exited"]
+[connection signal="meta_clicked" from="Audiopacks/Menu" to="." method="_on_Menu_meta_clicked"]
+[connection signal="meta_clicked" from="Audiopacks/Notes" to="Audiopacks/Notes" method="_on_Notes_meta_clicked"]
+[connection signal="meta_clicked" from="Audiopacks/Notes" to="." method="_on_Notes_meta_clicked"]
+[connection signal="meta_hover_started" from="Audiopacks/Notes" to="Audiopacks/Notes" method="_on_Notes_meta_hover_started"]
+[connection signal="meta_hover_started" from="Audiopacks/Notes" to="." method="_on_Notes_meta_hover_started"]
+[connection signal="mouse_exited" from="Audiopacks/Notes" to="." method="_on_Notes_mouse_exited"]
 [connection signal="focus_entered" from="LineEdit" to="." method="_on_LineEdit_focus_entered"]
 [connection signal="focus_exited" from="LineEdit" to="." method="_on_LineEdit_focus_exited"]
 [connection signal="gui_input" from="LineEdit" to="." method="_on_LineEdit_gui_input"]
@@ -298,5 +329,6 @@ __meta__ = {
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="meta_clicked" from="SuperButton" to="." method="_on_Menu_meta_clicked"]
 [connection signal="meta_clicked" from="Menu3" to="." method="_on_Menu_meta_clicked"]
 [connection signal="meta_hover_started" from="Menu3" to="." method="_on_Menu3_meta_hover_started"]

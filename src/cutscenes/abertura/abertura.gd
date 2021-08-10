@@ -1,6 +1,9 @@
-extends Node
+extends Node2D
 
+onready var screensize := get_viewport_rect().size
+onready var screencenter := screensize/2-Vector2(640,360)
 func _ready():
+	position = screencenter
 	var anim = get_node("AnimationPlayer").get_animation("Espiral")
 	anim.set_loop(true)
 	get_node("AnimationPlayer").play("Espiral")

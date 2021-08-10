@@ -36,8 +36,8 @@ script = ExtResource( 5 )
 
 [node name="AngelicaButton" type="RichTextLabel" parent="HideButton"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_right = 64.0
-margin_bottom = 64.0
+margin_right = 32.0
+margin_bottom = 35.0
 bbcode_enabled = true
 bbcode_text = "[url=hide][img]res://img/32/1f4f1.png[/img][/url]"
 scroll_active = false

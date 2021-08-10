@@ -9,7 +9,12 @@ var user = {
 	"hashtags":[],
 	"links":[],
 	"notes": [], 
-	"initialize":["title Welcome to the 100 days party!","dock","rest"],
+	"initialize":
+		[
+#			"title Welcome to the 100 days party!",
+			"dock",
+			"rest"
+			],
 	"userdata" : ["email@gmail.com","signature"],
 	"ai_version":"200",
 	"ai_date" : "2021-02-08",
@@ -109,15 +114,22 @@ var user = {
 #		"list notes":"1f4d4",
 #		"hide":"1f4bb",
 		}
-	, "Chat":{"position":"Vector2( 13, 119 )"},
-		"DJ":{"position":"Vector2( 722.122, 44.836 )"},
-		"Login":{"position":"Vector2( 480.48, 229.921 )"},
-		"Mini":{"position":"Vector2( 515.843, 508.705 )"},
-		"Next":{"position":"Vector2( 15, 500 )"},
-		"PaintTools":{"position":"Vector2( 1200.4, -3.9577 )"},
-		"Rest":{"position":"Vector2( 946.037, 499.612 )"},
-		"Star":{"position":"Vector2( 685, 61 )"},
-		"Studio":{"position":"Vector2( 1086, 240 )"}
+	,
+		"Bird":{"position":"Vector2( 8, 20 )"},
+		"CarSelect":{"position":"Vector2( 60, 138 )"},
+		"Chat":{"position":"Vector2( 263.731, -6.03163 )"},
+		"DJ":{"position":"Vector2( 250.282, -7.8706 )"},
+		"Glow":{"position":"Vector2( 1144, 7 )"},
+		"Login":{"position":"Vector2( 282.056, 66.3554 )"},
+		"Mini":{"position":"Vector2( 270.503, 319.762 )"},
+		"Next":{"position":"Vector2( 124, 171 )"},
+		"PaintTools":{"position":"Vector2( 799.719, 41.0693 )"},
+		"Phone":{"position":"Vector2( 8, 4.297 )"},
+		"Pong":{"position":"Vector2( 41, 265 )"},
+		"Rest":{"position":"Vector2( 336.144, 329.48 )"},
+		"Star":{"position":"Vector2( 272.351, 76.5403 )"},
+		"Studio":{"position":"Vector2( 675.139, 287.069 )"},
+		"Title":{"position":"Vector2( 0, 0 )"}
 		}
 
 #var apps = {}

@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var interface = [
 	"[center]System[/center]",
 	"\n",

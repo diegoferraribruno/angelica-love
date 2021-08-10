@@ -84,17 +84,17 @@ font_data = SubResource( 11 )
 script = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 339.0
-margin_bottom = 150.0
+margin_right = 331.0
+margin_bottom = 152.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="background" type="RichTextLabel" parent="."]
-margin_left = 21.0
+margin_left = 16.0
 margin_top = 17.0
-margin_right = 318.0
+margin_right = 313.0
 margin_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -122,9 +122,9 @@ __meta__ = {
 }
 
 [node name="ChatMini" type="RichTextLabel" parent="."]
-margin_left = 29.0
+margin_left = 24.0
 margin_top = 21.0
-margin_right = 314.0
+margin_right = 310.0
 margin_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -150,10 +150,10 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 80.0
-margin_top = 103.0
-margin_right = 264.0
-margin_bottom = 136.0
+margin_left = 91.0
+margin_top = 101.0
+margin_right = 267.0
+margin_bottom = 134.0
 custom_fonts/font = SubResource( 12 )
 placeholder_text = "\\>"
 __meta__ = {
@@ -161,8 +161,8 @@ __meta__ = {
 }
 
 [node name="send" type="RichTextLabel" parent="LineEdit"]
-margin_left = 204.762
-margin_right = 247.762
+margin_left = 189.785
+margin_right = 232.785
 margin_bottom = 36.0
 bbcode_enabled = true
 bbcode_text = "[url=send][img]res://img/32/27a1.png[/img][/url]
@@ -175,7 +175,7 @@ __meta__ = {
 }
 
 [node name="closebutton2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 15.874, 96.8315 )
+position = Vector2( 10.874, 97.8315 )
 
 [connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="meta_clicked" from="LineEdit/send" to="." method="_on_send_meta_clicked"]
