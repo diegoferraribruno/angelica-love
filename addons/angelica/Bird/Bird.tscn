@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/angelica/fonts/style/pre_line_edit.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/angelica/Bird/Bird.gd" type="Script" id=2]
 [ext_resource path="res://addons/angelica/fonts/google/NotoMono-hinted/NotoMono-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/angelica/Themes/emojiboard_chat.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.156863, 0.298039, 0.431373, 0.847059 )
@@ -48,23 +49,24 @@ extra_spacing_bottom = 2
 font_data = ExtResource( 1 )
 
 [node name="Bird" type="Node2D"]
+position = Vector2( 1.96814, -0.94545 )
 script = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 1.0
-margin_top = 2.0
-margin_right = 256.0
-margin_bottom = 355.0
+margin_top = 1.0
+margin_right = 575.0
+margin_bottom = 258.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_left = 8.0
-margin_top = 49.0
-margin_right = 248.0
-margin_bottom = 256.0
+margin_left = 9.0
+margin_top = 50.0
+margin_right = 289.0
+margin_bottom = 250.0
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 4 )
 draw_spaces = true
@@ -76,10 +78,10 @@ __meta__ = {
 }
 
 [node name="Count" type="RichTextLabel" parent="."]
-margin_left = 177.0
-margin_top = 237.0
-margin_right = 250.0
-margin_bottom = 258.0
+margin_left = 225.0
+margin_top = 234.777
+margin_right = 298.0
+margin_bottom = 255.777
 bbcode_enabled = true
 bbcode_text = "280"
 text = "280"
@@ -89,10 +91,10 @@ __meta__ = {
 }
 
 [node name="Hashtags" type="RichTextLabel" parent="."]
-margin_left = 9.0
-margin_top = 263.0
-margin_right = 246.0
-margin_bottom = 346.0
+margin_left = 303.0
+margin_top = 47.0
+margin_right = 565.0
+margin_bottom = 249.0
 custom_fonts/bold_font = SubResource( 6 )
 custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.0431373, 0.419608, 0.533333, 1 )
@@ -104,10 +106,10 @@ __meta__ = {
 }
 
 [node name="Buttons" type="RichTextLabel" parent="."]
-margin_left = 67.0
-margin_top = 12.0
-margin_right = 250.0
-margin_bottom = 38.0
+margin_left = 159.0
+margin_top = 12.8877
+margin_right = 297.0
+margin_bottom = 38.8877
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.87451, 0.690196, 0, 1 )
@@ -123,8 +125,22 @@ __meta__ = {
 [node name="SuperButton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6.56763, 5.94603 )
 
+[node name="emojiboard_link" type="RichTextLabel" parent="."]
+margin_left = 126.0
+margin_top = 9.0
+margin_right = 161.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[url=keyboard][img]res://img/32/2328.png[/img][/url]"
+scroll_active = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="meta_clicked" from="Hashtags" to="." method="_on_Hashtags_meta_clicked"]
 [connection signal="meta_clicked" from="Buttons" to="." method="_on_Buttons_meta_clicked"]
 [connection signal="meta_hover_ended" from="Buttons" to="." method="_on_Buttons_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Buttons" to="." method="_on_Buttons_meta_hover_started"]
+[connection signal="meta_clicked" from="emojiboard_link" to="emojiboard_link" method="_on_emojiboard_link_meta_clicked"]

@@ -29,16 +29,16 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 11
 
-[sub_resource type="StyleBoxEmpty" id=10]
+[sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 size = 20
 outline_size = 2
 outline_color = Color( 0.054902, 0.490196, 0.639216, 1 )
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=4]
+[sub_resource type="Theme" id=5]
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
@@ -49,17 +49,17 @@ VScrollBar/styles/grabber_pressed = null
 VScrollBar/styles/scroll = null
 VScrollBar/styles/scroll_focus = null
 
-[sub_resource type="StyleBoxEmpty" id=5]
-content_margin_right = 2.0
-
 [sub_resource type="StyleBoxEmpty" id=6]
 content_margin_right = 2.0
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="StyleBoxEmpty" id=7]
+content_margin_right = 2.0
+
+[sub_resource type="DynamicFont" id=8]
 outline_size = 3
 font_data = ExtResource( 9 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.729412, 0.317647, 0.878431, 0.027451 )
 draw_center = false
 border_width_left = 10
@@ -73,7 +73,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 20
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=10]
 content_margin_left = 8.0
 bg_color = Color( 0.0575562, 0.489459, 0.640625, 1 )
 corner_radius_bottom_right = 6
@@ -111,8 +111,8 @@ margin_top = 8.0
 margin_right = 484.0
 margin_bottom = 39.0
 size_flags_horizontal = 5
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Chat With Angelica Ver. 140"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -130,11 +130,11 @@ focus_next = NodePath("../LineEdit")
 focus_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-theme = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 8 )
+theme = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/italics_font = SubResource( 8 )
+custom_fonts/bold_font = SubResource( 4 )
 custom_fonts/normal_font = ExtResource( 7 )
 custom_colors/default_color = Color( 0.784314, 0.501961, 0.823529, 1 )
 bbcode_enabled = true
@@ -160,12 +160,12 @@ focus_next = NodePath("../LineEdit")
 focus_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-theme = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 8 )
-custom_fonts/normal_font = SubResource( 8 )
+theme = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/italics_font = SubResource( 8 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0.784314, 0.501961, 0.823529, 1 )
 bbcode_enabled = true
 bbcode_text = "[img]res://img/16/1f469.png[/img] Angelica"
@@ -186,35 +186,35 @@ margin_top = -56.4092
 margin_right = 96.8351
 margin_bottom = -17.4092
 size_flags_horizontal = 5
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 9 )
 custom_fonts/font = ExtResource( 6 )
 text = "link to"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextEdit" type="LineEdit" parent="."]
-margin_left = 11.0
-margin_top = 257.0
-margin_right = 398.0
-margin_bottom = 279.0
-custom_styles/normal = SubResource( 9 )
+[node name="emojiboard_link" type="RichTextLabel" parent="."]
+margin_left = 406.865
+margin_top = 258.622
+margin_right = 498.865
+margin_bottom = 288.622
+bbcode_enabled = true
+bbcode_text = "[url=emojipanel][img]res://img/16/1f60c.png[/img][/url]  [url=keyboard][img]res://img/16/2328.png[/img][/url] [url=fx]fx[/url] [url=send] [img]res://img/16/27a1.png[/img][/url]
+"
+text = "   fx  
+"
+scroll_active = false
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="emojiboard_link" type="RichTextLabel" parent="TextEdit"]
-margin_left = 402.495
-margin_top = 3.94388
-margin_right = 464.495
-margin_bottom = 21.9439
-bbcode_enabled = true
-bbcode_text = "[url=emojipanel][img]res://img/16/1f60c.png[/img][/url] [url=editor][img]res://img/16/2328.png[/img][/url][url=send] [img]res://img/16/27a1.png[/img][/url]
-"
-text = "  
-"
-scroll_active = false
-script = ExtResource( 3 )
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 11.0
+margin_top = 257.0
+margin_right = 398.0
+margin_bottom = 279.0
+custom_styles/normal = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -271,7 +271,6 @@ position = Vector2( 12.9173, 87.9288 )
 [connection signal="meta_hover_ended" from="RichTextLabel" to="RichTextLabel" method="_on_Interface_meta_hover_ended"]
 [connection signal="meta_hover_started" from="RichTextLabel" to="RichTextLabel" method="_on_Interface_meta_hover_started"]
 [connection signal="meta_hover_ended" from="UserList" to="RichTextLabel" method="_on_Interface2_meta_hover_ended"]
-[connection signal="text_entered" from="TextEdit" to="." method="_on_TextEdit_text_entered"]
-[connection signal="meta_clicked" from="TextEdit/emojiboard_link" to="TextEdit/emojiboard_link" method="_on_emojiboard_link_meta_clicked"]
-[connection signal="meta_clicked" from="Editor/RichTextLabel2" to="." method="_on_RichTextLabel2_meta_clicked"]
+[connection signal="meta_clicked" from="emojiboard_link" to="emojiboard_link" method="_on_emojiboard_link_meta_clicked"]
 [connection signal="meta_clicked" from="Editor/RichTextLabel2" to="Editor" method="_on_RichTextLabel_meta_clicked"]
+[connection signal="meta_clicked" from="Editor/RichTextLabel2" to="." method="_on_RichTextLabel2_meta_clicked"]

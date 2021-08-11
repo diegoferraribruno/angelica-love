@@ -139,10 +139,10 @@ __meta__ = {
 }
 
 [node name="clock" type="RichTextLabel" parent="."]
-margin_left = 19.2599
-margin_top = 51.4802
-margin_right = 110.26
-margin_bottom = 81.4802
+margin_left = 17.4781
+margin_top = 41.262
+margin_right = 108.478
+margin_bottom = 71.262
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
@@ -211,7 +211,7 @@ __meta__ = {
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 107.806, 466.797 )
+position = Vector2( 107.806, 465.015 )
 
 [connection signal="meta_clicked" from="footer" to="." method="_on_Body_meta_clicked"]
 [connection signal="meta_hover_ended" from="footer" to="." method="_on_Body_meta_hover_ended"]

@@ -11,6 +11,7 @@ onready var user = get_node("../../User").user
 onready var emoji = user["emoji"]
 var user_list = {}
 var FILE_NAME = "user://users"
+
 onready var user_temp = {
 	"id":"",
 	"name":user["name"],
@@ -20,6 +21,7 @@ onready var user_temp = {
 	"rgb":[1,1,1],
 	}
 func _ready():
+	
 	randomize()
 	var goodsize = good.size()
 	var head = good[rand_range(0,goodsize)]
@@ -186,15 +188,16 @@ func _on_LineEdit_text_changed(new_text):
 
 
 func _on_RichTextLabel_meta_clicked(meta):
-	$"LineEdit".text = meta
+	$"TextEdit".text = meta
 	$"Player".append_emoji(user_list[meta]["emoji"])
 	$"Player".get_node("Label").bbcode_text =  "[center]"+meta+"[/center]"
 	rgb = user_list[meta]["rgb"]
 	modulate()
 	$"Sillyword/EmojiPanel".visible = true
-	pass # Replace with function body.
-
 
 func _on_Sillyword_gui_input(event):
 	if Input.is_action_just_pressed("Click"):
 		$"Sillyword/EmojiPanel".visible = true
+
+func _on_text_entered(text):
+	$"LineEdit".text = text

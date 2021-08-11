@@ -1,5 +1,5 @@
 extends Node2D
-
+var mini = true
 var interface = [
 	"[center]System[/center]",
 	"\n",

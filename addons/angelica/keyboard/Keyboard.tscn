@@ -1,81 +1,104 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/angelica/keyboard/Keyboard.gd" type="Script" id=1]
-[ext_resource path="res://addons/angelica/keyboard/photo_2021-08-10_01-36-18.jpg" type="Texture" id=2]
+[ext_resource path="res://addons/angelica/fonts/open_sans_yellow.tres" type="DynamicFont" id=3]
 
-[node name="Keyboard" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Keyboard" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="photo_2021-08-10_01-36-18" type="Sprite" parent="."]
-position = Vector2( 448.182, 430.92 )
-scale = Vector2( 0.351187, 0.351187 )
-texture = ExtResource( 2 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-modulate = Color( 1.2, 0, 0.64, 1 )
-margin_left = 93.9292
-margin_top = -234.752
-margin_right = 803.929
-margin_bottom = 16.2482
+[node name="LeffKey" type="RichTextLabel" parent="."]
+modulate = Color( 1, 0, 0.516667, 1 )
+margin_left = -0.979736
+margin_top = 4.00262
+margin_right = 324.02
+margin_bottom = 217.003
 bbcode_enabled = true
-bbcode_text = "[center][img]res://img/32/0030.png[/img] [img]res://img/32/0031.png[/img] [img]res://img/32/0032.png[/img] [img]res://img/32/0033.png[/img] [img]res://img/32/0034.png[/img] [img]res://img/32/0035.png[/img] [img]res://img/32/0036.png[/img] [img]res://img/32/0037.png[/img] [img]res://img/32/0038.png[/img] [img]res://img/32/0039.png[/img] 
-
-[img]res://img/32/0023.png[/img] [img]res://img/32/002a.png[/img] [img]res://img/32/2754.png[/img] [img]res://img/32/2755.png[/img] [img]res://img/32/1f197.png[/img]
- 
-            [img]res://img/32/1f1f6.png[/img] [img]res://img/32/1f1fc.png[/img] [img]res://img/32/1f1ea.png[/img] [img]res://img/32/1f1f7.png[/img] [img]res://img/32/1f1f9.png[/img]        [img]res://img/32/1f1fe.png[/img] [img]res://img/32/1f1fa.png[/img] [img]res://img/32/1f1ee.png[/img] [img]res://img/32/1f1f4.png[/img] [img]res://img/32/1f1f5.png[/img]   
-[img]res://img/32/1f1e6.png[/img] [img]res://img/32/1f1f8.png[/img] [img]res://img/32/1f1e9.png[/img] [img]res://img/32/1f1eb.png[/img] [img]res://img/32/1f1ec.png[/img]        [img]res://img/32/1f1ed.png[/img] [img]res://img/32/1f1ef.png[/img] [img]res://img/32/1f1f0.png[/img] [img]res://img/32/1f1f1.png[/img]
-[img]res://img/32/1f1ff.png[/img] [img]res://img/32/1f1fd.png[/img] [img]res://img/32/1f1e8.png[/img] [img]res://img/32/1f1fb.png[/img]        [img]res://img/32/1f1e7.png[/img] [img]res://img/32/1f1f3.png[/img] [img]res://img/32/1f1f2.png[/img][/center]
-"
-text = "          
-
-    
- 
-                               
-               
-             
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="."]
-modulate = Color( 1.2, 0, 0.64, 1 )
-margin_left = 7.0
-margin_top = 275.0
-margin_right = 268.0
-margin_bottom = 436.0
-bbcode_enabled = true
-bbcode_text = "[right][img]res://img/32/0031.png[/img] [img]res://img/32/0032.png[/img] [img]res://img/32/0033.png[/img] [img]res://img/32/0034.png[/img] [img]res://img/32/0035.png[/img] [img]res://img/32/0036.png[/img] 
-[img]res://img/32/1f1f6.png[/img] [img]res://img/32/1f1fc.png[/img] [img]res://img/32/1f1ea.png[/img] [img]res://img/32/1f1f7.png[/img] [img]res://img/32/1f1f9.png[/img]
-[img]res://img/32/1f1e6.png[/img] [img]res://img/32/1f1f8.png[/img] [img]res://img/32/1f1e9.png[/img] [img]res://img/32/1f1eb.png[/img] [img]res://img/32/1f1ec.png[/img]
-[img]res://img/32/1f1ff.png[/img] [img]res://img/32/1f1fd.png[/img] [img]res://img/32/1f1e8.png[/img] [img]res://img/32/1f1fb.png[/img]"
-text = "      
-    
-    
-   "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-modulate = Color( 1.2, 0, 0.64, 1 )
-margin_left = 729.0
-margin_top = 258.0
-margin_right = 954.0
-margin_bottom = 480.0
-bbcode_enabled = true
-bbcode_text = " [img]res://img/32/0036.png[/img] [img]res://img/32/0037.png[/img] [img]res://img/32/0038.png[/img] [img]res://img/32/0039.png[/img] [img]res://img/32/0030.png[/img]
-[img]res://img/32/1f1fe.png[/img] [img]res://img/32/1f1fa.png[/img] [img]res://img/32/1f1ee.png[/img] [img]res://img/32/1f1f4.png[/img] [img]res://img/32/1f1f5.png[/img]
-[img]res://img/32/1f1ed.png[/img] [img]res://img/32/1f1ef.png[/img] [img]res://img/32/1f1f0.png[/img] [img]res://img/32/1f1f1.png[/img]
-[img]res://img/32/1f1e7.png[/img] [img]res://img/32/1f1f3.png[/img] [img]res://img/32/1f1f2.png[/img]
-[img]res://img/32/0023.png[/img] [img]res://img/32/002a.png[/img] [img]res://img/32/2754.png[/img] [img]res://img/32/2755.png[/img] [img]res://img/32/1f197.png[/img]
+bbcode_text = "[right][url=#][img]res://img/48/0023.png[/img][/url] [url=1][img]res://img/48/0031.png[/img][/url] [url=2][img]res://img/48/0032.png[/img][/url] [url=3][img]res://img/48/0033.png[/img][/url] [url=4][img]res://img/48/0034.png[/img][/url] [url=5][img]res://img/48/0035.png[/img][/url]
+[url=!][img]res://img/48/2755.png[/img][/url] [url=q][img]res://img/48/1f1f6.png[/img][/url] [url=w][img]res://img/48/1f1fc.png[/img][/url] [url=e][img]res://img/48/1f1ea.png[/img][/url] [url=r][img]res://img/48/1f1f7.png[/img][/url] [url=t][img]res://img/48/1f1f9.png[/img][/url]
+[url=*][img]res://img/48/002a.png[/img][/url] [url=a][img]res://img/48/1f1e6.png[/img][/url] [url=s][img]res://img/48/1f1f8.png[/img][/url] [url=d][img]res://img/48/1f1e9.png[/img][/url] [url=f][img]res://img/48/1f1eb.png[/img][/url] [url=g][img]res://img/48/1f1ec.png[/img][/url]
+[url=shift][img]res://img/48/1f521.png[/img][/url] [url=?][img]res://img/48/2754.png[/img][/url] [url=z][img]res://img/48/1f1ff.png[/img][/url] [url=x][img]res://img/48/1f1fd.png[/img][/url] [url=c][img]res://img/48/1f1e8.png[/img][/url] [url=v][img]res://img/48/1f1fb.png[/img][/url]
 "
 text = "     
-    
-   
-  
-    
+     
+     
+     
 "
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SpaceBar" type="RichTextLabel" parent="."]
+margin_left = 335.0
+margin_top = 165.881
+margin_right = 615.0
+margin_bottom = 207.881
+custom_styles/normal = SubResource( 3 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center][url=space]space[/url] [url=,]  , [/url]  [url=.] . [/url] [url=bold]bold[/url]"
+text = "space   ,    .  bold"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightKey" type="RichTextLabel" parent="."]
+modulate = Color( 1, 0, 0.517647, 1 )
+margin_left = 633.02
+margin_top = 8.22083
+margin_right = 961.02
+margin_bottom = 219.221
+bbcode_enabled = true
+bbcode_text = "[url=6][img]res://img/48/0036.png[/img][/url] [url=7][img]res://img/48/0037.png[/img][/url] [url=8][img]res://img/48/0038.png[/img][/url] [url=9][img]res://img/48/0039.png[/img][/url] [url=0][img]res://img/48/0030.png[/img][/url] [url=close][img]res://img/48/1f5d9.png[/img][/url]
+[url=y][img]res://img/48/1f1fe.png[/img][/url] [url=u][img]res://img/48/1f1fa.png[/img][/url] [url=i][img]res://img/48/1f1ee.png[/img][/url] [url=o][img]res://img/48/1f1f4.png[/img][/url] [url=p][img]res://img/48/1f1f5.png[/img][/url] [url=backspace][img]res://img/48/2b05.png[/img][/url]
+[url=h][img]res://img/48/1f1ed.png[/img][/url] [url=j][img]res://img/48/1f1ef.png[/img][/url] [url=k][img]res://img/48/1f1f0.png[/img][/url] [url=l][img]res://img/48/1f1f1.png[/img][/url] [url=up][img]res://img/48/1f53c.png[/img][/url] [url=ok][img]res://img/48/1f197.png[/img][/url] 
+[url=b][img]res://img/48/1f1e7.png[/img][/url] [url=n][img]res://img/48/1f1f3.png[/img][/url] [url=m][img]res://img/48/1f1f2.png[/img][/url] [url=left][img]res://img/48/25c0.png[/img][/url] [url=down][img]res://img/48/1f53d.png[/img][/url] [url=right][img]res://img/48/25b6.png[/img][/url]"
+text = "     
+     
+      
+     "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 335.0
+margin_top = 4.0
+margin_right = 618.0
+margin_bottom = 148.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="meta_clicked" from="LeffKey" to="." method="_on_LeffKey_meta_clicked"]
+[connection signal="meta_clicked" from="SpaceBar" to="." method="_on_LeffKey_meta_clicked"]
+[connection signal="meta_clicked" from="RightKey" to="." method="_on_RightKey_meta_clicked"]

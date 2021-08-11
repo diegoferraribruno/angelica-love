@@ -17,7 +17,7 @@ var lastmouseposition = Vector2()
 var parent_start_position = Vector2()
 
 func _ready():
-	screenSize = get_viewport().get_visible_rect().size
+#	screenSize = get_viewport().get_visible_rect().size
 	get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
 	load_start_position()
 	_on_viewport_size_changed()
@@ -47,9 +47,9 @@ func _on_viewport_size_changed():
 	if get_parent().position.y > screenSize.y-20:
 		get_parent().position.y = screenSize.y-66
 	if get_parent().position.x < 0:
-		get_parent().position.x = 30
+		get_parent().position.x = 16
 	if get_parent().position.y < 0:
-		get_parent().position.y = 30
+		get_parent().position.y = 16
 
 func _process(_delta):
 	if drag == true or touch == true:
@@ -111,9 +111,9 @@ func _on_Timer_timeout():
 		if global_position.y > screenSize.y-76:
 			get_parent().position.y = screenSize.y-80-position.y
 		if global_position.x < 0:
-			get_parent().position.x = 30-position.x
+			get_parent().position.x = 12
 		if global_position.y < 0:
-			get_parent().position.y = 30-position.y
+			get_parent().position.y = 12
 	dragging_start_position = get_global_mouse_position()
 	last_pos = get_parent().position
 	#save window position
