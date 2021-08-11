@@ -58,7 +58,7 @@ func load_user_list():
  
 func load_user_prefs():
 	var file = File.new()
-	var preference_file = "user://"+$"LineEdit".text+"/preferences/user.json"
+	var preference_file = "user://"+$"TextEdit".text+"/preferences/user.json"
 	if file.file_exists(preference_file):
 		file.open(preference_file, File.READ)
 		var data = parse_json(file.get_as_text())
@@ -85,7 +85,7 @@ func new_user_list():
 		
 func new_user():
 	get_parent().ai_say("creating directories:")
-	var pre = "user://"+$"LineEdit".text
+	var pre = "user://"+$"TextEdit".text
 	var dirs = ["","/notes","/screenshots","/preferences","/music"]
 	var directory = Directory.new()
 	for i in dirs:
@@ -93,7 +93,7 @@ func new_user():
 		directory.make_dir(dir)
 		get_parent().ai_say(dir)
 	get_parent().ai_say("to open you directory folder, type [url=folder]folder[/url]")
-	save_prefs($"LineEdit".text)
+	save_prefs($"TextEdit".text)
 	
 func save_prefs(name):
 	var file2 = File.new()
@@ -119,7 +119,7 @@ func _on_LineEdit_text_entered(new_text):
 func _on_Login_meta_clicked(meta):
 	match meta:
 		"login":
-			var name = $"LineEdit".text
+			var name = $"TextEdit".text
 			if name != "":
 				if not name in user_list:
 					var user_details = {"name":name,"emoji":user["emoji"], "color":user["color"], "sillyword":$"Sillyword".text, "rgb":user["rgb"]}
@@ -146,7 +146,7 @@ func _on_Login_meta_clicked(meta):
 			else:
 				body.ai_say("Please write a user name.")
 		"cancel":
-			$"LineEdit".text = ""
+			$"TextEdit".text = ""
 			$"Sillyword".text = ""
 
 func check_silly_word(name):
@@ -164,7 +164,7 @@ func modulate():
 	$"Player/Body".modulate = color
 	$"Player/mask".modulate = color
 	$"Player/Baloon".modulate = color
-	$"LineEdit".modulate = color
+	$"TextEdit".modulate = color
 	$"Player/Label".modulate = color
 	user_temp["color"] = "#"+color2
 	user_temp["rgb"] = rgb
@@ -183,7 +183,7 @@ func _on_VSliderB_value_changed(value):
 	modulate()
 
 func _on_LineEdit_text_changed(new_text):
-	$"Player/Label".bbcode_text = "[center]"+$"LineEdit".text+"[/center]"
+	$"Player/Label".bbcode_text = "[center]"+$"TextEdit".text+"[/center]"
 	pass # Replace with function body.
 
 
@@ -200,4 +200,4 @@ func _on_Sillyword_gui_input(event):
 		$"Sillyword/EmojiPanel".visible = true
 
 func _on_text_entered(text):
-	$"LineEdit".text = text
+	$"TextEdit".text = text
