@@ -34,8 +34,9 @@ __meta__ = {
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 
+[connection signal="gui_input" from="bbcode" to="." method="_on_bbcode_gui_input"]
 [connection signal="meta_clicked" from="bbcode" to="." method="_on_bbcode_meta_clicked"]
 [connection signal="meta_hover_ended" from="bbcode" to="." method="_on_bbcode_meta_hover_ended"]
 [connection signal="meta_hover_started" from="bbcode" to="." method="_on_bbcode_meta_hover_started"]

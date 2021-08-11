@@ -53,6 +53,7 @@ window/size/width=960
 window/size/height=540
 window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true
+window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
 
 [editor_plugins]

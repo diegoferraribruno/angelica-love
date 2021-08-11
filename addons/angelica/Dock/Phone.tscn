@@ -75,7 +75,6 @@ __meta__ = {
 
 [node name="Cover" type="Panel" parent="."]
 pause_mode = 2
-visible = false
 margin_right = 256.0
 margin_bottom = 512.0
 mouse_filter = 1

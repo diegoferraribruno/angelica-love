@@ -7,7 +7,11 @@ onready var last_pos = get_parent().position
 
 var supperbutton = "[url=move][img]res://img/32/1f49f.png[/img][/url]"
 var drag = false
+
 var touch = false
+var touch_start := Vector2()
+
+
 var dragging_start_position = Vector2()
 var lastmouseposition = Vector2()
 var parent_start_position = Vector2()
@@ -48,17 +52,17 @@ func _on_viewport_size_changed():
 		get_parent().position.y = 30
 
 func _process(_delta):
-	if drag == true:
+	if drag == true or touch == true:
 		get_parent().position = get_global_mouse_position()-position-Vector2(24,28)
-
 
 func handle(meta):
 	match meta:
 		"move":
-			drag = !drag
-			$"Timer".start()
-			if drag == false:
-				get_node("../../").add_app(get_parent().name,get_parent().position)
+#			drag = !drag
+#			$"Timer".start()
+			pass
+#			if drag == false:
+#				get_node("../../").add_app(get_parent().name,get_parent().position)
 		"close":
 			if get_node("../").get("close") != null:
 				if get_node("../").get("quit") != null:
@@ -81,6 +85,8 @@ func _on_bbcode_meta_hover_ended(meta):
 		$bbcode.bbcode_text = "[url=move][img]res://img/32/1f49f.png[/img][/url]"
 	hint.hint("",Vector2(-20,-20))
 
+
+
 func _on_bbcode_meta_hover_started(meta):
 	$bbcode.bbcode_text = supperbutton
 	var pos = get_local_mouse_position()+Vector2(-30,-40)
@@ -94,9 +100,11 @@ func _on_bbcode_mouse_entered():
 	$bbcode.bbcode_text = supperbutton
 
 func _on_Timer_timeout():
-	if last_pos == get_parent().position:
+	if dragging_start_position == get_global_mouse_position():
+#	if last_pos == get_parent().position:
 		$"Timer".stop()
 		drag = false
+		touch = false
 		global_position.x
 		if global_position.x > screenSize.x-66:
 			get_parent().position.x = screenSize.x-66-position.x
@@ -106,6 +114,21 @@ func _on_Timer_timeout():
 			get_parent().position.x = 30-position.x
 		if global_position.y < 0:
 			get_parent().position.y = 30-position.y
+	dragging_start_position = get_global_mouse_position()
 	last_pos = get_parent().position
 	#save window position
 	get_node("../../").add_app(get_parent().name,get_parent().position) 
+
+func _on_bbcode_gui_input(event):
+	if Input.is_action_just_pressed("Click"):
+		dragging_start_position = get_global_mouse_position()
+		$"Timer".start()
+		touch = true
+	if event is InputEventScreenTouch:
+		if event.is_pressed():
+			$"Timer".start()
+			dragging_start_position = get_global_mouse_position()
+			touch = true
+	if event.is_action_released("Click"):
+		touch = false
+		drag = false
