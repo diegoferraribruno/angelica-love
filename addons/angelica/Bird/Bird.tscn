@@ -91,10 +91,10 @@ __meta__ = {
 }
 
 [node name="Hashtags" type="RichTextLabel" parent="."]
-margin_left = 298.486
-margin_top = 53.0
-margin_right = 448.486
-margin_bottom = 247.0
+margin_left = 293.0
+margin_top = 56.0
+margin_right = 452.0
+margin_bottom = 252.0
 custom_fonts/bold_font = SubResource( 6 )
 custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.0431373, 0.419608, 0.533333, 1 )
@@ -106,10 +106,10 @@ __meta__ = {
 }
 
 [node name="Buttons" type="RichTextLabel" parent="."]
-margin_left = 96.0
-margin_top = 13.3784
-margin_right = 432.0
-margin_bottom = 61.3784
+margin_left = 189.0
+margin_top = 13.0
+margin_right = 449.0
+margin_bottom = 61.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.87451, 0.690196, 0, 1 )
@@ -124,9 +124,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SuperButton" parent="." instance=ExtResource( 4 )]
-position = Vector2( 6.56763, 5.94603 )
-
 [node name="emojiboard_link" type="RichTextLabel" parent="."]
 margin_left = 122.0
 margin_top = 1.0
@@ -140,9 +137,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SuperButton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6.56763, 5.94603 )
+
 [connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="meta_clicked" from="Hashtags" to="." method="_on_Hashtags_meta_clicked"]
 [connection signal="meta_clicked" from="Buttons" to="." method="_on_Buttons_meta_clicked"]
 [connection signal="meta_hover_ended" from="Buttons" to="." method="_on_Buttons_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Buttons" to="." method="_on_Buttons_meta_hover_started"]
 [connection signal="meta_clicked" from="emojiboard_link" to="emojiboard_link" method="_on_emojiboard_link_meta_clicked"]
+[connection signal="meta_hover_started" from="emojiboard_link" to="." method="_on_emojiboard_link_meta_hover_started"]

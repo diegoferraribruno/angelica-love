@@ -21,7 +21,7 @@ bg_color = Color( 0.627451, 0.94902, 0.964706, 0.803922 )
 border_width_left = 8
 border_width_top = 42
 border_width_right = 8
-border_width_bottom = 40
+border_width_bottom = 42
 border_color = Color( 0.0470588, 0.752941, 1, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -95,9 +95,9 @@ script = ExtResource( 11 )
 [node name="Skin" type="Panel" parent="."]
 pause_mode = 2
 margin_left = 2.0
-margin_top = 1.0
+margin_top = 2.18921
 margin_right = 496.0
-margin_bottom = 288.0
+margin_bottom = 248.189
 mouse_filter = 1
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
@@ -107,9 +107,9 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="."]
 margin_left = 61.0
-margin_top = 8.0
+margin_top = 5.62159
 margin_right = 484.0
-margin_bottom = 39.0
+margin_bottom = 36.6216
 size_flags_horizontal = 5
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -122,7 +122,7 @@ __meta__ = {
 margin_left = 18.0
 margin_top = 45.0
 margin_right = 343.0
-margin_bottom = 245.0
+margin_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -152,7 +152,7 @@ __meta__ = {
 margin_left = 358.0
 margin_top = 50.0
 margin_right = 487.0
-margin_bottom = 241.0
+margin_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -194,12 +194,12 @@ __meta__ = {
 }
 
 [node name="emojiboard_link" type="RichTextLabel" parent="."]
-margin_left = 406.865
-margin_top = 258.622
-margin_right = 498.865
-margin_bottom = 288.622
+margin_left = 353.0
+margin_top = 211.0
+margin_right = 485.0
+margin_bottom = 245.0
 bbcode_enabled = true
-bbcode_text = "[url=emojipanel][img]res://img/16/1f60c.png[/img][/url]  [url=keyboard][img]res://img/16/2328.png[/img][/url] [url=fx]fx[/url] [url=send] [img]res://img/16/27a1.png[/img][/url]
+bbcode_text = "[url=emojipanel][img]res://img/32/1f60c.png[/img][/url]  [url=keyboard][img]res://img/32/2328.png[/img][/url] [url=fx]fx[/url] [url=send] [img]res://img/32/27a1.png[/img][/url]
 "
 text = "   fx  
 "
@@ -210,10 +210,10 @@ __meta__ = {
 }
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_left = 11.0
-margin_top = 257.0
-margin_right = 398.0
-margin_bottom = 279.0
+margin_left = 9.58578
+margin_top = 211.069
+margin_right = 338.586
+margin_bottom = 241.069
 custom_styles/normal = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false

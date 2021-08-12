@@ -112,4 +112,11 @@ func hint(meta,pos):
 
 
 func _on_Buttons_meta_hover_started(meta):
+	var pos = get_local_mouse_position()+Vector2(-30,-40)
+	$"SuperButton".hint(meta,pos)
+
+
+func _on_emojiboard_link_meta_hover_started(meta):
+	var pos = get_local_mouse_position()+Vector2(-30,-40)
+	$"SuperButton".hint(meta,pos)
 	pass # Replace with function body.

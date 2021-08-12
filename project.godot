@@ -49,7 +49,7 @@ Game="*res://src/singletons/Game.gd"
 
 [display]
 
-window/size/width=800
+window/size/width=900
 window/size/height=520
 window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true

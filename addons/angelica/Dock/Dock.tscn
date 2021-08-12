@@ -100,10 +100,11 @@ __meta__ = {
 position = Vector2( 0, 32 )
 
 [node name="ColorRect" type="Panel" parent="State_machine/Right"]
-margin_left = -7.31821
-margin_top = 24.1815
-margin_right = 13.6818
-margin_bottom = 260.0
+margin_left = -7.0
+margin_top = 44.0
+margin_right = 14.0
+margin_bottom = 354.0
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

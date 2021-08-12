@@ -56,10 +56,10 @@ script = ExtResource( 1 )
 
 [node name="LeffKey" type="RichTextLabel" parent="."]
 modulate = Color( 1, 0, 0.517647, 0.882353 )
-margin_left = -0.979736
-margin_top = 4.00262
-margin_right = 324.02
-margin_bottom = 217.003
+margin_left = 2.65039
+margin_top = 2.39386
+margin_right = 312.65
+margin_bottom = 213.394
 bbcode_enabled = true
 bbcode_text = "[right][url=#][img]res://img/48/0023.png[/img][/url] [url=1][img]res://img/48/0031.png[/img][/url] [url=2][img]res://img/48/0032.png[/img][/url] [url=3][img]res://img/48/0033.png[/img][/url] [url=4][img]res://img/48/0034.png[/img][/url] [url=5][img]res://img/48/0035.png[/img][/url]
 [url=!][img]res://img/48/2755.png[/img][/url] [url=q][img]res://img/48/1f1f6.png[/img][/url] [url=w][img]res://img/48/1f1fc.png[/img][/url] [url=e][img]res://img/48/1f1ea.png[/img][/url] [url=r][img]res://img/48/1f1f7.png[/img][/url] [url=t][img]res://img/48/1f1f9.png[/img][/url]
@@ -77,10 +77,10 @@ __meta__ = {
 }
 
 [node name="SpaceBar" type="RichTextLabel" parent="."]
-margin_left = 330.476
-margin_top = 1.5874
-margin_right = 462.476
-margin_bottom = 210.587
+margin_left = 378.098
+margin_top = -1.5874
+margin_right = 510.098
+margin_bottom = 207.413
 custom_styles/normal = SubResource( 3 )
 custom_fonts/bold_font = SubResource( 4 )
 custom_fonts/normal_font = SubResource( 5 )
@@ -104,10 +104,10 @@ __meta__ = {
 
 [node name="RightKey" type="RichTextLabel" parent="."]
 modulate = Color( 1, 0, 0.517647, 0.882353 )
-margin_left = 472.02
-margin_top = 6.63343
-margin_right = 800.02
-margin_bottom = 217.634
+margin_left = 580.175
+margin_top = 5.91821
+margin_right = 902.175
+margin_bottom = 222.918
 bbcode_enabled = true
 bbcode_text = "[url=6][img]res://img/48/0036.png[/img][/url] [url=7][img]res://img/48/0037.png[/img][/url] [url=8][img]res://img/48/0038.png[/img][/url] [url=9][img]res://img/48/0039.png[/img][/url] [url=0][img]res://img/48/0030.png[/img][/url] [url=close][img]res://img/48/1f5d9.png[/img][/url]
 [url=y][img]res://img/48/1f1fe.png[/img][/url] [url=u][img]res://img/48/1f1fa.png[/img][/url] [url=i][img]res://img/48/1f1ee.png[/img][/url] [url=o][img]res://img/48/1f1f4.png[/img][/url] [url=p][img]res://img/48/1f1f5.png[/img][/url] [url=backspace][img]res://img/48/2b05.png[/img][/url]

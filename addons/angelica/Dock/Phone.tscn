@@ -62,7 +62,6 @@ font_data = SubResource( 6 )
 font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
 
 [sub_resource type="DynamicFont" id=8]
-size = 14
 outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
 use_mipmaps = true
 use_filter = true
@@ -126,14 +125,14 @@ __meta__ = {
 
 [node name="Title" type="RichTextLabel" parent="."]
 margin_left = 8.0
-margin_top = 12.0
+margin_top = 10.0
 margin_right = 127.0
-margin_bottom = 42.0
+margin_bottom = 40.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
 bbcode_enabled = true
-bbcode_text = "[center]Angelica 210[/center]"
+bbcode_text = "Angelica 210"
 text = "Angelica 210"
 scroll_active = false
 __meta__ = {
