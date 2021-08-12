@@ -30,12 +30,12 @@ font_data = SubResource( 3 )
 font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-size = 17
+size = 19
 outline_size = 2
 font_data = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 14
+size = 18
 outline_size = 2
 font_data = ExtResource( 3 )
 
@@ -53,10 +53,10 @@ position = Vector2( 1.96814, -0.94545 )
 script = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 575.0
-margin_bottom = 258.0
+margin_left = -1.0
+margin_top = 3.0
+margin_right = 461.0
+margin_bottom = 260.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,9 +64,9 @@ __meta__ = {
 
 [node name="TextEdit" type="TextEdit" parent="."]
 margin_left = 9.0
-margin_top = 50.0
-margin_right = 289.0
-margin_bottom = 250.0
+margin_top = 57.0
+margin_right = 284.0
+margin_bottom = 252.0
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 4 )
 draw_spaces = true
@@ -78,9 +78,9 @@ __meta__ = {
 }
 
 [node name="Count" type="RichTextLabel" parent="."]
-margin_left = 225.0
+margin_left = 201.0
 margin_top = 234.777
-margin_right = 298.0
+margin_right = 274.0
 margin_bottom = 255.777
 bbcode_enabled = true
 bbcode_text = "280"
@@ -91,10 +91,10 @@ __meta__ = {
 }
 
 [node name="Hashtags" type="RichTextLabel" parent="."]
-margin_left = 303.0
-margin_top = 47.0
-margin_right = 565.0
-margin_bottom = 249.0
+margin_left = 298.486
+margin_top = 53.0
+margin_right = 448.486
+margin_bottom = 247.0
 custom_fonts/bold_font = SubResource( 6 )
 custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.0431373, 0.419608, 0.533333, 1 )
@@ -106,17 +106,19 @@ __meta__ = {
 }
 
 [node name="Buttons" type="RichTextLabel" parent="."]
-margin_left = 159.0
-margin_top = 12.8877
-margin_right = 297.0
-margin_bottom = 38.8877
+margin_left = 96.0
+margin_top = 13.3784
+margin_right = 432.0
+margin_bottom = 61.3784
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.87451, 0.690196, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "[right][url=clear][img]res://img/16/274c.png[/img][/url]   [url=links][img]res://img/16/1f30e.png[/img][/url]   [url=hashtags][img]res://img/16/0023-20e3.png[/img][/url]   [url=folder][img]res://img/16/1f4c1.png[/img][/url] [url=tweet]  [img]res://img/16/1f426.png[/img][/url][/right]"
+bbcode_text = "[right][url=clear][img]res://img/32/274c.png[/img][/url]   [url=links][img]res://img/32/1f30e.png[/img][/url]   [url=hashtags][img]res://img/32/0023-20e3.png[/img][/url]   [url=folder][img]res://img/32/1f4c1.png[/img][/url] [url=tweet]  [img]res://img/32/1f426.png[/img][/url][/right]
+"
 meta_underlined = false
-text = "            "
+text = "            
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,12 +128,12 @@ __meta__ = {
 position = Vector2( 6.56763, 5.94603 )
 
 [node name="emojiboard_link" type="RichTextLabel" parent="."]
-margin_left = 126.0
-margin_top = 9.0
-margin_right = 161.0
-margin_bottom = 39.0
+margin_left = 122.0
+margin_top = 1.0
+margin_right = 185.0
+margin_bottom = 45.0
 bbcode_enabled = true
-bbcode_text = "[url=keyboard][img]res://img/32/2328.png[/img][/url]"
+bbcode_text = "[url=keyboard][img]res://img/48/2328.png[/img][/url]"
 scroll_active = false
 script = ExtResource( 5 )
 __meta__ = {

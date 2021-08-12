@@ -1,6 +1,5 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://addons/angelica/fonts/style/pre_line_edit.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Dock/Phone.gd" type="Script" id=3]
 [ext_resource path="res://addons/angelica/Dock/clock.gd" type="Script" id=4]
@@ -55,28 +54,32 @@ font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 [sub_resource type="DynamicFont" id=7]
 outline_size = 3
 outline_color = Color( 0.270588, 0.270588, 0.270588, 1 )
-extra_spacing_bottom = 6
+extra_spacing_bottom = 4
 extra_spacing_char = 7
 font_data = SubResource( 6 )
 
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
+
 [sub_resource type="DynamicFont" id=8]
+size = 14
 outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
 use_mipmaps = true
 use_filter = true
 extra_spacing_top = 4
 extra_spacing_bottom = 2
-font_data = ExtResource( 1 )
+font_data = SubResource( 9 )
 
 [node name="Phone" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_vertical_guides_": [ 128.054 ]
+"_edit_vertical_guides_": [ 121.021 ]
 }
 
 [node name="Cover" type="Panel" parent="."]
 pause_mode = 2
-margin_right = 256.0
-margin_bottom = 512.0
+margin_right = 242.0
+margin_bottom = 489.0
 mouse_filter = 1
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
@@ -85,10 +88,9 @@ __meta__ = {
 
 [node name="Screen" type="Panel" parent="."]
 pause_mode = 2
-margin_left = 2.0
 margin_top = 2.0
-margin_right = 254.0
-margin_bottom = 510.0
+margin_right = 240.0
+margin_bottom = 487.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
@@ -123,26 +125,26 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 10.0
+margin_left = 8.0
 margin_top = 12.0
-margin_right = 117.0
-margin_bottom = 41.0
+margin_right = 127.0
+margin_bottom = 42.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
 bbcode_enabled = true
-bbcode_text = "[center]Angelica 205[/center]"
-text = "Angelica 205"
+bbcode_text = "[center]Angelica 210[/center]"
+text = "Angelica 210"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="clock" type="RichTextLabel" parent="."]
-margin_left = 17.4781
-margin_top = 41.262
-margin_right = 108.478
-margin_bottom = 71.262
+margin_left = 93.0
+margin_top = 47.0
+margin_right = 151.0
+margin_bottom = 77.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
@@ -159,10 +161,10 @@ __meta__ = {
 autostart = true
 
 [node name="Body" type="RichTextLabel" parent="."]
-margin_left = 19.0
-margin_top = 82.0
-margin_right = 241.0
-margin_bottom = 467.0
+margin_left = 16.0
+margin_top = 71.0
+margin_right = 228.0
+margin_bottom = 440.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -185,10 +187,10 @@ __meta__ = {
 }
 
 [node name="Body2" type="RichTextLabel" parent="."]
-margin_left = 165.784
-margin_top = 10.2162
-margin_right = 244.784
-margin_bottom = 42.2162
+margin_left = 148.811
+margin_top = 15.1892
+margin_right = 229.811
+margin_bottom = 40.1892
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -201,8 +203,10 @@ custom_styles/normal = SubResource( 5 )
 custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
+bbcode_text = "[url=selfie] [img]res://img/16/1f4f7.png[/img] [/url][url=volume] [img]res://img/16/1f569.png[/img] [/url]"
 meta_underlined = false
 tab_size = 7
+text = "    "
 scroll_active = false
 override_selected_font_color = true
 custom_effects = [ null, null, null, null, null ]
@@ -211,7 +215,7 @@ __meta__ = {
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 107.806, 465.015 )
+position = Vector2( 99.806, 444.697 )
 
 [connection signal="meta_clicked" from="footer" to="." method="_on_Body_meta_clicked"]
 [connection signal="meta_hover_ended" from="footer" to="." method="_on_Body_meta_hover_ended"]

@@ -111,9 +111,9 @@ func _on_Timer_timeout():
 		if global_position.y > screenSize.y-76:
 			get_parent().position.y = screenSize.y-80-position.y
 		if global_position.x < 0:
-			get_parent().position.x = 12
+			get_parent().position.x = 4
 		if global_position.y < 0:
-			get_parent().position.y = 12
+			get_parent().position.y = 4
 	dragging_start_position = get_global_mouse_position()
 	last_pos = get_parent().position
 	#save window position

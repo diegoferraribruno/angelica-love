@@ -6,4 +6,4 @@ func _ready():
 	
 func _on_viewport_size_changed():
 	var screensize = get_viewport_rect().size
-	position = Vector2(screensize.x-96,16)
+	position = Vector2(screensize.x-48,16)

@@ -84,7 +84,6 @@ func tweet(new_text):
 #	if openfile == true:
 #		OS.shell_open(OS.get_user_data_dir())
 
-
 func _on_Buttons_meta_clicked(meta):
 	if meta == "tweet":
 		tweet($"TextEdit".text)
