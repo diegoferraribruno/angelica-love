@@ -11,7 +11,6 @@ var drag = false
 var touch = false
 var touch_start := Vector2()
 
-
 var dragging_start_position = Vector2()
 var lastmouseposition = Vector2()
 var parent_start_position = Vector2()
@@ -58,11 +57,7 @@ func _process(_delta):
 func handle(meta):
 	match meta:
 		"move":
-#			drag = !drag
-#			$"Timer".start()
 			pass
-#			if drag == false:
-#				get_node("../../").add_app(get_parent().name,get_parent().position)
 		"close":
 			if get_node("../").get("close") != null:
 				if get_node("../").get("quit") != null:
@@ -84,8 +79,6 @@ func _on_bbcode_meta_hover_ended(meta):
 	else:
 		$bbcode.bbcode_text = "[url=move][img]res://img/32/1f49f.png[/img][/url]"
 	hint.hint("",Vector2(-20,-20))
-
-
 
 func _on_bbcode_meta_hover_started(meta):
 	$bbcode.bbcode_text = supperbutton
