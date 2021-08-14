@@ -17,10 +17,9 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="DynamicFontData" id=2]
-font_path = "res://addons/angelica/fonts/OpenSans-Light.ttf"
 
 [sub_resource type="DynamicFont" id=3]
-size = 17
+size = 24
 outline_size = 1
 outline_color = Color( 0, 0.45098, 0.631373, 1 )
 extra_spacing_space = 7
@@ -29,7 +28,7 @@ font_data = SubResource( 2 )
 [sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 16.0
 content_margin_right = 16.0
-content_margin_top = 12.0
+content_margin_top = 16.0
 content_margin_bottom = 12.0
 bg_color = Color( 0.0352941, 0.172549, 0.207843, 0.823529 )
 border_width_left = 8
@@ -42,31 +41,31 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0.0941176, 0.121569, 0.423529 )
 border_width_left = 1
 border_width_right = 1
 border_color = Color( 0.49, 1.2, 1.5, 0.98 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 6.0
 content_margin_right = 6.0
 draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0.529412, 1, 0.976471, 0.52549 )
 border_blend = true
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=9]
 font_path = "res://addons/angelica/fonts/OpenSans-Light.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=10]
 size = 17
 outline_size = 1
 outline_color = Color( 0, 0.458824, 0.733333, 1 )
-font_data = SubResource( 7 )
+font_data = SubResource( 9 )
 
 [node name="Track" type="Node2D"]
 position = Vector2( -2.16838, 2.16837 )
@@ -74,19 +73,19 @@ script = ExtResource( 2 )
 
 [node name="line" type="Panel" parent="."]
 margin_left = 5.0
-margin_top = 4.0
-margin_right = 522.0
-margin_bottom = 38.0
+margin_top = -4.0
+margin_right = 635.0
+margin_bottom = 48.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Menu2" type="RichTextLabel" parent="."]
-margin_left = 473.056
-margin_top = 4.31821
-margin_right = 517.056
-margin_bottom = 31.3182
+margin_left = 515.023
+margin_top = 131.938
+margin_right = 587.023
+margin_bottom = 181.938
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[url=copy]c[/url] [url=paste]p[/url]"
@@ -96,10 +95,10 @@ __meta__ = {
 }
 
 [node name="Audiopacks" type="Panel" parent="."]
-margin_left = 14.0561
-margin_top = -128.682
-margin_right = 52.0561
-margin_bottom = 17.3182
+margin_left = 7.0
+margin_top = -150.0
+margin_right = 103.0
+margin_bottom = -4.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -107,20 +106,13 @@ __meta__ = {
 
 [node name="Menu" type="RichTextLabel" parent="Audiopacks"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 11.0561
-margin_top = 13.0
-margin_right = 33.0561
-margin_bottom = 128.0
-custom_fonts/normal_font = SubResource( 3 )
+margin_left = 10.2363
+margin_top = 13.909
+margin_right = 89.2363
+margin_bottom = 146.909
 bbcode_enabled = true
-bbcode_text = "[url=kenney][img]res://img/16/1f3ae.png[/img][/url]
-[url=kylan][img]res://img/16/1f3ba.png[/img][/url]
-[url=openpath1][img]res://img/16/1f941.png[/img][/url]
-[url=clear][img]res://img/16/1f5d9.png[/img][/url] "
-text = "
-
-
- "
+bbcode_text = "[url=kenney][img]res://img/32/1f3ae.png[/img][/url]  [url=kylan][img]res://img/32/1f3ba.png[/img][/url] [url=openpath1][img]res://img/32/1f941.png[/img][/url]  [url=delete track][img]res://img/32/1f5d9.png[/img][/url] "
+text = "      "
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -128,12 +120,14 @@ __meta__ = {
 
 [node name="Notes" type="RichTextLabel" parent="Audiopacks"]
 pause_mode = 2
-margin_left = 41.0
-margin_right = 507.0
-margin_bottom = 130.0
+margin_left = 101.0
+margin_top = 1.0
+margin_right = 621.0
+margin_bottom = 142.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.466667, 0.984314, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[url=a]a[/url] [url=b]b[/url]"
 text = "a b"
@@ -148,22 +142,22 @@ __meta__ = {
 position = Vector2( 0.0561218, 4.31821 )
 
 [node name="Panel" type="Panel" parent="Agulha"]
-margin_left = 230.0
-margin_top = 4.0
-margin_right = 240.0
-margin_bottom = 30.0
-custom_styles/panel = SubResource( 5 )
+margin_left = 254.0
+margin_top = 5.0
+margin_right = 264.0
+margin_bottom = 31.0
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 224.663
-margin_top = 8.31821
-margin_right = 391.663
-margin_bottom = 32.3182
+margin_left = 249.0
+margin_top = 6.0
+margin_right = 490.0
+margin_bottom = 39.0
 hint_tooltip = "Type 16 beats here"
-custom_styles/normal = SubResource( 6 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.431373, 1, 0.827451, 1 )
 max_length = 16
@@ -175,10 +169,10 @@ __meta__ = {
 
 [node name="SpeedTune" type="SpinBox" parent="."]
 modulate = Color( 0.49, 1.17, 1.16, 1 )
-margin_left = 116.32
-margin_top = 9.20911
-margin_right = 190.321
-margin_bottom = 33.2091
+margin_left = 134.0
+margin_top = 11.5874
+margin_right = 208.0
+margin_bottom = 35.5874
 hint_tooltip = "BPM (press enter after change)"
 max_value = 900.0
 value = 130.0
@@ -189,10 +183,10 @@ __meta__ = {
 
 [node name="Pitch" type="SpinBox" parent="."]
 modulate = Color( 0.49, 1.17, 1.16, 1 )
-margin_left = 41.4808
-margin_top = 9.20911
-margin_right = 115.481
-margin_bottom = 33.2091
+margin_left = 57.0315
+margin_top = 11.4126
+margin_right = 131.031
+margin_bottom = 35.4126
 hint_tooltip = "Pitch Scale (press enter after change)"
 min_value = 0.1
 max_value = 10.0
@@ -227,10 +221,10 @@ __meta__ = {
 
 [node name="VSlider" type="VSlider" parent="."]
 modulate = Color( 0.94, 2.15, 1.98693, 1 )
-margin_left = 197.127
-margin_top = 5.31821
-margin_right = 213.127
-margin_bottom = 35.3182
+margin_left = 212.127
+margin_top = 8.31821
+margin_right = 228.127
+margin_bottom = 38.3182
 min_value = -40.0
 max_value = 0.0
 step = -1.0
@@ -279,10 +273,10 @@ autostart = true
 
 [node name="SuperButton" type="RichTextLabel" parent="."]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 17.0561
-margin_top = 3.31821
-margin_right = 52.0561
-margin_bottom = 38.3182
+margin_left = 16.4126
+margin_top = 6.23779
+margin_right = 51.4126
+margin_bottom = 40.2378
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[url=superbutton][img]res://img/32/1f49f.png[/img][/url]"
@@ -293,13 +287,13 @@ __meta__ = {
 
 [node name="Menu3" type="RichTextLabel" parent="."]
 modulate = Color( 1, 0, 0.683333, 1 )
-margin_left = 404.663
-margin_top = 9.31821
-margin_right = 488.663
-margin_bottom = 34.3182
-custom_fonts/normal_font = SubResource( 8 )
+margin_left = 505.0
+margin_top = 7.0
+margin_right = 617.0
+margin_bottom = 42.0
+custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
-bbcode_text = "[url=rewind][img]res://img/16/23ee.png[/img][/url] [url=loop ][img]res://img/16/1f504.png[/img][/url] [url=play][img]res://img/16/25b6.png[/img][/url] 
+bbcode_text = "[url=rewind][img]res://img/32/23ee.png[/img][/url] [url=loop ][img]res://img/32/1f504.png[/img][/url] [url=play][img]res://img/32/25b6.png[/img][/url] 
 "
 text = "   
 "

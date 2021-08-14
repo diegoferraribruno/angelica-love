@@ -69,14 +69,10 @@ func update_notes():
 	
 func _on_Menu_meta_clicked(meta):
 	match meta:
-		"clear":
+		"delete track":
 			queue_free()
 		"play track":
 			_on_Playing_pressed()
-#			if playing == false:
-#				bpms = $SpeedTune.value
-#				_on_LineEdit_text_entered($LineEdit.text)
-#			playing = !playing
 		"paste":
 			$LineEdit.text += OS.clipboard
 		"copy":
@@ -117,13 +113,13 @@ func _on_Menu_meta_clicked(meta):
 			_on_Loop_pressed()
 
 func update_control():
-	var rewind = "[url=rewind][img]res://img/16/23ee.png[/img][/url] "
-	var loopbutton = "[url=loop][img]res://img/16/1f502.png[/img][/url] "
-	var playbutton = "[url=play track][img]res://img/16/25b6.png[/img][/url]" 
+	var rewind = "[url=rewind][img]res://img/32/23ee.png[/img][/url] "
+	var loopbutton = "[url=loop][img]res://img/32/1f502.png[/img][/url] "
+	var playbutton = "[url=play track][img]res://img/32/25b6.png[/img][/url]" 
 	if playing == true:
-		playbutton = "[url=play track][img]res://img/16/23f8.png[/img][/url]"
+		playbutton = "[url=play track][img]res://img/32/23f8.png[/img][/url]"
 	if looping == true:
-		loopbutton = "[url=loop][img]res://img/16/1f504.png[/img][/url] "
+		loopbutton = "[url=loop][img]res://img/32/1f504.png[/img][/url] "
 	$"Menu3".bbcode_text = rewind + loopbutton + playbutton
 
 
@@ -157,7 +153,7 @@ func _on_LineEdit_text_entered(new_text) -> void:
 		if nota in notes:
 			var stream = load(notes[nota])
 			funk(stream)
-		$Agulha.position.x = play_head*8
+		$Agulha.position.x = play_head*12
 		play_head += 1
 		if play_head >= new_text.length()+1:
 			loopcheck()
