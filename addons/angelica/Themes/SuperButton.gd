@@ -116,7 +116,7 @@ func _on_bbcode_gui_input(event):
 	if Input.is_action_just_pressed("Click"):
 		dragging_start_position = get_global_mouse_position()
 		$"Timer".start()
-		get_node("../../").move_child(get_parent(), 1)
+#		get_node("../../").move_child(get_parent(), -1)
 		touch = true
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
