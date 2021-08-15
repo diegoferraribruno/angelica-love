@@ -1,25 +1,90 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/emoojione64/1f333.png" type="Texture" id=1]
 [ext_resource path="res://sprites/emoojione64/1f335.png" type="Texture" id=2]
 [ext_resource path="res://sprites/emoojione64/1f334.png" type="Texture" id=3]
 [ext_resource path="res://sprites/emoojione64/1f332.png" type="Texture" id=4]
 [ext_resource path="res://src/scenes/Tree/Tree2.gd" type="Script" id=5]
+[ext_resource path="res://sprites/sprites720p.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 1.39011
 height = 13.6879
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 480, 608, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 640, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 640, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 192, 1376, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 352, 608, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 416, 608, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 608, 608, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 384, 608, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 13 ) ],
 "loop": true,
-"name": "default",
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), ExtResource( 3 ), SubResource( 14 ), SubResource( 7 ), SubResource( 8 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "summer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), SubResource( 2 ), SubResource( 2 ), SubResource( 7 ) ],
+"loop": true,
+"name": "spring ",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 2 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "winter",
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=3]
-resource_name = "background"
+[sub_resource type="Animation" id=4]
 length = 300.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -50,13 +115,13 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -32, -52 )
-frames = SubResource( 2 )
-frame = 1
+position = Vector2( 32, 42 )
+frames = SubResource( 3 )
+animation = "summer"
+frame = 4
 speed_scale = 0.1
-centered = false
-offset = Vector2( 0, -3.171 )
+offset = Vector2( -32, -64 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "background"
-anims/background = SubResource( 3 )
+anims/background = SubResource( 4 )

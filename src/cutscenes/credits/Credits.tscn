@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/angelica/fonts/ComicNeue-Angular_Bold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/cutscenes/credits/Credits.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+outline_size = 4
+outline_color = Color( 0.137255, 0.137255, 0.137255, 1 )
+extra_spacing_top = 20
+font_data = ExtResource( 1 )
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Portughues" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -221.0
+margin_top = -174.0
+margin_right = 776.0
+margin_bottom = 429.0
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "
+[center][wave][rainbow]  O amor é atemporal [/rainbow][/wave]
+mas 
+[wave][color=red]The End [/color][/wave]
+of the game. 
+Have a nice life!"
+text = "
+  O amor é atemporal 
+mas 
+The End 
+of the game. 
+Have a nice life!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_top = 27.0
+margin_right = 903.0
+margin_bottom = 517.0
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center][wave][rainbow] This is the end for now..
+ [/rainbow][/wave]Have a lovely life!
+By Diego Ferrari Bruno, Marcusmmm and Rick Reeves[/center]"
+text = " This is the end for now..
+ Have a lovely life!
+By Diego Ferrari Bruno, Marcusmmm and Rick Reeves"
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -4,6 +4,8 @@ export var TreeScene : PackedScene
 export var Player : PackedScene 
 export var Kill : PackedScene
 export var Goodie : PackedScene
+export var Credits : PackedScene
+
 onready var screensize := get_viewport_rect().size
 onready var max_height := screensize.y/3
 var initialize = [
@@ -26,6 +28,7 @@ func _ready():
 		var instance = TreeScene.instance()
 		instance.position = Vector2(screensize.x,rand_range(max_height,screensize.y))
 		instance.modulate = Color(0.75,0.75,0.75)
+		instance.add_to_group("Trees")
 		add_child(instance)
 		yield(get_tree().create_timer(1), "timeout")
 		
@@ -39,7 +42,11 @@ func _on_Timer_timeout():
 #		get_child(instance).set_script(friend)
 	
 func gameover():
-	$Credits.visible = true
+	if get_parent().has_node("Credits") == false:
+		var instance = Credits.instance()
+		get_parent().add_child(instance)
+		$Credits.visible = true
+	$"City/Celebration".reset()
 	
 
 func _on_GoodiesTimer_timeout():

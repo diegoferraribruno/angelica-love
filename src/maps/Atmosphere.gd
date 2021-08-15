@@ -6,9 +6,9 @@ var colors = [Color(0.3,0.56,0.98),Color(0.0,02,0.31), Color(0, 0.17, 0.44)]
 var r = 0.005
 var g = 0.007
 var b = 0.014
-var rfactor = 0.0045
-var gfactor = 0.0065
-var bfactor = 0.013
+var rfactor = 0.005
+var gfactor = 0.007
+var bfactor = 0.014
 var revert = 1.2
 
 func _ready():
@@ -16,7 +16,7 @@ func _ready():
 	rect_position.y = bg_position.y
 	chao.rect_size.x = bg_position.x
 	chao.rect_position.y = screensize.y
-#	modulate = colors[0]
+
 
 func _process(delta):
 	
@@ -27,7 +27,7 @@ func _process(delta):
 	chao.modulate = Color(g-0.1,b-0.1,r-0.1)
 	
 
-	if b >= 1.8:
+	if b >= 2:
 		revert = -3
 	if b < 0.014:
 			revert = 1
@@ -35,3 +35,4 @@ func _process(delta):
 			$"../Timer".start()
 			$"../Timer2".start()
 			$"../Sun".reset()
+			$"../Stars".reset()

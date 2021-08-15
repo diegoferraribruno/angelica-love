@@ -181,13 +181,23 @@ func synapse(new_text):
 				get_node("../Game/City").queue_free()
 #				quit("dj clear")
 		"glow":
-			if get_node("../Paint").has_node("Glow") == false:
-				var instance = glow.instance()
-				get_node("../Paint").add_child(instance)
-			if command.size() > 1 :
-				if command[1] != "on":
+			if command.size() == 1 :
+				if get_node("../Paint").has_node("Glow") == false:
+					var instance = glow.instance()
+					get_node("../Paint").add_child(instance)
+				else:
 					get_node("../Paint/Glow").queue_free()
 					ai_say("Glow removed!")
+			else:
+				if command[1] == "on":
+					if get_node("../Paint").has_node("Glow") == false:
+						var instance = glow.instance()
+						get_node("../Paint").add_child(instance)
+				elif command[1] == "off":
+					if get_node("../Paint").has_node("Glow") == true:
+						get_node("../Paint/Glow").queue_free()
+						ai_say("Glow removed!")
+			
 		"title":
 			if get_node("../Paint").has_node("Title") == false:
 				var instance = title.instance()

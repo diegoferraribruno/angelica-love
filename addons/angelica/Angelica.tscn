@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/angelica/Body/Body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/angelica/DJ/Scenes/DJ.tscn" type="PackedScene" id=2]
@@ -7,6 +7,29 @@
 [ext_resource path="res://addons/angelica/HideButton.gd" type="Script" id=5]
 [ext_resource path="res://addons/angelica/GDPaint/Paint.gd" type="Script" id=6]
 [ext_resource path="res://addons/angelica/default/User.gd" type="Script" id=7]
+[ext_resource path="res://addons/angelica/Health/Shades.gd" type="Script" id=8]
+[ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/angelica/Shades_node.gd" type="Script" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.964706, 1, 1, 1 )
+border_width_left = 8
+border_width_top = 4
+border_width_right = 8
+border_width_bottom = 4
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.321569, 0.321569, 0.321569, 1 )
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 1
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Angelica" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -34,7 +57,7 @@ dj = ExtResource( 2 )
 [node name="HideButton" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
-[node name="AngelicaButton" type="RichTextLabel" parent="HideButton"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HideButton"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
 margin_right = 32.0
 margin_bottom = 35.0
@@ -46,13 +69,40 @@ __meta__ = {
 }
 
 [node name="Shades" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0.0941176 )
+visible = false
+modulate = Color( 1, 1, 1, 0.3 )
 margin_right = 1993.0
 margin_bottom = 1123.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="meta_clicked" from="HideButton/AngelicaButton" to="." method="_on_AngelicaButton_meta_clicked"]
+[node name="Shades" type="Node2D" parent="Shades"]
+script = ExtResource( 10 )
+
+[node name="SuperButton" parent="Shades/Shades" instance=ExtResource( 9 )]
+
+[node name="VSlider" type="HSlider" parent="Shades/Shades"]
+modulate = Color( 0.558594, 0.558594, 0.558594, 0.862745 )
+margin_left = 46.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 40.0
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 2 )
+min_value = 0.1
+max_value = 0.6
+step = 0.05
+value = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="meta_clicked" from="HideButton/RichTextLabel" to="." method="_on_AngelicaButton_meta_clicked"]
+[connection signal="mouse_entered" from="HideButton/RichTextLabel" to="HideButton" method="_on_AngelicaButton_mouse_entered"]
+[connection signal="mouse_exited" from="HideButton/RichTextLabel" to="HideButton" method="_on_AngelicaButton_mouse_exited"]
+[connection signal="value_changed" from="Shades/Shades/VSlider" to="Shades" method="_on_VSlider_value_changed"]

@@ -11,12 +11,13 @@ func _draw():
 	draw_circle(Vector2(pos.x+100,pos.y-32), 38, Color.black)
 
 func reset():
-	position.y = screensize.y/3
-#	update()
+	position = Vector2.ZERO
 
 func _process(delta):
 	if position.y > -1600:
-		position += Vector2.UP*delta*15
+		position += Vector2(0,-1)*delta*15
+#	else:
+#		reset()
 
 
 #func _on_Timer_timeout():

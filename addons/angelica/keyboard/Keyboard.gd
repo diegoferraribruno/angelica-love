@@ -14,19 +14,19 @@ func _ready():
 	$"LeffKey".margin_bottom = screensize.y-20
 	$"LeffKey".margin_top = screensize.y-240
 	
-	$"RightKey".margin_left = screensize.x - 360
+	$"RightKey".margin_left = screensize.x - 370
 	$"RightKey".margin_right = screensize.x-46
-	$"RightKey".margin_bottom = screensize.y-20
+	$"RightKey".margin_bottom = screensize.y-40
 	$"RightKey".margin_top = screensize.y-240
 	
 	$"SpaceBar".margin_bottom = screensize.y - 40
 	$"SpaceBar".margin_top = screensize.y- 240
-	$"SpaceBar".margin_left = screensize.x/2-62
-	$"SpaceBar".margin_right = screensize.x/2+62
+	$"SpaceBar".margin_left = screensize.x/2-118
+	$"SpaceBar".margin_right = screensize.x/2+76
 	
 	$"TextEdit".margin_right = screensize.x-46
-	$"TextEdit".margin_left = 20
-	$"TextEdit".margin_top = screensize.y-290
+	$"TextEdit".margin_left = 40
+	$"TextEdit".margin_top = screensize.y-320
 	$"TextEdit".margin_top = screensize.y-250
 	
 func _on_LeffKey_meta_clicked(meta):

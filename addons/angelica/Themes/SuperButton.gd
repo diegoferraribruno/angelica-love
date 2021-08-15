@@ -23,6 +23,7 @@ func _ready():
 	update_icon()
 
 func load_start_position():
+#	this with save position, needs a new save function
 	if $"../../../".has_node("User"):
 		if app_name in get_node("../../../User").user:
 			var pos = str2var(get_node("../../../User").user[app_name]["position"])

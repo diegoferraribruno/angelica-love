@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/maps/City.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Background/building.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/maps/Sun.gd" type="Script" id=3]
+[ext_resource path="res://src/maps/Stars.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/maps/Atmoground.gd" type="Script" id=5]
 [ext_resource path="res://src/maps/Atmosphere.gd" type="Script" id=6]
+[ext_resource path="res://addons/kenney_interface_sounds/click_001.wav" type="AudioStream" id=7]
+[ext_resource path="res://src/maps/Celebration.gd" type="Script" id=8]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.980392, 0.980392, 0.980392, 1, 0.917647, 0.917647, 0.917647, 1 )
@@ -33,6 +36,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Celebration" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Timer4" type="Timer" parent="Celebration"]
+wait_time = 0.467
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Celebration"]
+stream = ExtResource( 7 )
+volume_db = 8.6
+pitch_scale = 0.24
+
+[node name="Stars" parent="." instance=ExtResource( 4 )]
+
 [node name="Sun" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
@@ -56,5 +73,6 @@ autostart = true
 
 [node name="Timer3" type="Timer" parent="."]
 
+[connection signal="timeout" from="Celebration/Timer4" to="Celebration" method="_on_Timer4_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
