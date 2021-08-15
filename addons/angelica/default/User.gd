@@ -7,6 +7,7 @@ var user = {
 	"color": "#dfbdfbff",
 	"rgb":[1,1,1],
 	"hashtags":[],
+	"friends":{},
 	"links":[],
 	"notes": [], 
 	"initialize":
@@ -131,6 +132,7 @@ var user = {
 		"Studio":{"position":"Vector2( 675.139, 287.069 )"},
 		"Title":{"position":"Vector2( 0, 0 )"}
 		}
+		
 
 #var apps = {}
 #

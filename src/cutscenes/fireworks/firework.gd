@@ -15,15 +15,15 @@ func reset():
 	position.y = screensize.y/3
 
 func _process(delta):
-	if position.y > 70:
+	if position.y > 36:
 		position += Vector2.UP*delta*120
 	else:
 		$"../AudioStreamPlayer2D".position.x = self.position.x
 		$"../AudioStreamPlayer2D".play()
-		for i in 200:
+		for i in 22:
 			var instance = sparkle.instance()
-			instance.position = self.global_position
 			instance.modulate = color
+			instance.position = self.global_position
 			get_parent().add_child(instance)
 		queue_free()
 		

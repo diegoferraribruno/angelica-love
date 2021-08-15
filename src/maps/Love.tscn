@@ -27,18 +27,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0.356863, 0.356863, 0.356863, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1.28627, 1.28627, 1.28627, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 33.5, 53.7, 66.6, 82.2, 95.3, 110.1, 129.9, 171, 188, 220.4, 247.5, 281.3, 303.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0.788235, 0.941176, 0.407843, 1 ), Color( 0.556863, 0.745098, 0.117647, 1 ), Color( 1, 0.937255, 0.662745, 1 ), Color( 0.972549, 0.988235, 0.984314, 1 ), Color( 0.968627, 0.984314, 0.984314, 1 ), Color( 0.980392, 0.980392, 0.980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.788235, 0.941176, 0.407843, 0.698039 ), Color( 0.788235, 0.941176, 0.407843, 0.698039 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1.5, 1.5, 1.5, 1 ) ]
-}
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -62,31 +50,11 @@ Kill = ExtResource( 8 )
 Goodie = ExtResource( 10 )
 Credits = ExtResource( 2 )
 
-[node name="City" parent="." instance=ExtResource( 12 )]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-modulate = Color( 0.888272, 0.843285, 0.564928, 1 )
-margin_right = 1028.0
-margin_bottom = 606.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.227
-
-[node name="BadTimer" type="Timer" parent="."]
-wait_time = 3.327
-
-[node name="GoodiesTimer" type="Timer" parent="."]
-wait_time = 6.068
-autostart = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "tempo"
 anims/tempo = SubResource( 1 )
+
+[node name="City" parent="." instance=ExtResource( 12 )]
 
 [node name="Cursor" type="AnimatedSprite" parent="."]
 modulate = Color( 3, 3, 3, 0.75 )
@@ -96,26 +64,40 @@ script = ExtResource( 4 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -8.0
-autoplay = true
 script = ExtResource( 3 )
 
-[node name="Player1Timer" type="Timer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+bus = "New Bus"
+
+[node name="Player" type="Timer" parent="."]
 wait_time = 6.109
 one_shot = true
 autostart = true
 
-[node name="PlayersTimer" type="Timer" parent="."]
+[node name="Goodies" type="Timer" parent="."]
+wait_time = 6.068
+autostart = true
+
+[node name="Delay" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 autostart = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
+[node name="Friends" type="Timer" parent="."]
+wait_time = 10.227
+
+[node name="Bad" type="Timer" parent="."]
+wait_time = 3.327
+
+[node name="GameOver" type="Timer" parent="."]
+wait_time = 15.5
 
 [connection signal="tree_exiting" from="." to="." method="_on_Love_tree_exiting"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="BadTimer" to="." method="_on_BadTimer_timeout"]
-[connection signal="timeout" from="GoodiesTimer" to="." method="_on_GoodiesTimer_timeout"]
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
-[connection signal="timeout" from="Player1Timer" to="." method="_on_Player1Timer_timeout"]
-[connection signal="timeout" from="PlayersTimer" to="." method="_on_PlayersTimer_timeout"]
+[connection signal="timeout" from="Player" to="." method="_on_Player_timeout"]
+[connection signal="timeout" from="Goodies" to="." method="_on_Goodies_timeout"]
+[connection signal="timeout" from="Delay" to="." method="_on_Delay_timeout"]
+[connection signal="timeout" from="Friends" to="." method="_on_Friends_timeout"]
+[connection signal="timeout" from="Bad" to="." method="_on_Bad_timeout"]
+[connection signal="timeout" from="GameOver" to="." method="_on_GameOver_timeout"]

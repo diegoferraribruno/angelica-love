@@ -25,9 +25,11 @@ func _process(delta):
 	b += bfactor*delta*revert
 	modulate = Color(r,g,b)
 	chao.modulate = Color(g-0.1,b-0.1,r-0.1)
+	var treecolor = Color(b*2.5,b*2.5,b*2.5)
+	get_node("../../").modulate_trees(treecolor)
 	
 
-	if b >= 2:
+	if b >= 1.80:
 		revert = -3
 	if b < 0.014:
 			revert = 1

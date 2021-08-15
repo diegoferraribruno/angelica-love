@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://sprites/emoojione64/1f333.png" type="Texture" id=1]
 [ext_resource path="res://sprites/emoojione64/1f335.png" type="Texture" id=2]
@@ -103,6 +103,21 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=13]
+length = 300.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15.8, 43.2, 72.7, 107.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.221154, 0.221154, 0.221154, 1 ), Color( 0.562255, 0.562255, 0.562255, 1 ), Color( 0.243137, 0.243137, 0.243137, 1 ), Color( 3, 3, 3, 1 ) ]
+}
+
 [node name="Tree2" type="StaticBody2D"]
 modulate = Color( 0.221154, 0.221154, 0.221154, 1 )
 position = Vector2( 0, -10 )
@@ -124,3 +139,7 @@ frames = SubResource( 12 )
 animation = "summer"
 speed_scale = 0.1
 offset = Vector2( -32, -64 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "background"
+anims/background = SubResource( 13 )

@@ -11,23 +11,23 @@ func _ready():
 #	position = Vector2(0,0)
 	$"LeffKey".margin_left = 0
 	$"LeffKey".margin_right = 330
-	$"LeffKey".margin_bottom = screensize.y-20
-	$"LeffKey".margin_top = screensize.y-240
+	$"LeffKey".margin_bottom = screensize.y-52
+	$"LeffKey".margin_top = screensize.y-276
 	
-	$"RightKey".margin_left = screensize.x - 370
+	$"RightKey".margin_left = screensize.x - 376
 	$"RightKey".margin_right = screensize.x-46
-	$"RightKey".margin_bottom = screensize.y-40
-	$"RightKey".margin_top = screensize.y-240
+	$"RightKey".margin_bottom = screensize.y-52
+	$"RightKey".margin_top = screensize.y-276
 	
-	$"SpaceBar".margin_bottom = screensize.y - 40
-	$"SpaceBar".margin_top = screensize.y- 240
+	$"SpaceBar".margin_bottom = screensize.y - 52
+	$"SpaceBar".margin_top = screensize.y- 276
 	$"SpaceBar".margin_left = screensize.x/2-118
 	$"SpaceBar".margin_right = screensize.x/2+76
 	
-	$"TextEdit".margin_right = screensize.x-46
-	$"TextEdit".margin_left = 40
-	$"TextEdit".margin_top = screensize.y-320
-	$"TextEdit".margin_top = screensize.y-250
+	$"TextEdit".margin_right = screensize.x-48
+	$"TextEdit".margin_left = 4
+	$"TextEdit".margin_top = screensize.y-280
+	$"TextEdit".margin_top = screensize.y-300
 	
 func _on_LeffKey_meta_clicked(meta):
 	match meta:

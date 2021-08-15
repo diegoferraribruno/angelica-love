@@ -8,7 +8,6 @@ var ambience = [
 	"res://addons/SFX/insect-sounds-at-night2.ogg",
 	"res://addons/SFX/rural-village-morning-ambience.ogg",
 	"res://addons/SFX/rural-village-morning-ambience.ogg",
-	"res://addons/SFX/rural-village-morning-ambience.ogg",
 	"res://addons/SFX/Berimb18 - Kitdepontos.Com.Br.ogg",
 	"res://addons/SFX/Berimb19 - Kitdepontos.Com.Br.ogg",
 	"res://addons/SFX/wind-sound-effect-free.ogg",
@@ -40,12 +39,18 @@ func _on_AudioStreamPlayer_finished():
 		elif sfx == 4:
 			scene = "summer"
 			get_parent().get_tree().call_group("Trees","set_scene")
+		if sfx == 3:
+			get_parent().get_tree().call_group("Trees","set_scene")
+			scene == "city"
+#			$"../City/Celebration".reset()
 		if sfx == 2:
-			$"../City/Celebration".reset()
+#			get_parent().get_tree().call_group("Trees","stop")
 			volume_db = -5
+			get_parent().get_tree().call_group("Friends","register")
 			get_parent().gameover()
 		elif sfx ==1:
-			pitch_scale = 1.8
+#			get_node("../City").get_tree().call_group("city","stop")
+			pitch_scale = 1.6
 			$"../AudioStreamPlayer2".play()
 #		if sfx > 0:
 #			get_parent().get_node("BadTimer").wait_time = 0.5 * sfx
@@ -54,5 +59,4 @@ func _on_AudioStreamPlayer_finished():
 #			get_parent().get_node("BadTimer").wait_time = 4
 			
 	else:
-#		get_tree().reload_current_scene()
-		get_parent().queue_free()
+		get_parent().gameover()

@@ -3,7 +3,7 @@
 [ext_resource path="res://src/maps/City.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Background/building.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/maps/Sun.gd" type="Script" id=3]
-[ext_resource path="res://src/maps/Stars.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/cutscenes/stars/StarField.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/maps/Atmoground.gd" type="Script" id=5]
 [ext_resource path="res://src/maps/Atmosphere.gd" type="Script" id=6]
 [ext_resource path="res://src/cutscenes/fireworks/Celebration.tscn" type="PackedScene" id=7]
@@ -61,6 +61,8 @@ one_shot = true
 autostart = true
 
 [node name="Timer3" type="Timer" parent="."]
+
+[node name="Background" type="Node" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

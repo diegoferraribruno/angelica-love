@@ -24,7 +24,7 @@ onready var health_bar = $Health
 onready var cooldown = $Cooldown
 onready var gun := $Gun
 onready var bullet_spawnpoint = $Gun/Position2D
-onready var body = $Body
+onready var corpo = $Body
 onready var user = get_node("../../../User").user
 
 var good = ["1f600","1f601","1f602","1f603","1f604","1f605","1f606","1f609","1f60a","1f60b","1f60e","1f60d","1f618","1f617","1f619","1f61a","263a","1f642","1f60c","1f913","1f61b","1f61c","1f61d","1f643","1f607","1f608"]
@@ -44,7 +44,7 @@ func _ready():
 #	]
 #	var corpo_cor = P1color[rand_range(0,6)]
 	var corpo_cor = user["color"]
-	body.modulate = Color(corpo_cor)
+	corpo.modulate = Color(corpo_cor)
 	mask.modulate = Color(corpo_cor)
 	$"Baloon".modulate = Color(corpo_cor)
 	$"Gun".modulate = Color(corpo_cor)
@@ -74,13 +74,10 @@ func _input(event):
 			touch = false
 func _process(_delta):
 	$AvatarHead.modulate.a  = clamp(health/10 + 0.4,0.4,1)
-#	body.modulate.a  = health/10
 	if health < 6:
 		$Baloon.visible = true
-#		changeface("sadface")
 	else:
 		$Baloon.visible = false
-#		changeface("happyface")
 		
 	if health  > 10:
 		mask.visible = true
@@ -93,7 +90,6 @@ func _on_Cooldown_timeout():
 
 func set_health(value:float):
 	health = min(value, max_health)
-#	health_bar.value = health
 		
 	if health <= 0:
 		queue_free()
@@ -102,7 +98,6 @@ func set_health(value:float):
 		if bullet_type == 7:
 			$"AudioStreamPlayer2D".play()
 			bullet_type = 0
-	
 
 func move(_delta):
 	if position.x < 0:
@@ -132,31 +127,18 @@ func move(_delta):
 	motion = move_and_slide(motion)
 	
 	if motion.x < -anime_run_h:
-		body.play("run-h")
-		body.flip_h = false
+		corpo.play("run-h")
+		corpo.flip_h = false
 	elif motion.x > anime_run_h:
-		body.play("run-h")
-		body.flip_h = true
+		corpo.play("run-h")
+		corpo.flip_h = true
 	elif motion.y > anime_run_h or motion.y < -anime_run_h:
-		body.play("run-v")
+		corpo.play("run-v")
 	else:
-		body.flip_h = true
-		body.play("run-h")
+		corpo.flip_h = true
+		corpo.play("run-h")
 
 func shoot():
-#	var bullet = Bullet.instance()
-#	bullet.global_position = bullet_spawnpoint.global_position
-#	bullet.shooter = self
-#	get_parent().add_child(bullet)
-#
-#	can_shoot = false
-#	cooldown.start()
-#	$Gun/AnimatedSprite.set_frame(1)
-	
-#	$Delay.wait_time = rand_range(0.01,0.2)
-#	$Delay.start()
-	
-#func _on_Delay_timeout():
 	var bullet = Bullet.instance()
 	bullet.global_position = bullet_spawnpoint.global_position
 	bullet.shooter = self
@@ -171,6 +153,7 @@ func damage(damage: int):
 	self.health -= damage
 
 func _on_Area2D_body_entered(body):
+	shoot()
 	drag.x = -10
 
 func _on_Area2D_body_exited(body):
@@ -181,18 +164,12 @@ func changeface(animation):
 	var goodsize = good.size()
 	var badsize = bad.size()
 	if animation == "happyface":
-#		$"AvatarHead".bbcode_text = "[img]res://img/32/"+good[rand_range(0,goodsize)]+".png[/img]"
 		$"AvatarHead".bbcode_text = "[img]res://img/32/"+user_face+".png[/img]"
 	else:
 		$"AvatarHead".bbcode_text = "[img]res://img/32/"+bad[rand_range(0,badsize)]+".png[/img]"
-#	$AvatarHead.play(animation)
-#	$AvatarHead.set_frame(face)
-#	$AvatarHead.stop()
-
 
 func _on_Timer_timeout():
 	self.health = 18
-	
 
 func _on_AvatarHead_meta_clicked(meta):
-	pass # Replace with function body.
+	pass

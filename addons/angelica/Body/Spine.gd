@@ -1,14 +1,5 @@
 extends YSort
 
-	 #      $      $       $       $      *
-	 #      #      #       #       #      #
-# 1  #  0   #  0   #   D    #   A  #  Y   #  S #
-################################################
-################# Agelica 200 ##################
-######2021-08-02 100 days of development########
-################################################
-################################################
-
 onready var user = $"../User"
 onready var alarm = $"AudioStreamPlayer"
 onready var game = get_parent().get_node("Game")
@@ -16,8 +7,7 @@ onready var screensize = get_viewport().get_visible_rect().size
 onready var music = {"main":{"BPM":130,"name":"playing"},"tracks":{"0":{"BPM":260,"audiopack":"kenney","beat":"Ambient","fx":0,"loop":true,"volume":0},"1":{"BPM":130,"audiopack":"kylan","beat":"<><<>><< ","fx":0,"loop":true,"volume":0},"2":{"BPM":130,"audiopack":"openpath1","beat":"Diego01","fx":0,"loop":true,"volume":-11.428571}}}
 
 export var dj : PackedScene
-#onready var Cbar = get_node("../CommandBar")
-
+#var dj = preload("res://addons/angelica/DJ/DJ.tscn")
 var paint = preload("res://addons/angelica/GDPaint/PaintTools.tscn")
 var pong = preload("res://addons/angelica/Games/Pong/pong.tscn")
 var truck = preload("res://addons/angelica/Games/trucktown/car_select.tscn")
@@ -29,7 +19,6 @@ var glow = preload("res://addons/angelica/WorldEnviroments/Glow.tscn")
 var studio = preload("res://addons/angelica/Studio/Studio.tscn")
 var chat = preload("res://addons/angelica/Chat/Chat.tscn")
 var editor = preload("res://addons/angelica/Editor/Editor.tscn")
-#var dj = preload("res://addons/angelica/DJ/DJ.tscn")
 var dock = preload("res://addons/angelica/Dock/Dock.tscn")
 var mini = preload("res://addons/angelica/Chat/ChatMini.tscn")
 var rest = preload("res://addons/angelica/Health/Rest.tscn")
@@ -38,6 +27,7 @@ var star = preload("res://addons/angelica/Star/Star.tscn")
 var title = preload("res://addons/angelica/Title/FloatingTitle.tscn")
 var phone = preload("res://addons/angelica/Dock/Phone.tscn")
 var bird = preload("res://addons/angelica/Bird/Bird.tscn")
+var friends = preload("res://src/maps/friends.tscn")
 
 func text_entered(argument):
 	synapse(argument)
@@ -59,8 +49,7 @@ func initialize():
 		yield(get_tree().create_timer(0.1), "timeout")
 
 func quit(argument):
-#	for i in quit:
-		input_entered(argument)
+	input_entered(argument)
 
 func synapse(new_text):
 	var command = []
@@ -140,7 +129,6 @@ func synapse(new_text):
 			elif self.has_node("Chat"):
 				self.get_node("Chat").queue_free()
 				ai_say("Chat Off")
-				
 		"truck":
 			if game.has_node("CarSelect") == false:
 				var instance = truck.instance()
@@ -158,6 +146,13 @@ func synapse(new_text):
 			elif game.has_node("Love"):
 				get_node("../Game/Love").queue_free()
 				ai_say("What was that?")
+		"friends":
+			var instance = friends.instance()
+			if game.has_node("Friends") == false:
+				game.add_child(instance)
+			elif game.has_node("Friends"):
+				get_node("../Game/Friends").queue_free()
+#				ai_say("What was that?")
 #				quit("dj clear")
 		"login":
 			var instance = login.instance()
@@ -197,7 +192,6 @@ func synapse(new_text):
 					if get_node("../Paint").has_node("Glow") == true:
 						get_node("../Paint/Glow").queue_free()
 						ai_say("Glow removed!")
-			
 		"title":
 			if get_node("../Paint").has_node("Title") == false:
 				var instance = title.instance()
@@ -247,6 +241,8 @@ func synapse(new_text):
 					get_node("DJ")._on_RichTextLabel_meta_clicked(command[1])
 		"ss":
 			screen_shot(false)
+		"screenshot":
+			screen_shot(false)
 		"ps":
 			var arg = [""]
 			var args = PoolStringArray(arg)
@@ -260,6 +256,10 @@ func synapse(new_text):
 			yield(get_tree().create_timer(0.2), "timeout")
 		"save":
 			save_prefs()
+		"bye":
+			save_prefs()
+			ai_say(str("Bye. (Reload to come back)"))
+			$"Bye".start()
 		_:
 			ai_say("command not processed: " + new_text)
 
@@ -268,6 +268,7 @@ func screen_shot(selfie):
 		if selfie == false:
 			visible = false
 			get_node("../Dock").visible = false
+			
 		yield(get_tree(), "idle_frame")
 		yield(get_tree(), "idle_frame")
 		var image = get_viewport().get_texture().get_data()
@@ -333,9 +334,12 @@ func save_prefs():
 
 func print_user():
 	ai_say(str(user.user))
-	
+
 func _on_RichTextLabel_meta_clicked(meta):
 	synapse(meta)
-	
+
 func add_app(app,app_xy):
 	get_node("../").add_app(app,app_xy)
+
+func _on_Bye_timeout():
+	get_tree().quit()

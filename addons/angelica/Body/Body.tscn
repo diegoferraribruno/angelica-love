@@ -26,3 +26,8 @@ position = Vector2( 6.16894, 5.18164 )
 
 [node name="Login" parent="." instance=ExtResource( 1 )]
 position = Vector2( 285.512, 53.5607 )
+
+[node name="Bye" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Bye" to="." method="_on_Bye_timeout"]

@@ -7,6 +7,9 @@ var draw_matrix = [Rect2(Vector2(0,0), Vector2(64, -32))]
 var rand_generate = RandomNumberGenerator.new()
 onready var screensize = get_viewport().get_visible_rect().size
 onready var max_height = screensize.y/6
+
+var speed = 40
+
 func _ready():
 	rand_generate.randomize()
 	var x = rand_generate.randi_range(16,56)
@@ -15,12 +18,15 @@ func _ready():
 	rectx = Rect2(Vector2(0,-1*y),Vector2(x,y))
 	draw_matrix.push_front(rectx)
 
+func stop():
+	speed = 0
+
 func _draw():
 	for i in draw_matrix:
 		draw_rect(i, bg_color)
 
 func _process(delta):
-	position += Vector2.LEFT*delta*50
+	position += Vector2.LEFT*delta*speed
 
 func _on_Timer_timeout():
 	queue_free()
