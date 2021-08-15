@@ -23,7 +23,7 @@ var pong = preload("res://addons/angelica/Games/Pong/pong.tscn")
 var truck = preload("res://addons/angelica/Games/trucktown/car_select.tscn")
 var love = preload("res://src/maps/Love.tscn")
 var login = preload("res://addons/angelica/Login/Login.tscn")
-var xperma = preload("res://src/maps/Xperma.tscn")
+var xperma = preload("res://src/cutscenes/abertura/abertura.tscn")
 var city = preload("res://src/maps/City.tscn")
 var glow = preload("res://addons/angelica/WorldEnviroments/Glow.tscn")
 var studio = preload("res://addons/angelica/Studio/Studio.tscn")
@@ -68,7 +68,7 @@ func synapse(new_text):
 		command = new_text.split(" ", true, 4)
 	match command[0]:
 		"hide":
-			get_parent()._on_AngelicaButton_meta_clicked(command[0])
+			get_parent()._on_AngelicaButton_meta_clicked(new_text)
 		"shades":
 			$"../Shades".visible = not $"../Shades".visible
 		"user":

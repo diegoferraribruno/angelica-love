@@ -28,3 +28,8 @@ func _on_AngelicaButton_meta_clicked(meta):
 					get_node("Dock").visible = true
 				else:
 					get_node("Body/Phone").visible = true
+		"hide on":
+			if get_node("Body").visible ==  true:
+				get_node("Body").visible = false
+			if has_node("Dock"):
+					get_node("Dock").visible = false

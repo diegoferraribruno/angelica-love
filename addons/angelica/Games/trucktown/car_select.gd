@@ -1,7 +1,8 @@
 extends Node2D
 
 var initialize = [
-	"title [center][rainbow]Truck Town Demo Remix - WIP[/rainbow][/center]",
+	"title [center][rainbow]Truck Town Demo Remix - W.I.P.[/rainbow][/center]",
+	"hide on",
 #	"dj clear",
 #	"dj play playing",
 #	"track fps",

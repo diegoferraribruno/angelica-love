@@ -2,7 +2,7 @@ extends Node2D
 
 var initialize = [
 	"glow on",
-	"hide"
+	"hide on"
 #	"title [center][rainbow]This is how it all started...[/rainbow][/center]",
 #	"dj clear",
 #	"dj play playing",

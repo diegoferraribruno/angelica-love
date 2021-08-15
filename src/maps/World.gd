@@ -10,7 +10,7 @@ onready var screensize := get_viewport_rect().size
 onready var max_height := screensize.y/3
 var initialize = [
 	"glow on",
-	"hide"
+	"hide on",
 #	"title [center][rainbow]Share Your Love[/rainbow][/center]",
 #	"dj clear",
 #	"dj play Love-01",
@@ -45,7 +45,7 @@ func gameover():
 	if get_parent().has_node("Credits") == false:
 		var instance = Credits.instance()
 		get_parent().add_child(instance)
-		$Credits.visible = true
+#		$Credits.visible = true
 	$"City/Celebration".reset()
 	
 

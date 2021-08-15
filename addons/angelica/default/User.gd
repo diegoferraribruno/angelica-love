@@ -2,7 +2,7 @@ extends Node
 var user = {
 	"id":"",
 	"name":"Player",
-	"emoji":"23ef",
+	"emoji":"1f60e",
 	"sillyword":"sillyword",
 	"color": "#dfbdfbff",
 	"rgb":[1,1,1],

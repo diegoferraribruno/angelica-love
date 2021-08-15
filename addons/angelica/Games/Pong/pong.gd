@@ -3,6 +3,7 @@ var close = true
 var icon = "1f3d3"
 var initialize = [
 	"title [center][color=red]Its Pong Time![/color][/center]",
+	"hide on"
 #	"volume",
 #	"volume",
 #	"volume",
