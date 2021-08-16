@@ -267,7 +267,8 @@ func screen_shot(selfie):
 	if user.user["name"] != "Player":
 		if selfie == false:
 			visible = false
-			get_node("../Dock").visible = false
+			if get_parent().has_node("Dock"):
+				get_node("../Dock").visible = false
 			
 		yield(get_tree(), "idle_frame")
 		yield(get_tree(), "idle_frame")
@@ -277,7 +278,8 @@ func screen_shot(selfie):
 		ai_say("File saved to" +str(OS.get_user_data_dir()))
 		if selfie == false:
 			visible = true
-			get_node("../Dock").visible = true
+			if get_parent().has_node("Dock"):
+				get_node("../Dock").visible = true
 	else:
 		ai_say("Please [url=login]login[/url] first so we can know where to save your pictures")
 

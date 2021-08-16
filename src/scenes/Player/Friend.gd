@@ -19,6 +19,7 @@ var touch := false
 var time := 0.02
 var bullet_type := 0
 var bag = {}
+var friend_name = ""
 
 onready var mask = $mask
 onready var health_bar = $Health
@@ -52,13 +53,21 @@ func _ready():
 		for i in user["friends"]:
 			if str("Friend"+str(x)) == self.name:
 				var cores =  user["friends"][i]["color"]
-				cores = str2var("Color("+cores+")")
-				corpo_cor = Color(cores)
+				if cores is Color:
+					corpo_cor = cores
+				else:
+					cores = str2var("Color("+cores+")")
+					corpo_cor = Color(cores)
 				happyface = user["friends"][i]["happyface"]
 				sadface = user["friends"][i]["sadface"]
 				bullet_type = user["friends"][i]["bullet_type"]
 				bag = user["friends"][i]["bag"]
+				friend_name = user["friends"][i]["friend_name"]
+				$"Label".bbcode_text = "[center]"+friend_name+"[/center]" 
+				$"Label".visible = true
 			x += 1
+	else:
+		$"Label".visible = false
 	corpo.modulate = corpo_cor
 	mask.modulate = corpo_cor
 	$"Baloon".modulate = corpo_cor
@@ -66,7 +75,6 @@ func _ready():
 	corpo.play("stand")
 		
 	changeface("sadface")
-	$"Label".visible = false
 		
 		
 func _physics_process(delta):
@@ -90,6 +98,7 @@ func _process(_delta):
 	if health < 6:
 		$Baloon.visible = true
 		changeface("sadface")
+		drag.x -= 1
 	else:
 		$Baloon.visible = false
 	if health  > 10:
@@ -140,7 +149,7 @@ func damage(damage: int):
 			
 		
 func register():
-	var friend = {"happyface":happyface,"sadface":sadface, "color":corpo_cor }
+	var friend = {"happyface":happyface,"sadface":sadface, "color":corpo_cor, "bag":bag, "friend_name":friend_name, "bullet_type":bullet_type }
 	get_parent().friends[self.name] = friend
 
 func _on_Delay_timeout():
@@ -154,7 +163,7 @@ func _on_Delay_timeout():
 	cooldown.start()
 	$Gun/AnimatedSprite.set_frame(1)
 
-func _on_Area2D_body_entered(_body):
+func _on_Area2D_body_entered(body):
 	shoot()
 #	drag.x = -5
 	pass
