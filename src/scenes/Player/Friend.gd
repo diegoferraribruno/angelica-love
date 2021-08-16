@@ -18,6 +18,7 @@ var drag := Vector2(-100,0)
 var touch := false
 var time := 0.02
 var bullet_type := 0
+var bag = {}
 
 onready var mask = $mask
 onready var health_bar = $Health
@@ -55,6 +56,8 @@ func _ready():
 				corpo_cor = Color(cores)
 				happyface = user["friends"][i]["happyface"]
 				sadface = user["friends"][i]["sadface"]
+				bullet_type = user["friends"][i]["bullet_type"]
+				bag = user["friends"][i]["bag"]
 			x += 1
 	corpo.modulate = corpo_cor
 	mask.modulate = corpo_cor
