@@ -13,7 +13,7 @@ sort_enabled = false
 script = ExtResource( 35 )
 
 [node name="Mini" parent="." instance=ExtResource( 3 )]
-position = Vector2( 331.507, 321.359 )
+position = Vector2( 333.395, 289.267 )
 
 [node name="Hint" parent="." instance=ExtResource( 21 )]
 position = Vector2( 8.39134, 44.6763 )
@@ -22,10 +22,10 @@ position = Vector2( 8.39134, 44.6763 )
 stream = ExtResource( 17 )
 
 [node name="Phone" parent="." instance=ExtResource( 2 )]
-position = Vector2( 738.615, 5.18164 )
+position = Vector2( 738.615, 12.7326 )
 
 [node name="Login" parent="." instance=ExtResource( 1 )]
-position = Vector2( 285.512, 53.5607 )
+position = Vector2( 289.287, 40.3465 )
 
 [node name="Bye" type="Timer" parent="."]
 wait_time = 3.0

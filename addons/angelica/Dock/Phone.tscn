@@ -92,7 +92,7 @@ __meta__ = {
 pause_mode = 2
 margin_left = -1.0
 margin_right = 242.0
-margin_bottom = 461.0
+margin_bottom = 463.0
 mouse_filter = 1
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
@@ -101,10 +101,10 @@ __meta__ = {
 
 [node name="Screen" type="Panel" parent="."]
 pause_mode = 2
-margin_left = 1.81079
-margin_top = 0.621582
-margin_right = 236.811
-margin_bottom = 455.622
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 237.0
+margin_bottom = 461.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
@@ -112,10 +112,10 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 76.9118
-margin_top = 428.5
-margin_right = 195.912
-margin_bottom = 458.5
+margin_left = 77.0
+margin_top = 434.0
+margin_right = 167.0
+margin_bottom = 464.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0.513726, 0.513726, 0.513726, 0.752941 )
@@ -153,7 +153,7 @@ autostart = true
 margin_left = 8.0
 margin_top = 71.0
 margin_right = 232.0
-margin_bottom = 432.0
+margin_bottom = 431.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )

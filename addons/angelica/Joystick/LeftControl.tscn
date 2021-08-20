@@ -141,7 +141,6 @@ scale = Vector2( 0.5, 0.5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Axis/AnimatedSprite"]
 frames = SubResource( 8 )
 animation = "walk"
-frame = 3
 playing = true
 flip_h = true
 
