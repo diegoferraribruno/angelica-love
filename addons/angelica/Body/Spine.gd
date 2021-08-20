@@ -57,6 +57,8 @@ func synapse(new_text):
 	if new_text is String:
 		command = new_text.split(" ", true, 4)
 	match command[0]:
+		"directional":
+			$"../DirectionalPad".visible = !$"../DirectionalPad".visible 
 		"joystick":
 			$"../TouchControl".visible = !$"../TouchControl".visible 
 		"hide":

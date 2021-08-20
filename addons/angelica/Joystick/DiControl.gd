@@ -15,9 +15,9 @@ func _ready():
 	position = Vector2(180,screensize.y-180)
 	
 func _draw():
-	draw_circle(Vector2(0,0),32,Color(0.8,0.8,0.8,0.2))
-	draw_circle(Vector2(0,0),44,Color(0.8,0.8,0.8,0.2))
-	draw_circle(Vector2(0,0),20,Color(0.8,0.8,0.8,0.5))
+	draw_circle(Vector2(0,0),36,Color(0.8,0.8,0.8,0.1))
+	draw_circle(Vector2(0,0),48,Color(0.8,0.8,0.8,0.1))
+#	draw_circle(Vector2(0,0),20,Color(0.8,0.8,0.8,0.5))
 
 func _process(delta):
 	if joystick.following:
@@ -37,7 +37,6 @@ func _on_Area2D_area_exited(area):
 		area.get_parent().following = false
 
 func _on_Area2D_body_exited(body):
-	print (body)
 	if body.name == "Area2D2":
 		body.get_parent().following = false
 

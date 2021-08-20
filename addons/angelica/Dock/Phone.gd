@@ -39,6 +39,7 @@ var interface = [
 #	"[url=demo][img]res://img/32/1f608.png[/img][/url]",
 	"[center]W.I.P.[/center]",
 	"\n",
+	"[url=directional][img]res://img/32/2194.png[/img][/url] ",
 	"[url=friends][img]res://img/32/1f917.png[/img][/url] ",
 	"[url=dock][img]res://img/32/268a.png[/img][/url] ",
 	"[url=city][img]res://img/32/1f307.png[/img][/url] ",

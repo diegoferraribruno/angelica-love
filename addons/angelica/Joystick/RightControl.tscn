@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://addons/angelica/Controller/DiControlR.gd" type="Script" id=1]
-[ext_resource path="res://addons/angelica/Controller/JoystickR.gd" type="Script" id=2]
-[ext_resource path="res://addons/angelica/Themes/Cursor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/sprites720p.png" type="Texture" id=1]
+[ext_resource path="res://addons/angelica/Joystick/JoystickR.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/Player/Gun.gd" type="Script" id=3]
 [ext_resource path="res://sprites/sprites16x45.png" type="Texture" id=4]
-[ext_resource path="res://src/scenes/Player/Gun.gd" type="Script" id=5]
-[ext_resource path="res://sprites/sprites720p.png" type="Texture" id=6]
+[ext_resource path="res://addons/angelica/Joystick/DiControlR.gd" type="Script" id=5]
+[ext_resource path="res://addons/angelica/Themes/Cursor.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.7922
@@ -24,12 +24,12 @@ corner_radius_bottom_left = 60
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 1 )
 region = Rect2( 864, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 1 )
 region = Rect2( 800, 832, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
@@ -53,7 +53,7 @@ animations = [ {
 [node name="RightControl" type="Node2D"]
 process_priority = 1
 position = Vector2( 120, 420 )
-script = ExtResource( 1 )
+script = ExtResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -63,7 +63,7 @@ shape = SubResource( 1 )
 [node name="Joystick" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Cursor" parent="Joystick" instance=ExtResource( 3 )]
+[node name="Cursor" parent="Joystick" instance=ExtResource( 6 )]
 visible = true
 script = null
 
@@ -107,7 +107,7 @@ __meta__ = {
 [node name="Gun" type="Node2D" parent="."]
 position = Vector2( 0, -7.545 )
 scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 5 )
+script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Gun"]
 position = Vector2( 13.7402, 2.56968 )

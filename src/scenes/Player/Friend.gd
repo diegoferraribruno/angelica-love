@@ -13,7 +13,6 @@ var max_speed := 160
 var can_shoot = true
 var morrendo := true
 var face := 1
-#var animation :="sface"
 var drag := Vector2(-100,0)
 var touch := false
 var time := 0.01
@@ -100,7 +99,6 @@ func _input(event):
 			touch = false
 
 func _process(_delta):
-#	$AvatarHead.modulate.a = clamp(health/10 + 0.4,0.4,1)
 	if health < 8:
 		$Baloon.visible = true
 		changeface("sadface")
@@ -176,26 +174,23 @@ func _on_Area2D_body_entered(body):
 #	drag.x = -5
 	pass
 
+	shoot()
 func _on_Area2D_body_exited(_body):
 #	drag.x = -2
 	pass
 
 func changeface(animation):
-#	var goodsize = good.size()
-#	var badsize = bad.size()
 	if animation == "happyface":
 		$"AvatarHead".bbcode_text = "[img]res://img/32/"+happyface+".png[/img]"
 	else:
 		$"AvatarHead".bbcode_text = "[img]res://img/32/"+sadface+".png[/img]"
-#	$AvatarHead.play(animation)
-#	$AvatarHead.set_frame(face)
-#	$AvatarHead.stop()
-
 
 func _on_Timer_timeout():
 	self.health = 18
 	
 
 func _on_AvatarHead_meta_clicked(meta):
-	
+	match meta:
+		"status":
+			pass
 	pass # Replace with function body.
