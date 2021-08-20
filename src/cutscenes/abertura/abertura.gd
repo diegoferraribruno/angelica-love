@@ -1,5 +1,5 @@
 extends Node2D
-onready var scene = load("res://src/maps/Xperma.tscn")
+onready var scene = load("res://src/maps/Love.tscn")
 onready var screensize := get_viewport_rect().size
 onready var screencenter := screensize/2-Vector2(640,360)
 var initialize = [

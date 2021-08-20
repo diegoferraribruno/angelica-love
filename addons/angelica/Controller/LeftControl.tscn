@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/angelica/Controller/DiControl.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/Player/Gun.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/Controller/Joystick.gd" type="Script" id=3]
+[ext_resource path="res://img/48/1f59d.png" type="Texture" id=4]
+[ext_resource path="res://addons/angelica/Controller/Axis.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 172.0
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 0.635294 )
+border_width_top = 6
+border_width_bottom = 6
+border_color = Color( 0.8, 0.8, 0.8, 0.0156863 )
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 0.862745 )
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "tiro",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 90.0
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.541176, 0.0352941, 0.0352941, 0.984314 )
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.686275, 0, 0, 0.396078 )
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[node name="LeftControl" type="Node2D"]
+position = Vector2( 128.418, 389.132 )
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource( 5 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -80.0
+margin_top = -80.0
+margin_right = 80.0
+margin_bottom = 80.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Axis" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Axis" type="Panel" parent="Axis"]
+modulate = Color( 0.639216, 0.639216, 0.639216, 1 )
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 58.0
+margin_bottom = 24.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Axis"]
+position = Vector2( 32, 6.02408 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Axis/AnimatedSprite"]
+margin_left = -88.8579
+margin_top = -37.2246
+margin_right = 120.0
+margin_bottom = 14.7754
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Joystick" type="Node2D" parent="."]
+position = Vector2( 26.9695, 26.2204 )
+script = ExtResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="Joystick"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Joystick/Area2D2"]
+shape = SubResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Joystick"]
+visible = false
+modulate = Color( 1, 1, 1, 0.0117647 )
+margin_left = -84.0
+margin_top = -88.0
+margin_right = 84.0
+margin_bottom = 84.0
+text = " ffdsfdsaasgdsagdgasdgsagdsag
+dasg gdasggdsagadsg
+dsafisah fihsfhsdf"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Joystick"]
+position = Vector2( -91.3283, -89.9976 )
+shape = SubResource( 3 )
+
+[node name="Panel2" type="Panel" parent="Joystick"]
+light_mask = 0
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -20.0
+margin_top = -88.0
+margin_right = 20.0
+margin_bottom = -74.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2( 0, 0.644501 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gun"]
+visible = false
+position = Vector2( 64, 10.7591 )
+frames = SubResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="Gun"]
+position = Vector2( 76.0983, 10.3683 )
+scale = Vector2( 0.5, 4 )
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="gui_input" from="Joystick/RichTextLabel" to="Joystick" method="_on_RichTextLabel_gui_input"]
+[connection signal="pressed" from="Joystick/TouchScreenButton" to="Joystick" method="_on_TouchScreenButton_pressed"]
+[connection signal="released" from="Joystick/TouchScreenButton" to="Joystick" method="_on_TouchScreenButton_released"]

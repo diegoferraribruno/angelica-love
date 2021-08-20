@@ -4,7 +4,7 @@ export var TreeScene : PackedScene
 export var XPlayer : PackedScene 
 export var Kill : PackedScene
 export var Goodie : PackedScene
-export var Love : PackedScene
+export var abertura : PackedScene
 onready var screensize := get_viewport_rect().size
 
 func _ready():
@@ -27,7 +27,7 @@ func _on_Timer_timeout():
 	
 func gameover():
 #	$Credits.visible = true
-	var instance = Love.instance()
+	var instance = abertura.instance()
 	get_node("../../").add_child(instance)
 	get_parent().queue_free()
 	

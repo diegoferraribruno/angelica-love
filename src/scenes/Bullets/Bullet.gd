@@ -1,12 +1,16 @@
 extends Area2D
 var type := 0
 var shooter
-var speed := 6
-var damage_amount := -3
+var speed := 4
+var damage_amount := -6
 onready var screensize := get_viewport_rect().size
 
 func _ready():
-	look_at(get_global_mouse_position())
+	var direction = shooter.position + shooter.aimdirection
+	direction.x = direction.x
+	direction.y = direction.y
+#	look_at(get_global_mouse_position())
+	look_at(direction)
 #	type = rand_range(0,27)
 	$Bullet.set_frame(type)
 	if type == 7:
@@ -42,8 +46,7 @@ func _on_Bullet_body_entered(body: Node):
 			
 		if is_instance_valid(shooter):
 			shooter.health += 0.4
-	else:
-		rotation = rotation*-1
+	rotation = rotation*-1
 #func _process(delta):
 #	$Bullet.rotation += 0.004
 func _on_bullet_animation_finished():

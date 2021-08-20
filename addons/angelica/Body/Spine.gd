@@ -8,13 +8,14 @@ onready var music = {"main":{"BPM":130,"name":"playing"},"tracks":{"0":{"BPM":26
 
 export var dj : PackedScene
 #var dj = preload("res://addons/angelica/DJ/DJ.tscn")
-var paint = preload("res://addons/angelica/GDPaint/PaintTools.tscn")
-var pong = preload("res://addons/angelica/Games/Pong/pong.tscn")
-var truck = preload("res://addons/angelica/Games/trucktown/car_select.tscn")
-var love = preload("res://src/maps/Love.tscn")
+onready var love = preload("res://src/maps/Love.tscn")
+onready var city = preload("res://src/maps/City.tscn")
+onready var xperma = preload("res://src/maps/Xperma.tscn")
+onready var paint = preload("res://addons/angelica/GDPaint/PaintTools.tscn")
+onready var pong = preload("res://addons/angelica/Games/Pong/pong.tscn")
+onready var truck = preload("res://addons/angelica/Games/trucktown/car_select.tscn")
+#var love = preload("res://src/cutscenes/abertura/abertura.tscn")
 var login = preload("res://addons/angelica/Login/Login.tscn")
-var xperma = preload("res://src/cutscenes/abertura/abertura.tscn")
-var city = preload("res://src/maps/City.tscn")
 var glow = preload("res://addons/angelica/WorldEnviroments/Glow.tscn")
 var studio = preload("res://addons/angelica/Studio/Studio.tscn")
 var chat = preload("res://addons/angelica/Chat/Chat.tscn")
@@ -56,6 +57,8 @@ func synapse(new_text):
 	if new_text is String:
 		command = new_text.split(" ", true, 4)
 	match command[0]:
+		"joystick":
+			$"../TouchControl".visible = !$"../TouchControl".visible 
 		"hide":
 			get_parent()._on_AngelicaButton_meta_clicked(new_text)
 		"shades":

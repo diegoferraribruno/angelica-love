@@ -1,10 +1,10 @@
 extends Area2D
 var motion := Vector2.LEFT
 var shooter
-var speed := 3
+var speed := 2
 var acceleration := 0.1
 var max_speed := 160
-var damage_amount := 14
+var damage_amount := 8
 onready var screensize := get_viewport_rect().size
 
 func _ready():

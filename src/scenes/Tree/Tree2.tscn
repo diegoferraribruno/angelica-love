@@ -43,63 +43,63 @@ region = Rect2( 352, 608, 32, 32 )
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 416, 608, 32, 32 )
+region = Rect2( 384, 608, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 608, 608, 32, 32 )
+region = Rect2( 480, 608, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 384, 608, 32, 32 )
+region = Rect2( 640, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 480, 608, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 640, 256, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 6 )
 region = Rect2( 192, 1376, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 416, 608, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 608, 608, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 2 ), ExtResource( 3 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "summer",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 7 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "winter",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), SubResource( 8 ), SubResource( 9 ), SubResource( 3 ), SubResource( 10 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 18 ) ],
+"frames": [ SubResource( 2 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "city",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), SubResource( 11 ), SubResource( 11 ), SubResource( 3 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "winter",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), SubResource( 6 ), SubResource( 7 ), SubResource( 3 ), SubResource( 8 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), SubResource( 2 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "spring",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), ExtResource( 3 ), SubResource( 9 ), SubResource( 3 ), SubResource( 4 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "summer",
 "speed": 5.0
 } ]
 
@@ -109,7 +109,7 @@ position = Vector2( 0, -10 )
 script = ExtResource( 5 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( 8.49248, 3.68754 )
+position = Vector2( 0.49248, 6.68754 )
 color = Color( 0, 0, 0, 0.0627451 )
 polygon = PoolVector2Array( -23.1431, 5.41407, -15.1971, 6.07623, -6.66005, 6.07623, 0.165128, 6.07623, 13.4084, 5.5465, 24.003, 3.69244, 19.8116, 2.57055, 17.2038, 1.87254, 5.60899, 1.87254, -4.79657, 1.57524, -14.0129, 2.16984 )
 

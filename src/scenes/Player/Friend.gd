@@ -16,10 +16,11 @@ var face := 1
 #var animation :="sface"
 var drag := Vector2(-100,0)
 var touch := false
-var time := 0.02
+var time := 0.01
 var bullet_type := 0
 var bag = {}
 var friend_name = ""
+onready var aimdirection = Vector2.ZERO
 
 onready var mask = $mask
 onready var health_bar = $Health
@@ -30,12 +31,14 @@ onready var corpo = $Body
 var corpo_cor
 var good = ["1f600","1f601","1f602","1f603","1f604","1f605","1f606","1f609","1f60a","1f60b","1f60e","1f60d","1f618","1f617","1f619","1f61a","263a","1f642","1f60c","1f913","1f61b","1f61c","1f61d","1f643","1f607","1f608"]
 var bad = ["1f610","1f611","1f636","1f644","1f60f","1f623","1f625","1f62e","1f910","1f62f","1f62a","1f62b","1f634","1f924","1f612","1f613","1f614","1f615","2639","1f641","1f616","1f61e","1f61f","1f624","1f622","1f62d","1f626","1f627","1f628","1f629","1f62c","1f630","1f633","1f635","1f621","1f479","1f922","1f915","1f912","1f637"]
+
 onready var happyface = good[rand_range(0,good.size())]
 onready var sadface = bad[rand_range(0,bad.size())]
-
 onready var user = get_node("../../../User").user
-
+signal my_signal(joydirection)
 func _ready():
+	$"Label".visible = false
+	get_node("../../../TouchControl").connect("intention", self, "aim_direction")
 	var P1color = [
 	Color(2.0, 4.0, 0.7),
 	Color(2.0, 0.2, 0.8),
@@ -63,11 +66,9 @@ func _ready():
 				bullet_type = user["friends"][i]["bullet_type"]
 				bag = user["friends"][i]["bag"]
 				friend_name = user["friends"][i]["friend_name"]
-				$"Label".bbcode_text = "[center]"+friend_name+"[/center]" 
-				$"Label".visible = true
-			x += 1
-	else:
-		$"Label".visible = false
+				if friend_name != "Player":
+					$"Label".bbcode_text = "[center]"+friend_name+"[/center]" 
+					$"Label".visible = true
 	corpo.modulate = corpo_cor
 	mask.modulate = corpo_cor
 	$"Baloon".modulate = corpo_cor
@@ -87,28 +88,35 @@ func _physics_process(delta):
 		&& can_shoot:
 		shoot()
 		
+func aim_direction(direction2):
+	aimdirection = direction2
+	emit_signal("my_signal", aimdirection)
+	
 func _input(event):
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
 			touch = true
 		else:
 			touch = false
+
 func _process(_delta):
-	$AvatarHead.modulate.a = clamp(health/10 + 0.4,0.4,1)
-	if health < 6:
+#	$AvatarHead.modulate.a = clamp(health/10 + 0.4,0.4,1)
+	if health < 8:
 		$Baloon.visible = true
 		changeface("sadface")
-		drag.x -= 1
+		drag.x -= 0.2
 	else:
 		$Baloon.visible = false
-	if health  > 10:
+	if health  > 12:
 		mask.visible = true
 	else:
 		mask.visible = false
 func _on_Cooldown_timeout():
 	can_shoot = true
 	$Gun/AnimatedSprite.set_frame(0)
-	cooldown.wait_time = rand_range(0.1,0.7)
+	cooldown.wait_time = rand_range(0.4,1)
+	
+	aimdirection = position
 
 func set_health(value:float):
 	health = min(value, max_health)
@@ -144,7 +152,7 @@ func damage(damage: int):
 			
 	else:
 		changeface("sadface")
-		drag = Vector2(-100,0)
+		drag = Vector2(-60,0)
 		corpo.play("stand")
 			
 		

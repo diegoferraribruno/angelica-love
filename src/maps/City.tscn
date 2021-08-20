@@ -52,11 +52,11 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.532
+wait_time = 0.356
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 50.0
+wait_time = 32.0
 one_shot = true
 autostart = true
 

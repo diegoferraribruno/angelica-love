@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/angelica/Controller/Joystick.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node2D
+var joydirection := Vector2(0,0)
+var following = false
+onready var joystick = $\"Joystick\"
+var size = 60
+signal my_signal2(joydirection)
+onready var screensize = get_viewport().get_visible_rect().size
+
+func _ready():
+	position = Vector2(screensize.x-80,screensize.y-80)
+func _draw():
+	draw_circle(Vector2(0,0),size,Color(1,1,1,0.2))
+
+func _process(delta):
+	if following:
+		var mouse_position = get_local_mouse_position()
+		var max_dist = 100
+		if mouse_position.x > max_dist:
+			following = false
+		if mouse_position.y < -100:
+			following = false
+		joystick.position = mouse_position 
+		if joystick.position.x < -size:
+			joystick.position.x = -size
+		if joystick.position.y < -size:
+			joystick.position.y = -size
+			
+		if joystick.position.x > size:
+			joystick.position.x = size
+		if joystick.position.y > size:
+			joystick.position.y = size
+		$Label.text = str(mouse_position)
+#	else:
+#		joystick.position = Vector2(0,0)
+	var x = joystick.position.x
+	var y = joystick.position.y
+	
+	joydirection = Vector2(x,y)
+	$\"RichTextLabel\".bbcode_text = \"[center](X=\"+str(x)+\")\\n(Y=\"+str(y)+\")[/center]\"
+#	get_node(\"../Game\").ui_direction(joydirection)
+
+	emit_signal(\"my_signal2\", joydirection)
+
+func _on_TouchUp2_released():
+	following = false
+
+func _on_RichTextLabel_gui_input(event):
+	if Input.is_action_just_pressed(\"Click\"):
+		following = true
+		
+	if Input.is_action_just_released(\"Click\"):
+		following = false
+
+func _on_Area2D2_input_event(viewport, event, shape_idx):
+	if event is InputEventScreenTouch and event.pressed:
+		following = true
+#		swipe_start = event.position
+		emit_signal(\"my_signal2\", event.position)
+	if event is InputEventScreenTouch and not event.pressed:
+		following = false
+
+
+func _on_Area2D2_area_exited(area):
+	print (area) 
+	pass # Replace with function body.
+"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 29.5296
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 66.0
+
+[node name="DiControl2" type="Node2D"]
+position = Vector2( 120, 420 )
+script = SubResource( 3 )
+
+[node name="Joystick" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Joystick"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Joystick/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="Joystick/Area2D" to="Joystick" method="_on_Area2D_input_event"]
+[connection signal="area_exited" from="Area2D2" to="." method="_on_Area2D2_area_exited"]
+[connection signal="input_event" from="Area2D2" to="." method="_on_Area2D2_input_event"]

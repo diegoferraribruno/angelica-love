@@ -53,11 +53,14 @@ func _on_Bad_timeout():
 	add_child(instance)
 	
 func _on_Player_timeout():
+#	var dragplayer = load("res://src/scenes/Player/DragPlayer.tscn")
+#	var instance = dragplayer.instance()
+#	var script = load("res://src/scenes/Player/DragPlayer.gd")
 	var instance = Player.instance()
 	var script = load("res://src/scenes/Player/Player.gd")
 	instance.set_script(script)
 	instance.name = "Player1"
-	instance.position = Vector2(-16,rand_range(max_height,600))
+	instance.position = Vector2(screensize.x/2,screensize.y/2)
 	add_child(instance)
 	$"Player1".health = 40
 	$"Player1".time = 0.015
@@ -93,4 +96,3 @@ func gameover():
 func _on_GameOver_timeout():
 	get_node("../../User").user["friends"] = friends 
 	queue_free()
-	pass # Replace with function body.

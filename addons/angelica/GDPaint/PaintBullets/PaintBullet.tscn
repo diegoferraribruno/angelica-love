@@ -1,71 +1,71 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/sprites16x45.png" type="Texture" id=1]
-[ext_resource path="res://addons/angelica/GDPaint/PaintBullets/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://addons/angelica/GDPaint/PaintBullets/PaintBullet.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 112, 704, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 112, 704, 16, 16 )
+region = Rect2( 496, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 496, 80, 16, 16 )
+region = Rect2( 496, 112, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 496, 112, 16, 16 )
+region = Rect2( 112, 704, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 112, 704, 16, 16 )
+region = Rect2( 496, 176, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 496, 176, 16, 16 )
+region = Rect2( 496, 192, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 496, 192, 16, 16 )
+region = Rect2( 496, 208, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 496, 208, 16, 16 )
+region = Rect2( 496, 224, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 496, 224, 16, 16 )
+region = Rect2( 496, 128, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 496, 128, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 1 )
 region = Rect2( 496, 160, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "New Anim",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), null, SubResource( 2 ), null, SubResource( 3 ), SubResource( 4 ), null, null ],
+"frames": [ SubResource( 1 ), null, SubResource( 1 ), null, SubResource( 2 ), SubResource( 3 ), null, null ],
 "loop": false,
 "name": "hit",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": false,
 "name": "goodies",
 "speed": 5.0
@@ -75,7 +75,7 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 one_shot = true
 autostart = true
 
@@ -86,8 +86,7 @@ autostart = true
 
 [node name="Bullet" type="AnimatedSprite" parent="."]
 modulate = Color( 1.56863, 1.56863, 1.56863, 1 )
-frames = SubResource( 12 )
+frames = SubResource( 11 )
 animation = "goodies"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="animation_finished" from="Bullet" to="." method="_on_Bullet_animation_finished"]

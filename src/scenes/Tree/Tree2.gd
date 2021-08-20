@@ -3,7 +3,7 @@ extends StaticBody2D
 
 var scenes = ["summer","fall","winter","spring","summer","city"]
 onready var screen_size := get_viewport_rect().size
-var speed = 100
+var speed = 60
 
 func set_scene():
 		scenes.pop_front()

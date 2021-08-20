@@ -9,7 +9,7 @@ var b = 0.014
 var rfactor = 0.005
 var gfactor = 0.007
 var bfactor = 0.014
-var revert = 1.2
+var revert = 1.1
 
 func _ready():
 	rect_size.x = bg_position.x
@@ -25,14 +25,14 @@ func _process(delta):
 	b += bfactor*delta*revert
 	modulate = Color(r,g,b)
 	chao.modulate = Color(g-0.1,b-0.1,r-0.1)
-	var treecolor = Color(b*2.5,b*2.5,b*2.5)
+	var treecolor = Color(b*4,b*4,b*4)
 	get_node("../../").modulate_trees(treecolor)
 	
 
-	if b >= 1.80:
+	if b >= 2:
 		revert = -3
 	if b < 0.014:
-			revert = 1
+			revert = 1.1
 			b = 0.06
 			$"../Timer".start()
 			$"../Timer2".start()

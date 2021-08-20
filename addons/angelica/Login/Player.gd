@@ -1,5 +1,7 @@
 extends KinematicBody2D
 var emoji = ""
+var aimdirection = Vector2(0,0)
+signal my_signal(aimdirection)
 
 func append_emoji(argument):
 	get_parent().change_emoji(argument)

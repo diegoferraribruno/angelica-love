@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/angelica/Dock/MenuVerticalLeft.gd" type="Script" id=1]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.298039, 0.298039, 0.298039, 0.494118 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
@@ -18,7 +18,7 @@ margin_left = -16.7098
 margin_top = 2.8028
 margin_right = 4.29016
 margin_bottom = 307.803
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

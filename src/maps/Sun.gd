@@ -1,6 +1,6 @@
 extends Node2D
 
-var bg_color = Color(3,2,0.8,1)
+var bg_color = Color(8,4,0.9,1)
 var draw_matrix = [Rect2(Vector2(0,-32), Vector2(128, 32))]
 onready var screensize = get_viewport().get_visible_rect().size
 onready var pos =  Vector2(screensize.x/2,screensize.y+256)
@@ -15,7 +15,7 @@ func reset():
 
 func _process(delta):
 	if position.y > -1600:
-		position += Vector2(0,-1)*delta*15
+		position += Vector2(0,-1)*delta*16
 #	else:
 #		reset()
 

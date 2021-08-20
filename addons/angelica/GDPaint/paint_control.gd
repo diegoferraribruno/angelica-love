@@ -7,7 +7,7 @@ const UNDO_NONE = -1
 onready var screenSize = get_viewport().get_visible_rect().size
 # How large is the image (it's actually the size of DrawingAreaBG, because that's our background canvas).
 var IMAGE_SIZE = screenSize
-var emoji_preload = preload("res://addons/angelica/GDPaint/PaintBullets/Bullet.tscn")
+var emoji_preload = preload("res://addons/angelica/GDPaint/PaintBullets/PaintBullet.tscn")
 # Enums for the various modes and brush shapes that can be applied.
 enum BrushModes {
 	NONE,

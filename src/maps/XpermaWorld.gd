@@ -12,6 +12,6 @@ func _ready():
 	for i in initialize:
 		get_node("../../Body").input_entered(i)
 
-
-func _on_XpermaWorld_tree_exiting():
-	get_node("../../Body").input_entered("glow off")
+#
+#func _on_XpermaWorld_tree_exiting():
+#	get_node("../../Body").input_entered("glow off")

@@ -4,7 +4,6 @@ var ambience = [
 	"res://addons/SFX/Berimb18 - Kitdepontos.Com.Br.ogg",
 	"res://addons/SFX/Berimb19 - Kitdepontos.Com.Br.ogg",
 	"res://addons/SFX/wind-sound-effect-free.ogg",
-	"res://addons/SFX/wind-sound-effect-free.ogg",
 ]
 
 func _on_AudioStreamPlayer_finished():

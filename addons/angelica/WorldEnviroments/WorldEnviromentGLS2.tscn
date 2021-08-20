@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 4
+background_sky = SubResource( 1 )
+background_energy = 2.54
+background_canvas_max_layer = 2
+glow_enabled = true
+glow_levels/4 = true
+glow_levels/5 = false
+glow_intensity = 1.07
+glow_strength = 1.13
+glow_bloom = 0.14
+glow_blend_mode = 1
+glow_hdr_threshold = 0.84
+glow_hdr_luminance_cap = 200.51
+glow_hdr_scale = 0.89
+glow_bicubic_upscale = true
+adjustment_enabled = true
+adjustment_contrast = 1.3
+
+[node name="WorldEnviroment" type="WorldEnvironment"]
+environment = SubResource( 2 )

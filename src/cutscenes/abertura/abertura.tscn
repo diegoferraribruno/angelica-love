@@ -99,7 +99,7 @@ tracks/7/path = NodePath("title:visible_characters")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.4, 0.8, 1.8, 5.4, 7.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
@@ -111,7 +111,7 @@ tracks/8/path = NodePath("credito:visible_characters")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
-tracks/8/enabled = true
+tracks/8/enabled = false
 tracks/8/keys = {
 "times": PoolRealArray( 2.9, 3.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -170,6 +170,7 @@ scale = Vector2( 2.92926, 2.92926 )
 texture = ExtResource( 4 )
 
 [node name="credito" type="RichTextLabel" parent="."]
+visible = false
 anchor_top = -0.00419973
 anchor_bottom = -0.00419963
 margin_left = 212.955
@@ -188,6 +189,7 @@ __meta__ = {
 }
 
 [node name="title" type="RichTextLabel" parent="."]
+visible = false
 anchor_top = -0.00419973
 anchor_bottom = -0.00419963
 margin_left = 235.955
