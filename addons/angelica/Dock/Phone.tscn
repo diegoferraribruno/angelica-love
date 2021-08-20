@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/angelica/Themes/SuperButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/angelica/Dock/Phone.gd" type="Script" id=3]
@@ -8,9 +8,9 @@
 bg_color = Color( 0.0862745, 0.0745098, 0.0745098, 0.921569 )
 draw_center = false
 border_width_left = 8
-border_width_top = 34
+border_width_top = 46
 border_width_right = 8
-border_width_bottom = 46
+border_width_bottom = 30
 border_color = Color( 0.243137, 0.262745, 0.278431, 1 )
 corner_radius_top_left = 12
 corner_radius_top_right = 12
@@ -21,9 +21,9 @@ corner_detail = 11
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0862745, 0.0745098, 0.0745098, 0.8 )
 border_width_left = 8
-border_width_top = 34
+border_width_top = 46
 border_width_right = 8
-border_width_bottom = 46
+border_width_bottom = 30
 border_color = Color( 0.129412, 0.145098, 0.156863, 0.796078 )
 corner_radius_top_left = 12
 corner_radius_top_right = 12
@@ -33,6 +33,16 @@ corner_detail = 11
 
 [sub_resource type="DynamicFontData" id=3]
 font_path = "res://addons/angelica/fonts/OpenSans-Semibold.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 14
+outline_size = 2
+outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 1
+extra_spacing_bottom = 2
+font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
 outline_color = Color( 0.109804, 0.109804, 0.109804, 0.72549 )
@@ -66,7 +76,7 @@ font_path = "res://addons/angelica/fonts/OpenSans-Bold.ttf"
 outline_size = 3
 outline_color = Color( 0.270588, 0.270588, 0.270588, 1 )
 extra_spacing_bottom = 3
-extra_spacing_char = 7
+extra_spacing_char = 4
 font_data = SubResource( 7 )
 
 [sub_resource type="StyleBoxEmpty" id=9]
@@ -82,7 +92,7 @@ __meta__ = {
 pause_mode = 2
 margin_left = -1.0
 margin_right = 242.0
-margin_bottom = 468.0
+margin_bottom = 461.0
 mouse_filter = 1
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
@@ -91,10 +101,10 @@ __meta__ = {
 
 [node name="Screen" type="Panel" parent="."]
 pause_mode = 2
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 238.0
-margin_bottom = 465.0
+margin_left = 1.81079
+margin_top = 0.621582
+margin_right = 236.811
+margin_bottom = 455.622
 mouse_filter = 2
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
@@ -102,16 +112,18 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 11.0
-margin_top = 7.0
-margin_right = 130.0
-margin_bottom = 37.0
+margin_left = 76.9118
+margin_top = 428.5
+margin_right = 195.912
+margin_bottom = 458.5
 size_flags_horizontal = 5
-custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
+custom_fonts/normal_font = SubResource( 10 )
+custom_colors/default_color = Color( 0.513726, 0.513726, 0.513726, 0.752941 )
 bbcode_enabled = true
-bbcode_text = "Angelica 210"
-text = "Angelica 210"
+bbcode_text = "Angelica 213
+"
+text = "Angelica 213
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -119,9 +131,9 @@ __meta__ = {
 
 [node name="clock" type="RichTextLabel" parent="."]
 margin_left = 89.0
-margin_top = 35.0
+margin_top = 46.0
 margin_right = 162.0
-margin_bottom = 62.0
+margin_bottom = 73.0
 size_flags_horizontal = 5
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 0.752941 )
@@ -139,9 +151,9 @@ autostart = true
 
 [node name="Body" type="RichTextLabel" parent="."]
 margin_left = 8.0
-margin_top = 59.0
+margin_top = 71.0
 margin_right = 232.0
-margin_bottom = 364.0
+margin_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -156,34 +168,6 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 meta_underlined = false
 tab_size = 7
-scroll_active = false
-override_selected_font_color = true
-custom_effects = [ null, null, null, null, null ]
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Body4" type="RichTextLabel" parent="."]
-margin_left = 8.0
-margin_top = 384.0
-margin_right = 232.0
-margin_bottom = 419.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_pivot_offset = Vector2( 10, 10 )
-focus_next = NodePath("../LineEdit")
-size_flags_horizontal = 4
-size_flags_vertical = 10
-theme = SubResource( 5 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/normal_font = SubResource( 8 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[url=selfie][img]res://img/32/1f4f9.png[/img][/url] "
-meta_underlined = false
-tab_size = 7
-text = " "
 scroll_active = false
 override_selected_font_color = true
 custom_effects = [ null, null, null, null, null ]
@@ -192,10 +176,10 @@ __meta__ = {
 }
 
 [node name="Body2" type="RichTextLabel" parent="."]
-margin_left = 121.0
+margin_left = 84.0
 margin_top = 9.0
-margin_right = 234.0
-margin_bottom = 35.0
+margin_right = 232.0
+margin_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 10, 10 )
@@ -208,10 +192,10 @@ custom_styles/normal = SubResource( 6 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "[url=selfie][img]res://img/16/1f4f9.png[/img] [/url][url=selfie] [img]res://img/16/1f4f7.png[/img] [/url] [url=volume][img]res://img/16/1f569.png[/img] [/url]"
+bbcode_text = "[url=selfie][img]res://img/32/1f4f9.png[/img] [/url][url=screenshot] [img]res://img/32/1f4f7.png[/img] [/url][url=volume][img]res://img/32/1f569.png[/img] [/url]"
 meta_underlined = false
 tab_size = 7
-text = "     "
+text = "    "
 scroll_active = false
 override_selected_font_color = true
 custom_effects = [ null, null, null, null, null ]
@@ -220,15 +204,12 @@ __meta__ = {
 }
 
 [node name="SuperButton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 99.806, 421.697 )
+position = Vector2( 4.97971, 4.14595 )
 
 [connection signal="timeout" from="clock/Timer" to="clock" method="_on_Timer_timeout"]
 [connection signal="meta_clicked" from="Body" to="." method="_on_Body_meta_clicked"]
 [connection signal="meta_hover_ended" from="Body" to="." method="_on_Body_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Body" to="." method="_on_Body_meta_hover_started"]
-[connection signal="meta_clicked" from="Body4" to="." method="_on_Body_meta_clicked"]
-[connection signal="meta_hover_ended" from="Body4" to="." method="_on_Body_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Body4" to="." method="_on_Body_meta_hover_started"]
 [connection signal="meta_clicked" from="Body2" to="." method="_on_Body_meta_clicked"]
-[connection signal="meta_hover_ended" from="Body2" to="." method="_on_Body_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Body2" to="." method="_on_Body_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Body2" to="." method="_on_Body2_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Body2" to="." method="_on_Body2_meta_hover_started"]

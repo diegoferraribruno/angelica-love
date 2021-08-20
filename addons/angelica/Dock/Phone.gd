@@ -81,3 +81,13 @@ func _on_Body_meta_clicked(meta):
 
 func _on_TextEdit_text_changed():
 	pass # Replace with function body.
+
+
+func _on_Body2_meta_hover_started(meta):
+	var pos = get_local_mouse_position()+Vector2(200,200)
+	$"SuperButton".hint(meta,pos)
+
+func _on_Body2_meta_hover_ended(meta):
+	var pos = get_local_mouse_position()+Vector2(30,100)
+	$"SuperButton".hint("",Vector2(-30,-40))
+	pass # Replace with function body.

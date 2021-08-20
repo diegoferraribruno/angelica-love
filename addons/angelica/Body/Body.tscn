@@ -22,7 +22,7 @@ position = Vector2( 8.39134, 44.6763 )
 stream = ExtResource( 17 )
 
 [node name="Phone" parent="." instance=ExtResource( 2 )]
-position = Vector2( 6.16894, 5.18164 )
+position = Vector2( 738.615, 5.18164 )
 
 [node name="Login" parent="." instance=ExtResource( 1 )]
 position = Vector2( 285.512, 53.5607 )

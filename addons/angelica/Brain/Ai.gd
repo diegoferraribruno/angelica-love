@@ -596,7 +596,6 @@ func _on_LineEdit_text_entered(new_text)-> void :
 				match command[1]:
 					_:
 						var commando = new_text.replace("app ","")
-						print(commando)
 						OS.execute(str(commando),[], false)
 						ai_say("trying to run %s" % command[1])	
 			"obs":

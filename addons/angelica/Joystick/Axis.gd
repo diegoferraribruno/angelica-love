@@ -13,14 +13,9 @@ func _process(delta):
 	var joyposition  = get_node("../../").joydirection
 	var square = sqrt( (joyposition.x * joyposition.x) + (joyposition.y * joyposition.y) )
 	sum = margin_value * -square*2.5
-	printerr(square, joyposition)
 	add_constant_override("margin_right", sum)
-	update()
-	if square>0.55:
+	if square >= 0.46:
 		$"../AnimatedSprite/AnimatedSprite".play("walk")
 		$"../AnimatedSprite/AnimatedSprite".speed_scale = clamp(1+int(square*1.5),1,1.5)
-		
 	else:
 		$"../AnimatedSprite/AnimatedSprite".play("default")
-
-	

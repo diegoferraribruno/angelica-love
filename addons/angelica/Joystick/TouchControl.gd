@@ -39,6 +39,5 @@ func ui_direction(direction):
 		joydirection.x = 0
 	if joydirection.y < min_limit and joydirection.y > -min_limit:
 		joydirection.y = 0
-#	print(joydirection)
 	
 	emit_signal("direction", joydirection)

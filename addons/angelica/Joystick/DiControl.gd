@@ -3,7 +3,7 @@ extends Node2D
 var joydirection := Vector2(0,0)
 var aimdirection := Vector2(0,0)
 var following = false
-var size = 100
+var size = 120
 
 onready var joystick = $"Joystick"
 onready var screensize = get_viewport().get_visible_rect().size
@@ -12,7 +12,7 @@ signal my_signal(joydirection)
 signal my_signal2(joydirection)
 
 func _ready():
-	position = Vector2(180,screensize.y-180)
+	position = Vector2(180,screensize.y-120)
 	
 func _draw():
 	draw_circle(Vector2(0,0),36,Color(0.8,0.8,0.8,0.1))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://addons/angelica/Joystick/Joystick.gd" type="Script" id=1]
 [ext_resource path="res://addons/angelica/Joystick/Axis2D.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://img/48/1f5a2.png" type="Texture" id=4]
 [ext_resource path="res://addons/angelica/Joystick/Axis.gd" type="Script" id=5]
 [ext_resource path="res://sprites/walking_up.png" type="Texture" id=6]
+[ext_resource path="res://img/64/1f49f.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 172.0
@@ -21,6 +22,13 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.964706, 0.964706, 0.964706, 0.45098 )
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -65,13 +73,6 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.964706, 0.964706, 0.964706, 0.45098 )
-corner_radius_top_left = 64
-corner_radius_top_right = 64
-corner_radius_bottom_right = 64
-corner_radius_bottom_left = 64
-
 [sub_resource type="CircleShape2D" id=10]
 radius = 4.0
 
@@ -85,7 +86,7 @@ corner_radius_bottom_right = 62
 corner_radius_bottom_left = 62
 
 [sub_resource type="CircleShape2D" id=12]
-radius = 90.0
+radius = 80.0
 
 [node name="LeftControl" type="Node2D"]
 position = Vector2( 128.418, 389.132 )
@@ -98,10 +99,11 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = -100.0
-margin_top = -100.0
+margin_left = -160.0
+margin_top = -116.0
 margin_right = 80.0
 margin_bottom = 80.0
+rect_pivot_offset = Vector2( 134, 78.1158 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
@@ -110,17 +112,6 @@ __meta__ = {
 
 [node name="Axis" type="Node2D" parent="."]
 script = ExtResource( 2 )
-
-[node name="AnimatedSprite" type="Node2D" parent="Axis"]
-position = Vector2( 0.0984192, 0.193848 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Axis/AnimatedSprite"]
-frames = SubResource( 8 )
-animation = "walk"
-playing = true
-flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Axis"]
 margin_left = -26.0
@@ -141,6 +132,18 @@ custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimatedSprite" type="Node2D" parent="Axis"]
+position = Vector2( 0.0984192, 0.193848 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Axis/AnimatedSprite"]
+frames = SubResource( 8 )
+animation = "walk"
+frame = 3
+playing = true
+flip_h = true
 
 [node name="Joystick" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -177,7 +180,7 @@ __meta__ = {
 }
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Joystick"]
-position = Vector2( -91.3283, -89.9976 )
+position = Vector2( -81.7874, -81.0179 )
 shape = SubResource( 12 )
 
 [node name="Label" type="Label" parent="."]
@@ -188,6 +191,13 @@ margin_bottom = -74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ShootL" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 0.0666667, 0, 0.588235 )
+position = Vector2( -143.384, -97.4767 )
+normal = ExtResource( 7 )
+passby_press = true
+action = "shoot"
 
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
