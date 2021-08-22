@@ -112,7 +112,8 @@ func _process(_delta):
 func _on_Cooldown_timeout():
 	can_shoot = true
 	$Gun/AnimatedSprite.set_frame(0)
-	cooldown.wait_time = rand_range(0.4,1)
+	cooldown.wait_time = rand_range(0.2,0.6)
+	cooldown.wait_time = rand_range(0.2,0.6)
 	
 	aimdirection = position
 
@@ -150,7 +151,7 @@ func damage(damage: int):
 			
 	else:
 		changeface("sadface")
-		drag = Vector2(-60,0)
+		drag = Vector2(-50,0)
 		corpo.play("stand")
 			
 		

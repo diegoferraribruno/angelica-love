@@ -10,16 +10,17 @@ var rfactor = 0.005
 var gfactor = 0.007
 var bfactor = 0.014
 var revert = 1.1
+var GLES_ajust = 1.8
 
 func _ready():
 	rect_size.x = bg_position.x
 	rect_position.y = bg_position.y
 	chao.rect_size.x = bg_position.x
 	chao.rect_position.y = screensize.y
-
+	if OS.get_current_video_driver() == 0:
+		GLES_ajust = 2.1
 
 func _process(delta):
-	
 	r += rfactor*delta*revert
 	g += gfactor*delta*revert
 	b += bfactor*delta*revert
@@ -27,9 +28,7 @@ func _process(delta):
 	chao.modulate = Color(g-0.1,b-0.1,r-0.1)
 	var treecolor = Color(b*4,b*4,b*4)
 	get_node("../../").modulate_trees(treecolor)
-	
-
-	if b >= 2:
+	if b >= GLES_ajust:
 		revert = -3
 	if b < 0.014:
 			revert = 1.1

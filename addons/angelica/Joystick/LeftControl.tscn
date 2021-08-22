@@ -23,54 +23,54 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.964706, 0.964706, 0.964706, 0.45098 )
-corner_radius_top_left = 64
-corner_radius_top_right = 64
-corner_radius_bottom_right = 64
-corner_radius_bottom_left = 64
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 126, 0, 63, 64 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 189, 0, 63, 64 )
+region = Rect2( 126, 0, 63, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 252, 0, 63, 64 )
+region = Rect2( 189, 0, 63, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 315, 0, 63, 64 )
+region = Rect2( 252, 0, 63, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 6 )
+region = Rect2( 315, 0, 63, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 378, 0, 63, 64 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+}, {
 "frames": [  ],
 "loop": false,
 "name": "tiro",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
 } ]
 
 [sub_resource type="CircleShape2D" id=10]
@@ -99,7 +99,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = -160.0
+margin_left = -143.0
 margin_top = -116.0
 margin_right = 80.0
 margin_bottom = 80.0
@@ -128,7 +128,7 @@ modulate = Color( 0.639216, 0.639216, 0.639216, 1 )
 margin_right = 52.0
 margin_bottom = 52.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -139,8 +139,9 @@ rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Axis/AnimatedSprite"]
-frames = SubResource( 8 )
+frames = SubResource( 9 )
 animation = "walk"
+frame = 1
 playing = true
 flip_h = true
 
@@ -193,7 +194,7 @@ __meta__ = {
 
 [node name="ShootL" type="TouchScreenButton" parent="."]
 modulate = Color( 1, 0.0666667, 0, 0.588235 )
-position = Vector2( -143.384, -97.4767 )
+position = Vector2( -129.891, -105.414 )
 normal = ExtResource( 7 )
 passby_press = true
 action = "shoot"

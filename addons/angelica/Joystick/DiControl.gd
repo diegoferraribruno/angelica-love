@@ -12,11 +12,11 @@ signal my_signal(joydirection)
 signal my_signal2(joydirection)
 
 func _ready():
-	position = Vector2(180,screensize.y-120)
+	position = Vector2(170,screensize.y-140)
 	
 func _draw():
-	draw_circle(Vector2(0,0),36,Color(0.8,0.8,0.8,0.1))
-	draw_circle(Vector2(0,0),48,Color(0.8,0.8,0.8,0.1))
+	draw_circle(Vector2(0,0),36,Color(0.8,0.8,0.8,0.2))
+	draw_circle(Vector2(0,0),48,Color(0.8,0.8,0.8,0.2))
 #	draw_circle(Vector2(0,0),20,Color(0.8,0.8,0.8,0.5))
 
 func _process(delta):

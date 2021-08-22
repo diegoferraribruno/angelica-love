@@ -49,6 +49,7 @@ Game="*res://src/singletons/Game.gd"
 
 [display]
 
+window/size/width=720
 window/size/height=480
 window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true
@@ -64,6 +65,7 @@ enabled=PoolStringArray(  )
 shoot={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 player_up={

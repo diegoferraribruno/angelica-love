@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var GLES2 = load("res://addons/angelica/WorldEnviroments/WorldEnviromentGLS2.tscn")
-onready var GLES3 = load("res://addons/angelica/WorldEnviroments/WorldEnviromentGLS3.tscn")
+onready var GLES2 = preload("res://addons/angelica/WorldEnviroments/WorldEnviromentGLS2.tscn")
+onready var GLES3 = preload("res://addons/angelica/WorldEnviroments/WorldEnviromentGLS3.tscn")
 
 var icon = "1f4a1"
 var close = true

@@ -1,6 +1,6 @@
 extends Node2D
 
-var bg_color = Color(8,4,0.9,1)
+var bg_color = Color(13,6,0.9,1)
 var draw_matrix = [Rect2(Vector2(0,-32), Vector2(128, 32))]
 onready var screensize = get_viewport().get_visible_rect().size
 onready var pos =  Vector2(screensize.x/2,screensize.y+256)
